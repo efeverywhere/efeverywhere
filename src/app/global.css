@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+/* body, html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+} */
+
+@font-face {
+  font-family: "EFCircular";
+  src: local("EFCircular"),
+    url("../../public/EF Circular/EF Circular - Desktop - TrueType TTF/Fonts/EFCircularTT-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EFCircularBook";
+  src: local("EFCircular"),
+    url("../../public/EF Circular/EF Circular - Desktop - TrueType TTF/Fonts/EFCircularTT-Book.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EFCircularBold";
+  src: local("EFCircularBold"),
+    url("../../public/EF Circular/EF Circular - Desktop - TrueType TTF/Fonts/EFCircularTT-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EFCircularMedium";
+  src: local("EFCircularMedium"),
+    url("../../public/EF Circular/EF Circular - Desktop - TrueType TTF/Fonts/EFCircularTT-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "EFCircularMobile";
+  src: local("EFCircularMobile"),
+    url("../../public/EF Circular/EF Circular - Web Fonts/css/fonts/EFCircularWeb-Light.woff") format("woff");
+    /* url("../../public/EF Circular/EF Circular - Desktop - OpenType OTF/Fonts/EFCircular-Ligh") format("otf"); */
+}
+
+body, p, h2, h3, h4, h5, h6 {
+  font-family: 'EFCircular', sans-serif;
+  color: '#191919';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: 'EFCircularBold', sans-serif !important;
+  color: ' #191919'
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
+
+/* removes tip of the popup */
+.mapboxgl-popup-tip {  
+  display: none;
+}
+
+.mapboxgl-popup-content{
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-radius: 5px !important;
+}
+
+.MuiImageListItemBar-title {
+  font-family: 'EFCircularBold' !important
+}
+
+.MuiImageListItemBar-subtitle {
+  font-family: 'EFCircularBook' !important
+}
+/* .modal-open .map-container {
+  pointer-events: none;
+} */
+
+/* #map-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+} */

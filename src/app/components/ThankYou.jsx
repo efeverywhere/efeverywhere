@@ -1,0 +1,220 @@
+'use client'
+import React, { useState } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Modal from '@mui/material/Modal';
+import { Box } from '@mui/material';
+import Fade from '@mui/material/Fade';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { FormControl, useFormControlContext } from '@mui/base/FormControl';
+import { TextField } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import MyDropzone from './Dropzone';
+import Autocomplete from '@mui/material/Autocomplete'; 
+
+import { useForm, ValidationError } from '@formspree/react';
+import { useCountries } from 'use-react-countries'
+
+
+function ThankYou({ isOpen, handleClose }) {
+  const [file, setFile] = useState(null);
+  const [open, setOpen] = useState(false);
+
+  const { countries } = useCountries();
+  const isMobile = useMediaQuery('(max-width:600px)')
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleFileUpload = (file) => {
+    // Update the form data with the uploaded file
+    setFile(file);
+  }
+
+  const form_name = 'name'
+  const form_email = 'email'
+  const form_country = 'country'
+  const form_description = 'description'
+  const form_caption = 'caption'
+  const form_image = 'image'
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setOpen(false);
+  // };
+
+  const [state, reactHookFormSubmit] = useForm("mgegpqzw");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    // Create a new FormData instance
+    const formData = new FormData();
+  
+    // Append the file to the form data
+    formData.append('image', file);
+  
+    // Append other form data
+    formData.append(form_email, e.target[form_email].value);
+    formData.append(form_name, e.target[form_name].value);
+    formData.append(form_country, e.target[form_country].value);
+    formData.append(form_description, e.target[form_description].value);
+    formData.append(form_caption, e.target[form_caption].value);
+  
+    // Call the handleSubmit function from useForm
+    await reactHookFormSubmit(formData);
+  
+  };
+
+  if (state.succeeded) {
+    return <div>Thank you for your submission!</div>;
+} 
+
+
+  return (
+    <div
+      style={{
+        height: '100vh'
+      }}
+    >
+      {isMobile ? (
+      //////////
+      // MOBILE
+      //////////
+      <div
+        style={{
+          position: 'fixed', 
+          width: '100vw',
+          height: '100vh'
+        }}
+      >
+        <Modal
+          open={isOpen}
+          onClose={handleClose}
+          closeAfterTransition
+        >
+        <Fade in={isOpen}>
+          <div style={{
+            height: '100vh',
+            width: '100vw',
+            overflow: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            // justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#0075E1',
+            color: 'white',
+            padding: '20px',
+          }}>
+            <CloseIcon 
+              style={{ 
+                position: 'absolute', 
+                right: '8vw', 
+                top: '3vh'
+                }} 
+              onClick={handleClose}
+              />
+              <Typography
+                style={{
+                  fontSize: 40,
+                  fontFamily: 'EFCircularBold',
+                  marginTop: '50%',
+                  marginRight: '15vw',
+                  lineHeight: '1.3'
+                }}
+              >
+                Thank you for your submission!
+              </Typography>
+              <Typography
+                sx={{
+                  marginTop: '4vh',
+                  fontSize: 16,
+                  fontFamily: 'EFCircularBook',
+                  marginBottom: '10vh',
+                  marginRight: '15vw',
+                  wordWrap: 'break-word'
+                }}
+              >
+                The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
+              </Typography>
+          </div>
+        </Fade>
+        </Modal>
+      </div>
+      ):(
+      //////////
+      // DESKTOP
+      //////////
+      <div>
+      <Modal
+        open={isOpen}
+        onClose={handleClose}
+        closeAfterTransition
+        sx={{
+          position: 'fixed',
+          borderRadius: '5px'
+        }}
+      >
+        <Fade 
+          in={isOpen}
+          style={{
+            borderRadius: '5px'
+          }}  
+        >
+          <div style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            width: '50vw',
+            height: '30vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'left',
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: '#0075E1',
+            padding: '16px 35px 24px 70px', // top right bottom left
+            color: 'white'
+          }}>
+            <CloseIcon 
+              style={{ 
+                position: 'absolute', 
+                right: 30, 
+                top: 30
+                }} 
+              onClick={handleClose}
+              />
+
+              <Typography
+                sx={{
+                  marginTop: '4vh',
+                  fontSize: 40,
+                  fontFamily: 'EFCircularBold',
+                  marginBottom: 2,
+                  lineHeight: '1.3'
+                }}
+              >
+                Thank you for your submission!
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: 18,
+                  fontFamily: 'EFCircular',
+                  marginBottom: 2
+                }}
+              >
+                The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
+              </Typography>
+          </div>
+        </Fade>
+      </Modal>
+      </div>
+      )}
+    </div>
+  );
+}
+
+export default ThankYou;

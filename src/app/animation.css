@@ -1,0 +1,55 @@
+@keyframes moveGif1 {
+    0% {
+      transform: translateX(-30vw);
+    }
+    100% {
+      transform: translateX(700vw);
+    }
+  }
+  
+  .moving-gif-1 {
+    /* position: absolute; */
+    animation: moveGif1 20s linear infinite;
+  }
+
+  @keyframes moveGif2 {
+    0% {
+      transform: translateX(-85vw);
+    }
+    100% {
+      transform: translateX(700vw);
+    }
+  }
+  
+  .moving-gif-2 {
+    /* position: absolute; */
+    animation: moveGif2 20s linear infinite;
+  }
+
+  @keyframes moveGif3 {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(700vw);
+    }
+  }
+  
+  .moving-gif-3 {
+    /* position: absolute; */
+    animation: moveGif3 20s linear infinite;
+  }
+
+  @keyframes moveGif4 {
+    0% {
+      transform: translateX(-50vw);
+    }
+    100% {
+      transform: translateX(700vw);
+    }
+  }
+  
+  .moving-gif-4 {
+    /* position: absolute; */
+    animation: moveGif4 20s linear infinite;
+  }

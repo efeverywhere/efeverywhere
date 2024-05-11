@@ -1,0 +1,8 @@
+cloudimage-example
+access_key=AKIAYLY5WCBHVTQ3WRX3
+secret_access_key=GMwh0EDW6f/LLvxSC4BYtjIlVsSSrtV5tQIe8WD9
+
+
+imgix-example
+access_key=AKIAYLY5WCBHWITGSE5V
+secret_access_key=dzzMrSmW+dCXvuZYTFUnBMXLrceF2YSzwYhe2erl

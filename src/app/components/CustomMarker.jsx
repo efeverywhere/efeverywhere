@@ -1,0 +1,43 @@
+import React, { useState, useEffect } from "react"
+
+const fillCombinations = {
+    pink: ["#231F20", "#FF329B"],
+    blue1: ["#231F20", "#009EEB"],
+    blue2: ["#231F20", "#2FC8F2"],
+    purple1: ["#231F20", "#AD57E5"],
+    purple2: ["#231F20", "#7B61FF"],
+
+    // Add more colors and corresponding fill combinations as needed
+  };
+
+  
+  const CustomMarker = ({ color, handleMarkerClick, folder_name, markerScale }) => {
+    const fills = fillCombinations[color];
+  
+    return (
+      <>
+        <rect
+          fill="transparent"
+          onClick={() => handleMarkerClick(folder_name)}
+        />
+        <clipPath id="clip0_115_24107">
+          <path d="M30.0027 0C13.4336 0 0 13.4336 0 30.0027C0 38.0764 3.19488 45.4014 8.38184 50.7938L8.36832 50.8073L30 72.439L51.6317 50.8073L51.6182 50.7938C56.8051 45.4014 60 38.0764 60 30.0027C60 13.4336 46.5664 0 29.9973 0H30.0027Z" fill={fills[0]}/>
+        </clipPath>
+        <g 
+          style={{ cursor: 'pointer' }}
+          transform={`translate(-1.5, -3.5) scale(${markerScale})`} // Adjust the scale as needed
+          clipPath="url(#clip0_115_24107)"
+        >
+          <path d="M0.000144958 79.872C34.5951 79.872 62.6409 51.8262 62.6409 17.2312C62.6409 -17.3638 34.5951 -45.4095 0.000144958 -45.4095C-34.5949 -45.4095 -62.6406 -17.3638 -62.6406 17.2312C-62.6406 51.8262 -34.5949 79.872 0.000144958 79.872Z" fill={fills[1]} shape-rendering="geometricPrecision"/>
+          <path d="M-0.000148773 69.4333C28.8295 69.4333 52.2019 46.0636 52.2019 17.234C52.2019 -11.5956 28.8295 -34.9707 -0.000148773 -34.9707C-28.8298 -34.9707 -52.2021 -11.5983 -52.2021 17.2313C-52.2021 46.0609 -28.8325 69.4306 -0.00284958 69.4306" fill={fills[2]} shape-rendering="geometricPrecision"/>
+          <path d="M-0.000225067 58.9917C23.064 58.9917 41.7603 40.2955 41.7603 17.2312C41.7603 -5.83302 23.064 -24.5293 -0.000225067 -24.5293C-23.0645 -24.5293 -41.7607 -5.83302 -41.7607 17.2312C-41.7607 40.2955 -23.0645 58.9917 -0.000225067 58.9917Z" fill={fills[1]} shape-rendering="geometricPrecision"/>
+          <path d="M-4.19617e-05 48.5503C17.2988 48.5503 31.319 34.5275 31.319 17.2286C31.319 -0.0702543 17.2961 -14.0931 -4.19617e-05 -14.0931C-17.2962 -14.0931 -31.3218 -0.0702543 -31.3218 17.2286C-31.3218 34.5275 -17.2989 48.5503 -4.19617e-05 48.5503Z" fill={fills[2]} shape-rendering="geometricPrecision"/>
+          <path d="M0.000375748 38.1115C11.5311 38.1115 20.8806 28.762 20.8806 17.2312C20.8806 5.70044 11.5311 -3.64905 0.000375748 -3.64905C-11.5304 -3.64905 -20.8799 5.70044 -20.8799 17.2312C-20.8799 28.762 -11.5304 38.1115 0.000375748 38.1115Z" fill={fills[1]} shape-rendering="geometricPrecision"/>
+          <path d="M-0.000412941 27.6727C5.76497 27.6727 10.4384 22.9993 10.4384 17.2339C10.4384 11.4686 5.76497 6.79517 -0.000412941 6.79517C-5.7658 6.79517 -10.4419 11.4686 -10.4419 17.2339C-10.4419 22.9993 -5.7685 27.6727 -0.000412941 27.6727Z" fill={fills[2]} shape-rendering="geometricPrecision"/>
+          {/* Other paths */}
+        </g>
+      </>
+    );
+  };
+
+export default CustomMarker;
