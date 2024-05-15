@@ -212,7 +212,7 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '40%' : '50%',
+                  top: isMobile ? '45%' : '50%',
                   left: '50%', 
                   transform: 'translate(-50%, -50%)',
                   width: '400',
@@ -222,7 +222,10 @@ useEffect(() => {
                   alignItems: 'center',
                   background: 'transparent',
                   zIndex: 1000,
-                }}>
+                  }}
+                  onTouchMove={(e) => e.preventDefault()}
+                  overflow='hidden'
+                >
                     <Card sx={{ 
                         // background: 'transparent',
                         position: 'relative',
@@ -231,7 +234,8 @@ useEffect(() => {
                         paddingTop: '30px',
                         paddingBottom: '30px',
                       }}>
-                        <CardContent>
+                        <CardContent
+                        >
                         {countriesData && //Wait for the countriesData to load
                             <RadialProgressBar 
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
