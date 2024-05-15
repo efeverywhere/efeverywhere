@@ -11,7 +11,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Divider from '@mui/material/Divider';
-import Image from 'next/image';
+// import Image from 'next/image';
+import { Image } from '@ef-global/backpack/Image';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 import UploadButton from './UploadButton';
@@ -136,8 +137,8 @@ export default function Header(pathname, children) {
                         }}
                         >
                             <Image 
-                            height={50}
-                            width={50}
+                            height={70}
+                            width={70}
                             src={logo}
                             alt="Education First Logo"
                             />

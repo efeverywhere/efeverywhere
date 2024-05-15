@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
+import { Image } from '@ef-global/backpack/Image';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 import useMediaQuery from '@mui/material/useMediaQuery';
