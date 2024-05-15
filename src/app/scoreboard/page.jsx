@@ -1,6 +1,13 @@
 'use client'
 import React, {Suspense, useEffect, useState} from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Carousel as EFCarousel} from '@ef-global/backpack/Carousel'
+import {
+  SurfaceCard,
+  SurfaceCardContent,
+  CardBody,
+  CardFooter
+} from '@ef-global/backpack/SurfaceCard';
 import { Grid } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
 import Typography from '@mui/material/Typography';
@@ -220,82 +227,83 @@ function PageContent(){
           <div
             style={{
               marginBottom: '10vh',
+              alignContent: 'center',
+              justifyContent: 'center',
+              width: '90%',       // width being only 90% all the way to the right, means
+              marginLeft: '5vw',  // a 5% margin on the left makes left and right even spacing
             }}
           >
-            <div
-            style={{ 
-              display: 'flex', 
-              flexDirection: 'row',
-              overflowX: 'scroll',
-              marginTop: '5vh',
-              paddingLeft: '5vw',
-              height: '30vh',
-              }}>
+            <EFCarousel
+            slidesInView = {2}
+            themeConfig={{
+              slots: {
+                sliderInnerContainer: 'overflow-hidden',
+              }
+            }}
+            controls= "none"
+            >
+            <SurfaceCard
+              >
+                  <SurfaceCardContent>
+                  <div style={{ 
+                        borderLeft: '4px solid #2FC8F2',
+                        paddingLeft: '7vw'}}>
+                        <Typography
+                          className='bold'
+                        >
+                          Africa & Middle East
+                        </Typography>
+                      </div>
+                      {countriesData && (
+                      <div>
+                      {countriesData['africa']['missing'].map(country => (
+                        <div key={country} style={{ 
+                          borderLeft: '4px solid #2FC8F2',
+                          paddingLeft: '7vw'}}>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key={country}
+                        >
+                          {country}
+                        </Typography>
+                        </div>
+                      ))}
+                      </div>
+                    )}
+                  </SurfaceCardContent>
+            </SurfaceCard>
+            <SurfaceCard>
+              <SurfaceCardContent>
                 <div style={{ 
-                  paddingLeft: '5vw',
-                  width: '50%'
-                }}>
-                    <div style={{ 
-                      borderLeft: '4px solid #2FC8F2',
-                      paddingLeft: '7vw'}}>
-                      <Typography
-                        className='bold'
-                      >
-                        Africa & Middle East
-                      </Typography>
-                    </div>
-                    {countriesData && (
-                    <div>
-                    {countriesData['africa']['missing'].map(country => (
+                  borderLeft: '4px solid #2FC8F2',
+                  paddingLeft: '7vw'}}>
+                  <Typography
+                    className='bold'
+                  >
+                    The Americas
+                  </Typography>
+                </div>
+                {countriesData && (
+                  <div>
+                    {countriesData['the_americas']['missing'].map(country => (
                       <div key={country} style={{ 
                         borderLeft: '4px solid #2FC8F2',
                         paddingLeft: '7vw'}}>
-                      <Typography 
-                        fontFamily='EFCircularBook'
-                        key={country}
-                      >
-                        {country}
-                      </Typography>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key={country}
+                        >
+                          {country}
+                        </Typography>
                       </div>
                     ))}
-                </div>
+                  </div>
                 )}
-                  </div>
-                  <div style={{ 
-                    paddingLeft: '5vw',
-                    width: '50%'
-                  }}>
-                    <div style={{ 
-                      borderLeft: '4px solid #2FC8F2',
-                      paddingLeft: '7vw'}}>
-                      <Typography
-                        className='bold'
-                      >
-                        The Americas
-                      </Typography>
-                    </div>
-                    {countriesData && (
-                      <div>
-                        {countriesData['the_americas']['missing'].map(country => (
-                          <div key={country} style={{ 
-                            borderLeft: '4px solid #2FC8F2',
-                            paddingLeft: '7vw'}}>
-                            <Typography 
-                              fontFamily='EFCircularBook'
-                              key={country}
-                            >
-                              {country}
-                            </Typography>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                  <div style={{ 
-                    paddingLeft: '5vw',
-                    width: '50%'
-                  }}>
-                    <div style={{ 
+              </SurfaceCardContent>
+            </SurfaceCard>
+            <SurfaceCard>
+              <SurfaceCardContent>
+              <div style={{ 
                       borderLeft: '4px solid #2FC8F2',
                       paddingLeft: '7vw'}}>
                       <Typography
@@ -319,13 +327,12 @@ function PageContent(){
                         </div>
                         ))}
                     </div>
-                    )}
-                  </div>
-                  <div style={{ 
-                    paddingLeft: '5vw',
-                    width: '50%'
-                  }}>
-                    <div style={{ 
+                  )}
+              </SurfaceCardContent>
+            </SurfaceCard>
+            <SurfaceCard>
+              <SurfaceCardContent>
+               <div style={{ 
                       borderLeft: '4px solid #2FC8F2',
                       paddingLeft: '7vw'}}>
                       <Typography
@@ -349,26 +356,10 @@ function PageContent(){
                           </div>
                           ))}
                       </div>
-                    )}
-                  </div>
-            </div>
-            <div          
-              sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'flex-start',
-              justifyContent: 'flex-start',
-              width: '85%',
-              paddingLeft: '10vw',
-            }}>
-                <MoreHorizIcon 
-                sx={{
-                  width: '50px',
-                  height: '50px',
-                  paddingLeft: '8vw',
-                }}
-                />
-              </div>
+                )}
+              </SurfaceCardContent>
+            </SurfaceCard>
+            </EFCarousel>
           </div>
           ):(
             <Grid
