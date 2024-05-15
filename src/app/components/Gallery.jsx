@@ -451,7 +451,7 @@ export default function Gallery({ onClose, name, images }) {
                           <div
                           onClick={() => setSelectedVideo(image.src)}
                           >
-                          <img
+                          <video
                             key={index} 
                             src={image.src + '?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
