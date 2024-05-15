@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { styled } from '@mui/system';
 import { Button } from '@mui/material';
 import { HeaderState } from './headerState';
+import { IntroState } from './introState';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 import IconButton from '@mui/material/IconButton';
@@ -27,6 +28,7 @@ const alt_logo = '/EF_logo_white.svg'
 
 export default function Header(pathname, children) {
     const { headerState, setHeaderState } = React.useContext(HeaderState);
+    const { isIntroVisible, setIsIntroVisible } = React.useContext(IntroState);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
     const [menuOpen, setMenuOpen] = useState(false); // Add this
@@ -52,6 +54,7 @@ export default function Header(pathname, children) {
     const handleHeaderMenuClick = (event) => {
         setMenuOpen(!isVisible); // Add this
         setDrawer(!drawer);
+        setIsIntroVisible(false);
       };
       
       const handleHeaderMenuClose = () => {

@@ -2,6 +2,7 @@
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React, {useState, useEffect, useRef, useMemo} from "react"
 import { HeaderState } from './components/headerState';
+import { IntroState } from './components/introState';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { Typography } from "@mui/material";
@@ -27,10 +28,10 @@ import smiley06 from '../../public/smileys/Smiley_60fps_06.gif'
 // Basic Example
 export default function MapChart() {
   const {headerState, setHeaderState} = React.useContext(HeaderState);
+  const {isIntroVisible, setIsIntroVisible} = React.useContext(IntroState);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [textOpacity, setTextOpacity] = useState(1);
-  const [isTextVisible, setTextVisible] = useState(true);
   const [cityImages, setCityImages] = useState({});
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [countriesData, setCountriesData] = useState(null);
@@ -45,7 +46,7 @@ export default function MapChart() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTextVisible(false);
+      setIsIntroVisible(false);
     }, 5000); // Change this value to control how long the text is visible
   
     return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
@@ -110,7 +111,7 @@ useEffect(() => {
     setCityName(name);
     setIsGalleryOpen(true);
     setHeaderState('gallery');
-    setTextVisible(false);
+    setIsIntroVisible(false);
   };
 
   const handleMarkerClose = () => {
@@ -123,7 +124,7 @@ useEffect(() => {
   return(
     <div>
 
-            {isTextVisible && mapLoaded && (
+            {isIntroVisible && mapLoaded && (
               <div
                 style={{
                   height: '100%',
@@ -208,7 +209,7 @@ useEffect(() => {
               </div>
               )}
 
-            {isTextVisible == false && mapLoaded && showPopup && (
+            {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
                   top: isMobile ? '40%' : '50%',
@@ -220,7 +221,7 @@ useEffect(() => {
                   justifyContent: 'center', 
                   alignItems: 'center',
                   background: 'transparent',
-                  zIndex: 100000000,
+                  zIndex: 1000,
                 }}>
                     <Card sx={{ 
                         // background: 'transparent',
@@ -251,7 +252,7 @@ useEffect(() => {
                           style={{
                             position: 'absolute',
                             top: isMobile ? '0px' : '0px',
-                            right: isMobile ? '0px' : '30px',
+                            right: isMobile ? '30px' : '30px',
                             background: 'transparent',
                             border: 'none',
                             color: 'black',
