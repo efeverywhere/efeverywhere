@@ -366,10 +366,10 @@ export default function Header(pathname, children) {
                     height: '5vh',
                     left: '10%',
                     zIndex: 502,
-                    top: '2vh',
+                    // top: '2vh',
                     backgroundColor: headerState == 'default'  ? 'transparent' : '#FFFFFF',
                     }}>
-                    <div
+                    <Box
                         style={{
                             position: 'relative', // Image fill default position is absolute - this is necessary 
                             width: '4vw',
@@ -384,7 +384,6 @@ export default function Header(pathname, children) {
                             justifyContent: 'space-between',
                             height: '10vh',
                             alignItems: 'center',
-                            marginTop: '1vh'  //HACKY
                         }}
                         >
                             <Image 
@@ -394,7 +393,7 @@ export default function Header(pathname, children) {
                                 alt="Education First Logo"
                                 />
                         </Link>
-                    </div>
+                    </Box>
                     <Box
                         role="presentation"
                         style={{
@@ -402,7 +401,7 @@ export default function Header(pathname, children) {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: '1vh' //HACKY
+                            marginTop: '5vh'
                         }}
                         >
                             <Link 
