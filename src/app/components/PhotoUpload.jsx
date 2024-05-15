@@ -109,7 +109,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
             backgroundColor: '#0075E1',
             color: 'white',
             paddingTop: '3vh',
-            paddingBottom: '7vh'
+            paddingBottom: '7vh',
+            overflow: 'hidden'
           }}>
             <CloseIcon 
               style={{ 
@@ -119,8 +120,12 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }} 
               onClick={handleClose}
               />
-            <form onSubmit={handleSubmit}>
-            <FormControl style={{width: '100%'}}>
+            <form 
+              onSubmit={handleSubmit}
+            >
+            <FormControl 
+              style={{width: '100%'}}
+            >
               <div
                 style={{
                   display: 'flex',
