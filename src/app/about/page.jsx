@@ -10,7 +10,12 @@ import {
           CardImage,
           CardTitle 
         } from '@ef-global/backpack/TeaserCard'
+import {
+          SurfaceCard,
+          SurfaceCardContent,
+        } from '@ef-global/backpack/SurfaceCard';
 import { Button } from '@mui/material';
+import { Image } from '@ef-global/backpack/Image';
 import Footer from '../components/Footer';
 import UploadButton from '../components/UploadButton';
 import ThankYou from '../components/ThankYou';
@@ -28,6 +33,7 @@ export default function Page(){
   const iconWidth = '28px'
   const iconHeight = '24px'
   const isMobile = useMediaQuery('(max-width:600px)')
+  const sliderWidth = '40vw'
 
   const toggleUpload = () => {
     setIsUploadOpen(!isUploadOpen);
@@ -84,10 +90,19 @@ export default function Page(){
                           objectFit: 'contain'}}/>
                     </div>
               </Carousel> */}
-              <EFCarousel>
+            <EFCarousel
+              sizes="mx-m md:max-lg:mx-l lg:mx-auto lg:max-xl:w-[960px] xl:w-[1200px]"
+              slidesInView={1}
+              themeConfig={{
+                slots: {
+                  sliderInnerContainer: 'overflow-hidden',
+                  pagination: 'ef-carousel-pagination h-s flex items-center gap-xxs',
+                  paginationIndicator: 'left-10'
+                }
+              }}
+              controls= "none"
+            >
               <TeaserCard
-                href="https://ef.design"
-                target="_blank"
               >
                 <CardImage
                   alt="Image alternate"
@@ -95,16 +110,13 @@ export default function Page(){
                     m: '16/9',
                     s: '1/1'
                   }}
-                  // src="Banner 1.png"
-                  src="https://a.storyblok.com/f/171771/4656x3492/bbf48d4721/wojciech-then-dija5f0vogq-unsplash.jpg"
+                  src="Banner 1.png" 
                 />
                 <CardTitle>
                   This is a title
                 </CardTitle>
               </TeaserCard>
               <TeaserCard
-                href="https://ef.design"
-                target="_blank"
               >
                 <CardImage
                   alt="Image alternate"
@@ -112,23 +124,24 @@ export default function Page(){
                     m: '16/9',
                     s: '1/1'
                   }}
-                  // src="Banner 2.png"
-                  src="https://a.storyblok.com/f/171771/4656x3492/bbf48d4721/wojciech-then-dija5f0vogq-unsplash.jpg"
+                  src="Banner 2.png" 
                 />
                 <CardTitle>
                   This is a title
                 </CardTitle>
               </TeaserCard>
-              </EFCarousel>
-              <img 
+            </EFCarousel>
+
+              <Image
                   src="60th logo.svg" 
                   style={{ 
                     position: 'absolute', 
                     width: '50%',
                     height: '50%',
-                    top: isMobile ? '30%' : '60%', 
-                    left: '30%', 
-                    transform: 'translate(-50%, -50%)' 
+                    top: isMobile ? '40%' : '60%', 
+                    left: isMobile ? '40%': '30%', 
+                    transform: 'translate(-50%, -50%)' ,
+                    pointerEvents: 'none'
                   }} 
                 />
           </div>
@@ -225,18 +238,25 @@ Our goal is to collect photos and videos in every single country in the world—
                 Cool prizes for two winners per category
               </Typography>
               {isMobile ? (
-              <div>
               <div 
               style={{ 
-                display: 'flex', 
-                overflowX: 'scroll',
                 marginTop: '10vh',
-                scrollbarWidth: 'thin', // for Firefox
-                msOverflowStyle: 'scrollbar', // for Internet Explorer and Edge
-                WebkitOverflowScrolling: 'touch', // for iOS momentum scrolling
                 }}
               >
-                  <div style={{ marginRight: '20px'}}>
+                <EFCarousel
+                scrollToHighlightedSlideOnClick
+                slidesInView = {1.2}
+                gap = {20}
+                themeConfig={{
+                  slots: {
+                    sliderInnerContainer: 'overflow-hidden',
+                  }
+                }}
+                controls = 'none'
+                >
+                <SurfaceCard
+                >
+                  <SurfaceCardContent>
                     <div>
                         <img src="category_icons/Guarantee.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
@@ -257,17 +277,18 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                     You know EF, we pink different. Now show us your version of pink different.
                     </Typography>
-                  </div>
-
-                  <div style={{ marginRight: '20px'}}>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
                     <div>
-                      <img src="category_icons/EF logo block.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
+                      <Image src="category_icons/EF logo block.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -285,15 +306,16 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                     What about a flash mob? Or a billboard, that works too!
                     </Typography>
-                  </div>
-                  
-                  <div style={{ marginRight: '20px'}}>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
                     <div>
                       <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
@@ -314,16 +336,17 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                     Top of the Burj Khalifa. Denali, Alaska. The Grand Canyon. Too many to list!
                     </Typography>
-                  </div>
-
-                  <div style={{ marginRight: '20px'}}>
-                    <div>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
+                  <div>
                     <img src="category_icons/Location.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
@@ -343,45 +366,46 @@ Our goal is to collect photos and videos in every single country in the world—
                     overflowX: 'none',
                     overflowY: 'auto',
                     height: '150px',
-                    width: '265px',
+                    width: sliderWidth,
                     fontSize: '18px'
                   }}
                     >
                     The currently viral country of Kiribati is one of the rarest visited countries in the world. Try there.
                     </Typography>
-                  </div>
-
-                  <div style={{ marginRight: '20px'}}>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
                     <div>
-                    <img src="category_icons/Music.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Craziest Idea
-                    </Typography>
-                    <Typography
-                    fontFamily='EFCircular'
-                    sx={{
-                      marginTop: '5px',
-                      wordWrap: 'break-word',
-                      
-                      overflowX: 'none',
-                      overflowY: 'auto',
-                      height: '150px',
-                      width: '265px',
-                      fontSize: '18px'
-                    }}
-                    >
+                      <img src="category_icons/Music.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      </div>
+                      <Typography
+                      fontFamily='EFCircularBold'
+                      sx={{
+                        fontSize: '20px'
+                      }}
+                      >
+                        Craziest Idea
+                      </Typography>
+                      <Typography
+                      fontFamily='EFCircular'
+                      sx={{
+                        marginTop: '5px',
+                        wordWrap: 'break-word',
+                        
+                        overflowX: 'none',
+                        overflowY: 'auto',
+                        height: '150px',
+                        width: sliderWidth,
+                        fontSize: '18px'
+                      }}
+                      >
                       We’re not saying you should sky dive with an EF backpack, but we’re also not saying you shouldn’t.
                     </Typography>
-                  </div>
-
-
-                  <div style={{ marginRight: '20px'}}>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
                     <div>
                       <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
@@ -402,46 +426,47 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                       Share your pic with the world. The highest number of views, likes, comments, and shares win. Don’t forget to use the hashtag #efeverywhere
                     </Typography>
-                  </div>
-
-                  <div style={{ marginRight: '20px'}}>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
                     <div>
-                      <img src="category_icons/Trophy.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Most Ad-worthy
+                        <img src="category_icons/Trophy.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
+                      </div>
+                      <Typography
+                      fontFamily='EFCircularBold'
+                      sx={{
+                        fontSize: '20px'
+                      }}
+                      >
+                        Most Ad-worthy
+                      </Typography>
+                      <Typography
+                      fontFamily='EFCircular'
+                      sx={{
+                        marginTop: '5px',
+                        wordWrap: 'break-word',
+                        
+                        overflowX: 'none',
+                        overflowY: 'auto',
+                        height: '150px',
+                        width: sliderWidth,
+                        fontSize: '18px'
+                      }}
+                      >
+                        Beautiful cinematography. Aesthetic tumblreqsue pics. Unleash your inner artist.
                     </Typography>
-                    <Typography
-                    fontFamily='EFCircular'
-                    sx={{
-                      marginTop: '5px',
-                      wordWrap: 'break-word',
-                      
-                      overflowX: 'none',
-                      overflowY: 'auto',
-                      height: '150px',
-                      width: '265px',
-                      fontSize: '18px'
-                    }}
-                    >
-                      Beautiful cinematography. Aesthetic tumblreqsue pics. Unleash your inner artist.
-                    </Typography>
-                  </div>
-
-
-                  <div style={{ marginRight: '20px'}}>
-                    <div>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
+                  <div>
                       <img src="category_icons/Balloon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
                     </div>
                     <Typography
@@ -461,16 +486,17 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                       The EF flag has been to Mt Everest. Think you can go higher?
                     </Typography>
-                  </div>
-
-                  <div style={{ marginRight: '20px'}}>
-                    <div>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
+                  <div>
                       <img src="category_icons/Beach.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -490,17 +516,17 @@ Our goal is to collect photos and videos in every single country in the world—
                       overflowX: 'none',
                       overflowY: 'auto',
                       height: '150px',
-                      width: '265px',
+                      width: sliderWidth,
                       fontSize: '18px'
                     }}
                     >
                       We’ve also been to the bottom of the Red Sea. Your challenge is to go down under. 
                     </Typography>
-                  </div>
-
-
-                  <div style={{ marginRight: '20px'}}>
-                    <div>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard>
+                  <SurfaceCardContent>
+                  <div>
                       <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -519,23 +545,16 @@ Our goal is to collect photos and videos in every single country in the world—
                      overflowX: 'none',
                      overflowY: 'auto',
                      height: '150px',
-                     width: '265px',
+                     width: sliderWidth,
                      fontSize: '18px'
                    }}
                     >
                       A discerning group of judges will select the one submission that doesn’t just speak to them, but sings to them!
                     </Typography>
-                  </div>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                </EFCarousel>
                 </div>
-              <div>
-                <MoreHorizIcon 
-                sx={{
-                  width: '50px',
-                  height: '50px'
-                }}
-                />
-              </div>
-              </div>
               ):(
               <div>
                 <Grid 
@@ -563,7 +582,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   </Grid>
                   <Grid item xs={12/5}>
                   <div>
-                        <img src="category_icons/EF logo block.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <Image src="category_icons/EF logo block.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                   </div>
                   <Typography
                     fontFamily='EFCircularMedium'
