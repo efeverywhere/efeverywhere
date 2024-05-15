@@ -30,7 +30,7 @@ export default function MapChart() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [textOpacity, setTextOpacity] = useState(1);
-  const [isTextVisible, setTextVisible] = useState(true);
+  const [isTextVisible, setTextVisible] = useState(false);
   const [cityImages, setCityImages] = useState({});
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [countriesData, setCountriesData] = useState(null);
@@ -46,7 +46,7 @@ export default function MapChart() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTextVisible(false);
-    }, 9000); // Change this value to control how long the text is visible
+    }, 5000); // Change this value to control how long the text is visible
   
     return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
   }, []);
@@ -54,7 +54,7 @@ export default function MapChart() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTextOpacity(0);
-    }, 7000); // Change this value to control how long the text is visible
+    }, 4000); // Change this value to control how long the text is visible
   
     return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
   }, []);
@@ -212,7 +212,7 @@ useEffect(() => {
             {isTextVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: '50%', 
+                  top: isMobile ? '40%' : '50%',
                   left: '50%', 
                   transform: 'translate(-50%, -50%)',
                   width: '400',
@@ -220,15 +220,16 @@ useEffect(() => {
                   display: 'flex', 
                   justifyContent: 'center', 
                   alignItems: 'center',
-                  // background: 'white',
+                  background: 'transparent',
                   zIndex: 100000000,
                 }}>
                     <Card sx={{ 
                         // background: 'transparent',
+                        position: 'relative',
                         width: '400',
                         height: '400',
                         paddingTop: '30px',
-                        paddingBottom: '30px'
+                        paddingBottom: '30px',
                       }}>
                         <CardContent>
                         {countriesData && //Wait for the countriesData to load
@@ -237,24 +238,26 @@ useEffect(() => {
                               textTop={countriesData['world']['text']}
                               textRadial={countriesData['world']['occupied']}
                               textBottom={`out of ${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '300': '350'}
-                              width= {isMobile ? '300' : '350'}
+                              height= {isMobile ? '170': '350'}
+                              width= {isMobile ? '200' : '350'}
                               fontSize='30px'
-                              dataLabelSize='130px'
+                              dataLabelSize={isMobile ? 50 : 130}
                               borderRadius='40px'
-                              dataLabelOffset={45}
+                              dataLabelOffset={isMobile? 20 : 45}
                               isMobile={isMobile}
                             />
                           }
-                          <button 
+                        </CardContent>
+                        <button 
                           style={{
                             position: 'absolute',
-                            top: '10px',
-                            right: '10px',
+                            top: '0px',
+                            right: '0px',
                             background: 'transparent',
                             border: 'none',
                             color: 'black',
                             fontSize: '2em',
+                            width: 0
                           }}
                           onClick={() => {
                             setShowPopup(false)
@@ -262,8 +265,6 @@ useEffect(() => {
                         >
                           <ClearIcon/>
                         </button>
-                        </CardContent>
-
                     </Card>
 
               </div>
