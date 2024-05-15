@@ -9,7 +9,7 @@
   
   .moving-gif-1 {
     /* position: absolute; */
-    animation: moveGif1 20s linear infinite;
+    animation: moveGif1 10s linear infinite;
   }
 
   @keyframes moveGif2 {
@@ -23,7 +23,7 @@
   
   .moving-gif-2 {
     /* position: absolute; */
-    animation: moveGif2 20s linear infinite;
+    animation: moveGif2 10s linear infinite;
   }
 
   @keyframes moveGif3 {
@@ -37,7 +37,7 @@
   
   .moving-gif-3 {
     /* position: absolute; */
-    animation: moveGif3 20s linear infinite;
+    animation: moveGif3 10s linear infinite;
   }
 
   @keyframes moveGif4 {
@@ -51,5 +51,5 @@
   
   .moving-gif-4 {
     /* position: absolute; */
-    animation: moveGif4 20s linear infinite;
+    animation: moveGif4 10s linear infinite;
   }

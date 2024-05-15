@@ -197,7 +197,6 @@ useEffect(() => {
                   style={{
                     fontSize: isMobile ? "10vw" : "100px", 
                     color: "black",
-                    // fontWeight: 500,
                     zIndex: 1000,
                     whiteSpace: "nowrap",
                     userSelect: 'none'
@@ -251,8 +250,8 @@ useEffect(() => {
                         <button 
                           style={{
                             position: 'absolute',
-                            top: '0px',
-                            right: '0px',
+                            top: isMobile ? '0px' : '0px',
+                            right: isMobile ? '0px' : '30px',
                             background: 'transparent',
                             border: 'none',
                             color: 'black',
