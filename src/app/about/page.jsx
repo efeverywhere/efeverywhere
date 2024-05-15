@@ -4,6 +4,12 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { Carousel as EFCarousel} from '@ef-global/backpack/Carousel'
+import { 
+          TeaserCard,     
+          CardImage,
+          CardTitle 
+        } from '@ef-global/backpack/TeaserCard'
 import { Button } from '@mui/material';
 import Footer from '../components/Footer';
 import UploadButton from '../components/UploadButton';
@@ -50,7 +56,7 @@ export default function Page(){
               marginTop: isMobile ? '10vh': 0
             }}
           >
-            <Carousel
+            {/* <Carousel
               style={{
                 height: isMobile ? '100vh' : '',
               }}
@@ -77,7 +83,43 @@ export default function Page(){
                           height: '100%', 
                           objectFit: 'contain'}}/>
                     </div>
-              </Carousel>
+              </Carousel> */}
+              <EFCarousel>
+              <TeaserCard
+                href="https://ef.design"
+                target="_blank"
+              >
+                <CardImage
+                  alt="Image alternate"
+                  aspectRatios={{
+                    m: '16/9',
+                    s: '1/1'
+                  }}
+                  // src="Banner 1.png"
+                  src="https://a.storyblok.com/f/171771/4656x3492/bbf48d4721/wojciech-then-dija5f0vogq-unsplash.jpg"
+                />
+                <CardTitle>
+                  This is a title
+                </CardTitle>
+              </TeaserCard>
+              <TeaserCard
+                href="https://ef.design"
+                target="_blank"
+              >
+                <CardImage
+                  alt="Image alternate"
+                  aspectRatios={{
+                    m: '16/9',
+                    s: '1/1'
+                  }}
+                  // src="Banner 2.png"
+                  src="https://a.storyblok.com/f/171771/4656x3492/bbf48d4721/wojciech-then-dija5f0vogq-unsplash.jpg"
+                />
+                <CardTitle>
+                  This is a title
+                </CardTitle>
+              </TeaserCard>
+              </EFCarousel>
               <img 
                   src="60th logo.svg" 
                   style={{ 
@@ -180,7 +222,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                Prizes ($1000 travel vouchers, two winners per category)
+                Cool prizes for two winners per category
               </Typography>
               {isMobile ? (
               <div>
