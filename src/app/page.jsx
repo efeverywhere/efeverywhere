@@ -30,7 +30,7 @@ export default function MapChart() {
   const [mapLoaded, setMapLoaded] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [textOpacity, setTextOpacity] = useState(1);
-  const [isTextVisible, setTextVisible] = useState(false);
+  const [isTextVisible, setTextVisible] = useState(true);
   const [cityImages, setCityImages] = useState({});
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [countriesData, setCountriesData] = useState(null);
