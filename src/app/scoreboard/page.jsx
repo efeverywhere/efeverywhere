@@ -5,8 +5,6 @@ import { Carousel as EFCarousel} from '@ef-global/backpack/Carousel'
 import {
   SurfaceCard,
   SurfaceCardContent,
-  CardBody,
-  CardFooter
 } from '@ef-global/backpack/SurfaceCard';
 import { Grid } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
@@ -243,6 +241,11 @@ function PageContent(){
             controls= "none"
             >
             <SurfaceCard
+              style={{
+                boxShadow: 'none',
+                height: '40vh',
+                overflowY: 'scroll'
+              }}
               >
                   <SurfaceCardContent>
                   <div style={{ 
@@ -272,7 +275,13 @@ function PageContent(){
                     )}
                   </SurfaceCardContent>
             </SurfaceCard>
-            <SurfaceCard>
+            <SurfaceCard
+              style={{
+                boxShadow: 'none',
+                height: '40vh',
+                overflowY: 'scroll'
+              }}
+            >
               <SurfaceCardContent>
                 <div style={{ 
                   borderLeft: '4px solid #2FC8F2',
@@ -301,7 +310,13 @@ function PageContent(){
                 )}
               </SurfaceCardContent>
             </SurfaceCard>
-            <SurfaceCard>
+            <SurfaceCard
+              style={{
+                boxShadow: 'none',
+                height: '40vh',
+                overflowY: 'scroll'
+              }}
+            >
               <SurfaceCardContent>
               <div style={{ 
                       borderLeft: '4px solid #2FC8F2',
@@ -330,7 +345,13 @@ function PageContent(){
                   )}
               </SurfaceCardContent>
             </SurfaceCard>
-            <SurfaceCard>
+            <SurfaceCard
+              style={{
+                boxShadow: 'none',
+                height: '40vh',
+                overflowY: 'scroll'
+              }}
+            >
               <SurfaceCardContent>
                <div style={{ 
                       borderLeft: '4px solid #2FC8F2',
