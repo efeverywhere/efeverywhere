@@ -7,9 +7,14 @@
     }
   }
   
-  .moving-gif-1 {
+  .moving-gif-1-mobile {
     /* position: absolute; */
     animation: moveGif1 10s linear infinite;
+  }
+
+  .moving-gif-1-desktop {
+    /* position: absolute; */
+    animation: moveGif1 15s linear infinite;
   }
 
   @keyframes moveGif2 {
@@ -21,9 +26,14 @@
     }
   }
   
-  .moving-gif-2 {
+  .moving-gif-2-mobile {
     /* position: absolute; */
     animation: moveGif2 10s linear infinite;
+  }
+
+  .moving-gif-2-desktop {
+    /* position: absolute; */
+    animation: moveGif2 15s linear infinite;
   }
 
   @keyframes moveGif3 {
@@ -35,10 +45,16 @@
     }
   }
   
-  .moving-gif-3 {
+  .moving-gif-3-mobile {
     /* position: absolute; */
     animation: moveGif3 10s linear infinite;
   }
+
+  .moving-gif-3-desktop {
+    /* position: absolute; */
+    animation: moveGif3 15s linear infinite;
+  }
+
 
   @keyframes moveGif4 {
     0% {
@@ -49,7 +65,12 @@
     }
   }
   
-  .moving-gif-4 {
+  .moving-gif-4-mobile {
     /* position: absolute; */
     animation: moveGif4 10s linear infinite;
+  }
+
+  .moving-gif-4-desktop {
+    /* position: absolute; */
+    animation: moveGif4 15s linear infinite;
   }

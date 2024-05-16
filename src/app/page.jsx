@@ -137,7 +137,7 @@ useEffect(() => {
                       key={'smiley02'} 
                       src={'/smileys/Smiley_60fps_02.gif'} 
                       alt="Smiley" 
-                      className= "moving-gif-1"
+                      className= {isMobile ? "moving-gif-1-mobile" : "moving-gif-1-desktop"}
                       style={{
                         width: isMobile ? "40%" : "20%",
                         zIndex: 10000,
@@ -149,7 +149,7 @@ useEffect(() => {
                     key={'smiley03'} 
                     src={'/smileys/Smiley_60fps_03.gif'} 
                     alt="Smiley" 
-                    className="moving-gif-2" 
+                    className= {isMobile ? "moving-gif-2-mobile" : "moving-gif-2-desktop"}
                     style={{
                       width: isMobile ? "40%" : "20%",
                       zIndex: 10000,
@@ -161,7 +161,7 @@ useEffect(() => {
                     key={'smiley04'} 
                     src={'/smileys/Smiley_60fps_04.gif'} 
                     alt="Smiley" 
-                    className="moving-gif-3" 
+                    className= {isMobile ? "moving-gif-3-mobile" : "moving-gif-3-desktop"}
                     style={{
                       width: isMobile ? "40%" : "20%",
                       zIndex: 10000,
@@ -173,7 +173,7 @@ useEffect(() => {
                     key={'smiley06'} 
                     src={'/smileys/Smiley_60fps_06.gif'} 
                     alt="Smiley" 
-                    className="moving-gif-4" 
+                    className= {isMobile ? "moving-gif-4-mobile" : "moving-gif-4-desktop"}
                     style={{
                       width: isMobile ? "40%" : "20%",
                       zIndex: 10000,
