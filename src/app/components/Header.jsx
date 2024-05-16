@@ -390,7 +390,6 @@ export default function Header(pathname, children) {
                         }}
                         >
                             <Image 
-                                fill
                                 src={logo}
                                 alt="Education First Logo"
                                 />
