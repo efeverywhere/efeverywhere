@@ -100,7 +100,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         <Fade in={isOpen}>
           <div style={{
             // position: 'absolute',
-            height: '100vh',
+            height: '110vh',
             width: '100vw',
             overflow: 'auto',
             display: 'flex',
@@ -108,8 +108,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
             alignItems: 'center',
             backgroundColor: '#0075E1',
             color: 'white',
-            paddingTop: '3vh',
-            paddingBottom: '7vh',
+            // paddingTop: '5vh',
+            // paddingBottom: '10vh',
             overflow: 'hidden'
           }}>
             <CloseIcon 
