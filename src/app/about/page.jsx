@@ -33,7 +33,8 @@ export default function Page(){
   const iconWidth = '28px'
   const iconHeight = '24px'
   const isMobile = useMediaQuery('(max-width:600px)')
-  const sliderWidth = '40vw'
+  const sliderWidth = '60vw'
+  const sliderHeight = '20vh'
 
   const toggleUpload = () => {
     setIsUploadOpen(!isUploadOpen);
@@ -62,7 +63,7 @@ export default function Page(){
               marginTop: isMobile ? '10vh': 0
             }}
           >
-            {/* <Carousel
+            <Carousel
               style={{
                 height: isMobile ? '100vh' : '',
               }}
@@ -89,8 +90,8 @@ export default function Page(){
                           height: '100%', 
                           objectFit: 'contain'}}/>
                     </div>
-              </Carousel> */}
-            <EFCarousel
+              </Carousel>
+            {/* <EFCarousel
               sizes="mx-m md:max-lg:mx-l lg:mx-auto lg:max-xl:w-[960px] xl:w-[1200px]"
               slidesInView={1}
               themeConfig={{
@@ -130,7 +131,7 @@ export default function Page(){
                   This is a title
                 </CardTitle>
               </TeaserCard>
-            </EFCarousel>
+            </EFCarousel> */}
 
               <Image
                   src="60th logo.svg" 
@@ -138,7 +139,7 @@ export default function Page(){
                     position: 'absolute', 
                     width: '50%',
                     height: '50%',
-                    top: isMobile ? '40%' : '60%', 
+                    top: isMobile ? '30%' : '60%', 
                     left: isMobile ? '40%': '30%', 
                     transform: 'translate(-50%, -50%)' ,
                     pointerEvents: 'none'
@@ -238,11 +239,7 @@ Our goal is to collect photos and videos in every single country in the world—
                 Cool prizes for two winners per category
               </Typography>
               {isMobile ? (
-              <div 
-              style={{ 
-                marginTop: '10vh',
-                }}
-              >
+              <div >
                 <EFCarousel
                 scrollToHighlightedSlideOnClick
                 slidesInView = {1.2}
@@ -255,6 +252,9 @@ Our goal is to collect photos and videos in every single country in the world—
                 controls = 'none'
                 >
                 <SurfaceCard
+                style={{
+                  boxShadow: 'none'
+                }}
                 >
                   <SurfaceCardContent>
                     <div>
@@ -276,7 +276,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -285,7 +285,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                     <div>
                       <Image src="category_icons/EF logo block.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
@@ -305,7 +305,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       wordWrap: 'break-word',
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -314,7 +314,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                     <div>
                       <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
@@ -335,7 +335,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -344,7 +344,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                   <div>
                     <img src="category_icons/Location.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
@@ -365,7 +365,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     
                     overflowX: 'none',
                     overflowY: 'auto',
-                    height: '150px',
+                    height: sliderHeight,
                     width: sliderWidth,
                     fontSize: '18px'
                   }}
@@ -374,7 +374,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                     <div>
                       <img src="category_icons/Music.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
@@ -395,7 +395,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         
                         overflowX: 'none',
                         overflowY: 'auto',
-                        height: '150px',
+                        height: sliderHeight,
                         width: sliderWidth,
                         fontSize: '18px'
                       }}
@@ -404,7 +404,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                     <div>
                       <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
@@ -425,7 +425,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -434,7 +434,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                     <div>
                         <img src="category_icons/Trophy.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
@@ -455,7 +455,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         
                         overflowX: 'none',
                         overflowY: 'auto',
-                        height: '150px',
+                        height: sliderHeight,
                         width: sliderWidth,
                         fontSize: '18px'
                       }}
@@ -464,7 +464,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                   <div>
                       <img src="category_icons/Balloon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
@@ -485,7 +485,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -494,7 +494,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                   <div>
                       <img src="category_icons/Beach.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
@@ -515,7 +515,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       
                       overflowX: 'none',
                       overflowY: 'auto',
-                      height: '150px',
+                      height: sliderHeight,
                       width: sliderWidth,
                       fontSize: '18px'
                     }}
@@ -524,7 +524,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-                <SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                   <div>
                       <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
@@ -544,7 +544,7 @@ Our goal is to collect photos and videos in every single country in the world—
                      wordWrap: 'break-word',
                      overflowX: 'none',
                      overflowY: 'auto',
-                     height: '150px',
+                     height: sliderHeight,
                      width: sliderWidth,
                      fontSize: '18px'
                    }}
