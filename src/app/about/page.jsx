@@ -76,7 +76,8 @@ export default function Page(){
               showIndicators={false}
             >
                     <div>
-                        <img src="Banner 1.png" 
+                        <img 
+                        src= {isMobile ? "Mobile_Play_Banner1.png" : "Banner 1.png" }
                         style={{ 
                           width: '100%', 
                           height: '100%', 
@@ -84,7 +85,7 @@ export default function Page(){
                           }}/>
                     </div>
                     <div>
-                        <img src="Banner 2.png" 
+                        <img src= {isMobile ? "Mobile_Play_Banner2.png" : "Banner 2.png" }
                         style={{ 
                           width: '100%', 
                           height: '100%', 
@@ -137,10 +138,10 @@ export default function Page(){
                   src="60th logo.svg" 
                   style={{ 
                     position: 'absolute', 
-                    width: '50%',
-                    height: '50%',
-                    top: isMobile ? '30%' : '60%', 
-                    left: isMobile ? '40%': '30%', 
+                    width: isMobile ? '65%' : '50%', 
+                    height: isMobile ? '65%' : '50%', 
+                    top: isMobile ? '50%' : '60%', 
+                    left: isMobile ? '50%': '30%', 
                     transform: 'translate(-50%, -50%)' ,
                     pointerEvents: 'none'
                   }} 
