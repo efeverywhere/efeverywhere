@@ -249,6 +249,7 @@ useEffect(() => {
                               borderRadius='40px'
                               dataLabelOffset={isMobile? 20 : 45}
                               isMobile={isMobile}
+                              lineHeight='1.0'
                             />
                           }
                         </CardContent>
@@ -289,9 +290,7 @@ useEffect(() => {
         height: '100vh'
       }}
       ref={mapRef}
-      // onLoad={onLoad}
       mapStyle="mapbox://styles/arielcarloscanete/clvg7hufp015801phbgcbboxc"
-      // onViewStateChange={(e) => { setZoomState(e.viewState.zoom); }}
       onZoom={(e) => { setZoomState(e.viewState.zoom); }}
       onLoad={(event) => {
         const map = event.target;
