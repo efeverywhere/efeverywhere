@@ -355,7 +355,8 @@ export default function Header(pathname, children) {
                     top: 0,
                     background: pathname.currentPage === '/' ? 'transparent' : '#FFFFFF',
                     zIndex: 600,
-                    top: visible ? '0' : '-100px', 
+                    // top: visible ? '0' : '-100px',  //uncomment if you want the header to disappear on scroll
+                    top: '0',
                     transition: 'top 0.3s',
                     borderBottom: pathname.currentPage === '/' ? '' : '1px solid rgba(37, 37, 37, .3)',
                 }}
@@ -369,12 +370,11 @@ export default function Header(pathname, children) {
                     height: '5vh',
                     left: '10%',
                     zIndex: 502,
-                    // top: '2vh',
                     backgroundColor: headerState == 'default'  ? 'transparent' : '#FFFFFF',
                     }}>
                     <Box
                         style={{
-                            position: 'relative', // Image fill default position is absolute - this is necessary 
+                            position: 'relative',
                             width: '4vw',
                             height: '3vw',
                         }}
@@ -391,7 +391,6 @@ export default function Header(pathname, children) {
                         >
                             <Image 
                                 fill
-                                // src={pathname.currentPage === '/about' && !drawer ? alt_logo : logo}
                                 src={logo}
                                 alt="Education First Logo"
                                 />
@@ -457,8 +456,6 @@ export default function Header(pathname, children) {
                                 }}
                                 toggleUpload={toggleUpload} 
                                 topSpacing={0}
-                                // textColor = {pathname.currentPage === '/about' ? '#0075E1' : '#FFFFFF'}
-                                // backgroundColor = {pathname.currentPage === '/about' ? '#FFFFFF' : '#0075E1'}
                                 textColor = {'#FFFFFF'}
                                 backgroundColor = {'#0075E1'}
                                 />
