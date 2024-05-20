@@ -45,6 +45,8 @@ export default function Gallery({ onClose, name, images }) {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
+  const thumbnailDir = "https://ckwgnbjfta.cloudimg.io/_ef-everywhere_/ef_images/_thumbnails/"
+
   function srcset(image, size, rows = 1, cols = 1) {
     return {
       src: `${image}?width=${size * cols}&height=${size * rows}&func=crop`,
@@ -487,9 +489,9 @@ export default function Gallery({ onClose, name, images }) {
                           <div
                           onClick={() => setSelectedVideo(image.src)}
                           >
-                          <video
+                          <img
                             key={index} 
-                            src={image.src + '?width=250&height=250&func=crop'} 
+                            src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
                             alt={image.caption_person}
                           />
@@ -499,7 +501,7 @@ export default function Gallery({ onClose, name, images }) {
                               top: '50%', 
                               left: '50%', 
                               fontSize: '50px', // Change this value to adjust the size of the icon
-                              color: 'black',
+                              color: 'white',
                               transform: 'translate(-50%, -50%)' // This will center the icon
                             }} 
                           />
