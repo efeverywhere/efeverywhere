@@ -236,13 +236,28 @@ export default function Gallery({ onClose, name, images }) {
                     alignItems: 'center',
                     zIndex: 600
                   }}
-                  onClick={() => setSelectedImage(null)}
+                  onClick={() => {
+                    setSelectedImage(null)
+                    setIsImageLoaded(false)
+                  }}
                   >
+                    {!isImageLoaded && 
+                      <CircularProgress 
+                      style = {{
+                        position: 'absolute',
+                      }}
+                      />
+                    }
                   <img 
                     src={selectedImage} 
                     alt="" 
                     style={{ maxHeight: '80%', maxWidth: '80%'}} 
-                    onClick={() => setSelectedImage(null)}/>
+                    onLoad={handleImageLoad}
+                    onClick={() => {
+                      setSelectedImage(null)
+                      setIsImageLoaded(false)
+                    }}
+                    />
                 </div>
                 </Modal>
               )}
@@ -269,13 +284,28 @@ export default function Gallery({ onClose, name, images }) {
                         alignItems: 'center',
                         zIndex: 600
                       }}
-                      onClick={() => setSelectedVideo(null)}
+                      onClick={() => {
+                        setSelectedVideo(null)
+                        setIsImageLoaded(false)
+                      }}
                       >
+                      {!isImageLoaded && 
+                        <CircularProgress 
+                        style = {{
+                          position: 'absolute',
+                        }}
+                        />
+                      }
                       <img 
                         src={selectedVideo} 
                         alt="" 
                         style={{ maxHeight: '80%', maxWidth: '80%'}} 
-                        onClick={() => setSelectedVideo(null)}/>
+                        onLoad={handleImageLoad}
+                        onClick={() => {
+                          setSelectedVideo(null)
+                          setIsImageLoaded(false)
+                        }}
+                        />
                     </div>
                     </Modal>
                   )}
@@ -630,6 +660,7 @@ export default function Gallery({ onClose, name, images }) {
                   onClose={() => {
                     setSelectedVideo(null)
                     setHeaderState('default')
+                    setIsImageLoaded(false)
                     }
                   }
                   closeAfterTransition
@@ -648,7 +679,13 @@ export default function Gallery({ onClose, name, images }) {
                       zIndex: 10000000000,
                     }}
                     >
-                    
+                    {!isImageLoaded && 
+                      <CircularProgress 
+                      style = {{
+                        position: 'absolute',
+                      }}
+                      />
+                    }
                     <video 
                       src={selectedVideo} 
                       alt="" 
@@ -671,6 +708,7 @@ export default function Gallery({ onClose, name, images }) {
                       onClick={() => {
                         setSelectedVideo(null)
                         setHeaderState('default')
+                        setIsImageLoaded(false)
                       }}
                     >
                       <DisabledByDefaultIcon/>
