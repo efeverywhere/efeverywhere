@@ -221,7 +221,7 @@ useEffect(() => {
                   justifyContent: 'center', 
                   alignItems: 'center',
                   background: 'transparent',
-                  zIndex: 1000,
+                  zIndex: 500,
                   }}
                   onTouchMove={(e) => e.preventDefault()}
                   overflow='hidden'
@@ -236,7 +236,6 @@ useEffect(() => {
                       }}>
                         <CardContent
                         >
-                        {countriesData && //Wait for the countriesData to load
                             <RadialProgressBar 
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
                               textTop={countriesData['world']['text']}
@@ -251,8 +250,9 @@ useEffect(() => {
                               isMobile={isMobile}
                               lineHeight='1.0'
                             />
-                          }
+
                         </CardContent>
+
                         <button 
                           style={{
                             position: 'absolute',
@@ -271,7 +271,6 @@ useEffect(() => {
                           <ClearIcon/>
                         </button>
                     </Card>
-
               </div>
             )}
 
