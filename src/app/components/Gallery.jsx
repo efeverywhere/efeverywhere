@@ -19,6 +19,7 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -27,6 +28,7 @@ export default function Gallery({ onClose, name, images }) {
   const {headerState, setHeaderState} = React.useContext(HeaderState);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [viewState, setViewState] = useState('squares')
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
@@ -48,6 +50,10 @@ export default function Gallery({ onClose, name, images }) {
       src: `${image}?width=${size * cols}&height=${size * rows}&func=crop`,
     };
   }
+
+  const handleImageLoad = () => {
+    setIsImageLoaded(true);
+  };
 
   useEffect(() => {console.log(images)}, [images])
 
@@ -571,6 +577,7 @@ export default function Gallery({ onClose, name, images }) {
                   onClose={() => {
                     setSelectedImage(null)
                     setHeaderState('default')
+                    setIsImageLoaded(false)
                     }
                   }
                   closeAfterTransition
@@ -591,9 +598,16 @@ export default function Gallery({ onClose, name, images }) {
                     onClick={() => {
                       setSelectedImage(null)
                       setHeaderState('default')
+                      setIsImageLoaded(false)
                     }}
                     >
-                    
+                    {!isImageLoaded && 
+                      <CircularProgress 
+                      style = {{
+                        position: 'absolute',
+                      }}
+                      />
+                    }
                     <img 
                       src={selectedImage} 
                       alt="" 
@@ -601,9 +615,11 @@ export default function Gallery({ onClose, name, images }) {
                         maxHeight: '80%', 
                         maxWidth: '80%'
                       }} 
+                      onLoad={handleImageLoad}
                       onClick={() => {
                         setSelectedImage(null)
                         setHeaderState('default')
+                        setIsImageLoaded(false)
                       }}/>
                   </div>
                 </Modal>
