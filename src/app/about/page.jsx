@@ -237,7 +237,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                Cool prizes for two winners per category
+                Have a brilliant idea? Great! Get creative and we will award you with cool prizes to the 20 best submissions (2 winners per category)
               </Typography>
               {isMobile ? (
               <div >
