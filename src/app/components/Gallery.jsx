@@ -496,12 +496,24 @@ export default function Gallery({ onClose, name, images }) {
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
                             alt={image.caption_person}
                           />
-                          <PlayArrowIcon
+                          {/* <PlayArrowIcon
                             style={{ 
                               position: 'absolute', 
                               top: '50%', 
                               left: '50%', 
                               fontSize: '50px', // Change this value to adjust the size of the icon
+                              color: 'white',
+                              transform: 'translate(-50%, -50%)' // This will center the icon
+                            }} 
+                          /> */}
+                          <img
+                            src="play_button.svg"
+                            alt="Play Button"
+                            style={{ 
+                              position: 'absolute', 
+                              top: '50%', 
+                              left: '50%', 
+                              width: '50px', // Change this value to adjust the size of the icon
                               color: 'white',
                               transform: 'translate(-50%, -50%)' // This will center the icon
                             }} 
