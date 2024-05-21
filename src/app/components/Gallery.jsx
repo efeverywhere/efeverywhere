@@ -57,6 +57,7 @@ export default function Gallery({ onClose, name, images }) {
     setIsImageLoaded(true);
   };
 
+
   useEffect(() => {console.log(images)}, [images])
 
   return (
@@ -681,13 +682,6 @@ export default function Gallery({ onClose, name, images }) {
                       zIndex: 10000000000,
                     }}
                     >
-                    {!isImageLoaded && 
-                      <CircularProgress 
-                      style = {{
-                        position: 'absolute',
-                      }}
-                      />
-                    }
                     <video 
                       src={selectedVideo} 
                       alt="" 
@@ -695,6 +689,7 @@ export default function Gallery({ onClose, name, images }) {
                         maxHeight: '80%', 
                         maxWidth: '80%'
                       }} 
+                      onLoad={handleImageLoad}
                       controls
                       />
                     <button 

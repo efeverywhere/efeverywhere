@@ -413,7 +413,7 @@ export default function Header(pathname, children) {
                                         color: text_color,
                                         fontSize:'16px',
                                         marginRight: '2vw',
-                                        fontFamily: pathname.currentPage == '/' ? 'EFCircularBold' : 'EFCircular'
+                                        fontFamily: pathname.currentPage == '/' ? 'EFCircularBold' : 'EFCircularBook'
                                     }}
                                 >
                                 EF Everywhere
@@ -429,7 +429,7 @@ export default function Header(pathname, children) {
                                     color: text_color,
                                     fontSize:'16px',
                                     marginRight: '2vw',
-                                    fontFamily: pathname.currentPage == '/about' ? 'EFCircularBold' : 'EFCircular'
+                                    fontFamily: pathname.currentPage == '/about' ? 'EFCircularBold' : 'EFCircularBook'
                                 }}>
                                 Play
                                 </Typography>
@@ -443,7 +443,7 @@ export default function Header(pathname, children) {
                                 color: text_color,
                                 fontSize:'16px',
                                 marginRight: '2vw',
-                                fontFamily: pathname.currentPage == '/scoreboard' ? 'EFCircularBold' : 'EFCircular'
+                                fontFamily: pathname.currentPage == '/scoreboard' ? 'EFCircularBold' : 'EFCircularBook'
                                 }}>
                                 Score
                                 </Typography>
