@@ -315,15 +315,14 @@ useEffect(() => {
             longitude={coords[1]} 
             latitude={coords[0]} 
             color="#FF329B"
-            // anchor="bottom"
+            anchor="bottom"
             onClick={() => handleMarkerClick(folder_name, name)}
           >
             <img
-             style={{
-                width: '200px',
-                height: '200px',
+             style={{ // width:height proportions should be 5:6
+                width: '25px',
+                height: '30px',
                 cursor: 'pointer',
-                marginLeft: '5%'
              }}
              src='./EF_pin_final.png'
              alt='map_pin'
