@@ -18,6 +18,7 @@ import Gallery from './components/Gallery';
 import {Map, Popup, NavigationControl} from 'react-map-gl';
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJpZWxjYXJsb3NjYW5ldGUiLCJhIjoiY2thZ3J5enBpMGJvcTJ4cG5xNndlM3hldSJ9.Fsyf28yyWJv8D_anecSkOQ";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { ReactComponent as Pin } from '../../public/EF_pin_final.svg';
 import smiley02 from '../../public/smileys/Smiley_60fps_02.gif'
 import smiley03 from '../../public/smileys/Smiley_60fps_03.gif'
 import smiley04 from '../../public/smileys/Smiley_60fps_04.gif'
@@ -317,6 +318,16 @@ useEffect(() => {
             // anchor="bottom"
             onClick={() => handleMarkerClick(folder_name, name)}
           >
+            <img
+             style={{
+                width: '200px',
+                height: '200px',
+                cursor: 'pointer',
+                marginLeft: '5%'
+             }}
+             src='./EF_pin_final.png'
+             alt='map_pin'
+            />
             
           </Marker>
           {zoomState > 4 && (
