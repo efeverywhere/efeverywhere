@@ -258,7 +258,7 @@ useEffect(() => {
                           style={{
                             position: 'absolute',
                             top: isMobile ? '0px' : '0px',
-                            right: isMobile ? '40px' : '30px',
+                            right: isMobile ? '40px' : '40px',
                             background: 'transparent',
                             border: 'none',
                             color: 'black',
