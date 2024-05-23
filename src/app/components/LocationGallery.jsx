@@ -401,7 +401,7 @@ export default function LocationGallery({ onClose, name, images }) {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'baseline',
-                  width: '80%',
+                  width: '81%',
                   paddingTop: '15vh',
                   marginLeft: '10vw',
                   position: 'fixed',
@@ -523,7 +523,7 @@ export default function LocationGallery({ onClose, name, images }) {
             // </Gallery>
                   <ImageList
                     sx={{ 
-                      width: '95%',
+                      width: '88.5%',
                       height: '100%',
                       overflowY: 'scroll',
                       maxHeight: '80vh',
