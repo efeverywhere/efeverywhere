@@ -14,7 +14,7 @@ import {
     Marker
 } from "react-map-gl";
 import './animation.css'; // Import the CSS file where you define your animation
-import Gallery from './components/Gallery';
+import LocationGallery from './components/LocationGallery';
 import {Map, Popup, NavigationControl} from 'react-map-gl';
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJpZWxjYXJsb3NjYW5ldGUiLCJhIjoiY2thZ3J5enBpMGJvcTJ4cG5xNndlM3hldSJ9.Fsyf28yyWJv8D_anecSkOQ";
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -355,7 +355,7 @@ useEffect(() => {
       </Map>
       {isGalleryOpen && (
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}>
-          <Gallery
+          <LocationGallery
               onClose={() => handleMarkerClose()} 
               marker={selectedMarker}
               name={cityName}

@@ -9,6 +9,21 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Modal from '@mui/material/Modal';
+import {
+  Gallery,
+  GalleryGroup,
+  GalleryGroupAsset,
+  GalleryGroupsContainer,
+  GalleryLabel,
+  GalleryModal,
+  GalleryModalAsset,
+  GalleryModalContent
+} from '@ef-global/backpack/Gallery';
+import { Image } from '@ef-global/backpack/Image';
+import {
+  Video,
+  VideoPlayIcon
+} from '@ef-global/backpack/Video';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
@@ -23,7 +38,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 
 
-export default function Gallery({ onClose, name, images }) {
+export default function LocationGallery({ onClose, name, images }) {
   // Replace this with your actual data
   const {headerState, setHeaderState} = React.useContext(HeaderState);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -404,6 +419,7 @@ export default function Gallery({ onClose, name, images }) {
                   </Typography>
                   <div>
                   <Button 
+                    disabled
                     onClick={() => setViewState('quilted')}
                     sx={{
                       '&:hover': {
@@ -471,6 +487,40 @@ export default function Gallery({ onClose, name, images }) {
 
 
               {images && viewState === 'squares' &&
+            //   <Gallery>
+            //   <GalleryGroupsContainer>
+            //     <GalleryGroup layout="1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1">
+            //     {currentImages.map((image, index) => (
+            //           {image.file_type == "video" ? (
+            //               <Video
+            //                 key={index} 
+            //                 src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
+            //                 // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
+            //                 alt={image.caption_person}
+            //                 // onClick={() => setSelectedVideo(image.src)}
+            //               />
+            //             ) : (
+            //               <Image
+            //               key={index} 
+            //               src={image.src  + '?width=250&height=250&func=crop'} 
+            //               alt={image.caption_person}
+            //               data-slot="Image"
+            //               onClick={() => setSelectedImage(image.src)}/>
+            //             )}
+            //         ))}
+            //       <Image
+            //         alt="Image alternate"
+            //         data-slot="Image"
+            //         src="https://ckwgnbjfta.cloudimg.io/_ef-everywhere_/ef_images/europe/france/paris/paris_2.jpg"
+            //       />
+            //       <Video
+            //         alt="Image alternate"
+            //         data-slot="Video"
+            //         url="https://ckwgnbjfta.cloudimg.io/https://ef-everywhere.s3.ap-southeast-2.amazonaws.com/ef_images/europe/france/paris/paris_3.mov"
+            //       />
+            //     </GalleryGroup>
+            //   </GalleryGroupsContainer>
+            // </Gallery>
                   <ImageList
                     sx={{ 
                       width: '95%',
@@ -487,38 +537,28 @@ export default function Gallery({ onClose, name, images }) {
                         key={image.img}
                       >
                       {image.file_type == "video" ? (
-                          <div
-                          onClick={() => setSelectedVideo(image.src)}
-                          >
+                          <>
                           <img
                             key={index} 
                             src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
                             alt={image.caption_person}
+                            onClick={() => setSelectedVideo(image.src)}
                           />
-                          {/* <PlayArrowIcon
-                            style={{ 
-                              position: 'absolute', 
-                              top: '50%', 
-                              left: '50%', 
-                              fontSize: '50px', // Change this value to adjust the size of the icon
-                              color: 'white',
-                              transform: 'translate(-50%, -50%)' // This will center the icon
-                            }} 
-                          /> */}
-                          <img
-                            src="play_button.svg"
-                            alt="Play Button"
-                            style={{ 
-                              position: 'absolute', 
-                              top: '50%', 
-                              left: '50%', 
-                              width: '50px', // Change this value to adjust the size of the icon
-                              color: 'white',
-                              transform: 'translate(-50%, -50%)' // This will center the icon
-                            }} 
-                          />
-                          </div>
+                                <img
+                                src="play_button.svg"
+                                alt="Play Button"
+                                style={{ 
+                                  position: 'absolute', 
+                                  top: '50%', 
+                                  left: '50%', 
+                                  width: '50px',
+                                  color: 'white',
+                                  transform: 'translate(-50%, -50%)'
+                                }} 
+                                onClick={() => setSelectedVideo(image.src)}
+                              />
+                       </>
                         ) : (
                           <img 
                           key={index} 
