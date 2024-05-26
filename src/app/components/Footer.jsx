@@ -59,6 +59,9 @@ export default function Footer() {
               <Typography 
                 align="left"
                 fontFamily={'EFCircularBook'}
+                style={{
+                  fontSize: '12px'
+                }}
                 >
                 About Us
               </Typography>
@@ -93,6 +96,9 @@ export default function Footer() {
                 color: 'inherit',}}>
               <Typography
               fontFamily={'EFCircularBook'}
+              style={{
+                fontSize: '12px'
+              }}
               >
               Careers at EF
               </Typography>
@@ -100,13 +106,16 @@ export default function Footer() {
           </Box>
           <div
           style={{
-            marginTop: '5vh'
+            marginTop: '5vh',
+            height: '0px' // added this due to EF backpack default styling
           }}
           >
             <hr 
               style={{ 
+                marginLeft: '10vw',
                 width: '80vw',
-                borderColor: '#19191933',
+                backgroundColor: '#191919',
+                opacity: '0.2',
                 marginTop: '0px'
               }} 
               />
@@ -131,6 +140,9 @@ export default function Footer() {
                   style={{ textDecoration: 'none', color: 'inherit' }}>
                   <Typography
                     fontFamily={'EFCircularBook'}
+                    style={{
+                      fontSize: '12px'
+                    }}
                   >
                     Privacy Policy
                   </Typography>
@@ -143,6 +155,9 @@ export default function Footer() {
                   style={{ textDecoration: 'none', color: 'inherit' }}>
                   <Typography
                     fontFamily={'EFCircularBook'}
+                    style={{
+                      fontSize: '12px'
+                    }}
                   >
                     Cookies
                   </Typography>
@@ -155,6 +170,9 @@ export default function Footer() {
                   style={{ textDecoration: 'none', color: 'inherit' }}>
                   <Typography
                     fontFamily={'EFCircularBook'}
+                    style={{
+                      fontSize: '12px'
+                    }}
                   >
                   © EF Education First 2024. All rights reserved.
                   </Typography>
