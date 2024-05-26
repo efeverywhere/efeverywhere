@@ -8,6 +8,7 @@ import { HeaderState } from './headerState';
 import { IntroState } from './introState';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import {IconMenu} from '@ef-global/backpack-icons'
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
@@ -117,7 +118,7 @@ export default function Header(pathname, children) {
                         {drawer ? 
                             <ClearIcon style={{ color: 'black' }}/>
                             :
-                            <MenuIcon style={{ color: 'black' }}/>
+                            <IconMenu />
                         }
                     </StyledIconButton>
                 </div>
