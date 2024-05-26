@@ -9,6 +9,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Modal from '@mui/material/Modal';
+import { Modal as EFModal } from '@ef-global/backpack/Modal';
 import {
   Gallery,
   GalleryGroup,
@@ -33,6 +34,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
+import {IconClose} from '@ef-global/backpack-icons'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
 
@@ -351,8 +353,9 @@ export default function LocationGallery({ onClose, name, images }) {
                 >
                   <div 
                   style={{
-                    display: 'flex',
                     flexDirection: 'column',
+                    alignContent: 'center',
+                    justifyContent: 'center',
                   }}
                   >
                   <NavigateBeforeIcon/>
@@ -706,6 +709,24 @@ export default function LocationGallery({ onClose, name, images }) {
                         setHeaderState('default')
                         setIsImageLoaded(false)
                       }}/>
+                    <button 
+                      style={{
+                        position: 'absolute',
+                        top: '0px',
+                        right: '10px',
+                        background: 'transparent',
+                        border: 'none',
+                        color: 'white',
+                        fontSize: '2em',
+                      }}
+                      onClick={() => {
+                        setSelectedVideo(null)
+                        setHeaderState('default')
+                        setIsImageLoaded(false)
+                      }}
+                    >
+                    <IconClose/>
+                    </button>
                   </div>
                 </Modal>
               )}
@@ -747,7 +768,11 @@ export default function LocationGallery({ onClose, name, images }) {
                     <button 
                       style={{
                         position: 'absolute',
-                        top: '10px',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignContent: 'center',
+                        justifyContent: 'center',
+                        top: '0px',
                         right: '10px',
                         background: 'transparent',
                         border: 'none',
@@ -760,7 +785,11 @@ export default function LocationGallery({ onClose, name, images }) {
                         setIsImageLoaded(false)
                       }}
                     >
-                      <DisabledByDefaultIcon/>
+                      {/* <Typography>
+                      Close
+                      </Typography> */}
+                      
+                      <IconClose/>
                     </button>
                   </div>
                 </Modal>
@@ -790,7 +819,12 @@ export default function LocationGallery({ onClose, name, images }) {
                 disableTouchRipple
                 >
                   <NavigateBeforeIcon/>
+                  <Typography
+                  fontFamily={'EFCircularBook'}
+                  style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
+                  >
                   Map
+                  </Typography>
               </Button>
             </div>
           )
