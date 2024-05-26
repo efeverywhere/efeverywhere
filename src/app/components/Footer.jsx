@@ -212,7 +212,12 @@ export default function Footer() {
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography>
+              <Typography
+                style={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: '12px'
+                }}
+              >
                 About Us
               </Typography>
             </a>
@@ -241,8 +246,15 @@ export default function Footer() {
               href="https://careers.ef.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography>
+              style={{ 
+                textDecoration: 'none', 
+                color: 'inherit' }}>
+              <Typography
+                style={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: '12px'
+                }}
+              >
               Careers at EF
               </Typography>
             </a>
@@ -250,12 +262,17 @@ export default function Footer() {
           
         </div>
 
-        <div>
+        <div
+        style={{
+          height: '25px' // added this due to EF backpack default styling
+        }}
+        >
           <hr 
             style={{ 
+              marginTop: '10px', // added this due to EF backpack default styling
               width: '80vw',
-              borderColor: '#19191933',
-              marginTop: '0px'
+              backgroundColor: '#191919',
+              opacity: '0.2',
             }} 
             />
         </div>
@@ -274,7 +291,12 @@ export default function Footer() {
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography>
+              <Typography
+                style={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: '12px'
+                }}
+              >
                 Privacy Policy
               </Typography>
             </a>
@@ -284,7 +306,12 @@ export default function Footer() {
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography>
+              <Typography
+                style={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: '12px'
+                }}
+              >
                 Cookies
               </Typography>
             </a>
@@ -294,7 +321,12 @@ export default function Footer() {
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ textDecoration: 'none', color: 'inherit' }}>
-              <Typography>
+              <Typography
+                style={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: '12px'
+                }}
+              >
               © EF Education First 2024. All rights reserved.
               </Typography>
             </a>
