@@ -769,10 +769,6 @@ export default function LocationGallery({ onClose, name, images }) {
                     <button 
                       style={{
                         position: 'absolute',
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignContent: 'center',
-                        justifyContent: 'center',
                         top: '0px',
                         right: '10px',
                         background: 'transparent',
