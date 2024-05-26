@@ -601,7 +601,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
               >
                 <Typography
                   sx={{
-                    fontFamily: 'EFCircular',
+                    fontFamily: 'EFCircularBook',
                     fontSize: 20,
                     color: '#191919'
                   }}
