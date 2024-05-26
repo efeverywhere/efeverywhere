@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { styled } from '@mui/system';
 import Modal from '@mui/material/Modal';
 import { Box } from '@mui/material';
 import Fade from '@mui/material/Fade';
@@ -42,10 +43,15 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const form_caption = 'caption'
   const form_image = 'image'
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setOpen(false);
-  // };
+  const StyledButton = styled(Button)({
+    '&:hover': {
+      transform: 'scale(1.025)',
+      // padding: '30px 50px',
+      // backgroundColor: blue[700], // Reset background color
+      boxShadow: 'none', // Remove box shadow
+    },
+    transition: 'transform 0.3s ease-in-out',
+  });
 
   // const [state, reactHookFormSubmit] = useForm("mgegpqzw");
   const [state, reactHookFormSubmit] = useForm("xeqydbyv");
@@ -580,7 +586,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                   />
                 } label="By clicking this box, you agree to share your submission publicly and are over the age of 18 years old." 
               />
-              <Button
+              <StyledButton
                 type="submit" 
                 disabled={state.submitting}
                 sx={{
@@ -609,7 +615,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 Submit
                 </Typography>
                 
-              </Button>
+              </StyledButton>
               </div>
             </div>
             </FormControl>
