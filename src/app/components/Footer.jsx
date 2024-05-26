@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
-// import Image from 'next/image';
-import { Image } from '@ef-global/backpack/Image';
+import Image from 'next/image';
+import { Image as EFImage } from '@ef-global/backpack/Image';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -33,8 +33,8 @@ export default function Footer() {
             justifyContent: 'center'
           }}>
             <Image src="EF 60th.svg" 
-              width={400} 
-              height={70}
+              width={100}
+              height={100}
             />
           </div>
 
@@ -210,7 +210,7 @@ export default function Footer() {
           style={{
             alignItem: 'baseline'
           }}>
-            <Image src="EF 60th.svg" 
+            <EFImage src="EF 60th.svg" 
               width={200} 
               height={100}
             />
