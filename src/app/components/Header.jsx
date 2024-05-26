@@ -371,7 +371,7 @@ export default function Header(pathname, children) {
                     height: '5vh',
                     left: '10%',
                     zIndex: 502,
-                    backgroundColor: headerState == 'default'  ? 'transparent' : '#FFFFFF',
+                    backgroundColor: 'transparent'
                     }}>
                     <Box
                         style={{
