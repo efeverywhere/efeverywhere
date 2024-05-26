@@ -381,6 +381,7 @@ export default function Header(pathname, children) {
                         }}
                         >
                         <Link 
+                        onClick={() => {window.location.href = "/"}}
                         href="/" 
                         style={{
                             textDecoration: 'none',
@@ -407,7 +408,9 @@ export default function Header(pathname, children) {
                         }}
                         >
                             <Link 
+                                onClick={() => {window.location.href = "/"}}
                                 href="/" style={{textDecoration: 'none'}}
+                                
                             >
                                 <Typography
                                     sx={{ 
