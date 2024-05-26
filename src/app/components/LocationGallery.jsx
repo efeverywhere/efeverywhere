@@ -382,8 +382,8 @@ export default function LocationGallery({ onClose, name, images }) {
             borderRadius: '10px',
             width: '100%',
             height: '100%',
-            maxHeight: '100%',
-            overflowY: 'auto',
+            // maxHeight: '100%',
+            // overflowY: 'auto',
             position: 'absolute',
             paddingTop: '10vh',
             zIndex: 500,
@@ -528,8 +528,6 @@ export default function LocationGallery({ onClose, name, images }) {
                     sx={{ 
                       width: '88.5%',
                       height: '100%',
-                      overflowY: 'scroll',
-                      maxHeight: '80vh',
                       justifyContent: 'space-around'
                     }} 
                     cols={5} 
@@ -542,6 +540,9 @@ export default function LocationGallery({ onClose, name, images }) {
                       {image.file_type == "video" ? (
                           <>
                           <img
+                            style={{
+                              minHeight: '100%' //Need to keep this to stop resizing image when changing screen size
+                            }}
                             key={index} 
                             src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
