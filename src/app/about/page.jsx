@@ -231,7 +231,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       listStyleType: 'disc',
                       marginLeft: '2vw',
                     }}
-                  >Have a brilliant idea? Great! Get creative and we will award you with a $1000 worth of flight tickets to the 20 best submissions (2 winners per category)</li>
+                  >Have a brilliant idea? Great! Get creative and we will award you with cool prizes to the 20 best submissions (2 winners per category)</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
@@ -279,7 +279,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                Have a brilliant idea? Great! Get creative and we will award you with cool prizes to the 20 best submissions (2 winners per category)
+                Cool prizes for two winners per category
               </Typography>
               {isMobile ? (
               <div >
