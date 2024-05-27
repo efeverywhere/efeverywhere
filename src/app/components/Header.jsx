@@ -155,9 +155,10 @@ export default function Header(pathname, children) {
                 {isVisible && !drawer && (
                     <div style={{
                         position: 'fixed',
-                        left: '25%',
+                        // left: '23.5%',
                         bottom: '10%',
-                        // transform: 'translateX(-50%)',
+                        left: '50.5%', //no idea why but this is the center
+                        transform: 'translate(-50%, -50%)',
                     }}>
                         <UploadButton
                             toggleUpload={toggleUpload} 
