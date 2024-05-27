@@ -8,6 +8,7 @@ import { HeaderState } from './headerState';
 import { IntroState } from './introState';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import {IconClose} from '@ef-global/backpack-icons'
 import {IconMenu} from '@ef-global/backpack-icons'
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -116,7 +117,7 @@ export default function Header(pathname, children) {
                     onClick={handleHeaderMenuClick}
                     >
                         {drawer ? 
-                            <ClearIcon style={{ color: 'black' }}/>
+                            <IconClose />
                             :
                             <IconMenu />
                         }
