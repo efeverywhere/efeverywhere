@@ -421,7 +421,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     {name}
                   </Typography>
                   <div>
-                  <Button 
+                  {/* <Button    
                     disabled
                     onClick={() => setViewState('quilted')}
                     sx={{
@@ -447,7 +447,7 @@ export default function LocationGallery({ onClose, name, images }) {
                       }}
                       />
                     </span>
-                    </Button>
+                    </Button> */}
                     <Button 
                       onClick={() => setViewState('squares')}
                       sx={{
