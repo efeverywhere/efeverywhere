@@ -448,7 +448,7 @@ export default function LocationGallery({ onClose, name, images }) {
                       />
                     </span>
                     </Button> */}
-                    <Button 
+                    {/* <Button 
                       onClick={() => setViewState('squares')}
                       sx={{
                         '&:hover': {
@@ -474,7 +474,7 @@ export default function LocationGallery({ onClose, name, images }) {
                         style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
                       />
                       </span>
-                    </Button>
+                    </Button> */}
 
                   </div>
 
