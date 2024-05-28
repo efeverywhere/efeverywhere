@@ -17,7 +17,7 @@ import {
 import { Button } from '@mui/material';
 import { Image } from '@ef-global/backpack/Image';
 import Footer from '../components/Footer';
-import UploadButton from '../components/UploadButton';
+import { Button as EFButton } from '@ef-global/backpack/Button'
 import ThankYou from '../components/ThankYou';
 import PhotoUpload from '../components/PhotoUpload';
 import ErrorIcon from '@mui/icons-material/Error';
@@ -775,14 +775,24 @@ Our goal is to collect photos and videos in every single country in the world—
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'left',
-              alignItems: 'left'
+              alignItems: 'left',
+              marginTop: '10vh'
             }}
           >
             { !isMobile && (
-                <UploadButton 
-                toggleUpload={toggleUpload}
-                topSpacing={10}
-              />
+              <div>
+                  <EFButton
+                    as="button"
+                    onClick={toggleUpload}
+                    variant="primary"
+                    size="regular"
+                    style={{
+                        fontFamily: 'EFCircularBook',
+                    }}
+                  >
+                  Submit Your Shot
+              </EFButton>
+            </div>
             )}
 
             {isUploadOpen && 

@@ -3,7 +3,7 @@ import React from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useState, useEffect } from 'react';
 import { styled } from '@mui/system';
-import { Button } from '@mui/material';
+import { Button as EFButton } from '@ef-global/backpack/Button'
 import { HeaderState } from './headerState';
 import { IntroState } from './introState';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -18,7 +18,6 @@ import Divider from '@mui/material/Divider';
 import { Image } from '@ef-global/backpack/Image';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
-import UploadButton from './UploadButton';
 import PhotoUpload from '../components/PhotoUpload';
 import ThankYou from '../components/ThankYou';
 import zIndex from '@mui/material/styles/zIndex';
@@ -160,14 +159,17 @@ export default function Header(pathname, children) {
                         left: '50.5%', //no idea why but this is the center
                         transform: 'translate(-50%, -50%)',
                     }}>
-                        <UploadButton
-                            toggleUpload={toggleUpload} 
-                            textColor = '#FFFFFF'
-                            backgroundColor = '#0075E1'
-                            width = '54vw'
-                            height = '8vh'
-                            fontsize = '4.5vw'
-                        />
+                        <EFButton
+                            as="button"
+                            onClick={toggleUpload}
+                            variant="primary"
+                            size="regular"
+                            style={{
+                                fontFamily: 'EFCircularBook',
+                            }}
+                        >
+                            Submit Your Shot
+                        </EFButton>
                     </div>
                 )}
                 <SwipeableDrawer
@@ -454,16 +456,17 @@ export default function Header(pathname, children) {
                                 Score
                                 </Typography>
                             </Link>
-                            <UploadButton 
-                                style={{
-                                    position: 'sticky',
-                                    zIndex: -1,
-                                }}
-                                toggleUpload={toggleUpload} 
-                                topSpacing={0}
-                                textColor = {'#FFFFFF'}
-                                backgroundColor = {'#0075E1'}
-                                />
+                                <EFButton
+                                    as="button"
+                                    onClick={toggleUpload}
+                                    variant="primary"
+                                    size="regular"
+                                    style={{
+                                        fontFamily: 'EFCircularBook',
+                                    }}
+                                >
+                                    Submit Your Shot
+                                </EFButton>
                     </Box>
                 </div>
                 {isUploadOpen && 
