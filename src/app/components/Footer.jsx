@@ -60,7 +60,7 @@ export default function Footer() {
                 align="left"
                 fontFamily={'EFCircularBook'}
                 style={{
-                  fontSize: '12px'
+                  fontSize: '16px'
                 }}
                 >
                 About Us
@@ -97,7 +97,7 @@ export default function Footer() {
               <Typography
               fontFamily={'EFCircularBook'}
               style={{
-                fontSize: '12px'
+                fontSize: '16px'
               }}
               >
               Careers at EF
@@ -141,7 +141,7 @@ export default function Footer() {
                   <Typography
                     fontFamily={'EFCircularBook'}
                     style={{
-                      fontSize: '12px'
+                      fontSize: '16px'
                     }}
                   >
                     Privacy Policy
@@ -156,7 +156,7 @@ export default function Footer() {
                   <Typography
                     fontFamily={'EFCircularBook'}
                     style={{
-                      fontSize: '12px'
+                      fontSize: '16px'
                     }}
                   >
                     Cookies
@@ -171,7 +171,7 @@ export default function Footer() {
                   <Typography
                     fontFamily={'EFCircularBook'}
                     style={{
-                      fontSize: '12px'
+                      fontSize: '16px'
                     }}
                   >
                   © EF Education First 2024. All rights reserved.
