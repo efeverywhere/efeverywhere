@@ -19,7 +19,7 @@ export default function RootLayout({children}){
   const [isIntroVisible, setIsIntroVisible] = React.useState(true);
 
   return (
-    <html lang="en" className={fonts.rubik.variable}>
+    <html lang="en">
       <body>
         <AppRouterCacheProvider>
           <Providers>
