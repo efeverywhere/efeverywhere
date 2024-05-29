@@ -551,7 +551,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     cols={4}
                     rowHeight={401}
                   >
-                  {currentImages.map((image, index) => (
+                  {currentImages.map((image) => (
                     <ImageListItem 
                       key={image.img}
                       cols={image.cols || 1} rows={image.rows || 1}
