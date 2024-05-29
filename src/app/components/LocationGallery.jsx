@@ -616,6 +616,7 @@ export default function LocationGallery({ onClose, name, images }) {
                 </Button>
                 <Typography
                   style={{
+                    fontFamily: 'EFCircularBook',
                     margin: '1vw'
                   }}
                 > 
