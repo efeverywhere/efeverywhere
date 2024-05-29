@@ -7,6 +7,7 @@ import { Providers } from './providers';
 import { fonts } from './fonts'
 import { HeaderState } from './components/headerState';
 import { IntroState } from './components/introState';
+import { Head } from 'next/head';
 import theme from './styles/theme';
 import Header from './components/Header'
 import './global.css'
@@ -20,6 +21,10 @@ export default function RootLayout({children}){
 
   return (
     <html lang="en">
+      <head>
+        <title> EF Everywhere - The Official 60th Anniversary Website </title>
+        <meta name="description" content="EF Everywhere is the official 60th anniversary website for EF Education First. Explore how EF members from all around the globe are celebrating their love for EF and discover how we are helping to make the world a better place." />
+      </head>
       <body>
         <AppRouterCacheProvider>
           <Providers>
