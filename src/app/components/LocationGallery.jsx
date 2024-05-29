@@ -46,18 +46,22 @@ export default function LocationGallery({ onClose, name, images }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [viewState, setViewState] = useState('squares')
+  const [viewState, setViewState] = useState('quilted')
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
 
   const indexOfLastImage = currentPage * imagesPerPage;
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
-  const currentImages = images.map(image => ({
+  const colsList = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]; // Replace with your list of numbers for cols
+  const rowsList = [2, 1, 1, 1, 1, 1, 2, 1, 1, 1];
+  const currentImages = images.map((image, index) => ({
     src: image.file_name,
     caption_person: image.caption_person,
     caption_location: image.caption_location,
     alt: image.caption,
     file_type: image.file_type,
+    cols: colsList[index % colsList.length],
+    rows: rowsList[index % rowsList.length]
   })).slice(indexOfFirstImage, indexOfLastImage);
 
   const isMobile = useMediaQuery('(max-width:600px)')
@@ -421,8 +425,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     {name}
                   </Typography>
                   <div>
-                  {/* <Button    
-                    disabled
+                  <Button    
                     onClick={() => setViewState('quilted')}
                     sx={{
                       '&:hover': {
@@ -447,8 +450,8 @@ export default function LocationGallery({ onClose, name, images }) {
                       }}
                       />
                     </span>
-                    </Button> */}
-                    {/* <Button 
+                    </Button>
+                    <Button 
                       onClick={() => setViewState('squares')}
                       sx={{
                         '&:hover': {
@@ -474,7 +477,7 @@ export default function LocationGallery({ onClose, name, images }) {
                         style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
                       />
                       </span>
-                    </Button> */}
+                    </Button>
 
                   </div>
 
@@ -490,40 +493,6 @@ export default function LocationGallery({ onClose, name, images }) {
 
 
               {images && viewState === 'squares' &&
-            //   <Gallery>
-            //   <GalleryGroupsContainer>
-            //     <GalleryGroup layout="1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1 - 1/1">
-            //     {currentImages.map((image, index) => (
-            //           {image.file_type == "video" ? (
-            //               <Video
-            //                 key={index} 
-            //                 src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
-            //                 // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
-            //                 alt={image.caption_person}
-            //                 // onClick={() => setSelectedVideo(image.src)}
-            //               />
-            //             ) : (
-            //               <Image
-            //               key={index} 
-            //               src={image.src  + '?width=250&height=250&func=crop'} 
-            //               alt={image.caption_person}
-            //               data-slot="Image"
-            //               onClick={() => setSelectedImage(image.src)}/>
-            //             )}
-            //         ))}
-            //       <Image
-            //         alt="Image alternate"
-            //         data-slot="Image"
-            //         src="https://ckwgnbjfta.cloudimg.io/_ef-everywhere_/ef_images/europe/france/paris/paris_2.jpg"
-            //       />
-            //       <Video
-            //         alt="Image alternate"
-            //         data-slot="Video"
-            //         url="https://ckwgnbjfta.cloudimg.io/https://ef-everywhere.s3.ap-southeast-2.amazonaws.com/ef_images/europe/france/paris/paris_3.mov"
-            //       />
-            //     </GalleryGroup>
-            //   </GalleryGroupsContainer>
-            // </Gallery>
                   <ImageList
                     sx={{ 
                       width: '88.5%',
@@ -584,15 +553,15 @@ export default function LocationGallery({ onClose, name, images }) {
                 }
                 {images && viewState === 'quilted' &&
                   <ImageList
-                  sx={{ 
-                    width: '90%',
-                    height: '100%',
-                    overflowX: 'hidden',
-                    touchAction: 'none',
-                  }} 
-                  variant="quilted"
-                  cols={4}
-                  rowHeight={401}
+                    sx={{ 
+                      width: '90%',
+                      height: '100%',
+                      overflowX: 'hidden',
+                      touchAction: 'none',
+                    }} 
+                    variant="quilted"
+                    cols={4}
+                    rowHeight={401}
                   >
                   {currentImages.map((image) => (
                     <ImageListItem 
@@ -600,14 +569,14 @@ export default function LocationGallery({ onClose, name, images }) {
                       cols={image.cols || 1} rows={image.rows || 1}
                     >
                       {image.file_type == "video" ? (
-                        <video
+                        <img
+                        {...srcset(thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop', 400, image.rows, image.cols)}
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
                             setSelectedVideo(image.src)
                             setHeaderState('gallery_image')
                           }}
-                          controls
                         />
                       ) : (
                         <img
