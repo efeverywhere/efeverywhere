@@ -41,12 +41,15 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 
 export default function LocationGallery({ onClose, name, images }) {
+
+  const isMobile = useMediaQuery('(max-width:600px)')
+
   // Replace this with your actual data
   const {headerState, setHeaderState} = React.useContext(HeaderState);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [viewState, setViewState] = useState('quilted')
+  const [viewState, setViewState] = useState(isMobile ? 'squares' : 'quilted');
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
 
@@ -61,10 +64,8 @@ export default function LocationGallery({ onClose, name, images }) {
     alt: image.caption,
     file_type: image.file_type,
     cols: colsList[index % colsList.length],
-    rows: rowsList[index % rowsList.length]
+    rows: rowsList[index % rowsList.length],
   })).slice(indexOfFirstImage, indexOfLastImage);
-
-  const isMobile = useMediaQuery('(max-width:600px)')
 
   const thumbnailDir = "https://ckwgnbjfta.cloudimg.io/_ef-everywhere_/ef_images/_thumbnails/"
 
@@ -194,7 +195,7 @@ export default function LocationGallery({ onClose, name, images }) {
                   cols={4}
                   rowHeight={121}
                   >
-                  {currentImages.map((image) => (
+                  {currentImages.map((image, index) => (
                     <ImageListItem 
                       key={image.img}
                       cols={image.cols || 1} rows={image.rows || 1}
