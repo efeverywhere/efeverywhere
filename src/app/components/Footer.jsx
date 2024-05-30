@@ -171,6 +171,7 @@ export default function Footer() {
                   <Typography
                     fontFamily={'EFCircularBook'}
                     style={{
+                      width: '65vw',
                       fontSize: '16px'
                     }}
                   >
