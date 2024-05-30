@@ -300,7 +300,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 }}
                 >
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                         <img src="category_icons/Guarantee.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -330,7 +334,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                       <Image src="category_icons/EF logo block.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
                     </div>
                     <Typography
@@ -359,7 +367,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                       <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
@@ -389,7 +401,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                     <img src="category_icons/Location.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
@@ -419,7 +435,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                       <img src="category_icons/Music.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                       </div>
                       <Typography
@@ -449,7 +469,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                       <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
@@ -479,7 +503,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                         <img src="category_icons/Trophy.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
                       </div>
                       <Typography
@@ -509,7 +537,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                       <img src="category_icons/Balloon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
                     </div>
                     <Typography
@@ -539,7 +571,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                       <img src="category_icons/Beach.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -569,7 +605,11 @@ Our goal is to collect photos and videos in every single country in the world—
                 </SurfaceCard>
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                       <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -599,17 +639,23 @@ Our goal is to collect photos and videos in every single country in the world—
                 </EFCarousel>
                 </div>
               ):(
-              <div>
+              <div
+              >
                 <Grid 
                   sx = {{
-                    marginTop: '20px'
+                    marginTop: '20px',
+                    marginBottom: '20px'
                   }}
                   container 
-                  spacing={2}
+                  spacing={6}
                 >
 
                   <Grid item xs={12/5}>
-                    <div>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
                         <img src="category_icons/Guarantee.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -624,7 +670,11 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <Image src="category_icons/EF logo block.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                   </div>
                   <Typography
@@ -639,7 +689,11 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px'
+                    }}
+                  >
                         <img src="category_icons/Camera.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
@@ -654,7 +708,11 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Location.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
@@ -669,7 +727,11 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Music.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -686,7 +748,11 @@ Our goal is to collect photos and videos in every single country in the world—
 
 
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Heart.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -701,7 +767,11 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Trophy.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -717,7 +787,11 @@ Our goal is to collect photos and videos in every single country in the world—
                   </Grid>
 
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Balloon.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -733,7 +807,11 @@ Our goal is to collect photos and videos in every single country in the world—
                   </Grid>
 
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/Beach.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
@@ -749,7 +827,11 @@ Our goal is to collect photos and videos in every single country in the world—
                   </Grid>
 
                   <Grid item xs={12/5}>
-                  <div>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
                         <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
