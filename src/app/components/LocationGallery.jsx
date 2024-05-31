@@ -347,7 +347,7 @@ export default function LocationGallery({ onClose, name, images }) {
                 style={{
                   position: 'fixed',
                   left: '5%', // Adjust this value as needed
-                  bottom: '10%',
+                  bottom: '12.7%',
                   color: '#000000',
                   backgroundColor: 'white',
                   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.25)',
