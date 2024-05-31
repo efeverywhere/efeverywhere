@@ -33,8 +33,8 @@ export default function Footer() {
             justifyContent: 'center'
           }}>
             <Image src="EF 60th.svg" 
-              width={100}
-              height={100}
+              width={110}
+              height={110}
             />
           </div>
 
@@ -175,8 +175,19 @@ export default function Footer() {
                       fontSize: '16px'
                     }}
                   >
-                  © EF Education First 2024. All rights reserved.
+                  © EF Education First 2024.
                   </Typography>
+                  <Typography
+                    fontFamily={'EFCircularBook'}
+                    style={{
+                      width: '65vw',
+                      fontSize: '16px'
+                    }}
+                  >
+                  All rights reserved.
+                  </Typography>
+
+
                 </a>
             </Box>
       </div>
