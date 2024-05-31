@@ -21,6 +21,7 @@ import { Button as EFButton } from '@ef-global/backpack/Button'
 import ThankYou from '../components/ThankYou';
 import PhotoUpload from '../components/PhotoUpload';
 import ErrorIcon from '@mui/icons-material/Error';
+import {IconAlertCircle} from '@ef-global/backpack-icons'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import '../css/About.css'
@@ -193,11 +194,11 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                <ul>
+                <ul style={{ marginLeft: '20px'}}>
                   <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      // 
                     }}
                   >
                     Bring anything EF with you on your travels and take a photo or video of it
@@ -205,43 +206,42 @@ Our goal is to collect photos and videos in every single country in the world—
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+
                     }}
                   >Submit this photo or video and make sure to tell us where you took it</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
                     }}
                   >Or, use the hashtag #efeverywhere on social when you post</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      
                     }}
                   >We will put a pin on the map in the country or region or spot where you took a shot in</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      
                     }}
                   >Not sure where to go? Check out the scoreboard to see what countries/territories we haven’t visited</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      
                     }}
                   >Have a brilliant idea? Great! Get creative and we will award you with cool prizes to the 20 best submissions (2 winners per category)</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      
                     }}
                   >Everyone is welcome to participate-EF staff, friends, travellers, students, parents—the more the merrier!</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
-                      listStylePosition: 'inside',
+                      
                     }}
                   >Don’t forget to hashtag #efeverywhere</li>
                 </ul>
@@ -257,7 +257,7 @@ Our goal is to collect photos and videos in every single country in the world—
                 marginBottom: '60px'
               }}>
 
-                <ErrorIcon 
+                <IconAlertCircle
                 fontSize='large'
                 style={{ 
                     color: '#D1334A', 
