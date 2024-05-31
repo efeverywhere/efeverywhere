@@ -272,7 +272,7 @@ Our goal is to collect photos and videos in every single country in the world—
               </div>
 
               <Typography
-                fontFamily='EFCircularMedium'
+                fontFamily='EFCircularBold'
                 sx = {{
                   fontSize: '24px',
                   color: 'black',
@@ -643,7 +643,7 @@ Our goal is to collect photos and videos in every single country in the world—
               >
                 <Grid 
                   sx = {{
-                    marginTop: '20px',
+                    marginTop: '0px',
                     marginBottom: '20px'
                   }}
                   container 
