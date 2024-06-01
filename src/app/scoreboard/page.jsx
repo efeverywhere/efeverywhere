@@ -83,10 +83,10 @@ function PageContent(){
                     textRadial={countriesData['africa']['occupied']}
                     textBottom={`out of ${countriesData['africa']['total']}`} 
                     textBottomSecond={`countries`}
-                    width={'200px'}
-                    height={'200px'}
-                    fontSize='20px'
-                    dataLabelSize='50px'
+                    width={'180px'}
+                    height={'180px'}
+                    fontSize='18px'
+                    dataLabelSize='45px'
                     hollowSize='55%'
                     dataLabelOffset={15}
                   />
@@ -98,10 +98,10 @@ function PageContent(){
                     textRadial={countriesData['the_americas']['occupied']}
                     textBottom={`out of ${countriesData['the_americas']['total']}`}
                     textBottomSecond={`countries`}
-                    width={'200px'}
-                    height={'200px'}
-                    fontSize='20px'
-                    dataLabelSize='50px'
+                    width={'180px'}
+                    height={'180px'}
+                    fontSize='18px'
+                    dataLabelSize='45px'
                     hollowSize='55%'
                     dataLabelOffset={15}
                   />
@@ -122,10 +122,10 @@ function PageContent(){
                       textRadial={countriesData['asia_pacific']['occupied']}
                       textBottom={`out of ${countriesData['asia_pacific']['total']}`} 
                       textBottomSecond={`countries`}
-                      width={'200px'}
-                      height={'200px'}
-                      fontSize='20px'
-                      dataLabelSize='50px'
+                      width={'180px'}
+                      height={'180px'}
+                      fontSize='18px'
+                      dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
                     />
@@ -137,10 +137,10 @@ function PageContent(){
                       textRadial={countriesData['europe']['occupied']}
                       textBottom={`out of ${countriesData['europe']['total']}`} 
                       textBottomSecond={`countries`}
-                      width={'200px'}
-                      height={'200px'}
-                      fontSize='20px'
-                      dataLabelSize='50px'
+                      width={'180px'}
+                      height={'180px'}
+                      fontSize='18px'
+                      dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
                     />
@@ -249,7 +249,10 @@ function PageContent(){
                   <SurfaceCardContent>
                   <div style={{ 
                         borderLeft: '4px solid #2FC8F2',
-                        paddingLeft: '7vw'}}>
+                        borderTopLeftRadius: '5000 !important', // Add this line to curve the top end of the border
+                        borderBottomLeftRadius: '500000 !important', // Add t
+                        paddingLeft: '7vw'
+                        }}>
                         <Typography
                           className='bold'
                         >
