@@ -157,7 +157,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }}
               >
                 <Typography
-                  style={{
+                  sx={{
                     fontSize: '7vw',
                     marginBottom: 2,
                     fontFamily: 'EFCircularBold',

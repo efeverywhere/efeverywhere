@@ -9,22 +9,6 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Modal from '@mui/material/Modal';
-import { Modal as EFModal } from '@ef-global/backpack/Modal';
-import {
-  Gallery,
-  GalleryGroup,
-  GalleryGroupAsset,
-  GalleryGroupsContainer,
-  GalleryLabel,
-  GalleryModal,
-  GalleryModalAsset,
-  GalleryModalContent
-} from '@ef-global/backpack/Gallery';
-import { Image } from '@ef-global/backpack/Image';
-import {
-  Video,
-  VideoPlayIcon
-} from '@ef-global/backpack/Video';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
@@ -33,9 +17,7 @@ import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArro
 import useMediaQuery from '@mui/material/useMediaQuery';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
-import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
 import {IconClose} from '@ef-global/backpack-icons'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
@@ -363,7 +345,11 @@ export default function LocationGallery({ onClose, name, images }) {
                     justifyContent: 'center',
                   }}
                   >
-                  <NavigateBeforeIcon/>
+                  <NavigateBeforeIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                   <Typography
                     fontFamily={'EFCircularBook'}
                     style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
@@ -447,7 +433,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     >
                       <SquareRoundedIcon
                       sx={{
-                        color: 'black'
+                        color: '#191919'
                       }}
                       />
                     </span>
@@ -473,7 +459,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     >
                       <GridViewRoundedIcon
                         sx={{
-                          color: 'black'
+                          color: '#191919'
                         }}
                         style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
                       />
@@ -610,10 +596,18 @@ export default function LocationGallery({ onClose, name, images }) {
                 marginRight: '10vw'
               }}>
                 <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
-                  <KeyboardDoubleArrowLeftIcon/>
+                  <KeyboardDoubleArrowLeftIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                 </Button>
                 <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-                  <ArrowBackIosIcon/>
+                  <ArrowBackIosIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                 </Button>
                 <Typography
                   style={{
@@ -624,10 +618,18 @@ export default function LocationGallery({ onClose, name, images }) {
                   {currentPage}/{Math.ceil(images.length / imagesPerPage)}
                 </Typography>
                 <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
-                  <ArrowForwardIosIcon/>
+                  <ArrowForwardIosIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                 </Button>
                 <Button onClick={() => setCurrentPage(Math.ceil(images.length / imagesPerPage))} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
-                  <KeyboardDoubleArrowRightIcon/>
+                  <KeyboardDoubleArrowRightIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                 </Button>
               </div>
   
@@ -697,7 +699,11 @@ export default function LocationGallery({ onClose, name, images }) {
                         setIsImageLoaded(false)
                       }}
                     >
-                    <IconClose/>
+                    <IconClose
+                      style={{
+                        color: '#191919'
+                      }}
+                    />
                     </button>
                   </div>
                 </Modal>
@@ -786,7 +792,11 @@ export default function LocationGallery({ onClose, name, images }) {
                 disableFocusRipple
                 disableTouchRipple
                 >
-                  <NavigateBeforeIcon/>
+                  <NavigateBeforeIcon
+                    style={{
+                      color: '#191919'
+                    }}
+                  />
                   <Typography
                   fontFamily={'EFCircularBook'}
                   style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals

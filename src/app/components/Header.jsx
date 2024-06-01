@@ -6,8 +6,6 @@ import { styled } from '@mui/system';
 import { Button as EFButton } from '@ef-global/backpack/Button'
 import { HeaderState } from './headerState';
 import { IntroState } from './introState';
-import MenuIcon from '@mui/icons-material/Menu';
-import ClearIcon from '@mui/icons-material/Clear';
 import {IconClose} from '@ef-global/backpack-icons'
 import {IconMenu} from '@ef-global/backpack-icons'
 import IconButton from '@mui/material/IconButton';
@@ -166,6 +164,7 @@ export default function Header(pathname, children) {
                             size="regular"
                             style={{
                                 fontFamily: 'EFCircularBook',
+                                color: '#FFFFFF !important',
                             }}
                         >
                             Submit Your Shot
@@ -314,15 +313,16 @@ export default function Header(pathname, children) {
                             }}
                         >
                             <Typography
-                            style={{ 
-                                color: '#FFFFFF',
+                            sx={{ 
                                 fontSize:'25px',
                                 marginLeft: '10vw',
-                                fontFamily: 'EFCircularBook'
+                                fontFamily: 'EFCircularBook',
+                                color: '#FFFFFF !important',
                             }}>
                                 Submit Your Shot
                             </Typography>
-                            <ArrowForwardIcon style={{ 
+                            <ArrowForwardIcon 
+                            sx={{ 
                                 color: '#FFFFFF',
                                 marginRight: '10vw',
                                 }} />

@@ -3,8 +3,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import React, {useState, useEffect, useRef, useMemo} from "react"
 import { HeaderState } from './components/headerState';
 import { IntroState } from './components/introState';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { Typography } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -269,7 +267,11 @@ useEffect(() => {
                             setShowPopup(false)
                           }}
                         >
-                          <ClearIcon/>
+                          <ClearIcon
+                            style={{
+                              color: '#191919'
+                            }}
+                          />
                         </button>
                     </Card>
               </div>

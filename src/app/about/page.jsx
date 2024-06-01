@@ -20,9 +20,7 @@ import Footer from '../components/Footer';
 import { Button as EFButton } from '@ef-global/backpack/Button'
 import ThankYou from '../components/ThankYou';
 import PhotoUpload from '../components/PhotoUpload';
-import ErrorIcon from '@mui/icons-material/Error';
 import {IconAlertCircle} from '@ef-global/backpack-icons'
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import '../css/About.css'
 
@@ -305,7 +303,13 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                        <img src="category_icons/Guarantee.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                        <img 
+                          src="category_icons/Guarantee.svg" 
+                          style={{ 
+                            width: iconWidthMobile, 
+                            height: iconHeightMobile, 
+                            objectFit: 'contain',
+                          }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'

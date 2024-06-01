@@ -70,7 +70,7 @@ body {
 }
 
 .MuiTypography-root {
-  color: #191919 !important; /* Replace #123456 with the color you want */
+  color: #191919 !important;
 }
 
 body, p, h2, h3, h4, h5, h6 {
