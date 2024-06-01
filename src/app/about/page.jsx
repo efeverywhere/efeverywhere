@@ -160,7 +160,8 @@ export default function Page(){
                 fontFamily='EFCircularBold'
                 sx ={{
                   fontSize: isMobile ? '40px' : '56px',
-                  color: 'black'
+                  color: 'black',
+                  lineHeight: '1',
                 }}
               >
               Show us EF Everywhere!
