@@ -73,7 +73,6 @@ function PageContent(){
                   flexDirection: 'row',
                   justifyContent: 'center',
                   marginTop: '10vh',
-                  marginLeft: '5vw'
                 }}
               >
                   {countriesData && (
@@ -114,7 +113,6 @@ function PageContent(){
                   flexDirection: 'row',
                   justifyContent: 'center',
                   marginTop: '5vh',
-                  marginLeft: '5vw'
                 }}
               >
                 {countriesData && (
