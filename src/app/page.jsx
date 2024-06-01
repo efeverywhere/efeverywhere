@@ -341,9 +341,6 @@ useEffect(() => {
               anchor="bottom"
               offset={[0,-40]}
               tipSize={0}
-              sx={{
-                padding: '5px 5px 5px 5px',
-              }}
             >
               <Typography
               style={{
