@@ -18,7 +18,6 @@ import Box from '@mui/material/Box';
 import Link from 'next/link';
 import PhotoUpload from '../components/PhotoUpload';
 import ThankYou from '../components/ThankYou';
-import zIndex from '@mui/material/styles/zIndex';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
@@ -114,9 +113,17 @@ export default function Header(pathname, children) {
                     onClick={handleHeaderMenuClick}
                     >
                         {drawer ? 
-                            <IconClose />
+                            <IconClose 
+                            style={{
+                                color: '#191919'
+                            }}
+                            />
                             :
-                            <IconMenu />
+                            <IconMenu 
+                            style={{
+                                color: '#191919'
+                            }}
+                            />
                         }
                     </StyledIconButton>
                 </div>
