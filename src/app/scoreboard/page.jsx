@@ -73,6 +73,7 @@ function PageContent(){
                   flexDirection: 'row',
                   justifyContent: 'center',
                   marginTop: '10vh',
+                  marginLeft: '5vw'
                 }}
               >
                   {countriesData && (
