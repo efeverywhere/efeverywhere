@@ -438,9 +438,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         borderRadius: '5px',
                       }
                     }}
-                    InputLabelProps={{
-                      style: { color: '#8C8C8C'},
-                    }}
 
                   />
                   <TextField 
@@ -462,9 +459,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       borderRadius: '5px',
                     }
                   }}
-                  InputLabelProps={{
-                    style: { color: '#8C8C8C'},
-                  }}
                   />
                   <Autocomplete // Replace TextField with Autocomplete
                     id="country-autocomplete"
@@ -483,9 +477,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                           backgroundColor: '#FFFFFF' 
                         }} 
                         style={{ width: '100%', marginBottom: 30 }}
-                        InputLabelProps={{
-                          style: { color: '#8C8C8C'},
-                        }}
                       />
                     }
                     sx={{
@@ -497,9 +488,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style: {
                         borderRadius: '5px',
                       }
-                    }}
-                    InputLabelProps={{
-                      style: { color: '#8C8C8C'},
                     }}
                   />
                   <TextField 
@@ -520,9 +508,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       borderRadius: '5px',
                     }
                   }}
-                  InputLabelProps={{
-                    style: { color: '#8C8C8C'},
-                  }}
                   />
                   <TextField 
                     label="Caption" 
@@ -540,9 +525,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style: {
                         borderRadius: '5px',
                       }
-                    }}
-                    InputLabelProps={{
-                      style: { color: '#8C8C8C'},
                     }}
                   />
                 </Grid>

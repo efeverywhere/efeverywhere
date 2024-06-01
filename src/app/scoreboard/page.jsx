@@ -12,7 +12,6 @@ import Typography from '@mui/material/Typography';
 import RadialProgressBar from '../components/RadialProgressBar';
 import Footer from '../components/Footer';
 import "@fontsource/noto-sans";
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const countries = './score_countries.json';
 
