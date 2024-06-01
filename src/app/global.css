@@ -69,6 +69,10 @@ body {
     /* url("../../public/EF Circular/EF Circular - Desktop - OpenType OTF/Fonts/EFCircular-Ligh") format("otf"); */
 }
 
+.MuiTypography-root {
+  color: #191919 !important; /* Replace #123456 with the color you want */
+}
+
 body, p, h2, h3, h4, h5, h6 {
   font-family: 'EFCircular', sans-serif;
   color: '#191919';
@@ -117,6 +121,7 @@ html, body {
 .MuiImageListItemBar-subtitle {
   font-family: 'EFCircularBook' !important
 }
+
 /* .modal-open .map-container {
   pointer-events: none;
 } */

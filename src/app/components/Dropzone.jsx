@@ -64,7 +64,8 @@ function MyDropzone({ onFileUpload }) {
                 textAlign: 'center',
                 fontSize: '14px',
                 fontFamily: 'EFCircular',
-                marginTop: '10px'
+                marginTop: '10px',
+                color: '#FFFFFF !important'
               }}
             >
                     Browse and upload

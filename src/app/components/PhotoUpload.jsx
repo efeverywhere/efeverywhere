@@ -20,6 +20,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useCountries } from 'use-react-countries'
 
 
+
 function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
 
@@ -51,6 +52,12 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
       boxShadow: 'none', // Remove box shadow
     },
     transition: 'transform 0.3s ease-in-out',
+  });
+
+  const StyledFormControlLabel = styled(FormControlLabel)({
+    '& .MuiFormControlLabel-label': {
+      color: '#FFFFFF !important', // Replace #FFFFFF with the color you want
+    },
   });
 
   // const [state, reactHookFormSubmit] = useForm("mgegpqzw");
@@ -155,7 +162,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     marginBottom: 2,
                     fontFamily: 'EFCircularBold',
                     alignContent: 'left',
-                    marginLeft: '10vw'
+                    marginLeft: '10vw',
+                    color: '#FFFFFF !important'
                   }}
                 >
                   Upload Your Shot!
@@ -288,7 +296,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 width: '81%'
               }}
             >
-              <FormControlLabel
+              <StyledFormControlLabel
                 style={{
                   marginTop: '1vh',
                   borderRadius: '10px',
@@ -327,8 +335,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 <Typography
                   sx={{
                     fontFamily: 'EFCircularBook',
-                    fontSize: 20,
-                    color: '#191919',
+                    fontSize: 20
                   }}
                 >
                   Submit
@@ -398,7 +405,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 sx={{
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
-                  marginBottom: 2
+                  marginBottom: 2,
+                  color: '#FFFFFF !important'
                 }}
               >
                 Upload Your Shot!
@@ -570,21 +578,23 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 flexDirection: 'column',
               }}
             >
-              <FormControlLabel
+              <StyledFormControlLabel
                 style={{
                   marginTop: '1vh',
+                  color: '#FFFFFF !important'
                 }}
                 size= 'large'
                 required control={
                   <Checkbox 
                     sx={{
-                      color: '#FFFFFF',
+                      color: '#FFFFFF !important',
                       '&.Mui-checked': {
-                        color: '#FFFFFF',
+                        color: '#FFFFFF !important',
                       },
                     }}
                   />
-                } label="By clicking this box, you agree to share your submission publicly and are over the age of 18 years old." 
+                } 
+                label="By clicking this box, you agree to share your submission publicly and are over the age of 18 years old." 
               />
               <StyledButton
                 type="submit" 
@@ -609,7 +619,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                   sx={{
                     fontFamily: 'EFCircularBook',
                     fontSize: 20,
-                    color: '#191919'
                   }}
                 >
                 Submit
