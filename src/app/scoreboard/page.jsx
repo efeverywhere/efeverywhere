@@ -113,7 +113,8 @@ function PageContent(){
                   display: 'flex',
                   flexDirection: 'row',
                   justifyContent: 'center',
-                  marginTop: '5vh'
+                  marginTop: '5vh',
+                  marginLeft: '5vw'
                 }}
               >
                 {countriesData && (
