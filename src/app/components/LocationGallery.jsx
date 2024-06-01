@@ -556,15 +556,38 @@ export default function LocationGallery({ onClose, name, images }) {
                       cols={image.cols || 1} rows={image.rows || 1}
                     >
                       {image.file_type == "video" ? (
+                        <>
                         <img
-                        {...srcset(thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop', 400, image.rows, image.cols)}
+                        {...srcset(
+                          thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png', 
+                          400, 
+                          image.rows, 
+                          image.cols)}
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
                             setSelectedVideo(image.src)
                             setHeaderState('gallery_image')
                           }}
+                          style={{
+                            width: '100%',
+                            height: '100%'
+                          }}
                         />
+                        <img
+                        src="play_button.svg"
+                        alt="Play Button"
+                        style={{ 
+                          position: 'absolute', 
+                          top: '50%', 
+                          left: '50%', 
+                          width: '50px',
+                          color: 'white',
+                          transform: 'translate(-50%, -50%)'
+                        }} 
+                        onClick={() => setSelectedVideo(image.src)}
+                      />
+                      </>
                       ) : (
                         <img
                           {...srcset(image.src, 400, image.rows, image.cols)}
