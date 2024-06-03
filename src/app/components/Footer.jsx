@@ -33,8 +33,8 @@ export default function Footer() {
             justifyContent: 'center'
           }}>
             <Image src="EF 60th.svg" 
-              width={110}
-              height={110}
+              width={130}
+              height={130}
             />
           </div>
 

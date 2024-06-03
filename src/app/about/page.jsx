@@ -161,7 +161,7 @@ export default function Page(){
                 sx ={{
                   fontSize: isMobile ? '40px' : '56px',
                   color: 'black',
-                  lineHeight: '1',
+                  lineHeight: '1.3',
                 }}
               >
               Show us EF Everywhere!
@@ -261,6 +261,7 @@ Our goal is to collect photos and videos in every single country in the world—
                 style={{ 
                     color: '#D1334A', 
                     fontSize: '52px',
+                    marginRight: isMobile ? '5px' : '0px'
                     }}
                 />
                 <Typography
@@ -648,7 +649,7 @@ Our goal is to collect photos and videos in every single country in the world—
               >
                 <Grid 
                   sx = {{
-                    marginTop: '0px',
+                    marginTop: '-30px',
                     marginBottom: '20px'
                   }}
                   container 
@@ -732,11 +733,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
+                  <div>
                         <img src="category_icons/Music.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
