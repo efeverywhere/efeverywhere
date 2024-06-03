@@ -16,6 +16,8 @@ import LocationGallery from './components/LocationGallery';
 import {Map, Popup, NavigationControl} from 'react-map-gl';
 const MAPBOX_TOKEN = "pk.eyJ1IjoiYXJpZWxjYXJsb3NjYW5ldGUiLCJhIjoiY2thZ3J5enBpMGJvcTJ4cG5xNndlM3hldSJ9.Fsyf28yyWJv8D_anecSkOQ";
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {IconPlusCircle} from '@ef-global/backpack-icons'
+import {IconMinusCircle} from '@ef-global/backpack-icons'
 import { ReactComponent as Pin } from '../../public/EF_pin_final.svg';
 import smiley02 from '../../public/smileys/Smiley_60fps_02.gif'
 import smiley03 from '../../public/smileys/Smiley_60fps_03.gif'
@@ -119,6 +121,16 @@ useEffect(() => {
     setIsGalleryOpen(false);
     setHeaderState('default');
   }
+
+  const zoomIn = () => {
+    const map = mapRef.current;
+    map.zoomIn();
+  };
+  
+  const zoomOut = () => {
+    const map = mapRef.current;
+    map.zoomOut();
+  };
 
   return(
     <div>
@@ -301,11 +313,38 @@ useEffect(() => {
       }}
       mapboxAccessToken={MAPBOX_TOKEN}
     >
-      {isMobile == false && (
+      {/* {isMobile == false && (
         <NavigationControl 
           position='bottom-left'
           showCompass={false}
         />
+      )} */}
+      {isMobile == false && (
+        <div style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'absolute', 
+          bottom: '10vh', 
+          left: '5vw' 
+          }}>
+          <button 
+            onClick={zoomIn}
+            style={{marginBottom: '10px'}}
+            >
+            <IconPlusCircle 
+            style={{
+              fontSize: '25px'
+            }}
+            />
+          </button>
+          <button onClick={zoomOut}>
+            <IconMinusCircle 
+            style={{
+              fontSize: '25px'
+            }}
+            />
+          </button>
+        </div>
       )}
 
 
