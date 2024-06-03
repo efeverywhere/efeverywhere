@@ -261,7 +261,7 @@ Our goal is to collect photos and videos in every single country in the world—
                 style={{ 
                     color: '#D1334A', 
                     fontSize: '52px',
-                    marginRight: isMobile ? '5px' : '0px'
+                    marginRight: isMobile ? '20px' : '0px'
                     }}
                 />
                 <Typography
