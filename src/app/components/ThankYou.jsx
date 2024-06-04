@@ -118,12 +118,14 @@ function ThankYou({ isOpen, handleClose }) {
               onClick={handleClose}
               />
               <Typography
-                style={{
+                sx={{
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
                   marginTop: '50%',
-                  marginRight: '15vw',
-                  lineHeight: '1.3'
+                  marginLeft: '5vw',
+                  marginRight: '6vw',
+                  lineHeight: '1.3',
+                  color: '#FFFFFF !important'
                 }}
               >
                 Thank you for your submission!
@@ -134,8 +136,10 @@ function ThankYou({ isOpen, handleClose }) {
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
                   marginBottom: '10vh',
-                  marginRight: '15vw',
-                  wordWrap: 'break-word'
+                  marginLeft: '5vw',
+                  marginRight: '6vw',
+                  wordWrap: 'break-word',
+                  color: '#FFFFFF !important'
                 }}
               >
                 The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
@@ -194,7 +198,8 @@ function ThankYou({ isOpen, handleClose }) {
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
                   marginBottom: 2,
-                  lineHeight: '1.3'
+                  lineHeight: '1.3',
+                  color: '#FFFFFF !important'
                 }}
               >
                 Thank you for your submission!
@@ -203,7 +208,8 @@ function ThankYou({ isOpen, handleClose }) {
                 sx={{
                   fontSize: 18,
                   fontFamily: 'EFCircular',
-                  marginBottom: 2
+                  marginBottom: 2,
+                  color: '#FFFFFF !important'
                 }}
               >
                 The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
