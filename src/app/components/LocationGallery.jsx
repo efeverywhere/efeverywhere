@@ -189,7 +189,6 @@ export default function LocationGallery({ onClose, name, images }) {
                           key={index}
                           src={image.src  + '?width=300&height=300&func=crop'} 
                           alt={image.caption_person}
-                          loading="lazy"
                           onClick={() => {
                             setSelectedVideo(image.src)
                             setHeaderState('gallery_image')
