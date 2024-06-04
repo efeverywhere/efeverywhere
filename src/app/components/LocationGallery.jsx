@@ -128,14 +128,16 @@ export default function LocationGallery({ onClose, name, images }) {
                       }}
                     >
                       {image.file_type == "video" ? (
-                        <img // USE IMG EVEN IF VIDEO. THIS IS THE WAY OF MOBILE.
+                        <img autoplay="true"
                           key={index}
                           src={image.src  + '?width=300&height=300&func=crop'} 
-                          // src={image.src} 
                           alt={image.caption_person}
-                          loading="lazy"
                           onClick={() => {
-                            setSelectedImage(image.src) // USE IMG EVEN IF VIDEO. THIS IS THE WAY OF MOBILE.
+                            setSelectedImage(image.src)
+                          }}
+                          style={{
+                            width: '100%',
+                            height: '100%'
                           }}
                         />
                       ) : (
