@@ -234,7 +234,7 @@ export default function Header(pathname, children) {
                                 fontFamily: pathname.currentPage === '/' ? 'EFCircularBold' : 'EFCircularBook'
                             }}
                             >
-                            EF Everywhere
+                            Map
                             </Typography>
                         </Link>
 
@@ -431,7 +431,7 @@ export default function Header(pathname, children) {
                                         fontFamily: pathname.currentPage == '/' ? 'EFCircularBold' : 'EFCircularBook'
                                     }}
                                 >
-                                EF Everywhere
+                                Map
                                 </Typography>
                             </Link>
                             
