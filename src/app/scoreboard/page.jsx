@@ -25,7 +25,13 @@ function PageContent(){
   useEffect(() => {
     fetch(`/score_countries.json`)
       .then(response => response.json())
-      .then(data => setCountriesData(data));
+      .then(data => {
+              data.asia_pacific.missing.sort();
+              data.the_americas.missing.sort();
+              data.africa.missing.sort();
+              data.europe.missing.sort();
+              setCountriesData(data);
+      });
   }, []);
 
     return (
