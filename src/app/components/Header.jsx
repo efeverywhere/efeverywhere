@@ -21,7 +21,7 @@ import ThankYou from '../components/ThankYou';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
-const logo = '/EF_logo.svg'
+const logo = '/EF_Everywhere.svg'
 const alt_logo = '/EF_logo_white.svg'
 
 export default function Header(pathname, children) {
@@ -132,7 +132,7 @@ export default function Header(pathname, children) {
                         position: 'absolute',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        top: 0,
+                        top: 4,
                         zIndex: 1000
                     }}>
                         <Link 
@@ -387,8 +387,9 @@ export default function Header(pathname, children) {
                     <Box
                         style={{
                             position: 'relative',
-                            width: '4vw',
-                            height: '3vw',
+                            width: '20vw',
+                            height: '5vw',
+                            top: '0.5vh'
                         }}
                         >
                         <Link 
@@ -398,11 +399,15 @@ export default function Header(pathname, children) {
                             textDecoration: 'none',
                             display: 'flex',
                             justifyContent: 'space-between',
-                            height: '10vh',
+                            height: '100%',
                             alignItems: 'center',
                         }}
                         >
-                            <Image 
+                            <Image
+                                style={{
+                                    height:'100%',
+                                    width: '100%'
+                                }}
                                 src={logo}
                                 alt="Education First Logo"
                                 />
