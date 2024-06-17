@@ -146,8 +146,8 @@ export default function Header(pathname, children) {
                         }}
                         >
                             <Image 
-                            height={70}
-                            width={70}
+                            height={'70px'}
+                            width={'70px'}
                             src={logo}
                             alt="Education First Logo"
                             />
@@ -387,26 +387,28 @@ export default function Header(pathname, children) {
                     <Box
                         style={{
                             position: 'relative',
-                            width: '20vw',
-                            height: '5vw',
-                            top: '0.5vh'
+                            width: '200px',
+                            height: '30px',
+                            top: '33.5px'
                         }}
                         >
                         <Link 
-                        onClick={() => {window.location.href = "/"}}
-                        href="/" 
-                        style={{
-                            textDecoration: 'none',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            height: '100%',
-                            alignItems: 'center',
-                        }}
+                            onClick={() => {window.location.href = "/"}}
+                            href="/" 
+                            style={{
+                                textDecoration: 'none',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                height: '100%',
+                                alignItems: 'center',
+                            }}
                         >
                             <Image
                                 style={{
-                                    height:'100%',
-                                    width: '100%'
+                                    minHeight:'200px',
+                                    minWidth: '200px',
+                                    height:'200px',
+                                    width: '200px'
                                 }}
                                 src={logo}
                                 alt="Education First Logo"
@@ -420,7 +422,9 @@ export default function Header(pathname, children) {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: '5vh'
+                            // marginTop: '5vh'
+                            // top: '5vh'
+                            marginTop: '50px'
                         }}
                         >
                             <Link 
