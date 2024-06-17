@@ -389,7 +389,7 @@ export default function Header(pathname, children) {
                             position: 'relative',
                             width: '200px',
                             height: '30px',
-                            top: '33.5px'
+                            top: '23.5px'
                         }}
                         >
                         <Link 
@@ -422,9 +422,7 @@ export default function Header(pathname, children) {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            // marginTop: '5vh'
-                            // top: '5vh'
-                            marginTop: '50px'
+                            marginTop: '40px'
                         }}
                         >
                             <Link 
