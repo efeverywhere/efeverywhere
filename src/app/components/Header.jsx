@@ -408,7 +408,8 @@ export default function Header(pathname, children) {
                                     minHeight:'200px',
                                     minWidth: '200px',
                                     height:'200px',
-                                    width: '200px'
+                                    width: '200px',
+                                    marginLeft: '5px'
                                 }}
                                 src={logo}
                                 alt="Education First Logo"

@@ -401,7 +401,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     justifyContent: 'space-between',
                     alignItems: 'baseline',
                     width: '81%',
-                    paddingTop: '15vh',
+                    paddingTop: '10vh',
                     marginLeft: '10vw',
                     position: 'fixed',
                     zIndex: 502,
