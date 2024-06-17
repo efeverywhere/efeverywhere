@@ -17,10 +17,6 @@ const countries = './score_countries.json';
 
 function PageContent(){
   const [countriesData, setCountriesData] = useState(null);
-  const [mapLonLat, setMapLonLat] = React.useState(() => {
-    const storedValue = localStorage.getItem('mapLonLat');
-    return storedValue !== null ? JSON.parse(storedValue) : 'default';
-  });
   const searchParams = useSearchParams()
   const scope = searchParams.get('scope')
   const isMobile = useMediaQuery('(max-width:600px)')
@@ -86,10 +82,6 @@ function PageContent(){
               >
                   {countriesData && (
                   <div
-                    onClick={() => {
-                      localStorage.setItem('mapLonLat', JSON.stringify([0,0,10]))
-                      window.location.href="/"
-                    }}
                   >
                     <RadialProgressBar 
                       percentage={countriesData['africa']['occupied']/countriesData['africa']['total']*100} 

@@ -30,10 +30,6 @@ import smiley06 from '../../public/smileys/Smiley_60fps_06.gif'
 export default function MapChart() {
   const {headerState, setHeaderState} = React.useContext(HeaderState);
   const {isIntroVisible, setIsIntroVisible} = React.useContext(IntroState);
-  const [mapLonLat, setMapLonLat] = React.useState(() => {
-    const storedValue = localStorage.getItem('mapLonLat');
-    return storedValue !== null ? JSON.parse(storedValue) : 'default';
-  });
   const [mapLoaded, setMapLoaded] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [textOpacity, setTextOpacity] = useState(1);
@@ -296,10 +292,10 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude: mapLonLat == 'default' ? 55.70584 : mapLonLat[0],
-        longitude: mapLonLat == 'default' ? 13.19321 : mapLonLat[1], 
+        latitude: 55.70584,
+        longitude: 13.19321, 
         dragRotate: false,
-        zoom: mapLonLat == 'default' ? 4 : mapLonLat[2]
+        zoom: 4
       }}
       dragRotate = {false}
       touchZoomRotate = {'disableRotation'}
