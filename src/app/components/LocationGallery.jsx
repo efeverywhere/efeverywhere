@@ -744,11 +744,19 @@ export default function LocationGallery({ onClose, name, images }) {
                     }}
                     >
                     {!isImageLoaded && 
-                      <CircularProgress 
-                      style = {{
+                      // <CircularProgress 
+                      // style = {{
+                      //   position: 'absolute',
+                      // }}
+                      // />
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
                         position: 'absolute',
-                      }}
-                      />
+                      }} 
+                    />
                     }
                     <img 
                       src={selectedImage} 
