@@ -388,97 +388,153 @@ export default function LocationGallery({ onClose, name, images }) {
               background: 'white',
               top: 0,
               zIndex: 1000,
-
-            }}
+              }}
             >
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'baseline',
-                  width: '81%',
-                  paddingTop: '15vh',
-                  marginLeft: '10vw',
-                  position: 'fixed',
-                  zIndex: 502,
-                  background: 'white'
-                  }}
-                >
-                  <Typography 
-                    variant="h1"
-                    style={{
-                      fontSize: '64px'
+                  display:'flex'
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'baseline',
+                    width: '81%',
+                    paddingTop: '15vh',
+                    marginLeft: '10vw',
+                    position: 'fixed',
+                    zIndex: 502,
+                    background: 'white'
                     }}
                   >
-                    {name}
-                  </Typography>
-                  <div>
-                  <Button    
-                    onClick={() => setViewState('quilted')}
-                    sx={{
-                      '&:hover': {
-                        backgroundColor: 'transparent', // Removes hover effect
-                      },
-                      '&:focus': {
-                        outline: 'none',
-                      }
-                    }}
-                    disableRipple  
-                    disableFocusRipple
-                  >
-                    <span 
-                      style={{ 
-                        borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
-                        // paddingBottom: '2px'
+                    <Typography 
+                      variant="h1"
+                      style={{
+                        fontSize: '64px'
                       }}
                     >
-                      <SquareRoundedIcon
-                      sx={{
-                        color: '#191919'
-                      }}
-                      />
-                    </span>
-                    </Button>
-                    <Button 
-                      onClick={() => setViewState('squares')}
-                      sx={{
-                        '&:hover': {
-                          backgroundColor: 'transparent', // Removes hover effect
-                        },
-                        '&:focus': {
-                          outline: 'none',
-                        },
-                      }}
-                      disableRipple
-                      disableFocusRipple
-                    > 
-                    <span 
-                      style={{ 
-                        borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
-                        // paddingBottom: '2px'
-                      }}
-                    >
-                      <GridViewRoundedIcon
-                        sx={{
-                          color: '#191919'
+                      {name}
+                    </Typography>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between'
                         }}
-                        style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
-                      />
-                      </span>
-                    </Button>
+                      >
+                        <div
+                          style={{
+                            justifyContent: 'space-between'
+                          }}
+                        >
+                        <Button    
+                          onClick={() => setViewState('quilted')}
+                          sx={{
+                            '&:hover': {
+                              backgroundColor: 'transparent', // Removes hover effect
+                            },
+                            '&:focus': {
+                              outline: 'none',
+                            }
+                          }}
+                          disableRipple  
+                          disableFocusRipple
+                        >
+                          <span 
+                            style={{ 
+                              borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
+                              // paddingBottom: '2px'
+                            }}
+                          >
+                            <SquareRoundedIcon
+                            sx={{
+                              color: '#191919'
+                            }}
+                            />
+                          </span>
+                          </Button>
+                          <Button 
+                            onClick={() => setViewState('squares')}
+                            sx={{
+                              '&:hover': {
+                                backgroundColor: 'transparent', // Removes hover effect
+                              },
+                              '&:focus': {
+                                outline: 'none',
+                              },
+                            }}
+                            disableRipple
+                            disableFocusRipple
+                          > 
+                          <span 
+                            style={{ 
+                              borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
+                              // paddingBottom: '2px'
+                            }}
+                          >
+                            <GridViewRoundedIcon
+                              sx={{
+                                color: '#191919'
+                              }}
+                              style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
+                            />
+                            </span>
+                          </Button>
+                        </div>
 
+                        <div
+                          style={{
+                            display: 'flex', 
+                            justifyContent: 'flex-end', 
+                          }}>
+                            <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+                              <KeyboardDoubleArrowLeftIcon
+                                style={{
+                                  color: '#191919'
+                                }}
+                              />
+                            </Button>
+                            <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                              <ArrowBackIosIcon
+                                style={{
+                                  color: '#191919'
+                                }}
+                              />
+                            </Button>
+                            <Typography
+                              style={{
+                                fontFamily: 'EFCircularBook',
+                                margin: '1vw'
+                              }}
+                            > 
+                              {currentPage}/{Math.ceil(images.length / imagesPerPage)}
+                            </Typography>
+                            <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                              <ArrowForwardIosIcon
+                                style={{
+                                  color: '#191919'
+                                }}
+                              />
+                            </Button>
+                            <Button onClick={() => setCurrentPage(Math.ceil(images.length / imagesPerPage))} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                              <KeyboardDoubleArrowRightIcon
+                                style={{
+                                  color: '#191919'
+                                }}
+                              />
+                            </Button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
 
-              </div>
-            </div>
-            <div
-              style={{
-                marginLeft: '10vw',
-                marginTop: '15vh'
-              }}
-            >
-
-
+              <div
+                style={{
+                  marginLeft: '10vw',
+                  marginTop: '15vh'
+                }}
+              >
 
               {images && viewState === 'squares' &&
                   <ImageList
@@ -617,7 +673,7 @@ export default function LocationGallery({ onClose, name, images }) {
               style={{
                 display: 'flex', 
                 justifyContent: 'flex-end', 
-                marginRight: '10vw'
+                marginRight: '8.9vw'
               }}>
                 <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
                   <KeyboardDoubleArrowLeftIcon
