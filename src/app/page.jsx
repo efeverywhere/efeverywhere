@@ -365,7 +365,7 @@ useEffect(() => {
                 height: '30px',
                 cursor: 'pointer',
              }}
-             src='./EF_pin_final.png'
+             src='./Pin_pink.png'
              alt='map_pin'
             />
             
