@@ -250,11 +250,14 @@ export default function LocationGallery({ onClose, name, images }) {
                   }}
                   >
                     {!isImageLoaded && 
-                      <CircularProgress 
-                      style = {{
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
                         position: 'absolute',
-                      }}
-                      />
+                      }} 
+                    />
                     }
                   <img 
                     src={selectedImage} 
@@ -744,11 +747,6 @@ export default function LocationGallery({ onClose, name, images }) {
                     }}
                     >
                     {!isImageLoaded && 
-                      // <CircularProgress 
-                      // style = {{
-                      //   position: 'absolute',
-                      // }}
-                      // />
                       <img 
                       src="LoadingIcon.gif" 
                       alt="Loading..." 
@@ -821,6 +819,16 @@ export default function LocationGallery({ onClose, name, images }) {
                       zIndex: 10000000000,
                     }}
                     >
+                    {!isImageLoaded && 
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                      }} 
+                    />
+                    }
                     <video 
                       src={selectedVideo} 
                       alt="" 
@@ -828,7 +836,7 @@ export default function LocationGallery({ onClose, name, images }) {
                         maxHeight: '80%', 
                         maxWidth: '80%'
                       }} 
-                      onLoad={handleImageLoad}
+                      onCanPlay={handleImageLoad}
                       controls
                       />
                     <button 
@@ -847,9 +855,6 @@ export default function LocationGallery({ onClose, name, images }) {
                         setIsImageLoaded(false)
                       }}
                     >
-                      {/* <Typography>
-                      Close
-                      </Typography> */}
                       
                       <IconClose/>
                     </button>
