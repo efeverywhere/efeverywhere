@@ -66,6 +66,20 @@ export default function MapChart() {
     return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
   }, []);
 
+  useEffect(() => {
+    const onPopState = () => {
+      if (isGalleryOpen) {
+        window.location.reload();
+      }
+    };
+  
+    window.addEventListener('popstate', onPopState);
+  
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+    };
+  }, [isGalleryOpen]);
+
 
   useEffect(() => {
     if (mapRef.current) {
@@ -118,6 +132,10 @@ useEffect(() => {
     setIsGalleryOpen(true);
     setHeaderState('gallery');
     setIsIntroVisible(false);
+
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('gallery', folder_name);
+    window.history.pushState({}, '', currentUrl.toString());
   };
 
   const handleMarkerClose = () => {
@@ -125,6 +143,10 @@ useEffect(() => {
     setCityName(null);
     setIsGalleryOpen(false);
     setHeaderState('default');
+
+    const currentUrl = new URL(window.location.href);
+    currentUrl.search = '';
+    window.history.pushState({}, '', currentUrl.toString());
   }
 
   const zoomIn = () => {
