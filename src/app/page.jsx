@@ -1,6 +1,7 @@
 'use client'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React, {useState, useEffect, useRef, useMemo} from "react"
+import { useSearchParams } from 'next/navigation'
 import { HeaderState } from './components/headerState';
 import { IntroState } from './components/introState';
 import { Typography } from "@mui/material";
@@ -40,6 +41,10 @@ export default function MapChart() {
   const [cityName, setCityName] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [zoomState, setZoomState] = useState(4);
+  const searchParams = useSearchParams();
+  const lon = searchParams.get('lon')
+  const lat = searchParams.get('lat')
+  const zoom = searchParams.get('zoom')
   const mapRef = useRef();
   const colors = ["pink"];
 
@@ -292,10 +297,10 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude: 55.70584,
-        longitude: 13.19321, 
+        latitude:  lat ? lat : 55.70584,
+        longitude: lon ? lon : 13.19321, 
         dragRotate: false,
-        zoom: 4
+        zoom: zoom ? zoom : 4
       }}
       dragRotate = {false}
       touchZoomRotate = {'disableRotation'}
