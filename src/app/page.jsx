@@ -228,11 +228,11 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '45%' : '50%',
-                  left: '50%', 
+                  top: isMobile ? '45%' : '25%',
+                  left: isMobile ? '50%' : '84.25%', 
                   transform: 'translate(-50%, -50%)',
-                  width: '400',
-                  height: '400',
+                  height: isMobile ? '400' : '150',
+                  width: isMobile ? '400' : '50',
                   display: 'flex', 
                   justifyContent: 'center', 
                   alignItems: 'center',
@@ -245,10 +245,10 @@ useEffect(() => {
                     <Card sx={{ 
                         // background: 'transparent',
                         position: 'relative',
-                        width: '400',
-                        height: '400',
-                        paddingTop: '30px',
-                        paddingBottom: '30px',
+                        width: isMobile ? '400' : '130',
+                        height: isMobile ? '400' : '125',
+                        paddingTop: '10px',
+                        paddingBottom: '10px',
                       }}>
                         <CardContent
                         >
@@ -256,40 +256,19 @@ useEffect(() => {
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
                               textTop={countriesData['world']['text']}
                               textRadial={countriesData['world']['occupied']}
-                              textBottom={`out of ${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '170': '350'}
-                              width= {isMobile ? '200' : '350'}
-                              fontSize='30px'
-                              dataLabelSize={isMobile ? 50 : 130}
+                              textBottom={`out of`}
+                              textBottomSecond={`${countriesData['world']['total']} countries`}
+                              height= {isMobile ? '170': '140'}
+                              width= {isMobile ? '200' : '145'}
+                              fontSize= {isMobile ? '30px': '20px'}
+                              dataLabelSize={isMobile ? 50 : 35}
                               borderRadius='40px'
-                              dataLabelOffset={isMobile? 20 : 45}
+                              dataLabelOffset={isMobile? 20 : 12}
                               isMobile={isMobile}
                               lineHeight='1.0'
                             />
 
                         </CardContent>
-
-                        <button 
-                          style={{
-                            position: 'absolute',
-                            top: isMobile ? '0px' : '0px',
-                            right: isMobile ? '40px' : '40px',
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'black',
-                            fontSize: '2em',
-                            width: 0
-                          }}
-                          onClick={() => {
-                            setShowPopup(false)
-                          }}
-                        >
-                          <ClearIcon
-                            style={{
-                              color: '#191919'
-                            }}
-                          />
-                        </button>
                     </Card>
               </div>
             )}
