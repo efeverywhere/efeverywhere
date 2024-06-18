@@ -1,6 +1,6 @@
 'use client'
 import useMediaQuery from '@mui/material/useMediaQuery';
-import React, {useState, useEffect, useRef, Suspense} from "react"
+import React, {useState, useEffect, useRef} from "react"
 import { useSearchParams } from 'next/navigation'
 import { HeaderState } from './components/headerState';
 import { IntroState } from './components/introState';
@@ -160,7 +160,6 @@ useEffect(() => {
   };
 
   return(
-    <Suspense>
     <div>
 
             {isIntroVisible && mapLoaded && (
@@ -411,6 +410,5 @@ useEffect(() => {
         </div>
          )}
     </div>
-    </Suspense>
   )
 }

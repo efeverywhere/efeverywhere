@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { Suspense } from 'react';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { usePathname } from 'next/navigation';
 import { ThemeProvider } from '@mui/material/styles';
@@ -37,7 +37,9 @@ export default function RootLayout({children}){
                         zIndex: 1000,
                       }}
                     />
-                  {children}
+                  <Suspense fallback={<div>Loading...</div>}>
+                    {children}
+                  </Suspense>
                   </IntroState.Provider>
                 </HeaderState.Provider>
             </ThemeProvider>
