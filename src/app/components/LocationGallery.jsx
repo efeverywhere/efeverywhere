@@ -23,7 +23,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 
 
-export default function LocationGallery({ onClose, name, images }) {
+export default function LocationGallery({ onClose, name, images, countryISOCode }) {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
@@ -57,6 +57,10 @@ export default function LocationGallery({ onClose, name, images }) {
       src: `${image}?width=${size * cols}&height=${size * rows}&func=crop`,
     };
   }
+
+  useEffect(() => {
+    console.log(countryISOCode)
+  }, []);
 
   const handleImageLoad = () => {
     setIsImageLoaded(true);
@@ -373,13 +377,10 @@ export default function LocationGallery({ onClose, name, images }) {
 
 
           <div style={{
-        
             backgroundColor: 'white',
             borderRadius: '10px',
             width: '100%',
             height: '100%',
-            // maxHeight: '100%',
-            // overflowY: 'auto',
             position: 'absolute',
             paddingTop: '10vh',
             zIndex: 500,
@@ -409,125 +410,144 @@ export default function LocationGallery({ onClose, name, images }) {
                     marginLeft: '10vw',
                     position: 'fixed',
                     zIndex: 502,
-                    background: 'white'
+                    background: 'white',
                     }}
                   >
-                    <Typography 
-                      variant="h1"
+                    <div
                       style={{
-                        fontSize: '64px'
+                        display: 'flex',
+                        flexDirection: 'horizontal',
+                        alignItems: 'center',
                       }}
                     >
-                      {name}
-                    </Typography>
-                      <div
+                      <FlagLoader 
+                      style={{
+                        marginRight: '10px',
+                        marginTop: '18px'
+                      }}
+                        width='25px'
+                        height='25px'
+                        countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'} 
+                        ratio={'rounded'} 
+                      />
+                      <Typography 
+                        variant="h1"
                         style={{
-                          display: 'flex',
-                          justifyContent: 'space-between'
+                          fontSize: '64px'
                         }}
                       >
+                        {name}
+                      </Typography>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'horizontal',
+                        alignItems: 'center',
+                      }}
+                    >
                         <div
                           style={{
-                            justifyContent: 'space-between'
+                            justifyContent: 'space-between',
+                            alignItems: 'baseline',
                           }}
                         >
-                        <Button    
-                          onClick={() => setViewState('quilted')}
-                          sx={{
-                            '&:hover': {
-                              backgroundColor: 'transparent', // Removes hover effect
-                            },
-                            '&:focus': {
-                              outline: 'none',
-                            }
-                          }}
-                          disableRipple  
-                          disableFocusRipple
-                        >
-                          <span 
-                            style={{ 
-                              borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
-                              // paddingBottom: '2px'
-                            }}
-                          >
-                            <SquareRoundedIcon
-                            sx={{
-                              color: '#191919'
-                            }}
-                            />
-                          </span>
-                          </Button>
-                          <Button 
-                            onClick={() => setViewState('squares')}
+                          <Button    
+                            onClick={() => setViewState('quilted')}
                             sx={{
                               '&:hover': {
                                 backgroundColor: 'transparent', // Removes hover effect
                               },
                               '&:focus': {
                                 outline: 'none',
-                              },
+                              }
                             }}
-                            disableRipple
+                            disableRipple  
                             disableFocusRipple
-                          > 
-                          <span 
-                            style={{ 
-                              borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
-                              // paddingBottom: '2px'
-                            }}
                           >
-                            <GridViewRoundedIcon
+                            <span 
+                              style={{ 
+                                borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
+                                // paddingBottom: '2px'
+                              }}
+                            >
+                              <SquareRoundedIcon
                               sx={{
                                 color: '#191919'
                               }}
-                              style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
-                            />
+                              />
                             </span>
-                          </Button>
-                        </div>
-
-                        <div
-                          style={{
-                            display: 'flex', 
-                            justifyContent: 'flex-end', 
-                          }}>
-                            <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
-                              <KeyboardDoubleArrowLeftIcon
-                                style={{
-                                  color: '#191919'
-                                }}
-                              />
                             </Button>
-                            <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
-                              <ArrowBackIosIcon
-                                style={{
-                                  color: '#191919'
-                                }}
-                              />
-                            </Button>
-                            <Typography
-                              style={{
-                                fontFamily: 'EFCircularBook',
-                                margin: '1vw'
+                            <Button 
+                              onClick={() => setViewState('squares')}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
                               }}
+                              disableRipple
+                              disableFocusRipple
                             > 
-                              {currentPage}/{Math.ceil(images.length / imagesPerPage)}
-                            </Typography>
-                            <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
-                              <ArrowForwardIosIcon
-                                style={{
+                            <span 
+                              style={{ 
+                                borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
+                              }}
+                            >
+                              <GridViewRoundedIcon
+                                sx={{
                                   color: '#191919'
                                 }}
+                                style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
                               />
+                              </span>
                             </Button>
-                            <Button onClick={() => setCurrentPage(Math.ceil(images.length / imagesPerPage))} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
-                              <KeyboardDoubleArrowRightIcon
+                          </div>
+
+                          <div
+                            style={{
+                              display: 'flex', 
+                              justifyContent: 'flex-end', 
+                            }}>
+                              <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+                                <KeyboardDoubleArrowLeftIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                                <ArrowBackIosIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Typography
                                 style={{
-                                  color: '#191919'
+                                  fontFamily: 'EFCircularBook',
+                                  margin: '1vw'
                                 }}
-                              />
-                            </Button>
-                        </div>
+                              > 
+                                {currentPage}/{Math.ceil(images.length / imagesPerPage)}
+                              </Typography>
+                              <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                                <ArrowForwardIosIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Button onClick={() => setCurrentPage(Math.ceil(images.length / imagesPerPage))} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                                <KeyboardDoubleArrowRightIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                          </div>
                       </div>
                     </div>
                   </div>
