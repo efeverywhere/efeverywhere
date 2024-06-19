@@ -405,9 +405,9 @@ export default function Header(pathname, children) {
                         >
                             <Image
                                 style={{
-                                    minHeight:'200px',
+                                    minHeight: '50px',
                                     minWidth: '200px',
-                                    height:'200px',
+                                    height:'50px',
                                     width: '200px',
                                     marginLeft: '5px'
                                 }}
