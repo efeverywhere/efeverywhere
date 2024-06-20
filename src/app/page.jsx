@@ -253,11 +253,11 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '45%' : '25%',
-                  left: isMobile ? '50%' : '84.25%', 
+                  top: isMobile ? '20%' : '25%',
+                  left: isMobile ? '80%' : '84.25%', 
                   transform: 'translate(-50%, -50%)',
-                  height: isMobile ? '400' : '150',
-                  width: isMobile ? '400' : '50',
+                  height: isMobile ? '10' : '150',
+                  width: isMobile ? '10' : '50',
                   display: 'flex', 
                   justifyContent: 'center', 
                   alignItems: 'center',
@@ -267,15 +267,22 @@ useEffect(() => {
                   onTouchMove={(e) => e.preventDefault()}
                   overflow='hidden'
                 >
-                    <Card sx={{ 
-                        // background: 'transparent',
+                    <Card 
+                    sx={{ 
                         position: 'relative',
-                        width: isMobile ? '400' : '130',
-                        height: isMobile ? '400' : '125',
-                        paddingTop: '10px',
-                        paddingBottom: '10px',
+                        width: isMobile ? '40' : '130',
+                        height: isMobile ? '100' : '125',
+                        paddingTop: isMobile ? '0px' : '10px',
+                        paddingBottom: isMobile ? '0px' : '10px',
+                        
                       }}>
                         <CardContent
+                          sx={{
+                            paddingBottom: isMobile ? '10px !important' : '10px',
+                            paddingLeft: isMobile ? '5px !important' : '10px',
+                            paddingRight: isMobile ? '5px !important' : '10px',
+                            paddingTop: isMobile ? '10px' : '10px',
+                          }}
                         >
                             <RadialProgressBar 
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
@@ -283,14 +290,16 @@ useEffect(() => {
                               textRadial={countriesData['world']['occupied']}
                               textBottom={`out of`}
                               textBottomSecond={`${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '170': '140'}
-                              width= {isMobile ? '200' : '145'}
-                              fontSize= {isMobile ? '30px': '20px'}
-                              dataLabelSize={isMobile ? 50 : 35}
+                              height= {isMobile ? '150': '140'}
+                              width= {isMobile ? '100' : '145'}
+                              fontSize= {isMobile ? '10px': '20px'}
+                              dataLabelSize={isMobile ? 15 : 35}
                               borderRadius='40px'
-                              dataLabelOffset={isMobile? 20 : 12}
+                              dataLabelOffset={isMobile? 6 : 12}
                               isMobile={isMobile}
                               lineHeight='1.0'
+                              hollowSize= {isMobile ? '40%': '65%'}
+                              marginTop= {isMobile ? '0vh': '35vh'}
                             />
 
                         </CardContent>
