@@ -52,6 +52,9 @@ function PageContent(){
           >
             {countriesData && //Wait for the countriesData to load
             <div
+              style={{
+                cursor: 'pointer'
+              }}
               onClick={() => {
                 console.log('LJDSLFJKDSL')
                 window.location.href = `/?lon=0&lat=40&zoom=1&scope=world`
@@ -194,6 +197,9 @@ function PageContent(){
           >
             {countriesData && (
             <div
+              style={{
+                cursor: 'pointer'
+              }}
               onClick={() => {
                 window.location.href = `/?lon=24.5085&lat=2.7832&zoom=2.7&scope=africa`
               }}
@@ -210,6 +216,9 @@ function PageContent(){
             )}
             {countriesData && (
             <div
+              style={{
+                cursor: 'pointer'
+              }}
               onClick={() => {
                 window.location.href = `/?lon=-80.1667&lat=15.1667&zoom=3&scope=americas`
               }}
@@ -225,6 +234,9 @@ function PageContent(){
             )}
             {countriesData && (
             <div
+              style={{
+                cursor: 'pointer'
+              }}
               onClick={() => {
                 window.location.href = `/?lon=140&lat=20&zoom=2.5&scope=asia_pacific`
               }}
@@ -240,9 +252,12 @@ function PageContent(){
             )}
             {countriesData && (
             <div
-            onClick={() => {
-              window.location.href = `?lon=20&lat=53&zoom=3.5&scope=europe`
-                }}
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                window.location.href = `?lon=20&lat=53&zoom=3.5&scope=europe`
+                  }}
               >
               <RadialProgressBar 
                 percentage={countriesData['europe']['occupied']/countriesData['europe']['total']*100} 
