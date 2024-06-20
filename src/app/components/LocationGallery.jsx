@@ -808,7 +808,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     >
                     <IconClose
                       style={{
-                        color: '#191919'
+                        color: '#EFEFEF'
                       }}
                     />
                     </button>
@@ -882,7 +882,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   </div>
                 </Modal>
               )}
-              <Button
+              {/* <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -917,7 +917,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   >
                   Map
                   </Typography>
-              </Button>
+              </Button> */}
             </div>
           )
         }
