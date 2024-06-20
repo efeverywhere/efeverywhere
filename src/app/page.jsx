@@ -253,7 +253,7 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '20%' : '25%',
+                  top: isMobile ? '25%' : '25%',
                   left: isMobile ? '80%' : '84.25%', 
                   transform: 'translate(-50%, -50%)',
                   height: isMobile ? '10' : '150',
@@ -270,7 +270,6 @@ useEffect(() => {
                     <Card 
                     sx={{ 
                         position: 'relative',
-                        width: isMobile ? '40' : '130',
                         height: isMobile ? '100' : '125',
                         paddingTop: isMobile ? '0px' : '10px',
                         paddingBottom: isMobile ? '0px' : '10px',
@@ -278,10 +277,12 @@ useEffect(() => {
                       }}>
                         <CardContent
                           sx={{
-                            paddingBottom: isMobile ? '10px !important' : '10px',
-                            paddingLeft: isMobile ? '5px !important' : '10px',
-                            paddingRight: isMobile ? '5px !important' : '10px',
+                            paddingBottom: isMobile ? '5px !important' : '10px',
+                            paddingLeft: isMobile ? '10px !important' : '10px',
+                            paddingRight: isMobile ? '10px !important' : '10px',
                             paddingTop: isMobile ? '10px' : '10px',
+                            width: isMobile ? '120px !important' : '130',
+                            minWidth: isMobile ? '40px !important' : '150',
                           }}
                         >
                             <RadialProgressBar 
@@ -290,16 +291,18 @@ useEffect(() => {
                               textRadial={countriesData['world']['occupied']}
                               textBottom={`out of`}
                               textBottomSecond={`${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '150': '140'}
-                              width= {isMobile ? '100' : '145'}
-                              fontSize= {isMobile ? '10px': '20px'}
-                              dataLabelSize={isMobile ? 15 : 35}
+                              height= {isMobile ? '200': '140'}
+                              width= {isMobile ? '150' : '145'}
+                              fontSize= {isMobile ? '12px': '20px'}
+                              dataLabelSize={isMobile ? 30 : 35}
                               borderRadius='40px'
-                              dataLabelOffset={isMobile? 6 : 12}
+                              dataLabelOffset={isMobile? 11 : 12}
                               isMobile={isMobile}
                               lineHeight='1.0'
-                              hollowSize= {isMobile ? '40%': '65%'}
+                              hollowSize= {isMobile ? '50%': '65%'}
                               marginTop= {isMobile ? '0vh': '35vh'}
+                              translateX= '-25px'
+                              translateY= '-0px'
                             />
 
                         </CardContent>

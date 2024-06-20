@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false }) => {
+const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false, translateX='0px', translateY='0px' }) => {
   
   const options = {
     plotOptions: {
@@ -67,6 +67,9 @@ const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, tex
             { textTopSecond }
         </Typography>
         <ApexChart
+          style={{
+            transform: `translate(${translateX}, ${translateY})`,
+          }}
             options={options}
             series={[percentage]}
             type="radialBar"
