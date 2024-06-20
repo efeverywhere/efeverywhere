@@ -93,7 +93,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
               <div
                 style={{
                   display: 'flex',
-                  justifyContent: 'space-between',
+                  // justifyContent: 'space-between',
                   alignItems: 'baseline',
                   width: '100%',
                   position: 'fixed',
@@ -102,6 +102,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   paddingBottom: '3vh',
                   }}
                 >
+                      <FlagLoader 
+                      style={{
+                        marginRight: '10px',
+                        marginTop: '18px',
+                        marginLeft: '-22px'
+                      }}
+                        width='10px'
+                        height='10px'
+                        countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'} 
+                        ratio={'rounded'} 
+                      />
                   <Typography 
                     variant="h1"
                     style={{
