@@ -272,8 +272,8 @@ useEffect(() => {
                     sx={{ 
                         position: 'relative',
                         height: isMobile ? '100' : '125',
-                        paddingTop: isMobile ? '0px' : '10px',
-                        paddingBottom: isMobile ? '0px' : '0px !important',
+                        paddingTop: isMobile ? '10px' : '10px',
+                        paddingBottom: isMobile ? '10px' : '0px !important',
                       }}>
                         <CardContent
                           sx={{
@@ -281,10 +281,10 @@ useEffect(() => {
                             paddingLeft: isMobile ? '10px !important' : '10px',
                             paddingRight: isMobile ? '10px !important' : '10px',
                             paddingTop: isMobile ? '10px' : '0px',
-                            width: isMobile ? '120px !important' : '130',
+                            width: isMobile ? '150px !important' : '130',
                             minWidth: isMobile ? '40px !important' : '150',
                             "&:last-child": {
-                              paddingBottom: '5px'
+                              paddingBottom: isMobile ? '10px' : '5px'
                             },
                           }}
 
@@ -295,17 +295,17 @@ useEffect(() => {
                               textRadial={countriesData['world']['occupied']}
                               textBottom={`out of`}
                               textBottomSecond={`${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '200': '140'}
-                              width= {isMobile ? '150' : '145'}
-                              fontSize= {isMobile ? '12px': '20px'}
-                              dataLabelSize={isMobile ? 30 : 35}
+                              height= {isMobile ? '140': '140'}
+                              width= {isMobile ? '145' : '145'}
+                              fontSize= {isMobile ? '18px': '20px'}
+                              dataLabelSize={isMobile ? 30 : 30}
                               borderRadius='40px'
-                              dataLabelOffset={isMobile? 11 : 12}
+                              dataLabelOffset={isMobile? 11 : 11.5}
                               isMobile={isMobile}
                               lineHeight='1.0'
-                              hollowSize= {isMobile ? '50%': '65%'}
+                              hollowSize= {isMobile ? '50%': '55%'}
                               marginTop= {isMobile ? '0vh': '35vh'}
-                              translateX= {isMobile ? '-25px' : '0px' }
+                              translateX= {isMobile ? '-8px' : '0px' }
                               translateY= {isMobile ? '0px' : '0px' }
                             />
 
