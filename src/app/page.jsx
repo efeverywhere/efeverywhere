@@ -273,18 +273,21 @@ useEffect(() => {
                         position: 'relative',
                         height: isMobile ? '100' : '125',
                         paddingTop: isMobile ? '0px' : '10px',
-                        paddingBottom: isMobile ? '0px' : '10px',
-                        
+                        paddingBottom: isMobile ? '0px' : '0px !important',
                       }}>
                         <CardContent
                           sx={{
-                            paddingBottom: isMobile ? '5px !important' : '10px',
+                            paddingBottom: isMobile ? '5px !important' : '0px',
                             paddingLeft: isMobile ? '10px !important' : '10px',
                             paddingRight: isMobile ? '10px !important' : '10px',
-                            paddingTop: isMobile ? '10px' : '10px',
+                            paddingTop: isMobile ? '10px' : '0px',
                             width: isMobile ? '120px !important' : '130',
                             minWidth: isMobile ? '40px !important' : '150',
+                            "&:last-child": {
+                              paddingBottom: '5px'
+                            },
                           }}
+
                         >
                             <RadialProgressBar 
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
@@ -400,7 +403,7 @@ useEffect(() => {
               closeButton={false}
               closeOnClick={false}
               anchor="bottom"
-              offset={[0,-40]}
+              offset={[0,-60]}
               tipSize={0}
             >
               <Typography
