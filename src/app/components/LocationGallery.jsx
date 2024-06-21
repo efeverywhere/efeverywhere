@@ -106,7 +106,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{
                         marginRight: '10px',
                         marginTop: '18px',
-                        marginLeft: '-22px'
+                        marginLeft: '-15px'
                       }}
                         width='10px'
                         height='10px'
