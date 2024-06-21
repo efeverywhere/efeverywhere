@@ -381,7 +381,7 @@ useEffect(() => {
             anchor="bottom"
             onClick={() => handleMarkerClick(folder_name, name, country_ISO)}
           >
-            <img
+            {/* <img
              style={{ // width:height proportions should be 5:6
                 width: '25px',
                 height: '30px',
@@ -389,7 +389,7 @@ useEffect(() => {
              }}
              src='./Pin_pink.png'
              alt='map_pin'
-            />
+            /> */}
             
           </Marker>
           {zoomState > 4 && (
