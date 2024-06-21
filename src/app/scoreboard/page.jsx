@@ -109,6 +109,7 @@ function PageContent(){
                         dataLabelSize='45px'
                         hollowSize='55%'
                         dataLabelOffset={15}
+                        scoreLabelColorOnHover='#2FC8F2'
                       />
                      </div>
                   }
@@ -130,6 +131,7 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
                     />
                   </div>
                 }
@@ -160,6 +162,7 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
                     />
                   </div>
                   )}
@@ -181,6 +184,7 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
                     />
                   </div>
                   )}
