@@ -169,7 +169,7 @@ function PageContent(){
                   {countriesData && (
                   <div
                       onClick={() => {
-                        window.location.href = `?lon=20&lat=53&zoom=3.5&scope=europe`
+                        window.location.href = `/?lon=20&lat=53&zoom=3.5&scope=europe`
                       }}
                   >
                     <RadialProgressBar 
@@ -264,7 +264,7 @@ function PageContent(){
                 cursor: 'pointer'
               }}
               onClick={() => {
-                window.location.href = `?lon=20&lat=53&zoom=3.5&scope=europe`
+                window.location.href = `/?lon=20&lat=53&zoom=3.5&scope=europe`
                   }}
               >
               <RadialProgressBar 
