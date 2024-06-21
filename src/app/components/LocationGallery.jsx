@@ -66,9 +66,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     setIsImageLoaded(true);
   };
 
-
-  useEffect(() => {console.log(images)}, [images])
-
   return (
         <div>
         {
@@ -102,17 +99,31 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   paddingBottom: '3vh',
                   }}
                 >
-                      <FlagLoader 
-                      style={{
-                        marginRight: '10px',
-                        marginTop: '18px',
-                        marginLeft: '-15px'
-                      }}
+                    {countryISOCode === "PG" ? (
+                        <img 
+                        style={{
+                          marginRight: '10px',
+                          marginTop: '18px',
+                          marginLeft: '-15px'
+                        }}
+                        src="papua-new-guinea-flag.png" 
+                        alt="Papua New Guinea Flag"
                         width='14px'
-                        height='14px'
-                        countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'} 
-                        ratio={'rounded'} 
-                      />
+                        height='14px'/>
+                    ) : (
+                        <FlagLoader 
+                            style={{
+                                marginRight: '10px',
+                                marginTop: '18px',
+                                marginLeft: '-15px'
+                            }}
+                            width='14px'
+                            height='14px'
+                            countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'}
+                            color='#EFEFEF' 
+                            ratio={'rounded'} 
+                        />
+                    )}
                   <Typography 
                     variant="h1"
                     style={{
@@ -431,16 +442,29 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         alignItems: 'center',
                       }}
                     >
-                      <FlagLoader 
-                      style={{
-                        marginRight: '10px',
-                        marginTop: '18px'
-                      }}
-                        width='25px'
-                        height='25px'
-                        countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'} 
-                        ratio={'rounded'} 
-                      />
+                    {countryISOCode === "PG" ? (
+                        <img 
+                          style={{
+                            marginTop: '21px'
+                          }}
+                          src="papua-new-guinea-flag.png" 
+                          alt="Papua New Guinea Flag"
+                          width='14px'
+                          height='14px'/>
+                    ) : (
+                        <FlagLoader 
+                            style={{
+                                marginRight: '10px',
+                                marginTop: '18px',
+                                marginLeft: '-15px'
+                            }}
+                            width='14px'
+                            height='14px'
+                            countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'}
+                            color='#EFEFEF' 
+                            ratio={'rounded'} 
+                        />
+                    )}
                       <Typography 
                         variant="h1"
                         style={{
@@ -893,7 +917,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   </div>
                 </Modal>
               )}
-              {/* <Button
+              <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -928,7 +952,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   >
                   Map
                   </Typography>
-              </Button> */}
+              </Button>
             </div>
           )
         }
