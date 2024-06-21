@@ -71,6 +71,7 @@ function PageContent(){
                 dataLabelSize='130px'
                 dataLabelOffset={45}
                 isMobile={isMobile}
+                scoreLabelColorOnHover='#2FC8F2'
               />
             </div>
             }
@@ -211,6 +212,7 @@ function PageContent(){
                 textRadial={countriesData['africa']['occupied']}
                 textBottom={`out of ${countriesData['africa']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
             </div>
             )}
@@ -229,6 +231,7 @@ function PageContent(){
                 textRadial={countriesData['the_americas']['occupied']}
                 textBottom={`out of ${countriesData['the_americas']['total']}`}
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
             </div>
             )}
@@ -247,6 +250,7 @@ function PageContent(){
                 textRadial={countriesData['asia_pacific']['occupied']}
                 textBottom={`out of ${countriesData['asia_pacific']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
             </div>
             )}
@@ -265,6 +269,7 @@ function PageContent(){
                 textRadial={countriesData['europe']['occupied']}
                 textBottom={`out of ${countriesData['europe']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
               </div>
             )}

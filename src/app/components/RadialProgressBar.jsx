@@ -1,12 +1,13 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import dynamic from "next/dynamic";
 import { Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false, translateX='0px', translateY='0px' }) => {
-  
+const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false, translateX='0px', translateY='0px', scoreLabelColorDefault='#000000', scoreLabelColorOnHover="#000000" }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const options = {
     plotOptions: {
       radialBar: {
@@ -21,7 +22,7 @@ const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, tex
           name: {
             offsetY: dataLabelOffset,
             fontSize: dataLabelSize,
-            color: "#000000",
+            color: isHovered ? scoreLabelColorOnHover : scoreLabelColorDefault,
             fontFamily: 'EFCircularMedium',
             fontWeight: 0,
             show: true,
@@ -42,6 +43,8 @@ const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, tex
 
   return (
     <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -49,7 +52,7 @@ const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, tex
             justifyContent: 'center',
             height: '100%',
             width: '100%',
-            marginTop: marginTop
+            marginTop: marginTop,
         }}
     >
         <Typography
