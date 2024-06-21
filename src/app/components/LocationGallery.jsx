@@ -108,8 +108,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         marginTop: '18px',
                         marginLeft: '-15px'
                       }}
-                        width='10px'
-                        height='10px'
+                        width='14px'
+                        height='14px'
                         countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'} 
                         ratio={'rounded'} 
                       />
