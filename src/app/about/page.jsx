@@ -279,7 +279,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                Cool prizes for two winners per category
+                More prize categories to come!
               </Typography>
               {isMobile ? (
               <div >
