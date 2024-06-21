@@ -255,7 +255,7 @@ useEffect(() => {
                   position: 'absolute', 
                   top: isMobile ? '15%' : '15%',
                   // left: isMobile ? '80%' : '79.25%', 
-                  right: isMobile ? '5%' : '10%',
+                  right: isMobile ? '5%' : '10.20%',
                   // transform: 'translate(-50%, -50%)',
                   height: isMobile ? '10' : '150',
                   width: isMobile ? '10' : '50',
