@@ -17,7 +17,6 @@ const countries = './score_countries.json';
 
 function PageContent(){
   const [countriesData, setCountriesData] = useState(null);
-
   const searchParams = useSearchParams()
   const scope = searchParams.get('scope')
   const isMobile = useMediaQuery('(max-width:600px)')
@@ -25,7 +24,13 @@ function PageContent(){
   useEffect(() => {
     fetch(`/score_countries.json`)
       .then(response => response.json())
-      .then(data => setCountriesData(data));
+      .then(data => {
+              data.asia_pacific.missing.sort();
+              data.the_americas.missing.sort();
+              data.africa.missing.sort();
+              data.europe.missing.sort();
+              setCountriesData(data);
+      });
   }, []);
 
     return (
@@ -46,6 +51,15 @@ function PageContent(){
           }}
           >
             {countriesData && //Wait for the countriesData to load
+            <div
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                console.log('LJDSLFJKDSL')
+                window.location.href = `/?lon=0&lat=40&zoom=1&scope=world`
+              }}
+            >
               <RadialProgressBar 
                 percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
                 textTop={countriesData['world']['text']}
@@ -57,13 +71,14 @@ function PageContent(){
                 dataLabelSize='130px'
                 dataLabelOffset={45}
                 isMobile={isMobile}
+                scoreLabelColorOnHover='#2FC8F2'
               />
+            </div>
             }
           </div>
           {isMobile ?(
             <div
               style={{
-                // display: 'flex',
                 justifyContent: 'center',
               }}
             >
@@ -75,37 +90,51 @@ function PageContent(){
                   marginTop: '10vh',
                 }}
               >
-                  {countriesData && (
-                  <RadialProgressBar 
-                    percentage={countriesData['africa']['occupied']/countriesData['africa']['total']*100} 
-                    textTop={`Africa &`}
-                    textTopSecond={`The Middle East`}
-                    textRadial={countriesData['africa']['occupied']}
-                    textBottom={`out of ${countriesData['africa']['total']}`} 
-                    textBottomSecond={`countries`}
-                    width={'180px'}
-                    height={'180px'}
-                    fontSize='18px'
-                    dataLabelSize='45px'
-                    hollowSize='55%'
-                    dataLabelOffset={15}
-                  />
-                )}
-                {countriesData && (
-                  <RadialProgressBar 
-                    percentage={countriesData['the_americas']['occupied']/countriesData['the_americas']['total']*100} 
-                    textTopSecond={countriesData['the_americas']['text']}
-                    textRadial={countriesData['the_americas']['occupied']}
-                    textBottom={`out of ${countriesData['the_americas']['total']}`}
-                    textBottomSecond={`countries`}
-                    width={'180px'}
-                    height={'180px'}
-                    fontSize='18px'
-                    dataLabelSize='45px'
-                    hollowSize='55%'
-                    dataLabelOffset={15}
-                  />
-                )}
+                  {countriesData && 
+                    <div
+                      onClick={() => {
+                        window.location.href = `/?lon=24.5085&lat=2.7832&zoom=2.7&scope=africa`
+                      }}
+                    >
+                      <RadialProgressBar 
+                        percentage={countriesData['africa']['occupied']/countriesData['africa']['total']*100} 
+                        textTop={`Africa &`}
+                        textTopSecond={`The Middle East`}
+                        textRadial={countriesData['africa']['occupied']}
+                        textBottom={`out of ${countriesData['africa']['total']}`} 
+                        textBottomSecond={`countries`}
+                        width={'180px'}
+                        height={'180px'}
+                        fontSize='18px'
+                        dataLabelSize='45px'
+                        hollowSize='55%'
+                        dataLabelOffset={15}
+                        scoreLabelColorOnHover='#2FC8F2'
+                      />
+                     </div>
+                  }
+                {countriesData && 
+                  <div
+                    onClick={() => {
+                      window.location.href = `/?lon=-80.1667&lat=15.1667&zoom=3&scope=americas`
+                    }}
+                  >
+                    <RadialProgressBar 
+                      percentage={countriesData['the_americas']['occupied']/countriesData['the_americas']['total']*100} 
+                      textTopSecond={countriesData['the_americas']['text']}
+                      textRadial={countriesData['the_americas']['occupied']}
+                      textBottom={`out of ${countriesData['the_americas']['total']}`}
+                      textBottomSecond={`countries`}
+                      width={'180px'}
+                      height={'180px'}
+                      fontSize='18px'
+                      dataLabelSize='45px'
+                      hollowSize='55%'
+                      dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
+                    />
+                  </div>
+                }
               </div>
               <div
                 style={{
@@ -116,6 +145,11 @@ function PageContent(){
                 }}
               >
                 {countriesData && (
+                  <div		
+                    onClick={() => {
+                      window.location.href = `/?lon=140&lat=20&zoom=2.5&scope=asia_pacific`
+                    }}
+                  >
                     <RadialProgressBar 
                       percentage={countriesData['asia_pacific']['occupied']/countriesData['asia_pacific']['total']*100} 
                       textTopSecond={countriesData['asia_pacific']['text']}
@@ -128,9 +162,16 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
                     />
+                  </div>
                   )}
                   {countriesData && (
+                  <div
+                      onClick={() => {
+                        window.location.href = `/?lon=20&lat=53&zoom=3.5&scope=europe`
+                      }}
+                  >
                     <RadialProgressBar 
                       percentage={countriesData['europe']['occupied']/countriesData['europe']['total']*100} 
                       textTopSecond={countriesData['europe']['text']}
@@ -143,7 +184,9 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
+                      scoreLabelColorOnHover='#2FC8F2'
                     />
+                  </div>
                   )}
               </div>
             </div>
@@ -158,6 +201,14 @@ function PageContent(){
             }}
           >
             {countriesData && (
+            <div
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                window.location.href = `/?lon=24.5085&lat=2.7832&zoom=2.7&scope=africa`
+              }}
+            >
               <RadialProgressBar 
                 percentage={countriesData['africa']['occupied']/countriesData['africa']['total']*100} 
                 textTop={`Africa &`}
@@ -165,34 +216,66 @@ function PageContent(){
                 textRadial={countriesData['africa']['occupied']}
                 textBottom={`out of ${countriesData['africa']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
+            </div>
             )}
             {countriesData && (
+            <div
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                window.location.href = `/?lon=-80.1667&lat=15.1667&zoom=3&scope=americas`
+              }}
+            >
               <RadialProgressBar 
                 percentage={countriesData['the_americas']['occupied']/countriesData['the_americas']['total']*100} 
                 textTopSecond={countriesData['the_americas']['text']}
                 textRadial={countriesData['the_americas']['occupied']}
                 textBottom={`out of ${countriesData['the_americas']['total']}`}
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
+            </div>
             )}
             {countriesData && (
+            <div
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                window.location.href = `/?lon=140&lat=20&zoom=2.5&scope=asia_pacific`
+              }}
+            >
               <RadialProgressBar 
                 percentage={countriesData['asia_pacific']['occupied']/countriesData['asia_pacific']['total']*100} 
                 textTopSecond={countriesData['asia_pacific']['text']}
                 textRadial={countriesData['asia_pacific']['occupied']}
                 textBottom={`out of ${countriesData['asia_pacific']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
+            </div>
             )}
             {countriesData && (
+            <div
+              style={{
+                cursor: 'pointer'
+              }}
+              onClick={() => {
+                window.location.href = `/?lon=20&lat=53&zoom=3.5&scope=europe`
+                  }}
+              >
               <RadialProgressBar 
                 percentage={countriesData['europe']['occupied']/countriesData['europe']['total']*100} 
                 textTopSecond={countriesData['europe']['text']}
                 textRadial={countriesData['europe']['occupied']}
                 textBottom={`out of ${countriesData['europe']['total']}`} 
                 textBottomSecond={`countries`}
+                scoreLabelColorOnHover='#2FC8F2'
               />
+              </div>
             )}
           </div>
           )}

@@ -18,11 +18,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
 import {IconClose} from '@ef-global/backpack-icons'
+import {FlagLoader} from '@ef-global/backpack-flags/FlagLoader';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
 
-export default function LocationGallery({ onClose, name, images }) {
+export default function LocationGallery({ onClose, name, images, countryISOCode }) {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
@@ -57,12 +58,13 @@ export default function LocationGallery({ onClose, name, images }) {
     };
   }
 
+  useEffect(() => {
+    console.log(countryISOCode)
+  }, []);
+
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
-
-
-  useEffect(() => {console.log(images)}, [images])
 
   return (
         <div>
@@ -88,7 +90,7 @@ export default function LocationGallery({ onClose, name, images }) {
               <div
                 style={{
                   display: 'flex',
-                  justifyContent: 'space-between',
+                  // justifyContent: 'space-between',
                   alignItems: 'baseline',
                   width: '100%',
                   position: 'fixed',
@@ -97,6 +99,31 @@ export default function LocationGallery({ onClose, name, images }) {
                   paddingBottom: '3vh',
                   }}
                 >
+                    {countryISOCode === "PG" ? (
+                        <img 
+                        style={{
+                          marginRight: '10px',
+                          marginTop: '18px',
+                          marginLeft: '-15px'
+                        }}
+                        src="papua-new-guinea-flag.png" 
+                        alt="Papua New Guinea Flag"
+                        width='14px'
+                        height='14px'/>
+                    ) : (
+                        <FlagLoader 
+                            style={{
+                                marginRight: '10px',
+                                marginTop: '18px',
+                                marginLeft: '-15px'
+                            }}
+                            width='14px'
+                            height='14px'
+                            countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'}
+                            color='#EFEFEF' 
+                            ratio={'rounded'} 
+                        />
+                    )}
                   <Typography 
                     variant="h1"
                     style={{
@@ -250,11 +277,14 @@ export default function LocationGallery({ onClose, name, images }) {
                   }}
                   >
                     {!isImageLoaded && 
-                      <CircularProgress 
-                      style = {{
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
                         position: 'absolute',
-                      }}
-                      />
+                      }} 
+                    />
                     }
                   <img 
                     src={selectedImage} 
@@ -369,13 +399,10 @@ export default function LocationGallery({ onClose, name, images }) {
 
 
           <div style={{
-        
             backgroundColor: 'white',
             borderRadius: '10px',
             width: '100%',
             height: '100%',
-            // maxHeight: '100%',
-            // overflowY: 'auto',
             position: 'absolute',
             paddingTop: '10vh',
             zIndex: 500,
@@ -388,97 +415,185 @@ export default function LocationGallery({ onClose, name, images }) {
               background: 'white',
               top: 0,
               zIndex: 1000,
-
-            }}
+              }}
             >
               <div
                 style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'baseline',
-                  width: '81%',
-                  paddingTop: '15vh',
-                  marginLeft: '10vw',
-                  position: 'fixed',
-                  zIndex: 502,
-                  background: 'white'
-                  }}
-                >
-                  <Typography 
-                    variant="h1"
-                    style={{
-                      fontSize: '64px'
+                  display:'flex'
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'baseline',
+                    width: '81%',
+                    paddingTop: '10vh',
+                    marginLeft: '10vw',
+                    position: 'fixed',
+                    zIndex: 502,
+                    background: 'white',
                     }}
                   >
-                    {name}
-                  </Typography>
-                  <div>
-                  <Button    
-                    onClick={() => setViewState('quilted')}
-                    sx={{
-                      '&:hover': {
-                        backgroundColor: 'transparent', // Removes hover effect
-                      },
-                      '&:focus': {
-                        outline: 'none',
-                      }
-                    }}
-                    disableRipple  
-                    disableFocusRipple
-                  >
-                    <span 
-                      style={{ 
-                        borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
-                        // paddingBottom: '2px'
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'horizontal',
+                        alignItems: 'center',
                       }}
                     >
-                      <SquareRoundedIcon
-                      sx={{
-                        color: '#191919'
-                      }}
-                      />
-                    </span>
-                    </Button>
-                    <Button 
-                      onClick={() => setViewState('squares')}
-                      sx={{
-                        '&:hover': {
-                          backgroundColor: 'transparent', // Removes hover effect
-                        },
-                        '&:focus': {
-                          outline: 'none',
-                        },
-                      }}
-                      disableRipple
-                      disableFocusRipple
-                    > 
-                    <span 
-                      style={{ 
-                        borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
-                        // paddingBottom: '2px'
-                      }}
-                    >
-                      <GridViewRoundedIcon
-                        sx={{
-                          color: '#191919'
+                    {countryISOCode === "PG" ? (
+                        <img 
+                          style={{
+                            marginTop: '21px'
+                          }}
+                          src="papua-new-guinea-flag.png" 
+                          alt="Papua New Guinea Flag"
+                          width='20px'
+                          height='20px'/>
+                    ) : (
+                        <FlagLoader 
+                            style={{
+                                marginRight: '10px',
+                                marginTop: '18px',
+                                marginLeft: '-15px'
+                            }}
+                            width='20px'
+                            height='20px'
+                            countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'}
+                            color='#EFEFEF' 
+                            ratio={'rounded'} 
+                        />
+                    )}
+                      <Typography 
+                        variant="h1"
+                        style={{
+                          fontSize: '64px'
                         }}
-                        style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
-                      />
-                      </span>
-                    </Button>
+                      >
+                        {name}
+                      </Typography>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'horizontal',
+                        alignItems: 'center',
+                      }}
+                    >
+                        <div
+                          style={{
+                            justifyContent: 'space-between',
+                            alignItems: 'baseline',
+                          }}
+                        >
+                          <Button    
+                            onClick={() => setViewState('quilted')}
+                            sx={{
+                              '&:hover': {
+                                backgroundColor: 'transparent', // Removes hover effect
+                              },
+                              '&:focus': {
+                                outline: 'none',
+                              }
+                            }}
+                            disableRipple  
+                            disableFocusRipple
+                          >
+                            <span 
+                              style={{ 
+                                borderBottom: viewState === 'quilted' ? '2px solid black' : 'none',
+                                // paddingBottom: '2px'
+                              }}
+                            >
+                              <SquareRoundedIcon
+                              sx={{
+                                color: '#191919'
+                              }}
+                              />
+                            </span>
+                            </Button>
+                            <Button 
+                              onClick={() => setViewState('squares')}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
+                              }}
+                              disableRipple
+                              disableFocusRipple
+                            > 
+                            <span 
+                              style={{ 
+                                borderBottom: viewState === 'squares' ? '2px solid black' : 'none',
+                              }}
+                            >
+                              <GridViewRoundedIcon
+                                sx={{
+                                  color: '#191919'
+                                }}
+                                style={{ textDecoration: viewState === 'squares' ? 'underline' : 'none' }} 
+                              />
+                              </span>
+                            </Button>
+                          </div>
 
+                          <div
+                            style={{
+                              display: 'flex', 
+                              justifyContent: 'flex-end', 
+                            }}>
+                              <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+                                <KeyboardDoubleArrowLeftIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>
+                                <ArrowBackIosIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Typography
+                                style={{
+                                  fontFamily: 'EFCircularBook',
+                                  margin: '1vw'
+                                }}
+                              > 
+                                {currentPage}/{Math.ceil(images.length / imagesPerPage)}
+                              </Typography>
+                              <Button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                                <ArrowForwardIosIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                              <Button onClick={() => setCurrentPage(Math.ceil(images.length / imagesPerPage))} disabled={currentPage === Math.ceil(images.length / imagesPerPage)}>
+                                <KeyboardDoubleArrowRightIcon
+                                  style={{
+                                    color: '#191919'
+                                  }}
+                                />
+                              </Button>
+                          </div>
+                      </div>
+                    </div>
                   </div>
+                </div>
 
-              </div>
-            </div>
-            <div
-              style={{
-                marginLeft: '10vw',
-                marginTop: '15vh'
-              }}
-            >
-
-
+              <div
+                style={{
+                  marginLeft: '10vw',
+                  marginTop: '15vh'
+                }}
+              >
 
               {images && viewState === 'squares' &&
                   <ImageList
@@ -617,7 +732,7 @@ export default function LocationGallery({ onClose, name, images }) {
               style={{
                 display: 'flex', 
                 justifyContent: 'flex-end', 
-                marginRight: '10vw'
+                marginRight: '8.9vw'
               }}>
                 <Button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
                   <KeyboardDoubleArrowLeftIcon
@@ -688,11 +803,14 @@ export default function LocationGallery({ onClose, name, images }) {
                     }}
                     >
                     {!isImageLoaded && 
-                      <CircularProgress 
-                      style = {{
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
                         position: 'absolute',
-                      }}
-                      />
+                      }} 
+                    />
                     }
                     <img 
                       src={selectedImage} 
@@ -725,7 +843,7 @@ export default function LocationGallery({ onClose, name, images }) {
                     >
                     <IconClose
                       style={{
-                        color: '#191919'
+                        color: '#EFEFEF'
                       }}
                     />
                     </button>
@@ -757,6 +875,16 @@ export default function LocationGallery({ onClose, name, images }) {
                       zIndex: 10000000000,
                     }}
                     >
+                    {!isImageLoaded && 
+                      <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                      }} 
+                    />
+                    }
                     <video 
                       src={selectedVideo} 
                       alt="" 
@@ -764,7 +892,7 @@ export default function LocationGallery({ onClose, name, images }) {
                         maxHeight: '80%', 
                         maxWidth: '80%'
                       }} 
-                      onLoad={handleImageLoad}
+                      onCanPlay={handleImageLoad}
                       controls
                       />
                     <button 
@@ -783,16 +911,13 @@ export default function LocationGallery({ onClose, name, images }) {
                         setIsImageLoaded(false)
                       }}
                     >
-                      {/* <Typography>
-                      Close
-                      </Typography> */}
                       
                       <IconClose/>
                     </button>
                   </div>
                 </Modal>
               )}
-              <Button
+              {/* <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -827,7 +952,7 @@ export default function LocationGallery({ onClose, name, images }) {
                   >
                   Map
                   </Typography>
-              </Button>
+              </Button> */}
             </div>
           )
         }

@@ -21,7 +21,7 @@ import ThankYou from '../components/ThankYou';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
-const logo = '/EF_logo.svg'
+const logo = '/EF_Everywhere.svg'
 const alt_logo = '/EF_logo_white.svg'
 
 export default function Header(pathname, children) {
@@ -132,7 +132,7 @@ export default function Header(pathname, children) {
                         position: 'absolute',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        top: 0,
+                        top: 4,
                         zIndex: 1000
                     }}>
                         <Link 
@@ -146,8 +146,8 @@ export default function Header(pathname, children) {
                         }}
                         >
                             <Image 
-                            height={70}
-                            width={70}
+                            height={'70px'}
+                            width={'70px'}
                             src={logo}
                             alt="Education First Logo"
                             />
@@ -234,7 +234,7 @@ export default function Header(pathname, children) {
                                 fontFamily: pathname.currentPage === '/' ? 'EFCircularBold' : 'EFCircularBook'
                             }}
                             >
-                            EF Everywhere
+                            Map
                             </Typography>
                         </Link>
 
@@ -387,22 +387,30 @@ export default function Header(pathname, children) {
                     <Box
                         style={{
                             position: 'relative',
-                            width: '4vw',
-                            height: '3vw',
+                            width: '200px',
+                            height: '30px',
+                            top: '23.5px'
                         }}
                         >
                         <Link 
-                        onClick={() => {window.location.href = "/"}}
-                        href="/" 
-                        style={{
-                            textDecoration: 'none',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            height: '10vh',
-                            alignItems: 'center',
-                        }}
+                            onClick={() => {window.location.href = "/"}}
+                            href="/" 
+                            style={{
+                                textDecoration: 'none',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                height: '100%',
+                                alignItems: 'center',
+                            }}
                         >
-                            <Image 
+                            <Image
+                                style={{
+                                    minHeight: '50px',
+                                    minWidth: '200px',
+                                    height:'50px',
+                                    width: '200px',
+                                    marginLeft: '5px'
+                                }}
                                 src={logo}
                                 alt="Education First Logo"
                                 />
@@ -415,7 +423,7 @@ export default function Header(pathname, children) {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: '5vh'
+                            marginTop: '40px'
                         }}
                         >
                             <Link 
@@ -431,7 +439,7 @@ export default function Header(pathname, children) {
                                         fontFamily: pathname.currentPage == '/' ? 'EFCircularBold' : 'EFCircularBook'
                                     }}
                                 >
-                                EF Everywhere
+                                Map
                                 </Typography>
                             </Link>
                             

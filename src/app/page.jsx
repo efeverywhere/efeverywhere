@@ -1,6 +1,7 @@
 'use client'
 import useMediaQuery from '@mui/material/useMediaQuery';
-import React, {useState, useEffect, useRef, useMemo} from "react"
+import React, {useState, useEffect, useRef} from "react"
+import { useSearchParams } from 'next/navigation'
 import { HeaderState } from './components/headerState';
 import { IntroState } from './components/introState';
 import { Typography } from "@mui/material";
@@ -40,6 +41,11 @@ export default function MapChart() {
   const [cityName, setCityName] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [zoomState, setZoomState] = useState(4);
+  const [countryISOCode, setCountryISOCode] = useState(null);
+  const searchParams = useSearchParams();
+  const lon = searchParams.get('lon')
+  const lat = searchParams.get('lat')
+  const zoom = searchParams.get('zoom')
   const mapRef = useRef();
   const colors = ["pink"];
 
@@ -60,6 +66,20 @@ export default function MapChart() {
   
     return () => clearTimeout(timer); // Clean up the timer when the component is unmounted
   }, []);
+
+  useEffect(() => {
+    const onPopState = () => {
+      if (isGalleryOpen) {
+        window.location.reload();
+      }
+    };
+  
+    window.addEventListener('popstate', onPopState);
+  
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+    };
+  }, [isGalleryOpen]);
 
 
   useEffect(() => {
@@ -106,13 +126,18 @@ useEffect(() => {
     .then(data => setCountriesData(data));
 }, []);
 
-  const handleMarkerClick = (folder_name, name) => {
+  const handleMarkerClick = (folder_name, name, country_ISO) => {
     // const handleMarkerClick = () => {
     setSelectedMarker(folder_name);
     setCityName(name);
     setIsGalleryOpen(true);
     setHeaderState('gallery');
     setIsIntroVisible(false);
+    setCountryISOCode(country_ISO)
+
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('gallery', folder_name);
+    window.history.pushState({}, '', currentUrl.toString());
   };
 
   const handleMarkerClose = () => {
@@ -120,6 +145,11 @@ useEffect(() => {
     setCityName(null);
     setIsGalleryOpen(false);
     setHeaderState('default');
+    setCountryISOCode(null)
+
+    const currentUrl = new URL(window.location.href);
+    currentUrl.search = '';
+    window.history.pushState({}, '', currentUrl.toString());
   }
 
   const zoomIn = () => {
@@ -223,11 +253,12 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '45%' : '50%',
-                  left: '50%', 
-                  transform: 'translate(-50%, -50%)',
-                  width: '400',
-                  height: '400',
+                  top: isMobile ? '7.5%' : '15%',
+                  // left: isMobile ? '80%' : '79.25%', 
+                  right: isMobile ? '0%' : '10.20%',
+                  // transform: 'translate(-50%, -50%)',
+                  height: isMobile ? '10' : '150',
+                  width: isMobile ? '10' : '50',
                   display: 'flex', 
                   justifyContent: 'center', 
                   alignItems: 'center',
@@ -237,54 +268,49 @@ useEffect(() => {
                   onTouchMove={(e) => e.preventDefault()}
                   overflow='hidden'
                 >
-                    <Card sx={{ 
-                        // background: 'transparent',
+                    <Card 
+                    sx={{ 
                         position: 'relative',
-                        width: '400',
-                        height: '400',
-                        paddingTop: '30px',
-                        paddingBottom: '30px',
+                        height: isMobile ? '100' : '125',
+                        paddingTop: isMobile ? '10px' : '20px',
+                        paddingBottom: isMobile ? '10px' : '15px !important',
+                        transform: isMobile ? 'scale(0.80)' : '',
                       }}>
                         <CardContent
+                          sx={{
+                            paddingBottom: isMobile ? '5px !important' : '0px',
+                            paddingLeft: isMobile ? '10px !important' : '10px',
+                            paddingRight: isMobile ? '10px !important' : '10px',
+                            paddingTop: isMobile ? '10px' : '0px',
+                            width: isMobile ? '150px !important' : '130',
+                            minWidth: isMobile ? '40px !important' : '150',
+                            "&:last-child": {
+                              paddingBottom: isMobile ? '10px' : '5px'
+                            },
+                          }}
+
                         >
                             <RadialProgressBar 
                               percentage={countriesData['world']['occupied']/countriesData['world']['total']*100} 
                               textTop={countriesData['world']['text']}
                               textRadial={countriesData['world']['occupied']}
-                              textBottom={`out of ${countriesData['world']['total']} countries`}
-                              height= {isMobile ? '170': '350'}
-                              width= {isMobile ? '200' : '350'}
-                              fontSize='30px'
-                              dataLabelSize={isMobile ? 50 : 130}
+                              textBottom={`out of`}
+                              textBottomSecond={`${countriesData['world']['total']} countries`}
+                              height= {isMobile ? '140': '140'}
+                              width= {isMobile ? '145' : '145'}
+                              fontSize= {isMobile ? '18px': '20px'}
+                              dataLabelSize={isMobile ? 30 : 30}
                               borderRadius='40px'
-                              dataLabelOffset={isMobile? 20 : 45}
+                              dataLabelOffset={isMobile? 11 : 11.5}
                               isMobile={isMobile}
                               lineHeight='1.0'
+                              hollowSize= {isMobile ? '50%': '55%'}
+                              marginTop= {isMobile ? '0vh': '35vh'}
+                              translateX= {isMobile ? '-8px' : '0px' }
+                              translateY= {isMobile ? '0px' : '0px' }
                             />
 
                         </CardContent>
-
-                        <button 
-                          style={{
-                            position: 'absolute',
-                            top: isMobile ? '0px' : '0px',
-                            right: isMobile ? '40px' : '40px',
-                            background: 'transparent',
-                            border: 'none',
-                            color: 'black',
-                            fontSize: '2em',
-                            width: 0
-                          }}
-                          onClick={() => {
-                            setShowPopup(false)
-                          }}
-                        >
-                          <ClearIcon
-                            style={{
-                              color: '#191919'
-                            }}
-                          />
-                        </button>
                     </Card>
               </div>
             )}
@@ -292,10 +318,10 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude: 55.70584,
-        longitude: 13.19321, 
+        latitude:  lat ? lat : 55.70584,
+        longitude: lon ? lon : 13.19321, 
         dragRotate: false,
-        zoom: 4
+        zoom: zoom ? zoom : 4
       }}
       dragRotate = {false}
       touchZoomRotate = {'disableRotation'}
@@ -349,7 +375,7 @@ useEffect(() => {
 
 
       {
-        markers.map(({folder_name, name, coords}) => {
+        markers.map(({folder_name, name, coords, country, country_ISO}) => {
           return (<>
           <Marker 
             key={`marker-${folder_name}`}
@@ -357,17 +383,17 @@ useEffect(() => {
             latitude={coords[0]} 
             color="#FF329B"
             anchor="bottom"
-            onClick={() => handleMarkerClick(folder_name, name)}
+            onClick={() => handleMarkerClick(folder_name, name, country_ISO)}
           >
-            <img
+            {/* <img
              style={{ // width:height proportions should be 5:6
                 width: '25px',
                 height: '30px',
                 cursor: 'pointer',
              }}
-             src='./EF_pin_final.png'
+             src='./Pin_pink.png'
              alt='map_pin'
-            />
+            /> */}
             
           </Marker>
           {zoomState > 4 && (
@@ -378,7 +404,7 @@ useEffect(() => {
               closeButton={false}
               closeOnClick={false}
               anchor="bottom"
-              offset={[0,-40]}
+              offset={[0,-60]}
               tipSize={0}
             >
               <Typography
@@ -400,7 +426,8 @@ useEffect(() => {
               onClose={() => handleMarkerClose()} 
               marker={selectedMarker}
               name={cityName}
-              images={cityImages[selectedMarker]} />
+              images={cityImages[selectedMarker]}
+              countryISOCode={countryISOCode} />
         </div>
          )}
     </div>
