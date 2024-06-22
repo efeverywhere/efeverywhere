@@ -449,8 +449,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           }}
                           src="papua-new-guinea-flag.png" 
                           alt="Papua New Guinea Flag"
-                          width='14px'
-                          height='14px'/>
+                          width='20px'
+                          height='20px'/>
                     ) : (
                         <FlagLoader 
                             style={{
@@ -458,8 +458,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 marginTop: '18px',
                                 marginLeft: '-15px'
                             }}
-                            width='14px'
-                            height='14px'
+                            width='20px'
+                            height='20px'
                             countryIsoCode={countryISOCode ? countryISOCode : 'rainbow'}
                             color='#EFEFEF' 
                             ratio={'rounded'} 
@@ -917,7 +917,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   </div>
                 </Modal>
               )}
-              <Button
+              {/* <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -952,7 +952,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   >
                   Map
                   </Typography>
-              </Button>
+              </Button> */}
             </div>
           )
         }
