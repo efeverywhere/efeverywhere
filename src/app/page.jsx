@@ -274,7 +274,7 @@ useEffect(() => {
                         height: isMobile ? '100' : '125',
                         paddingTop: isMobile ? '10px' : '20px',
                         paddingBottom: isMobile ? '10px' : '15px !important',
-                        transform: isMobile ? 'scale(0.70)' : '',
+                        transform: isMobile ? 'scale(0.80)' : '',
                       }}>
                         <CardContent
                           sx={{
