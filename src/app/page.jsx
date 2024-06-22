@@ -253,9 +253,9 @@ useEffect(() => {
             {isIntroVisible == false && mapLoaded && showPopup && (
               <div style={{ 
                   position: 'absolute', 
-                  top: isMobile ? '7.5%' : '15%',
+                  top: isMobile ? '10%' : '15%',
                   // left: isMobile ? '80%' : '79.25%', 
-                  right: isMobile ? '0%' : '10.20%',
+                  right: isMobile ? '3%' : '10.20%',
                   // transform: 'translate(-50%, -50%)',
                   height: isMobile ? '10' : '150',
                   width: isMobile ? '10' : '50',
@@ -274,7 +274,7 @@ useEffect(() => {
                         height: isMobile ? '100' : '125',
                         paddingTop: isMobile ? '10px' : '20px',
                         paddingBottom: isMobile ? '10px' : '15px !important',
-                        transform: isMobile ? 'scale(0.80)' : '',
+                        transform: isMobile ? 'scale(0.90)' : '',
                       }}>
                         <CardContent
                           sx={{
