@@ -23,6 +23,7 @@ import PhotoUpload from '../components/PhotoUpload';
 import {IconAlertCircle} from '@ef-global/backpack-icons'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import '../css/About.css'
+import Link from 'next/link';
 
 export default function Page(){
   const [isUploadOpen, setIsUploadOpen] = useState(false);
@@ -164,7 +165,7 @@ export default function Page(){
                   lineHeight: '1.3',
                 }}
               >
-              Show us EF Everywhere!
+              Help show EF Everywhere!
               </Typography>
               <Typography
                 sx = {{
@@ -207,7 +208,13 @@ Our goal is to collect photos and videos in every single country in the world—
                       listStyleType: 'disc',
 
                     }}
-                  >Submit this photo or video and make sure to tell us where you took it</li>
+                  > <a 
+                  style={{
+                    color: '#0000EE', // Change the color to link blue
+                    textDecoration: 'underline', // Add an underline
+                    cursor: 'pointer', // Change the cursor to a pointer when hovering
+                  }}
+                  onClick={toggleUpload}>Submit </a> this photo or video and make sure to tell us where you took it</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
@@ -218,31 +225,38 @@ Our goal is to collect photos and videos in every single country in the world—
                       listStyleType: 'disc',
                       
                     }}
-                  >We will put a pin on the map in the country or region or spot where you took a shot in</li>
+                  >We will put a <Link 
+                                    style={{
+                                        color: '#0000EE', // Change the color to link blue
+                                        textDecoration: 'underline', // Add an underline
+                                        cursor: 'pointer', // Change the cursor to a pointer when hovering
+                                      }}
+                                    href="/">pin on the map</Link> in the country or region or spot where you took a shot in</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
                       
                     }}
-                  >Not sure where to go? Check out the scoreboard to see what countries/territories we haven’t visited</li>
+                  >Not sure where to go? Check out the <Link 
+                                                    style={{
+                                                      color: '#0000EE', // Change the color to link blue
+                                                      textDecoration: 'underline', // Add an underline
+                                                      cursor: 'pointer', // Change the cursor to a pointer when hovering
+                                                    }}
+                                                    href="/scoreboard">  
+                                                    scoreboard </Link> to see what countries/territories we haven’t visited</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
                       
                     }}
-                  >Have a brilliant idea? Great! Get creative and we will award you with cool prizes to the 20 best submissions (2 winners per category)</li>
+                  >Have a brilliant idea? Great! Get creative and win cool prizes</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
                       
                     }}
                   >Everyone is welcome to participate-EF staff, friends, travellers, students, parents—the more the merrier!</li>
-                                    <li
-                    style={{
-                      listStyleType: 'disc',
-                      
-                    }}
-                  >Don’t forget to hashtag #efeverywhere</li>
                 </ul>
               </Typography>
 
@@ -279,7 +293,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                More prize categories to come!
+                These are the prize categories, more to come!
               </Typography>
               {isMobile ? (
               <div >
