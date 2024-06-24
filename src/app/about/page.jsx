@@ -201,7 +201,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       // 
                     }}
                   >
-                    Bring anything EF with you on your travels and take a photo or video of it
+                    Bring anything EF with you on your travels and take a photo or video with it
                   </li>
                                     <li
                     style={{
@@ -214,7 +214,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     textDecoration: 'underline', // Add an underline
                     cursor: 'pointer', // Change the cursor to a pointer when hovering
                   }}
-                  onClick={toggleUpload}>Submit </a> this photo or video and make sure to tell us where you took it</li>
+                  onClick={toggleUpload}>Submit</a> this photo or video and make sure to tell us where you took it</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
@@ -244,7 +244,7 @@ Our goal is to collect photos and videos in every single country in the world—
                                                       cursor: 'pointer', // Change the cursor to a pointer when hovering
                                                     }}
                                                     href="/scoreboard">  
-                                                    scoreboard </Link> to see what countries/territories we haven’t visited</li>
+                                                    scoreboard</Link> to see what countries/territories we haven’t visited</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
@@ -256,7 +256,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       listStyleType: 'disc',
                       
                     }}
-                  >Everyone is welcome to participate-EF staff, friends, travellers, students, parents—the more the merrier!</li>
+                  >Everyone is welcome to participate—EF staff, friends, travellers, students, parents—the more the merrier!</li>
                 </ul>
               </Typography>
 
