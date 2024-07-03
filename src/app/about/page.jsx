@@ -886,6 +886,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     size="regular"
                     style={{
                         fontFamily: 'EFCircularBook',
+                        '--color-component-button-primary-bg': '#ff329B'
                     }}
                   >
                   Submit Your Shot
