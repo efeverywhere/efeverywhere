@@ -333,7 +333,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                    Most EF
+                    Best EF office/school/campus spirit!
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -348,7 +348,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                    You know EF, we pink different. Now show us your version of pink different.
+                    Photo or video.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -367,7 +367,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                    Biggest EF Logo
+                    Product with most entries on the map
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -381,7 +381,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                    What about a flash mob? Or a billboard, that works too!
+                    Think high quality high volume i.e. let’s be proud of being EF Everywhere!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -400,7 +400,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                    Most Breathtaking View
+                    Product with best customer entries
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -415,7 +415,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                    Top of the Burj Khalifa. Denali, Alaska. The Grand Canyon. Too many to list!
+                    Our customers are awesome, let’s invite them to join!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -434,7 +434,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                    One of a Kind Location
+                    Product photos in the most cities
                     </Typography>
                     <Typography
                   fontFamily='EFCircular'
@@ -449,7 +449,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     fontSize: '18px'
                   }}
                     >
-                    The currently viral country of Kiribati is one of the rarest visited countries in the world. Try there.
+                    Or villages, or towns, or havens, nooks or hamlets.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -460,7 +460,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/Music.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                       </div>
                       <Typography
                       fontFamily='EFCircularBold'
@@ -468,7 +468,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         fontSize: '20px'
                       }}
                       >
-                        Craziest Idea
+                        Biggest crowd in a photo
                       </Typography>
                       <Typography
                       fontFamily='EFCircular'
@@ -483,7 +483,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         fontSize: '18px'
                       }}
                       >
-                      We’re not saying you should sky dive with an EF backpack, but we’re also not saying you shouldn’t.
+                      Think big, like really big!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -502,7 +502,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                      Most Viral
+                      Most creative with 10 or more people
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -517,7 +517,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                      Share your pic with the world. The highest number of views, likes, comments, and shares win. Don’t forget to use the hashtag #efeverywhere
+                      Perhaps a great pyramid by the Great Pyramids?
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -536,7 +536,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         fontSize: '20px'
                       }}
                       >
-                        Most Ad-worthy
+                        Group that most represents the essence of their home city
                       </Typography>
                       <Typography
                       fontFamily='EFCircular'
@@ -551,7 +551,7 @@ Our goal is to collect photos and videos in every single country in the world—
                         fontSize: '18px'
                       }}
                       >
-                        Beautiful cinematography. Aesthetic tumblreqsue pics. Unleash your inner artist.
+                        Lederhosen. Always a good idea.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -562,7 +562,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/Balloon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
+                      <img src="category_icons/plane-take-off.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -570,7 +570,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                      Highest Altitude
+                      Best shot on a plane
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -585,7 +585,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                      The EF flag has been to Mt Everest. Think you can go higher?
+                      Use your flight time effectively and get your flight crew and fellow passengers involved!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -604,7 +604,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                      Lowest Altitude
+                      Best shot of iconic landmark
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -619,7 +619,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '18px'
                     }}
                     >
-                      We’ve also been to the bottom of the Red Sea. Your challenge is to go down under. 
+                      Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there. 
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -630,7 +630,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/star.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -638,7 +638,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       fontSize: '20px'
                     }}
                     >
-                      Critics' Choice
+                      Best shot of celebrity with EF logo
                     </Typography>
                     <Typography
                    fontFamily='EFCircular'
@@ -652,15 +652,187 @@ Our goal is to collect photos and videos in every single country in the world—
                      fontSize: '18px'
                    }}
                     >
-                      A discerning group of judges will select the one submission that doesn’t just speak to them, but sings to them!
+                      EF some A-listers.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
+
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/moon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      EF logo in most unique place
+                    </Typography>
+                    <Typography
+                   fontFamily='EFCircular'
+                   sx={{
+                     marginTop: '5px',
+                     wordWrap: 'break-word',
+                     overflowX: 'none',
+                     overflowY: 'auto',
+                     height: sliderHeight,
+                     width: sliderWidth,
+                     fontSize: '18px'
+                   }}
+                    >
+                      Space X anyone?
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/search.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      Best randomly spotted EF logo
+                    </Typography>
+                    <Typography
+                   fontFamily='EFCircular'
+                   sx={{
+                     marginTop: '5px',
+                     wordWrap: 'break-word',
+                     overflowX: 'none',
+                     overflowY: 'auto',
+                     height: sliderHeight,
+                     width: sliderWidth,
+                     fontSize: '18px'
+                   }}
+                    >
+                      Spot some EF-alike clouds? Or a cheetah with an ‘EF’ shaped birthmark? Snap it!
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      Best EF photobomb
+                    </Typography>
+                    <Typography
+                   fontFamily='EFCircular'
+                   sx={{
+                     marginTop: '5px',
+                     wordWrap: 'break-word',
+                     overflowX: 'none',
+                     overflowY: 'auto',
+                     height: sliderHeight,
+                     width: sliderWidth,
+                     fontSize: '18px'
+                   }}
+                    >
+                      But in a safe, fun way. We hear King Charles’ security has little patience for that sort of thing.
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+
+
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/house.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      Best representation of your city
+                    </Typography>
+                    <Typography
+                   fontFamily='EFCircular'
+                   sx={{
+                     marginTop: '5px',
+                     wordWrap: 'break-word',
+                     overflowX: 'none',
+                     overflowY: 'auto',
+                     height: sliderHeight,
+                     width: sliderWidth,
+                     fontSize: '18px'
+                   }}
+                    >
+                      Show your home town some EF love.
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+
+
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      Most viral EF photo
+                    </Typography>
+                    <Typography
+                   fontFamily='EFCircular'
+                   sx={{
+                     marginTop: '5px',
+                     wordWrap: 'break-word',
+                     overflowX: 'none',
+                     overflowY: 'auto',
+                     height: sliderHeight,
+                     width: sliderWidth,
+                     fontSize: '18px'
+                   }}
+                    >
+                      Do it for the likes.
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+
                 </EFCarousel>
                 </div>
               ):(
-              <div
-              >
+              <div>
                 <Grid 
                   sx = {{
                     marginTop: '-30px',
@@ -683,10 +855,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Most EF
+                    Best EF office/school/campus spirit!
                     </Typography>
                     <Typography>
-                    You know EF, we pink different. Now show us your version of pink different.
+                    Photo or video.
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
@@ -702,10 +874,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Biggest EF Logo
+                    Product with most entries on the map
                     </Typography>
                     <Typography>
-                    What about a flash mob? Or a billboard, that works too!
+                    Think high quality high volume i.e. let’s be proud of being EF Everywhere!
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
@@ -721,10 +893,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Most Breathtaking View
+                    Product with best customer entries
                     </Typography>
                     <Typography>
-                    Top of the Burj Khalifa. Denali, Alaska. The Grand Canyon. Too many to list!
+                    Our customers are awesome, let’s invite them to join!
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
@@ -740,25 +912,25 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    One of a Kind Location
+                    Product photos in the most cities
                     </Typography>
                     <Typography>
-                    The currently viral country of Kiribati is one of the rarest visited countries in the world. Try there.
+                    Or villages, or towns, or havens, nooks or hamlets.
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
                   <div>
-                        <img src="category_icons/Music.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
-                    Craziest Idea
+                    Biggest crowd in a photo
                     </Typography>
                     <Typography>
-                    We’re not saying you should sky dive with an EF backpack, but we’re also not saying you shouldn’t.
+                    Think big, like really big!
                     </Typography>
                   </Grid>
 
@@ -776,10 +948,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Most Viral
+                    Most creative with 10 or more people
                     </Typography>
                     <Typography>
-                    Share your pic with the world. The highest number of views, likes, comments, and shares win. Don’t forget to use the hashtag #efeverywhere
+                    Perhaps a great pyramid by the Great Pyramids?
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
@@ -795,10 +967,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Most Ad-worthy
+                    Group that most represents the essence of their home city
                     </Typography>
                     <Typography>
-                    Beautiful cinematography. Aesthetic tumblreqsue pics. Unleash your inner artist.
+                    Lederhosen. Always a good idea.
                     </Typography>
                   </Grid>
 
@@ -808,17 +980,17 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Balloon.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/plane-take-off.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
-                    Highest Altitude
+                    Best shot on a plane
                     </Typography>
                     <Typography>
-                    The EF flag has been to Mt Everest. Think you can go higher?
+                    Use your flight time effectively and get your flight crew and fellow passengers involved!
                     </Typography>
                   </Grid>
 
@@ -835,10 +1007,10 @@ Our goal is to collect photos and videos in every single country in the world—
                     sx={{
                       
                     }}>
-                    Lowest Altitude
+                    Best shot of iconic landmark
                     </Typography>
                     <Typography>
-                    We’ve also been to the bottom of the Red Sea. Your challenge is to go down under. 
+                    Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there. 
                     </Typography>
                   </Grid>
 
@@ -848,17 +1020,116 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/star.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
-                    Critics' Choice
+                    Best shot of celebrity with EF logo
                     </Typography>
                     <Typography>
-                    A discerning group of judges will select the one submission that doesn’t just speak to them, but sings to them!
+                    EF some A-listers.
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/moon.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    EF logo in most unique place
+                    </Typography>
+                    <Typography>
+                    Space X anyone?
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/search.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Best randomly spotted EF logo
+                    </Typography>
+                    <Typography>
+                    Spot some EF-alike clouds? Or a cheetah with an ‘EF’ shaped birthmark? Snap it!
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/Camera.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Best EF photobomb
+                    </Typography>
+                    <Typography>
+                    But in a safe, fun way. We hear King Charles’ security has little patience for that sort of thing.
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/house.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                  <Typography
+                  fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Best representation of your city
+                    </Typography>
+                    <Typography>
+                    Show your home town some EF love.
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/Heart.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                  <Typography
+                  fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Most viral EF photo
+                    </Typography>
+                    <Typography>
+                    Do it for the likes.
                     </Typography>
                   </Grid>
 
