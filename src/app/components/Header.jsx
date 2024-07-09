@@ -171,7 +171,7 @@ export default function Header(pathname, children) {
                             size="regular"
                             style={{
                                 fontFamily: 'EFCircularBook',
-                                color: '#FFFFFF !important',
+                                '--color-component-button-primary-bg': '#DA2381'
                             }}
                         >
                             Submit Your Shot
@@ -478,7 +478,7 @@ export default function Header(pathname, children) {
                                     size="regular"
                                     style={{
                                         fontFamily: 'EFCircularBook',
-                                        '--color-component-button-primary-bg': '#ff329B'
+                                        '--color-component-button-primary-bg': '#DA2381'
                                     }}
                                     
                                 >
