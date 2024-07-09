@@ -24,8 +24,9 @@ import { useCountries } from 'use-react-countries'
 function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
 
-  const { countries } = useCountries();
-  const isMobile = useMediaQuery('(max-width:600px)')
+  var { countries } = useCountries();
+  // countries = countries.replace("China", "China (Mainland)");
+  countries = countries.map(country => country.name === "China" ? {...country, name: "China (Mainland)"} : country);  const isMobile = useMediaQuery('(max-width:600px)')
 
   const handleFileUpload = (file) => {
     // Update the form data with the uploaded file
@@ -230,7 +231,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Territory*" 
+                        label="Country/Region*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '7px',
@@ -470,7 +471,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Territory*" 
+                        label="Country/Region*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '5px',
