@@ -231,7 +231,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Region*" 
+                        label="Country/Region of Residence*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '7px',
@@ -471,7 +471,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Region*" 
+                        label="Country/Region of Residence*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '5px',
