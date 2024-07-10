@@ -21,6 +21,7 @@ import { Button as EFButton } from '@ef-global/backpack/Button'
 import ThankYou from '../components/ThankYou';
 import PhotoUpload from '../components/PhotoUpload';
 import {IconAlertCircle} from '@ef-global/backpack-icons'
+import {IconAirplane} from '@ef-global/backpack-icons'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import '../css/About.css'
 import Link from 'next/link';
@@ -320,7 +321,7 @@ Our goal is to collect photos and videos in every single country in the world—
                     }}
                     >
                         <img 
-                          src="category_icons/Guarantee.svg" 
+                          src="category_icons/best_EF_office.svg" 
                           style={{ 
                             width: iconWidthMobile, 
                             height: iconHeightMobile, 
@@ -359,7 +360,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                      <Image src="category_icons/EF logo block.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
+                      <Image src="category_icons/entries_on_map.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -392,7 +393,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/customer_entries.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -426,7 +427,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                    <img src="category_icons/Location.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                    <img src="category_icons/product_photos.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -460,7 +461,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/biggest_crowd.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                       </div>
                       <Typography
                       fontFamily='EFCircularBold'
@@ -494,7 +495,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/10_people.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -528,7 +529,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                        <img src="category_icons/Trophy.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
+                        <img src="category_icons/essence_homecity.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
                       </div>
                       <Typography
                       fontFamily='EFCircularBold'
@@ -562,7 +563,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/plane-take-off.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
+                      <img src="category_icons/plane.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -596,7 +597,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/Beach.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/iconic_landmark.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -630,7 +631,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/star.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/celebrity.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -664,7 +665,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/moon.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/unique_place.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -698,7 +699,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/search.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/random_EF_logo.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -732,7 +733,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/Camera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/photo_bomb.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -767,7 +768,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/house.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/represent_city.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -802,7 +803,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/Heart.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/viral_photo.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -848,7 +849,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                     >
-                        <img src="category_icons/Guarantee.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/best_EF_office.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -867,7 +868,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <Image src="category_icons/EF logo block.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <Image src="category_icons/entries_on_map.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                   </div>
                   <Typography
                     fontFamily='EFCircularMedium'
@@ -886,7 +887,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px'
                     }}
                   >
-                        <img src="category_icons/Camera.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/customer_entries.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                     fontFamily='EFCircularMedium'
@@ -905,7 +906,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Location.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/product_photos.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                     fontFamily='EFCircularMedium'
@@ -920,7 +921,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   </Grid>
                   <Grid item xs={12/5}>
                   <div>
-                        <img src="category_icons/CriticsChoice.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/biggest_crowd.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -941,7 +942,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Heart.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/10_people.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -960,7 +961,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Trophy.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/essence_homecity.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -980,7 +981,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/plane-take-off.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/plane.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -1000,7 +1001,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Beach.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/iconic_landmark.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
@@ -1020,7 +1021,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/star.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/celebrity.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
@@ -1040,7 +1041,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/moon.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/unique_place.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -1059,7 +1060,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/search.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/random_EF_logo.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -1079,7 +1080,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Camera.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/photo_bomb.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -1099,7 +1100,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/house.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/represent_city.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
@@ -1119,7 +1120,7 @@ Our goal is to collect photos and videos in every single country in the world—
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/Heart.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/viral_photo.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
