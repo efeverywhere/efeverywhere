@@ -122,6 +122,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='14px'
                       height='14px'
                     />
+                  ) : countryISOCode === "VA" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="vatican-city-flag.svg" 
+                    alt="Vatican City Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "MV" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="maldives-flag.svg" 
+                    alt="Maldives Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -472,6 +496,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       alt="Japan Flag"
                       width='20px'
                       height='20px'
+                    />
+                  ) : countryISOCode === "VA" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="vatican-city-flag.svg" 
+                    alt="Vatican City Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "MV" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="maldives-flag.svg" 
+                    alt="Maldives Flag"
+                    width='20px'
+                    height='20px'
                     />
                     ) : (
                         <FlagLoader 
