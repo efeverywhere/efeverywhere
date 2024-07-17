@@ -268,7 +268,8 @@ useEffect(() => {
                   onTouchMove={(e) => e.preventDefault()}
                   overflow='hidden'
                 >
-                    <Card 
+                    <Card
+                    onClick={() => window.location.href = '/scoreboard'}
                     sx={{ 
                         position: 'relative',
                         height: isMobile ? '100' : '125',
