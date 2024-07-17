@@ -110,7 +110,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         alt="Papua New Guinea Flag"
                         width='14px'
                         height='14px'/>
-                    ) : countryISOCode === "JP" ? (
+                  ) : countryISOCode === "JP" ? (
                       <img 
                       style={{
                         marginRight: '10px',
@@ -143,6 +143,54 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     src="maldives-flag.svg" 
                     alt="Maldives Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "LA" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="laos-flag.svg" 
+                    alt="Laos Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "SI" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="slovenia-flag.svg"
+                    alt="Slovenia Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CN" && name === "Hong Kong" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="hongkong-flag.svg"
+                    alt="Hong Kong Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CN" && name === "Macau" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="macau-flag.svg"
+                    alt="Macau Flag"
                     width='14px'
                     height='14px'
                     />
@@ -514,6 +562,46 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     src="maldives-flag.svg" 
                     alt="Maldives Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "LA" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="laos-flag.svg" 
+                    alt="Laos Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "SI" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="slovenia-flag.svg" 
+                    alt="Slovenia Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "CN" && name === "Hong Kong" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="hongkong-flag.svg" 
+                    alt="Hong Kong Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "CN" && name === "Macau" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="macau-flag.svg" 
+                    alt="Macau Flag"
                     width='20px'
                     height='20px'
                     />
