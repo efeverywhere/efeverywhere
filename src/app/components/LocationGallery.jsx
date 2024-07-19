@@ -1071,7 +1071,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   </div>
                 </Modal>
               )}
-              {/* <Button
+              <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -1106,7 +1106,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   >
                   Map
                   </Typography>
-              </Button> */}
+              </Button>
             </div>
           )
         }
