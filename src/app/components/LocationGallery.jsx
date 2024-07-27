@@ -194,6 +194,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "BZ" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="belize-flag.svg"
+                    alt="Belize Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CW" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="curacao-flag.svg"
+                    alt="Curacao Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -602,6 +626,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     src="macau-flag.svg" 
                     alt="Macau Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "BZ" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="belize-flag.svg" 
+                    alt="Belize Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "CW" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="curacao-flag.svg" 
+                    alt="Curacao Flag"
                     width='20px'
                     height='20px'
                     />
@@ -1071,7 +1115,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   </div>
                 </Modal>
               )}
-              {/* <Button
+              <Button
                 onClick={onClose}
                 sx={{
                     '&:hover': {
@@ -1106,7 +1150,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   >
                   Map
                   </Typography>
-              </Button> */}
+              </Button>
             </div>
           )
         }
