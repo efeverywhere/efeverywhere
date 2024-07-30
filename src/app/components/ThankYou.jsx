@@ -142,8 +142,23 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
+                Let’s get EF Everywhere to 100 countries by October! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you have any questions, suggestions, or fun ideas, please email us at efeverywhere@ef.com.
               </Typography>
+              <Typography
+                sx={{
+                  marginTop: '4vh',
+                  fontSize: 16,
+                  fontFamily: 'EFCircularBook',
+                  marginBottom: '10vh',
+                  marginLeft: '5vw',
+                  marginRight: '6vw',
+                  wordWrap: 'break-word',
+                  color: '#FFFFFF !important'
+                }}
+              >
+                  We look forward to seeing EF Everywhere!
+              </Typography>
+              
           </div>
         </Fade>
         </Modal>
@@ -212,7 +227,17 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                The EF Everywhere challenge will last until December 2024. You have time until then to bring EF to as many places as you wish. We look forward to seeing EF Everywhere.
+                Let’s get EF Everywhere to 100 countries by October! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you have any questions, suggestions, or fun ideas, please email us at efeverywhere@ef.com. 
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: 18,
+                  fontFamily: 'EFCircular',
+                  marginBottom: 2,
+                  color: '#FFFFFF !important'
+                }}
+              >
+                We look forward to seeing EF Everywhere!
               </Typography>
           </div>
         </Fade>
