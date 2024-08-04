@@ -218,6 +218,42 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "IS" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="iceland-flag.svg"
+                    alt="Iceland Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "TO" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="tonga-flag.svg"
+                    alt="Tonga Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "LI" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="liechtenstein-flag.svg"
+                    alt="Liechtenstein Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -646,6 +682,36 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     src="curacao-flag.svg" 
                     alt="Curacao Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "IS" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="iceland-flag.svg" 
+                    alt="Iceland Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "TO" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="tonga-flag.svg" 
+                    alt="Tonga Flag"
+                    width='20px'
+                    height='20px'
+                    />
+                  ) : countryISOCode === "LI" ? (
+                    <img 
+                    style={{
+                      marginTop: '21px'
+                    }}
+                    src="liechtenstein-flag.svg" 
+                    alt="Liechtenstein Flag"
                     width='20px'
                     height='20px'
                     />
