@@ -8,6 +8,9 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Modal from '@mui/material/Modal';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -388,7 +391,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           src={image.src  + '?width=300&height=300&func=crop'} 
                           alt={image.caption_person}
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                           }}
                           style={{
                             width: '100%',
@@ -402,7 +405,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.caption_person}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                           }}
                           style={{
                             borderRadius: '3px',
@@ -457,7 +460,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         alt={image.caption_person}
                         loading="lazy"
                         onClick={() => {
-                          setSelectedImage(image.src)
+                          setSelectedImage(image)
                         }}
                         style={{
                           borderRadius: '3px',
@@ -515,7 +518,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     />
                     }
                   <img 
-                    src={selectedImage} 
+                    src={selectedImage.src} 
                     alt="" 
                     style={{ maxHeight: '80%', maxWidth: '80%'}} 
                     onLoad={handleImageLoad}
@@ -1058,7 +1061,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           key={index} 
                           src={image.src  + '?width=250&height=250&func=crop'} 
                           alt={image.caption_person}
-                          onClick={() => setSelectedImage(image.src)}/>
+                          onClick={() => setSelectedImage(image)}/>
                         )}
                           <ImageListItemBar
                             title={image.caption_person}
@@ -1128,7 +1131,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                             setHeaderState('gallery_image')
                           }}
                         />
@@ -1230,19 +1233,72 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                     />
                     }
-                    <img 
-                      src={selectedImage} 
-                      alt="" 
-                      style={{ 
+                    <Card
+                      sx={{ 
                         maxHeight: '80%', 
                         maxWidth: '80%'
                       }} 
-                      onLoad={handleImageLoad}
-                      onClick={() => {
-                        setSelectedImage(null)
-                        setHeaderState('default')
-                        setIsImageLoaded(false)
-                      }}/>
+                    >
+                      <CardContent
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            overflow: 'scroll',
+                          }}
+                      >
+                        <CardMedia
+                          image={selectedImage.src}
+                          title={selectedImage.name}
+                          component="img"
+                          sx={{
+                            maxHeight: '90%', 
+                            maxWidth: '90%'
+                          }}
+                        >
+                          {/* <img 
+                            src={selectedImage.src} 
+                            alt="" 
+                            style={{ 
+                              maxHeight: '90%', 
+                              maxWidth: '90%'
+                            }} 
+                            onLoad={handleImageLoad}
+                            onClick={() => {
+                              setSelectedImage(null)
+                              setHeaderState('default')
+                              setIsImageLoaded(false)
+                            }}/> */}
+                          </CardMedia>
+                          {/* TODO: ADD THE CAPTION PERSON AND Location
+                          TODO: CHECK IF CHANGING "selectedImage" BROKE ANYTHING */}
+                          {
+                            selectedImage.caption_person &&
+                            <Typography
+                              align='left'
+                              sx={{
+                                width: '100%'
+                              }}
+                            >
+                              {selectedImage.caption_person}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption_location &&
+                            <Typography>
+                              {selectedImage.caption_location}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption &&
+                            <Typography>
+                              {selectedImage.caption}
+                            </Typography>
+                          }
+
+                        </CardContent>
+                    </Card>
                     <button 
                       style={{
                         position: 'absolute',
