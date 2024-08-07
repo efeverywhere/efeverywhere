@@ -254,6 +254,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "CV" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="cape-verde-flag.svg"
+                    alt="Cape Verde Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -715,7 +727,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='20px'
                     height='20px'
                     />
-                    ) : (
+                    ) : countryISOCode === "CV" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="cape-verde-flag.svg" 
+                      alt="Cape Verde Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                      ) : (
                         <FlagLoader 
                             style={{
                                 marginRight: '10px',
