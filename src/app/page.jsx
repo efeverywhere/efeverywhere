@@ -319,10 +319,10 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude:  lat ? lat : 55.70584,
-        longitude: lon ? lon : 13.19321, 
+        latitude:  lat ? lat : 35.70584,
+        longitude: lon ? lon : 10.19321, 
         dragRotate: false,
-        zoom: zoom ? zoom : 4
+        zoom: zoom ? zoom : 1.75
       }}
       dragRotate = {false}
       touchZoomRotate = {'disableRotation'}
