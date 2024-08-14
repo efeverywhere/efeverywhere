@@ -372,29 +372,30 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         closeAfterTransition
         sx={{
           position: 'fixed',
-          borderRadius: '5px'
+          borderRadius: '5px',
         }}
       >
         <Fade 
           in={isOpen}
           style={{
             borderRadius: '5px',
-            overflow: 'scroll'
+            overflow: 'scroll',
           }}  
         >
           <div style={{
             position: 'fixed',
             top: '50%',
             left: '50%',
-            width: '50vw',
-            height: '90vh',
+            width: '80vw',
+            height: '115vh',
             display: 'flex',
             justifyContent: 'left',
             alignItems: 'center',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -50%) scale(0.8)', //this scaling is important because there are too many elements in this form
             backgroundColor: '#0075E1',
             padding: '16px 35px 24px 70px', // top right bottom left
-            color: 'white'
+            color: 'white',
+            
           }}>
             <CloseIcon 
               style={{ 
@@ -442,7 +443,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
-                      marginBottom: 30,
+                      marginBottom: 24,
                     }}
                     InputProps={{
                       style: {
@@ -463,7 +464,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
-                      marginBottom: 30,
+                      marginBottom: 24,
                   }}
                   InputProps={{
                     style: {
@@ -487,7 +488,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                           borderRadius: '5px',
                           backgroundColor: '#FFFFFF' 
                         }} 
-                        style={{ width: '100%', marginBottom: 30 }}
+                        style={{ width: '100%', marginBottom: 24 }}
                       />
                     }
                     sx={{
@@ -514,7 +515,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }}
                       style={{
                         width: '48%', // adjust as needed
-                        marginBottom: 30,
+                        marginBottom: 24,
                       }}
                       InputProps={{
                         style: {
@@ -533,7 +534,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }}
                       style={{
                         width: '48%', // adjust as needed
-                        marginBottom: 30,
+                        marginBottom: 24,
                       }}
                       InputProps={{
                         style: {
@@ -551,13 +552,14 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       display: 'flex',
                       flexDirection: 'row',
                       alignContent: 'center',
+                      marginBottom: '15px'
                     }}
                   >
                     <FormLabel
                       sx={{
                         alignSelf: 'center',
                         color: '#FFFFFF !important',
-                        marginRight: '10px'
+                        marginRight: '10px',
                       }}
                     > 
                       Are you current or former EF staff?
@@ -627,7 +629,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }}
                       style={{
                         width: '48%', // adjust as needed
-                        marginBottom: 30,
+                        marginBottom: 24,
                       }}
                       InputProps={{
                         style: {
@@ -646,7 +648,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }}
                       style={{
                         width: '48%', // adjust as needed
-                        marginBottom: 30,
+                        marginBottom: 24,
                       }}
                       InputProps={{
                         style: {
@@ -664,6 +666,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       display: 'flex',
                       flexDirection: 'row',
                       alignContent: 'center',
+                      marginBottom: '15px'
                     }}
                   >
                     <FormLabel
@@ -739,6 +742,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
+                      marginBottom: 24,
                     }}
                     InputProps={{
                       style: {
@@ -752,7 +756,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                     alignContent: 'center'
                   }}
                 >
@@ -760,7 +764,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         sx={{
                           border: '2px dotted #000', // Add a border with a dotted line
                           width: '80%', // Set the width
-                          height: '100%', // Set the height
+                          height: '96%', // Set the height
                           maxWidth: '80%',
                           maxHeight: '100%',
                           display: 'flex',
@@ -788,9 +792,10 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     sx={{
                       borderRadius: '5px',
                       backgroundColor: '#FFFFFF',
+                      marginTop: '10px'
                     }}
                     style={{
-                      width: '100%',
+                      width: '96%',
                     }}
                     InputProps={{
                       style: {
