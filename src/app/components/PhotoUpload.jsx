@@ -47,8 +47,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const form_description = 'description'
   const form_instagram_handle = 'instagram_handle'
   const form_is_ef_staff = 'is_ef_staff'
-  const form_ef_years = 'ef_years'
   const form_ef_location = 'ef_location'
+  const form_ef_years = 'ef_years'
   const form_is_ef_student = 'is_ef_student'
   const form_experience = 'experience'
   const form_caption = 'caption'
@@ -72,6 +72,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
 
   // const [state, reactHookFormSubmit] = useForm("mgegpqzw");
   const [state, reactHookFormSubmit] = useForm("xeqydbyv");
+  // const [state, reactHookFormSubmit] = useForm("xrbzknog"); //test form
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -87,6 +88,11 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_country, e.target[form_country].value);
     formData.append(form_description, e.target[form_description].value);
     formData.append(form_instagram_handle, e.target[form_instagram_handle].value);
+    formData.append(form_is_ef_staff, e.target[form_is_ef_staff].value);
+    formData.append(form_ef_location, e.target[form_ef_location].value);
+    formData.append(form_ef_years, e.target[form_ef_years].value);
+    formData.append(form_is_ef_student, e.target[form_is_ef_student].value);
+    formData.append(form_experience, e.target[form_experience].value);
     formData.append(form_caption, e.target[form_caption].value);
   
     // Call the handleSubmit function from useForm
@@ -546,8 +552,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
 
 
                   <FormControl
-                    id={form_is_ef_staff}
-                    name={form_is_ef_staff}
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
@@ -565,6 +569,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       Are you current or former EF staff?
                     </FormLabel>
                     <RadioGroup
+                      id={form_is_ef_staff}
+                      name={form_is_ef_staff}
                       sx={{
                         color: '#FFFFFF !important',
                         '&.Mui-checked': {
@@ -660,8 +666,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
 
 
                   <FormControl
-                    id={form_is_ef_student}
-                    name={form_is_ef_student}
                     style={{
                       display: 'flex',
                       flexDirection: 'row',
@@ -679,6 +683,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       Are you a current or former EF customer or student?
                     </FormLabel>
                     <RadioGroup
+                      id={form_is_ef_student}
+                      name={form_is_ef_student}
                       sx={{
                         color: '#FFFFFF !important',
                         '&.Mui-checked': {
