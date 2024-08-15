@@ -122,6 +122,9 @@ html, body {
 .MuiImageListItemBar-subtitle {
   font-family: 'EFCircularBook' !important
 }
+#radio-typography{
+  color: white !important;
+}
 
 /* .modal-open .map-container {
   pointer-events: none;
