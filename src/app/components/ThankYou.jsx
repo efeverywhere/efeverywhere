@@ -121,7 +121,7 @@ function ThankYou({ isOpen, handleClose }) {
                 sx={{
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
-                  marginTop: '50%',
+                  marginTop: '30%',
                   marginLeft: '5vw',
                   marginRight: '6vw',
                   lineHeight: '1.3',
