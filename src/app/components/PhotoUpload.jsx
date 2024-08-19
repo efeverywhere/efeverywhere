@@ -527,6 +527,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     // label="Describe your EF experience(s), such as the EF program, location & dates*" 
                     variant="filled"
                     multiline
+                    rowsMax={2}
                     sx={{
                       borderRadius: '7px',
                       backgroundColor: '#FFFFFF',
@@ -541,7 +542,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
-                      height: '75sdfpx',
+                      height: '50px',
                       marginBottom: '1vh',
                   }}
                   />
@@ -566,23 +567,28 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                   <TextField 
                     id={form_caption}
                     name={form_caption}
+                    rowsMax={4}
                     // label="Please share more about what impact if any your EF experience has had on your life? (200 words max)" 
                     variant="filled"
                     multiline
-                      sx={{
-                        backgroundColor: '#FFFFFF',
-                        borderRadius: '7px',
-                      }}
-                      style={{
-                        width: '100%',
-                        height: '100px',
-                      }}
+                    sx={{
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '7px',
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100px',
+                      maxHeight: '100px'
+                    }}
 
-                      InputProps={{
-                        disableUnderline: true,
-                        style: { backgroundColor: 'transparent' },
-                        inputProps: { maxLength: 200 }
-                      }}
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { 
+                        backgroundColor: 'transparent',
+                        overflowY: 'auto'
+                      },
+                      // inputProps: { maxLength: 200 }
+                    }}
                   />
                 </FormControl>
             <div
