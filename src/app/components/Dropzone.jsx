@@ -71,6 +71,9 @@ function MyDropzone({ onFileUpload }) {
                     Browse and upload
                     *Max file size 7MB.
                     For larger files, please send to <b>efeverywhere@ef.com</b>.
+                    <br />
+                    <br />
+                    *Please ensure that all of your submissions have an <b>EF-affiliated logo</b> or <b>sign</b> in them.
             </Typography>)}
         </div>
     }
