@@ -134,7 +134,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         <Fade in={isOpen}>
           <div style={{
             // position: 'absolute',
-            height: '160vh',
+            height: isEFStaff == 'Yes' | isEFStudent == 'Yes' ? '170vh' : '140vh',
             width: '100vw',
             overflow: 'scroll',
             display: 'flex',
