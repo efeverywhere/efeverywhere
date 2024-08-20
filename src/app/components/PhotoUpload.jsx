@@ -28,6 +28,14 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
   const [isEFStaff, setIsEFStaff] = useState('No');
   const [isEFStudent, setIsEFStudent] = useState('No');
+  let mobilePhotoUploadHeight = 1200
+
+  if (isEFStaff == 'Yes') {
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 100
+  }
+  if (isEFStudent == 'Yes'){
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 70
+  }
 
   var { countries } = useCountries();
   // countries = countries.replace("China", "China (Mainland)");
@@ -134,7 +142,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         <Fade in={isOpen}>
           <div style={{
             // position: 'absolute',
-            height: isEFStaff == 'Yes' | isEFStudent == 'Yes' ? '200vh' : '150vh',
+            height: `${mobilePhotoUploadHeight}px`,
             width: '100vw',
             overflow: 'scroll',
             display: 'flex',
