@@ -28,13 +28,13 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
   const [isEFStaff, setIsEFStaff] = useState('No');
   const [isEFStudent, setIsEFStudent] = useState('No');
-  let mobilePhotoUploadHeight = 1200
+  let mobilePhotoUploadHeight = 1300
 
   if (isEFStaff == 'Yes') {
-    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 100
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 150
   }
   if (isEFStudent == 'Yes'){
-    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 70
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 120
   }
 
   var { countries } = useCountries();
