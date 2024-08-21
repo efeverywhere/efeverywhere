@@ -47,7 +47,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   }
 
   const mobileDropzoneWidth = '80vw'
-  const mobileDropzoneHeight = '20vh'
+  const mobileDropzoneHeight = '30vh'
   const desktopDropzoneWidth = '80vw'
   const desktopDropzoneHeight = '15vh'
 
