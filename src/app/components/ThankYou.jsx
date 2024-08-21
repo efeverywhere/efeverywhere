@@ -135,7 +135,7 @@ function ThankYou({ isOpen, handleClose }) {
                   marginTop: '4vh',
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
-                  marginBottom: '10vh',
+                  marginBottom: '6vh',
                   marginLeft: '5vw',
                   marginRight: '6vw',
                   wordWrap: 'break-word',
@@ -146,7 +146,7 @@ function ThankYou({ isOpen, handleClose }) {
               </Typography>
               <Typography
                 sx={{
-                  marginTop: '4vh',
+                  marginTop: '3vh',
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
                   marginBottom: '10vh',
