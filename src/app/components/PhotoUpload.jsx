@@ -26,6 +26,7 @@ import { useCountries } from 'use-react-countries'
 
 function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
   const [isEFStaff, setIsEFStaff] = useState('No');
   const [isEFStudent, setIsEFStudent] = useState('No');
   let mobilePhotoUploadHeight = 1300
@@ -45,6 +46,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     // Update the form data with the uploaded file
     setFile(file);
   }
+
 
   const mobileDropzoneWidth = '80vw'
   const mobileDropzoneHeight = '30vh'
@@ -85,6 +87,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   // const [state, reactHookFormSubmit] = useForm("xrbzknog"); //test form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
   
     // Create a new FormData instance
     const formData = new FormData();
@@ -104,7 +107,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_is_ef_student, e.target[form_is_ef_student].value);
     formData.append(form_experience, e.target[form_experience].value);
     formData.append(form_caption, e.target[form_caption].value);
-  
+    setIsLoading(false);
     // Call the handleSubmit function from useForm
     await reactHookFormSubmit(formData);
     setIsThankYouOpen(true);
@@ -643,14 +646,23 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }}
                 variant="contained"
               >
-                <Typography
-                  sx={{
-                    fontFamily: 'EFCircularBook',
-                    fontSize: 20
-                  }}
-                >
-                  Submit
-                </Typography>
+            {isLoading && <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                      }} 
+                      />}
+              <Typography
+                sx={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: 20
+                }}
+              >
+                Submit
+              </Typography>
+
                 
               </Button>
               </div>
@@ -1140,6 +1152,14 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }}
                 variant="contained"
               >
+            {isLoading && <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                      }} 
+                      />}
                 <Typography
                   sx={{
                     fontFamily: 'EFCircularBook',
