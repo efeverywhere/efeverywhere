@@ -652,6 +652,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 1000000
                       }} 
                       />}
               <Typography
@@ -1158,6 +1159,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 1000000
                       }} 
                       />}
                 <Typography
