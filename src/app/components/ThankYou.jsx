@@ -121,7 +121,7 @@ function ThankYou({ isOpen, handleClose }) {
                 sx={{
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
-                  marginTop: '50%',
+                  marginTop: '30%',
                   marginLeft: '5vw',
                   marginRight: '6vw',
                   lineHeight: '1.3',
@@ -135,7 +135,7 @@ function ThankYou({ isOpen, handleClose }) {
                   marginTop: '4vh',
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
-                  marginBottom: '10vh',
+                  marginBottom: '6vh',
                   marginLeft: '5vw',
                   marginRight: '6vw',
                   wordWrap: 'break-word',
@@ -146,12 +146,13 @@ function ThankYou({ isOpen, handleClose }) {
               </Typography>
               <Typography
                 sx={{
-                  marginTop: '4vh',
+                  marginTop: '3vh',
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
                   marginBottom: '10vh',
                   marginLeft: '5vw',
                   marginRight: '6vw',
+                  marginBottom: '3vh',
                   wordWrap: 'break-word',
                   color: '#FFFFFF !important'
                 }}
@@ -188,16 +189,18 @@ function ThankYou({ isOpen, handleClose }) {
             top: '50%',
             left: '50%',
             width: '50vw',
-            height: '30vh',
+            height: '40vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'left',
+            alignItems: 'center',
             transform: 'translate(-50%, -50%)',
             backgroundColor: '#0075E1',
-            padding: '16px 35px 24px 70px', // top right bottom left
-            color: 'white'
+            padding: '16px 35px 40px 70px', // top right bottom left
+            color: 'white',
+            overflow: 'hidden'
           }}>
+          <div style={{ height: '30px' }} > 
             <CloseIcon 
               style={{ 
                 position: 'absolute', 
@@ -206,10 +209,15 @@ function ThankYou({ isOpen, handleClose }) {
                 }} 
               onClick={handleClose}
               />
-
+          </div>
+          <div style={{ 
+            position: 'relative',
+            overflow: 'auto',
+            marginTop: '30px'
+            }}>
+                
               <Typography
                 sx={{
-                  marginTop: '4vh',
                   fontSize: 40,
                   fontFamily: 'EFCircularBold',
                   marginBottom: 2,
@@ -239,7 +247,8 @@ function ThankYou({ isOpen, handleClose }) {
               >
                 We look forward to seeing EF Everywhere!
               </Typography>
-          </div>
+            </div>
+        </div>
         </Fade>
       </Modal>
       </div>

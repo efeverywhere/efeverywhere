@@ -9,7 +9,10 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
 import Checkbox from '@mui/material/Checkbox';
+import RadioGroup from '@mui/material/RadioGroup'
+import Radio from '@mui/material/Radio'
 import { FormControl, useFormControlContext } from '@mui/base/FormControl';
 import { TextField } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
@@ -23,6 +26,17 @@ import { useCountries } from 'use-react-countries'
 
 function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const [file, setFile] = useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isEFStaff, setIsEFStaff] = useState('No');
+  const [isEFStudent, setIsEFStudent] = useState('No');
+  let mobilePhotoUploadHeight = 1300
+
+  if (isEFStaff == 'Yes') {
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 150
+  }
+  if (isEFStudent == 'Yes'){
+    mobilePhotoUploadHeight = mobilePhotoUploadHeight + 120
+  }
 
   var { countries } = useCountries();
   // countries = countries.replace("China", "China (Mainland)");
@@ -33,8 +47,9 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     setFile(file);
   }
 
+
   const mobileDropzoneWidth = '80vw'
-  const mobileDropzoneHeight = '20vh'
+  const mobileDropzoneHeight = '30vh'
   const desktopDropzoneWidth = '80vw'
   const desktopDropzoneHeight = '15vh'
 
@@ -42,6 +57,12 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   const form_email = 'email'
   const form_country = 'country'
   const form_description = 'description'
+  const form_instagram_handle = 'instagram_handle'
+  const form_is_ef_staff = 'is_ef_staff'
+  const form_ef_location = 'ef_location'
+  const form_ef_years = 'ef_years'
+  const form_is_ef_student = 'is_ef_student'
+  const form_experience = 'experience'
   const form_caption = 'caption'
   const form_image = 'image'
 
@@ -63,8 +84,10 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
 
   // const [state, reactHookFormSubmit] = useForm("mgegpqzw");
   const [state, reactHookFormSubmit] = useForm("xeqydbyv");
+  // const [state, reactHookFormSubmit] = useForm("xrbzknog"); //test form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
   
     // Create a new FormData instance
     const formData = new FormData();
@@ -77,8 +100,14 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_name, e.target[form_name].value);
     formData.append(form_country, e.target[form_country].value);
     formData.append(form_description, e.target[form_description].value);
+    formData.append(form_instagram_handle, e.target[form_instagram_handle].value);
+    formData.append(form_is_ef_staff, e.target[form_is_ef_staff].value);
+    formData.append(form_ef_location, e.target[form_ef_location].value);
+    formData.append(form_ef_years, e.target[form_ef_years].value);
+    formData.append(form_is_ef_student, e.target[form_is_ef_student].value);
+    formData.append(form_experience, e.target[form_experience].value);
     formData.append(form_caption, e.target[form_caption].value);
-  
+    setIsLoading(false);
     // Call the handleSubmit function from useForm
     await reactHookFormSubmit(formData);
     setIsThankYouOpen(true);
@@ -90,7 +119,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     <div
       style={{
         height: '100vh',
-        overflow: 'scroll'
+        overflow: 'scroll',
+        maxHeight: '200vh'
       }}
     >
       {isMobile ? (
@@ -115,15 +145,14 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         <Fade in={isOpen}>
           <div style={{
             // position: 'absolute',
-            height: '110vh',
+            height: `${mobilePhotoUploadHeight}px`,
             width: '100vw',
-            overflow: 'auto',
+            overflow: 'scroll',
             display: 'flex',
             justifyContent: 'left',
-            alignItems: 'center',
             backgroundColor: '#0075E1',
             color: 'white',
-            // paddingTop: '5vh',
+            paddingTop: '5vh',
             // paddingBottom: '10vh',
             overflow: 'hidden'
           }}>
@@ -136,10 +165,15 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
               onClick={handleClose}
               />
             <form 
+              style={{
+                top: '5vh'
+              }}
               onSubmit={handleSubmit}
             >
             <FormControl 
-              style={{width: '100%'}}
+              style={{
+                width: '100%',
+              }}
             >
               <div
                 style={{
@@ -231,7 +265,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Region of Residence*" 
+                        label="Where is this photo taken (Country/Region/Territory)*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '7px',
@@ -273,22 +307,301 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                   }}
                   />
                   <TextField 
+                    id={form_instagram_handle}
+                    name={form_instagram_handle}
+                    label="Instagram handle" 
+                    variant="filled" 
+                    sx={{
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '7px',
+                    }}
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { backgroundColor: 'transparent' },
+                    }}
+                    style={{
+                      width: '81%',
+                      marginBottom: '1vh',
+                  }}
+                  />
+
+              <FormControl
+                    style={{
+                      display: 'flex',
+                      width: '81%',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-start',
+                      alignItems: 'flex-start',
+                      marginBottom: '15px'
+                    }}
+                  >
+                    <FormLabel
+                      sx={{
+                        alignSelf: 'flex-start',
+                        color: '#FFFFFF !important',
+                        marginRight: '10px',
+                      }}
+                    > 
+                      Are you a current or former EF staff?
+                    </FormLabel>
+                    <RadioGroup
+                      id={form_is_ef_staff}
+                      name={form_is_ef_staff}
+                      onChange={(e) => setIsEFStaff(e.target.value)}
+                      sx={{
+                        color: '#FFFFFF !important',
+                        '&.Mui-checked': {
+                          color: '#FFFFFF !important',
+                        },
+                      }}
+                      row
+                    >
+                      <FormControlLabel
+                        style={{
+                          color: '#FFFFFF !important'
+                        }}
+                        value="Yes" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          Yes
+                          </Typography>
+                          }
+                      />
+                      <FormControlLabel 
+                        value="No" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          No
+                          </Typography>
+                          }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                  
+              {isEFStaff === 'Yes' && (
+                  <TextField 
+                    id={form_ef_location}
+                    name={form_ef_location}
+                    label="EF Office Location*" 
+                    variant="filled"
+                    sx={{
+                      borderRadius: '7px',
+                      backgroundColor: '#FFFFFF',
+                    }}
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { backgroundColor: 'transparent' },
+                    }}
+                    style={{
+                      width: '81%',
+                      marginBottom: '1vh',
+                  }}
+                  />                
+                )}
+
+                {isEFStaff === 'Yes' && (
+                  <TextField 
+                    id={form_ef_years}
+                    name={form_ef_years}
+                    label="Number of years with EF*" 
+                    variant="filled"
+                    sx={{
+                      borderRadius: '7px',
+                      backgroundColor: '#FFFFFF',
+                    }}
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { backgroundColor: 'transparent' },
+                    }}
+                    style={{
+                      width: '81%',
+                      marginBottom: '1vh',
+                  }}
+                  />
+                )}
+
+                  <FormControl
+                    style={{
+                      display: 'flex',
+                      width: '81%',
+                      flexDirection: 'column',
+                      justifyContent: 'flex-start',
+                      alignItems: 'flex-start',
+                      marginBottom: '15px'
+                    }}
+                  >
+                    <FormLabel
+                      sx={{
+                        alignSelf: 'flex-start',
+                        color: '#FFFFFF !important',
+                        marginRight: '10px',
+                      }}
+                    > 
+                      Are you current or former EF customer or student?
+                    </FormLabel>
+                    <RadioGroup
+                      id={form_is_ef_student}
+                      name={form_is_ef_student}
+                      onChange={(event) => setIsEFStudent(event.target.value)}
+                      sx={{
+                        color: '#FFFFFF !important',
+                        '&.Mui-checked': {
+                          color: '#FFFFFF !important',
+                        },
+                      }}
+                      row
+                    >
+                      <FormControlLabel
+                        style={{
+                          color: '#FFFFFF !important'
+                        }}
+                        value="Yes" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          Yes
+                          </Typography>
+                          }
+                      />
+                      <FormControlLabel 
+                        value="No" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          No
+                          </Typography>
+                          }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+
+                  {isEFStudent === 'Yes' && (
+                  <FormControl
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '81%',
+                  }}
+                >
+                  <FormLabel
+                  style={{
+                    color: '#FFFFFF',
+                    marginBottom: '3px',
+                  }}
+                  >
+                  Describe your EF experience(s), such as the EF program, location & dates*                  </FormLabel>
+                  <TextField 
+                    id={form_experience}
+                    name={form_experience}
+                    // label="Describe your EF experience(s), such as the EF program, location & dates*" 
+                    variant="filled"
+                    multiline
+                    rowsMax={2}
+                    sx={{
+                      borderRadius: '7px',
+                      backgroundColor: '#FFFFFF',
+                    }}
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { 
+                        backgroundColor: 'transparent',
+                        overflow: 'auto'
+                      },
+
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '50px',
+                      marginBottom: '1vh',
+                  }}
+                  />
+                  </FormControl>
+                )}
+
+                <FormControl
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '81%',
+                  }}
+                >
+                  <FormLabel
+                  style={{
+                    color: '#FFFFFF',
+                    marginBottom: '3px',
+                  }}
+                  >
+                  Please share more about what impact if any your EF experience has had on your life? (200 words max)
+                  </FormLabel>
+                  <TextField 
                     id={form_caption}
                     name={form_caption}
-                    label="Caption" 
+                    rowsMax={4}
+                    // label="Please share more about what impact if any your EF experience has had on your life? (200 words max)" 
                     variant="filled"
-                      sx={{
-                        backgroundColor: '#FFFFFF',
-                        borderRadius: '7px',
-                      }}
-                      style={{
-                        width: '81%',
-                      }}
-                      InputProps={{
-                        disableUnderline: true,
-                        style: { backgroundColor: 'transparent' },
-                      }}
+                    multiline
+                    sx={{
+                      backgroundColor: '#FFFFFF',
+                      borderRadius: '7px',
+                    }}
+                    style={{
+                      width: '100%',
+                      height: '100px',
+                      maxHeight: '100px'
+                    }}
+
+                    InputProps={{
+                      disableUnderline: true,
+                      style: { 
+                        backgroundColor: 'transparent',
+                        overflowY: 'auto'
+                      },
+                      // inputProps: { maxLength: 200 }
+                    }}
                   />
+                </FormControl>
             <div
               style={{
                 display: 'flex',
@@ -333,14 +646,24 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }}
                 variant="contained"
               >
-                <Typography
-                  sx={{
-                    fontFamily: 'EFCircularBook',
-                    fontSize: 20
-                  }}
-                >
-                  Submit
-                </Typography>
+            {isLoading && <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                        zIndex: 1000000
+                      }} 
+                      />}
+              <Typography
+                sx={{
+                  fontFamily: 'EFCircularBook',
+                  fontSize: 20
+                }}
+              >
+                Submit
+              </Typography>
+
                 
               </Button>
               </div>
@@ -362,29 +685,30 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
         closeAfterTransition
         sx={{
           position: 'fixed',
-          borderRadius: '5px'
+          borderRadius: '5px',
         }}
       >
         <Fade 
           in={isOpen}
           style={{
             borderRadius: '5px',
-            overflow: 'scroll'
+            overflow: 'scroll',
           }}  
         >
           <div style={{
             position: 'fixed',
             top: '50%',
             left: '50%',
-            width: '50vw',
-            height: '90vh',
+            width: '80vw',
+            height: '115vh',
             display: 'flex',
             justifyContent: 'left',
             alignItems: 'center',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -50%) scale(0.8)', //this scaling is important because there are too many elements in this form
             backgroundColor: '#0075E1',
             padding: '16px 35px 24px 70px', // top right bottom left
-            color: 'white'
+            color: 'white',
+            
           }}>
             <CloseIcon 
               style={{ 
@@ -432,7 +756,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
-                      marginBottom: 30,
+                      marginBottom: 24,
                     }}
                     InputProps={{
                       style: {
@@ -453,7 +777,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     }}
                     style={{
                       width: '100%',
-                      marginBottom: 30,
+                      marginBottom: 24,
                   }}
                   InputProps={{
                     style: {
@@ -471,13 +795,13 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         {...params} 
                         id={form_country}
                         name={form_country}
-                        label="Country/Region of Residence*" 
+                        label="Where is the photo taken (Country/Region/Territory)*" 
                         variant="filled" 
                         sx={{ 
                           borderRadius: '5px',
                           backgroundColor: '#FFFFFF' 
                         }} 
-                        style={{ width: '100%', marginBottom: 30 }}
+                        style={{ width: '100%', marginBottom: 24 }}
                       />
                     }
                     sx={{
@@ -491,36 +815,247 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }
                     }}
                   />
-                  <TextField 
-                    label="Location description*" 
-                    variant="filled" 
-                    id={form_description}
-                    name={form_description}
-                    sx={{
-                      borderRadius: '5px',
-                      backgroundColor: '#FFFFFF',
-                    }}
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <TextField 
+                      label="Location description*" 
+                      variant="filled" 
+                      id={form_description}
+                      name={form_description}
+                      sx={{
+                        borderRadius: '5px',
+                        backgroundColor: '#FFFFFF',
+                      }}
+                      style={{
+                        width: '48%', // adjust as needed
+                        marginBottom: 24,
+                      }}
+                      InputProps={{
+                        style: {
+                          borderRadius: '5px',
+                        }
+                      }}
+                    />
+                    <TextField 
+                      label="Instagram handle" 
+                      variant="filled" 
+                      id={form_instagram_handle}
+                      name={form_instagram_handle}
+                      sx={{
+                        borderRadius: '5px',
+                        backgroundColor: '#FFFFFF',
+                      }}
+                      style={{
+                        width: '48%', // adjust as needed
+                        marginBottom: 24,
+                      }}
+                      InputProps={{
+                        style: {
+                          borderRadius: '5px',
+                        }
+                      }}
+                    />
+                  </div>
+
+
+                  <FormControl
                     style={{
-                      width: '100%',
-                      marginBottom: 30,
-                  }}
-                  InputProps={{
-                    style: {
-                      borderRadius: '5px',
-                    }
-                  }}
-                  />
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignContent: 'center',
+                      marginBottom: '15px'
+                    }}
+                  >
+                    <FormLabel
+                      sx={{
+                        alignSelf: 'center',
+                        color: '#FFFFFF !important',
+                        marginRight: '10px',
+                      }}
+                    > 
+                      Are you a current or former EF staff?
+                    </FormLabel>
+                    <RadioGroup
+                      id={form_is_ef_staff}
+                      name={form_is_ef_staff}
+                      sx={{
+                        color: '#FFFFFF !important',
+                        '&.Mui-checked': {
+                          color: '#FFFFFF !important',
+                        },
+                      }}
+                      row
+                    >
+                      <FormControlLabel
+                        style={{
+                          color: '#FFFFFF !important'
+                        }}
+                        value="Yes" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          Yes
+                          </Typography>
+                          }
+                      />
+                      <FormControlLabel 
+                        value="No" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          No
+                          </Typography>
+                          }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <TextField 
+                      label="(If yes) EF Office Location*" 
+                      variant="filled" 
+                      id={form_ef_location}
+                      name={form_ef_location}
+                      sx={{
+                        borderRadius: '5px',
+                        backgroundColor: '#FFFFFF',
+                      }}
+                      style={{
+                        width: '48%', // adjust as needed
+                        marginBottom: 24,
+                      }}
+                      InputProps={{
+                        style: {
+                          borderRadius: '5px',
+                        }
+                      }}
+                    />
+                    <TextField 
+                      label="(If yes) Number of years with EF*" 
+                      variant="filled" 
+                      id={form_ef_years}
+                      name={form_ef_years}
+                      sx={{
+                        borderRadius: '5px',
+                        backgroundColor: '#FFFFFF',
+                      }}
+                      style={{
+                        width: '48%', // adjust as needed
+                        marginBottom: 24,
+                      }}
+                      InputProps={{
+                        style: {
+                          borderRadius: '5px',
+                        }
+                      }}
+                    />
+                  </div>
+
+
+                  <FormControl
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignContent: 'center',
+                      marginBottom: '15px'
+                    }}
+                  >
+                    <FormLabel
+                      sx={{
+                        alignSelf: 'center',
+                        color: '#FFFFFF !important',
+                        marginRight: '10px'
+                      }}
+                    > 
+                      Are you a current or former EF customer or student?
+                    </FormLabel>
+                    <RadioGroup
+                      id={form_is_ef_student}
+                      name={form_is_ef_student}
+                      sx={{
+                        color: '#FFFFFF !important',
+                        '&.Mui-checked': {
+                          color: '#FFFFFF !important',
+                        },
+                      }}
+                      row
+                    >
+                      <FormControlLabel
+                        style={{
+                          color: '#FFFFFF !important'
+                        }}
+                        value="Yes" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          Yes
+                          </Typography>
+                          }
+                      />
+                      <FormControlLabel 
+                        value="No" 
+                        control={<Radio 
+                          sx={{
+                            variant: 'solid',
+                            color: 'white',
+                            '&.Mui-checked': {
+                              color: 'white',
+                            },
+                          }}
+                            />} 
+                        label={
+                          <Typography 
+                                id="radio-typography" //NEED TO DO THIS TURN TEXT WHITE
+                                >
+                          No
+                          </Typography>
+                          }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+
                   <TextField 
-                    label="Caption" 
+                    label="(If yes) Describe your EF experience(s), such as the EF program, location & dates* " 
                     variant="filled"
-                    id={form_caption}
-                    name={form_caption}
+                    id={form_experience}
+                    name={form_experience}
                     sx={{
                       borderRadius: '5px',
                       backgroundColor: '#FFFFFF',
                     }}
                     style={{
                       width: '100%',
+                      marginBottom: 24,
                     }}
                     InputProps={{
                       style: {
@@ -528,12 +1063,13 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       }
                     }}
                   />
+
                 </Grid>
                 <Grid xs={5} item
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                     alignContent: 'center'
                   }}
                 >
@@ -541,7 +1077,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         sx={{
                           border: '2px dotted #000', // Add a border with a dotted line
                           width: '80%', // Set the width
-                          height: '100%', // Set the height
+                          height: '96%', // Set the height
                           maxWidth: '80%',
                           maxHeight: '100%',
                           display: 'flex',
@@ -561,6 +1097,25 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 flexDirection: 'column',
               }}
             >
+                  <TextField 
+                    label="Please share more about what impact if any your EF experience has had on your life? (200 words max)" 
+                    variant="filled"
+                    id={form_caption}
+                    name={form_caption}
+                    sx={{
+                      borderRadius: '5px',
+                      backgroundColor: '#FFFFFF',
+                      marginTop: '10px'
+                    }}
+                    style={{
+                      width: '96%',
+                    }}
+                    InputProps={{
+                      style: {
+                        borderRadius: '5px',
+                      }
+                    }}
+                  />
               <StyledFormControlLabel
                 style={{
                   marginTop: '1vh',
@@ -598,6 +1153,15 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                 }}
                 variant="contained"
               >
+            {isLoading && <img 
+                      src="LoadingIcon.gif" 
+                      alt="Loading..." 
+                      style={{ 
+                        height: '100px',
+                        position: 'absolute',
+                        zIndex: 1000000
+                      }} 
+                      />}
                 <Typography
                   sx={{
                     fontFamily: 'EFCircularBook',
