@@ -101,11 +101,11 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_country, e.target[form_country].value);
     formData.append(form_description, e.target[form_description].value);
     formData.append(form_instagram_handle, e.target[form_instagram_handle].value);
-    formData.append(form_is_ef_staff, e.target[form_is_ef_staff].value);
-    formData.append(form_ef_location, e.target[form_ef_location].value);
-    formData.append(form_ef_years, e.target[form_ef_years].value);
-    formData.append(form_is_ef_student, e.target[form_is_ef_student].value);
-    formData.append(form_experience, e.target[form_experience].value);
+    formData.append(form_is_ef_staff, e.target[form_is_ef_staff].value ?? 'None');
+    formData.append(form_ef_location, e.target[form_ef_location].value ?? 'None');
+    formData.append(form_ef_years, e.target[form_ef_years].value ?? 'None');
+    formData.append(form_is_ef_student, e.target[form_is_ef_student].value ?? 'None');
+    formData.append(form_experience, e.target[form_experience].value ?? 'None');
     formData.append(form_caption, e.target[form_caption].value);
     setIsLoading(false);
     // Call the handleSubmit function from useForm
@@ -406,6 +406,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     name={form_ef_location}
                     label="EF Office Location*" 
                     variant="filled"
+                    defaultValue="None"
                     sx={{
                       borderRadius: '7px',
                       backgroundColor: '#FFFFFF',
@@ -427,6 +428,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     name={form_ef_years}
                     label="Number of years with EF*" 
                     variant="filled"
+                    defaultValue="None"
                     sx={{
                       borderRadius: '7px',
                       backgroundColor: '#FFFFFF',
@@ -464,6 +466,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     <RadioGroup
                       id={form_is_ef_student}
                       name={form_is_ef_student}
+                      defaultValue="None"
                       onChange={(event) => setIsEFStudent(event.target.value)}
                       sx={{
                         color: '#FFFFFF !important',
@@ -538,6 +541,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     // label="Describe your EF experience(s), such as the EF program, location & dates*" 
                     variant="filled"
                     multiline
+                    defaultValue="None"
                     rowsMax={2}
                     sx={{
                       borderRadius: '7px',
