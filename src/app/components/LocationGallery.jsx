@@ -278,6 +278,42 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "BT" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="bhutan-flag.svg"
+                    alt="Bhutan Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "JM" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="jamaica-flag.svg"
+                    alt="Jamaica Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "DM" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="dominica-flag.svg"
+                    alt="Dominica Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -756,6 +792,36 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="sierra-leone-flag.svg" 
                       alt="Sierra Leone Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "BT" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="bhutan-flag.svg" 
+                      alt="Bhutan Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "JM" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="sierra-leone-flag.svg" 
+                      alt="Sierra Leone Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "DM" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="dominica-flag.svg" 
+                      alt="Dominica Flag"
                       width='20px'
                       height='20px'
                       />
