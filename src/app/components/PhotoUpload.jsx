@@ -101,11 +101,11 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_country, e.target[form_country].value);
     formData.append(form_description, e.target[form_description].value);
     formData.append(form_instagram_handle, e.target[form_instagram_handle].value);
-    formData.append(form_is_ef_staff, e.target[form_is_ef_staff].value ?? 'None');
-    formData.append(form_ef_location, e.target[form_ef_location].value ?? 'None');
-    formData.append(form_ef_years, e.target[form_ef_years].value ?? 'None');
-    formData.append(form_is_ef_student, e.target[form_is_ef_student].value ?? 'None');
-    formData.append(form_experience, e.target[form_experience].value ?? 'None');
+    formData.append(form_is_ef_staff, e.target[form_is_ef_staff]?.value ?? 'None');
+    formData.append(form_ef_location, e.target[form_ef_location]?.value ?? 'None');
+    formData.append(form_ef_years, e.target[form_ef_years]?.value ?? 'None');
+    formData.append(form_is_ef_student, e.target[form_is_ef_student]?.value ?? 'None');
+    formData.append(form_experience, e.target[form_experience]?.value ?? 'None');
     formData.append(form_caption, e.target[form_caption].value);
     setIsLoading(false);
     // Call the handleSubmit function from useForm
