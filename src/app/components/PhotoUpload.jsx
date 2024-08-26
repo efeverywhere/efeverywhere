@@ -342,7 +342,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         marginRight: '10px',
                       }}
                     > 
-                      Are you a current or former EF staff?
+                      Are you a current or former EF staff?*
                     </FormLabel>
                     <RadioGroup
                       id={form_is_ef_staff}
@@ -459,7 +459,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         marginRight: '10px',
                       }}
                     > 
-                      Are you current or former EF customer or student?
+                      Are you a current or former EF customer or student?*
                     </FormLabel>
                     <RadioGroup
                       id={form_is_ef_student}
@@ -873,7 +873,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         marginRight: '10px',
                       }}
                     > 
-                      Are you a current or former EF staff?
+                      Are you a current or former EF staff?*
                     </FormLabel>
                     <RadioGroup
                       id={form_is_ef_staff}
@@ -987,7 +987,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                         marginRight: '10px'
                       }}
                     > 
-                      Are you a current or former EF customer or student?
+                      Are you a current or former EF customer or student?*
                     </FormLabel>
                     <RadioGroup
                       id={form_is_ef_student}
