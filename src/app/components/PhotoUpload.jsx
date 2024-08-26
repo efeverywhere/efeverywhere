@@ -406,7 +406,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     name={form_ef_location}
                     label="EF Office Location*" 
                     variant="filled"
-                    defaultValue="None"
                     sx={{
                       borderRadius: '7px',
                       backgroundColor: '#FFFFFF',
@@ -428,7 +427,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     name={form_ef_years}
                     label="Number of years with EF*" 
                     variant="filled"
-                    defaultValue="None"
                     sx={{
                       borderRadius: '7px',
                       backgroundColor: '#FFFFFF',
@@ -466,7 +464,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     <RadioGroup
                       id={form_is_ef_student}
                       name={form_is_ef_student}
-                      defaultValue="None"
                       onChange={(event) => setIsEFStudent(event.target.value)}
                       sx={{
                         color: '#FFFFFF !important',
@@ -541,7 +538,6 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                     // label="Describe your EF experience(s), such as the EF program, location & dates*" 
                     variant="filled"
                     multiline
-                    defaultValue="None"
                     rowsMax={2}
                     sx={{
                       borderRadius: '7px',
