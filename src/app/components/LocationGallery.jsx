@@ -266,6 +266,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "SL" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="sierra-leone-flag.svg"
+                    alt="Sierra Leone Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -734,6 +746,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="cape-verde-flag.svg" 
                       alt="Cape Verde Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "SL" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="sierra-leone-flag.svg" 
+                      alt="Sierra Leone Flag"
                       width='20px'
                       height='20px'
                       />
