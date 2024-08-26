@@ -810,8 +810,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{
                         marginTop: '21px'
                       }}
-                      src="sierra-leone-flag.svg" 
-                      alt="Sierra Leone Flag"
+                      src="jamaica-flag.svg" 
+                      alt="Jamaica Flag"
                       width='20px'
                       height='20px'
                       />
