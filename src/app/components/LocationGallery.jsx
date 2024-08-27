@@ -314,6 +314,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "FJ" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="fiji-flag.svg"
+                    alt="Fiji Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -822,6 +834,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="dominica-flag.svg" 
                       alt="Dominica Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "FJ" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="fiji-flag.svg" 
+                      alt="Fiji Flag"
                       width='20px'
                       height='20px'
                       />
