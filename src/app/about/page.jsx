@@ -136,7 +136,7 @@ export default function Page(){
             </EFCarousel> */}
 
               <Image
-                  src="60th logo.svg" 
+                  src="60_anniversary-logo.svg" 
                   style={{ 
                     position: 'absolute', 
                     width: isMobile ? '65%' : '50%', 

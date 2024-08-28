@@ -32,7 +32,7 @@ export default function Footer() {
             alignItem: 'center',
             justifyContent: 'center'
           }}>
-            <Image src="EF 60th.svg" 
+            <Image src="EF 60th_white2.svg" 
               width={130}
               height={130}
             />
@@ -222,9 +222,11 @@ export default function Footer() {
           style={{
             alignItem: 'baseline'
           }}>
-            <EFImage src="EF 60th.svg" 
-              width={200} 
-              height={100}
+            <EFImage src="EF 60th_white2.svg" 
+            style={{
+              width: '180px',
+              height: '90px'
+            }}
             />
           </div>
           <Box
