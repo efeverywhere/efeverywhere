@@ -326,6 +326,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "ET" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="ethiopia-flag.svg"
+                    alt="Ethiopia Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -844,6 +856,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="fiji-flag.svg" 
                       alt="Fiji Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "ET" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="ethiopia-flag.svg" 
+                      alt="Ethiopia Flag"
                       width='20px'
                       height='20px'
                       />
