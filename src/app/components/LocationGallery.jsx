@@ -47,6 +47,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     src: image.file_name,
     caption_person: image.caption_person,
     caption_location: image.caption_location,
+    caption_text: image.caption_text,
+    submitter_details: image.submitter_details,
     alt: image.caption,
     file_type: image.file_type,
     cols: colsList[index % colsList.length],
@@ -65,9 +67,19 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     console.log(countryISOCode)
   }, []);
 
+  useEffect(() => { //We need to use this for CardMedia image loading checks
+    const img = new Image();
+    if (!selectedImage) {
+      return;
+    }
+    img.src = selectedImage.src;
+    img.onload = handleImageLoad;
+  }, [selectedImage]);
+
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
+
 
   return (
         <div>
@@ -1235,8 +1247,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }
                     <Card
                       sx={{ 
-                        maxHeight: '80%', 
-                        maxWidth: '80%'
+                        maxHeight: '90%', 
+                        maxWidth: '80%',
+                        overflow: 'scroll',
                       }} 
                     >
                       <CardContent
@@ -1245,39 +1258,27 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            overflow: 'scroll',
+                            padding: '50px',
+
                           }}
                       >
                         <CardMedia
-                          image={selectedImage.src}
+                          src={selectedImage.src} 
                           title={selectedImage.name}
                           component="img"
                           sx={{
                             maxHeight: '90%', 
                             maxWidth: '90%'
                           }}
-                        >
-                          {/* <img 
-                            src={selectedImage.src} 
-                            alt="" 
-                            style={{ 
-                              maxHeight: '90%', 
-                              maxWidth: '90%'
-                            }} 
-                            onLoad={handleImageLoad}
-                            onClick={() => {
-                              setSelectedImage(null)
-                              setHeaderState('default')
-                              setIsImageLoaded(false)
-                            }}/> */}
-                          </CardMedia>
-                          {/* TODO: ADD THE CAPTION PERSON AND Location
-                          TODO: CHECK IF CHANGING "selectedImage" BROKE ANYTHING */}
+                        />
                           {
                             selectedImage.caption_person &&
                             <Typography
                               align='left'
+                              paddingTop='10px'
+                              paddingLeft='5%'
                               sx={{
+                                fontFamily: 'EFCircularBold',
                                 width: '100%'
                               }}
                             >
@@ -1286,14 +1287,27 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           }
                           {
                             selectedImage.caption_location &&
-                            <Typography>
+                            <Typography
+                            align='left'
+                            paddingLeft='5%'
+                            sx={{
+                              fontFamily: 'EFCircularBook',
+                              width: '100%'
+                            }}
+                            >
                               {selectedImage.caption_location}
                             </Typography>
                           }
                           {
-                            selectedImage.caption &&
+                            selectedImage.caption_text &&
                             <Typography>
-                              {selectedImage.caption}
+                              {selectedImage.caption_text}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.submitter_details &&
+                            <Typography>
+                              {selectedImage.submitter_details}
                             </Typography>
                           }
 
