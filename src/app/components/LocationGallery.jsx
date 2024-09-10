@@ -11,6 +11,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import { Box } from '@mui/material';
 import Modal from '@mui/material/Modal';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -1271,19 +1272,39 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             maxWidth: '90%'
                           }}
                         />
-                          {
-                            selectedImage.caption_person &&
-                            <Typography
-                              align='left'
-                              paddingTop='10px'
-                              paddingLeft='5%'
-                              sx={{
-                                fontFamily: 'EFCircularBold',
-                                width: '100%'
-                              }}
+                        {
+                            (selectedImage.caption_person || selectedImage.submitter_details) &&
+                            <Box 
+                              display="flex"
+                              width="90%"
+                              align="left"
+                              justifyContent="flex-start"
+                              gap={2}
                             >
-                              {selectedImage.caption_person}
-                            </Typography>
+                              {
+                                selectedImage.caption_person &&
+                                <Typography
+                                  paddingTop='10px'
+                                  sx={{
+                                    fontFamily: 'EFCircularBold',
+                                  }}
+                                >
+                                  {selectedImage.caption_person}
+                                </Typography>
+                              }
+                              {
+                                selectedImage.submitter_details &&
+                                <Typography
+                                  paddingTop='10px'
+                                  sx={{
+                                    fontFamily: 'EFCircularBold',
+                                    color: '#DA2381 !important'
+                                  }}
+                                >
+                                  {selectedImage.submitter_details}
+                                </Typography>
+                              }
+                            </Box>
                           }
                           {
                             selectedImage.caption_location &&
@@ -1300,16 +1321,19 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           }
                           {
                             selectedImage.caption_text &&
-                            <Typography>
+                            <Typography
+                              align='left'
+                              paddingTop='30px'
+                              paddingLeft='5%'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                width: '100%'
+                              }}
+                            >
                               {selectedImage.caption_text}
                             </Typography>
                           }
-                          {
-                            selectedImage.submitter_details &&
-                            <Typography>
-                              {selectedImage.submitter_details}
-                            </Typography>
-                          }
+
 
                         </CardContent>
                     </Card>
