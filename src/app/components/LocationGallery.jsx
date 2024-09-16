@@ -1251,6 +1251,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         maxHeight: '90%', 
                         maxWidth: '80%',
                         overflow: 'scroll',
+                        paddingBottom:'50px',
                       }} 
                     >
                       <CardContent
@@ -1279,6 +1280,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               width="90%"
                               align="left"
                               justifyContent="flex-start"
+                              marginTop="40px"
                               gap={2}
                             >
                               {
@@ -1311,6 +1313,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             <Typography
                             align='left'
                             paddingLeft='5%'
+                            marginTop='10px'
                             sx={{
                               fontFamily: 'EFCircularBook',
                               width: '100%'
@@ -1323,8 +1326,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             selectedImage.caption_text &&
                             <Typography
                               align='left'
-                              paddingTop='30px'
                               paddingLeft='5%'
+                              marginTop='50px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
                                 width: '100%'
