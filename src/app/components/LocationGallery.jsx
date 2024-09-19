@@ -530,7 +530,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                     />
                     }
-                  <img 
+                  {/* <img 
                     src={selectedImage.src} 
                     alt="" 
                     style={{ maxHeight: '80%', maxWidth: '80%'}} 
@@ -539,7 +539,101 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       setSelectedImage(null)
                       setIsImageLoaded(false)
                     }}
-                    />
+                    /> */}
+                    <Card
+                      sx={{ 
+                        maxHeight: '80%', 
+                        maxWidth: '80%',
+                        overflow: 'scroll',
+                        paddingBottom:'50px',
+                      }} 
+                    >
+                      <CardContent
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '50px',
+
+                          }}
+                      >
+                        <CardMedia
+                          src={selectedImage.src} 
+                          title={selectedImage.name}
+                          component="img"
+                          sx={{
+                            maxHeight: '90%', 
+                            maxWidth: '90%'
+                          }}
+                        />
+                        {
+                            (selectedImage.caption_person || selectedImage.submitter_details) &&
+                            <Box 
+                              display="flex"
+                              width="90%"
+                              align="left"
+                              justifyContent="flex-start"
+                              marginTop="40px"
+                              gap={2}
+                            >
+                              {
+                                selectedImage.caption_person &&
+                                <Typography
+                                  paddingTop='10px'
+                                  sx={{
+                                    fontFamily: 'EFCircularBold',
+                                  }}
+                                >
+                                  {selectedImage.caption_person}
+                                </Typography>
+                              }
+                              {
+                                selectedImage.submitter_details &&
+                                <Typography
+                                  paddingTop='10px'
+                                  sx={{
+                                    fontFamily: 'EFCircularBold',
+                                    color: '#DA2381 !important'
+                                  }}
+                                >
+                                  {selectedImage.submitter_details}
+                                </Typography>
+                              }
+                            </Box>
+                          }
+                          {
+                            selectedImage.caption_location &&
+                            <Typography
+                            align='left'
+                            paddingLeft='5%'
+                            marginTop='10px'
+                            sx={{
+                              fontFamily: 'EFCircularBook',
+                              width: '100%'
+                            }}
+                            >
+                              {selectedImage.caption_location}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption_text &&
+                            <Typography
+                              align='left'
+                              paddingLeft='5%'
+                              marginTop='50px'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                width: '100%'
+                              }}
+                            >
+                              {selectedImage.caption_text}
+                            </Typography>
+                          }
+
+
+                        </CardContent>
+                    </Card>
                 </div>
                 </Modal>
               )}
@@ -1269,8 +1363,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedImage.name}
                           component="img"
                           sx={{
-                            maxHeight: '90%', 
-                            maxWidth: '90%'
+                            maxHeight: '40%', 
+                            maxWidth: '50%'
                           }}
                         />
                         {
