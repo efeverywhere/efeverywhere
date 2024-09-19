@@ -354,6 +354,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "NA" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="namibia-flag.svg"
+                    alt="Namibia Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "UG" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="uganda-flag.svg"
+                    alt="Uganda Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -976,6 +1000,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="ethiopia-flag.svg" 
                       alt="Ethiopia Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "NA" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="namibia-flag.svg" 
+                      alt="Namibia Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "UG" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="uganda-flag.svg" 
+                      alt="Uganda Flag"
                       width='20px'
                       height='20px'
                       />
