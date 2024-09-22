@@ -36,6 +36,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [viewState, setViewState] = useState(isMobile ? 'squares' : 'quilted');
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
@@ -81,6 +82,25 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     setIsImageLoaded(true);
   };
 
+  useEffect(() => {
+    const video = document.createElement('video');
+  
+    if (!selectedVideo) {
+      return;
+    }
+  
+    video.onloadedmetadata = handleVideoLoad;
+    video.src = selectedVideo.src;
+  
+    // Cleanup function
+    return () => {
+      video.onloadedmetadata = null;
+    };
+  }, [selectedVideo]);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
 
   return (
         <div>
@@ -1191,7 +1211,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
                             alt={image.caption_person}
-                            onClick={() => setSelectedVideo(image.src)}
+                            onClick={() => setSelectedVideo(image)}
                           />
                                 <img
                                 src="play_button.svg"
@@ -1204,7 +1224,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   color: 'white',
                                   transform: 'translate(-50%, -50%)'
                                 }} 
-                                onClick={() => setSelectedVideo(image.src)}
+                                onClick={() => setSelectedVideo(image)}
                               />
                        </>
                         ) : (
@@ -1254,7 +1274,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedVideo(image.src)
+                            setSelectedVideo(image)
                             setHeaderState('gallery_image')
                           }}
                           style={{
@@ -1273,7 +1293,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           color: 'white',
                           transform: 'translate(-50%, -50%)'
                         }} 
-                        onClick={() => setSelectedVideo(image.src)}
+                        onClick={() => setSelectedVideo(image)}
                       />
                       </>
                       ) : (
@@ -1356,6 +1376,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   closeAfterTransition
                 >
                   <div 
+                    onClick={() => {
+                      setSelectedImage(null)
+                      setHeaderState('default')
+                      setIsImageLoaded(false)
+                    }}
                     style={{ 
                       position: 'fixed', 
                       top: 0, 
@@ -1367,11 +1392,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       justifyContent: 'center',
                       alignItems: 'center',
                       zIndex: 10000000000,
-                    }}
-                    onClick={() => {
-                      setSelectedImage(null)
-                      setHeaderState('default')
-                      setIsImageLoaded(false)
                     }}
                     >
                     {!isImageLoaded && 
@@ -1407,26 +1427,27 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedImage.name}
                           component="img"
                           sx={{
-                            maxHeight: '40%', 
-                            maxWidth: '50%'
+                            maxHeight: '30%', 
+                            maxWidth: '40%'
                           }}
                         />
                         {
                             (selectedImage.caption_person || selectedImage.submitter_details) &&
                             <Box 
                               display="flex"
+                              flexDirection="row"
                               width="90%"
-                              align="left"
                               justifyContent="flex-start"
+                              alignItems="flex-end"
                               marginTop="40px"
-                              gap={2}
                             >
                               {
                                 selectedImage.caption_person &&
                                 <Typography
-                                  paddingTop='10px'
                                   sx={{
-                                    fontFamily: 'EFCircularBold',
+                                    fontFamily: 'EFCircularMedium',
+                                    fontSize: '20pt',
+                                    marginRight: '15px'
                                   }}
                                 >
                                   {selectedImage.caption_person}
@@ -1435,9 +1456,10 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {
                                 selectedImage.submitter_details &&
                                 <Typography
-                                  paddingTop='10px'
                                   sx={{
-                                    fontFamily: 'EFCircularBold',
+                                    fontFamily: 'EFCircularBook',
+                                    fontSize: '16pt',
+                                    paddingBottom: '1.5pt',
                                     color: '#DA2381 !important'
                                   }}
                                 >
@@ -1451,9 +1473,10 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             <Typography
                             align='left'
                             paddingLeft='5%'
-                            marginTop='10px'
+                            marginTop='5px'
                             sx={{
                               fontFamily: 'EFCircularBook',
+                              fontSize: '16pt',
                               width: '100%'
                             }}
                             >
@@ -1465,9 +1488,10 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             <Typography
                               align='left'
                               paddingLeft='5%'
-                              marginTop='50px'
+                              marginTop='40px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
+                                fontSize: '18pt',
                                 width: '100%'
                               }}
                             >
@@ -1515,6 +1539,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   closeAfterTransition
                 >
                   <div 
+                    onClick={() => {
+                      setSelectedVideo(null)
+                      setHeaderState('default')
+                      setIsVideoLoaded(false)
+                    }}
                     style={{ 
                       position: 'fixed', 
                       top: 0, 
@@ -1528,7 +1557,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       zIndex: 10000000000,
                     }}
                     >
-                    {!isImageLoaded && 
+                    {!isVideoLoaded && 
                       <img 
                       src="LoadingIcon.gif" 
                       alt="Loading..." 
@@ -1538,7 +1567,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                     />
                     }
-                    <video 
+                    {/* <video 
                       src={selectedVideo} 
                       alt="" 
                       style={{ 
@@ -1547,7 +1576,102 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                       onCanPlay={handleImageLoad}
                       controls
-                      />
+                      /> */}
+                    <Card
+                      sx={{ 
+                        maxHeight: '90%', 
+                        maxWidth: '80%',
+                        overflow: 'scroll',
+                        paddingBottom:'50px',
+                      }} 
+                    >
+                      <CardContent
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '50px',
+                          }}
+                      >
+                        <CardMedia
+                          src={selectedVideo.src} 
+                          title={selectedVideo.name}
+                          component="img"
+                          sx={{
+                            maxHeight: '30%', 
+                            maxWidth: '40%'
+                          }}
+                        />
+                        {
+                            (selectedVideo.caption_person || selectedVideo.submitter_details) &&
+                            <Box 
+                              display="flex"
+                              flexDirection="row"
+                              width="90%"
+                              justifyContent="flex-start"
+                              alignItems="flex-end"
+                              marginTop="40px"
+                            >
+                              {
+                                selectedVideo.caption_person &&
+                                <Typography
+                                  sx={{
+                                    fontFamily: 'EFCircularMedium',
+                                    fontSize: '20pt',
+                                    marginRight: '15px'
+                                  }}
+                                >
+                                  {selectedVideo.caption_person}
+                                </Typography>
+                              }
+                              {
+                                selectedVideo.submitter_details &&
+                                <Typography
+                                  sx={{
+                                    fontFamily: 'EFCircularBook',
+                                    fontSize: '16pt',
+                                    paddingBottom: '1.5pt',
+                                    color: '#DA2381 !important'
+                                  }}
+                                >
+                                  {selectedVideo.submitter_details}
+                                </Typography>
+                              }
+                            </Box>
+                          }
+                          {
+                            selectedVideo.caption_location &&
+                            <Typography
+                            align='left'
+                            paddingLeft='5%'
+                            marginTop='5px'
+                            sx={{
+                              fontFamily: 'EFCircularBook',
+                              fontSize: '16pt',
+                              width: '100%'
+                            }}
+                            >
+                              {selectedVideo.caption_location}
+                            </Typography>
+                          }
+                          {
+                            selectedVideo.caption_text &&
+                            <Typography
+                              align='left'
+                              paddingLeft='5%'
+                              marginTop='40px'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                fontSize: '18pt',
+                                width: '100%'
+                              }}
+                            >
+                              {selectedVideo.caption_text}
+                            </Typography>
+                          }
+                        </CardContent>
+                    </Card>
                     <button 
                       style={{
                         position: 'absolute',
@@ -1561,7 +1685,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       onClick={() => {
                         setSelectedVideo(null)
                         setHeaderState('default')
-                        setIsImageLoaded(false)
+                        setIsVideoLoaded(false)
                       }}
                     >
                       
