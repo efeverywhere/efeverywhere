@@ -598,7 +598,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            padding: '50px',
+                            padding: '24px',
 
                           }}
                       >
@@ -618,15 +618,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               width="90%"
                               align="left"
                               justifyContent="flex-start"
+                              alignItems="flex-end"
                               marginTop="40px"
-                              gap={2}
                             >
                               {
                                 selectedImage.caption_person &&
                                 <Typography
                                   paddingTop='10px'
                                   sx={{
-                                    fontFamily: 'EFCircularBold',
+                                    fontFamily: 'EFCircularMedium',
+                                    fontSize: '20pt',
+                                    marginRight: '15px'
                                   }}
                                 >
                                   {selectedImage.caption_person}
@@ -637,7 +639,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 <Typography
                                   paddingTop='10px'
                                   sx={{
-                                    fontFamily: 'EFCircularBold',
+                                    fontFamily: 'EFCircularMedium',
+                                    fontSize: '18pt',
                                     color: '#DA2381 !important'
                                   }}
                                 >
@@ -651,9 +654,10 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             <Typography
                             align='left'
                             paddingLeft='5%'
-                            marginTop='10px'
+                            marginTop='5px'
                             sx={{
                               fontFamily: 'EFCircularBook',
+                              fontSize: '18pt',
                               width: '100%'
                             }}
                             >
@@ -665,9 +669,10 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             <Typography
                               align='left'
                               paddingLeft='5%'
-                              marginTop='50px'
+                              marginTop='40px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
+                                fontSize: '18pt',
                                 width: '100%'
                               }}
                             >
