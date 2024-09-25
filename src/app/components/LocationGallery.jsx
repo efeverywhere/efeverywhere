@@ -1423,8 +1423,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            padding: '50px',
-
+                            padding: '50px'
                           }}
                       >
                         <CardMedia
@@ -1432,8 +1431,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedImage.name}
                           component="img"
                           sx={{
-                            maxHeight: '30%', 
-                            maxWidth: '40%'
+                            height: '80vh', 
+                            objectFit: 'contain'
                           }}
                         />
                         {
@@ -1604,8 +1603,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedVideo.name}
                           component="img"
                           sx={{
-                            maxHeight: '30%', 
-                            maxWidth: '40%'
+                            height: '80vh',
+                            objectFit: 'contain'
                           }}
                         />
                         {
