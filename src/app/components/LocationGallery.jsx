@@ -607,8 +607,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedImage.name}
                           component="img"
                           sx={{
-                            maxHeight: '90%', 
-                            maxWidth: '90%'
+                            maxHeight: '70vh',
+                            objectFit: 'contain',
                           }}
                         />
                         {
@@ -627,7 +627,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   paddingTop='10px'
                                   sx={{
                                     fontFamily: 'EFCircularMedium',
-                                    fontSize: '20pt',
+                                    fontSize: '20px',
                                     marginRight: '15px'
                                   }}
                                 >
@@ -640,8 +640,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   paddingTop='10px'
                                   sx={{
                                     fontFamily: 'EFCircularMedium',
-                                    fontSize: '18pt',
-                                    color: '#DA2381 !important'
+                                    fontSize: '18px',
+                                    color: '#DA2381 !important',
+                                    marginBottom: '1.25px'
                                   }}
                                 >
                                   {selectedImage.submitter_details}
@@ -657,7 +658,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             marginTop='5px'
                             sx={{
                               fontFamily: 'EFCircularBook',
-                              fontSize: '18pt',
+                              fontSize: '18px',
                               width: '100%'
                             }}
                             >
@@ -672,7 +673,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               marginTop='40px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
-                                fontSize: '18pt',
+                                fontSize: '18px',
                                 width: '100%'
                               }}
                             >
