@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -37,6 +38,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isCardBottom, setIsCardBottom] = useState(false);
   const [viewState, setViewState] = useState(isMobile ? 'squares' : 'quilted');
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
@@ -100,6 +102,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
 
   const handleVideoLoad = () => {
     setIsVideoLoaded(true);
+  };
+
+  const handleCardScroll = (e) => {
+    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    setIsCardBottom(bottom);
   };
 
   return (
@@ -585,6 +592,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     /> */}
                     <Card
+                      onScroll={handleCardScroll}
                       sx={{ 
                         maxHeight: '80%', 
                         maxWidth: '80%',
@@ -680,8 +688,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedImage.caption_text}
                             </Typography>
                           }
-
-
+                          {!isCardBottom && 
+                            <KeyboardArrowDownIcon
+                              style={{
+                                position: 'sticky',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                                color: 'grey',
+                                fontSize: '40px'
+                              }}
+                            />
+                          }
                         </CardContent>
                     </Card>
                 </div>
@@ -1411,7 +1428,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     />
                     }
                     <Card
+                      onScroll={handleCardScroll}
                       sx={{ 
+                        position: 'relative',
                         maxHeight: '90%', 
                         maxWidth: '80%',
                         overflow: 'scroll',
@@ -1503,8 +1522,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedImage.caption_text}
                             </Typography>
                           }
-
-
+                          {!isCardBottom && 
+                            <KeyboardArrowDownIcon
+                              style={{
+                                position: 'sticky',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                                color: 'grey',
+                                fontSize: '40px'
+                              }}
+                            />
+                          }
                         </CardContent>
                     </Card>
                     <button 
@@ -1583,6 +1611,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       controls
                       /> */}
                     <Card
+                      onScroll={handleCardScroll}
                       sx={{ 
                         maxHeight: '90%', 
                         maxWidth: '80%',
@@ -1604,7 +1633,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           title={selectedVideo.name}
                           component="img"
                           sx={{
-                            height: '80vh',
+                            maxHeight: '70vh',
                             objectFit: 'contain'
                           }}
                         />
@@ -1674,6 +1703,17 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             >
                               {selectedVideo.caption_text}
                             </Typography>
+                          }
+                          {!isCardBottom && 
+                            <KeyboardArrowDownIcon
+                              style={{
+                                position: 'sticky',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                                color: 'grey',
+                                fontSize: '40px'
+                              }}
+                            />
                           }
                         </CardContent>
                     </Card>
