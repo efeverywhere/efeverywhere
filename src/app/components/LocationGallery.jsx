@@ -582,17 +582,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                     />
                     }
-                  {/* <img 
-                    src={selectedImage.src} 
-                    alt="" 
-                    style={{ maxHeight: '80%', maxWidth: '80%'}} 
-                    onLoad={handleImageLoad}
-                    onClick={() => {
-                      setSelectedImage(null)
-                      setIsImageLoaded(false)
-                    }}
-                    /> */}
                     <Card
+                      id="myMobileCard"
                       onScroll={handleCardScroll}
                       sx={{ 
                         maxHeight: '80%', 
@@ -620,8 +611,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             objectFit: 'contain',
                           }}
                         />
-                        {
-                            (selectedImage.caption_person || selectedImage.submitter_details) &&
+                        { selectedImage.caption_person &&
                             <Box 
                               display="flex"
                               width="90%"
@@ -630,8 +620,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               alignItems="flex-end"
                               marginTop="40px"
                             >
-                              {
-                                selectedImage.caption_person &&
                                 <Typography
                                   paddingTop='10px'
                                   sx={{
@@ -642,22 +630,25 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 >
                                   {selectedImage.caption_person}
                                 </Typography>
-                              }
-                              {
-                                selectedImage.submitter_details &&
-                                <Typography
-                                  paddingTop='10px'
-                                  sx={{
-                                    fontFamily: 'EFCircularMedium',
-                                    fontSize: '18px',
-                                    color: '#DA2381 !important',
-                                    marginBottom: '1.25px'
-                                  }}
-                                >
-                                  {selectedImage.submitter_details}
-                                </Typography>
-                              }
                             </Box>
+                          }
+                          {selectedImage.submitter_details &&
+                            <Typography
+                              paddingTop='10px'
+                              display="flex"
+                              width="90%"
+                              align="left"
+                              justifyContent="flex-start"
+                              alignItems="flex-end"
+                              sx={{
+                                fontFamily: 'EFCircularMedium',
+                                fontSize: '18px',
+                                color: '#DA2381 !important',
+                                marginBottom: '1.25px'
+                              }}
+                            >
+                              {selectedImage.submitter_details}
+                            </Typography>
                           }
                           {
                             selectedImage.caption_location &&
@@ -699,16 +690,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             //     fontSize: '40px'
                             //   }}
                             // />
-                            <img
-                              src="ArrowDown.svg"
-                              style={{
-                                position: 'sticky',
-                                bottom: '0px',
-                                left: '100%', //somehow works to align arrow to the right
-                                color: 'grey',
-                                width: '40px'
-                              }}
-                            />
+                            <Button
+                            onClick={(event) => {
+                              event.stopPropagation(); // prevent card from closing
+                              const card = document.getElementById('myMobileCard');
+                              card.scrollTop = card.scrollHeight;
+                            }}
+                            style={{
+                              position: 'sticky',
+                              bottom: '0px',
+                              left: '100%', //somehow works to align arrow to the right
+                            }}
+                            >
+                              <img
+                                src="ArrowDown.svg"
+                                style={{
+                                  color: 'grey',
+                                  width: '40px'
+                                }}
+                              />
+                          </Button>
                           }
                         </CardContent>
                     </Card>
