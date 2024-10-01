@@ -578,6 +578,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
@@ -689,13 +690,23 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             </Typography>
                           }
                           {!isCardBottom && 
-                            <KeyboardArrowDownIcon
+                            // <KeyboardArrowDownIcon
+                            //   style={{
+                            //     position: 'sticky',
+                            //     bottom: '0px',
+                            //     left: '100%', //somehow works to align arrow to the right
+                            //     color: 'grey',
+                            //     fontSize: '40px'
+                            //   }}
+                            // />
+                            <img
+                              src="ArrowDown.svg"
                               style={{
                                 position: 'sticky',
                                 bottom: '0px',
                                 left: '100%', //somehow works to align arrow to the right
                                 color: 'grey',
-                                fontSize: '40px'
+                                width: '40px'
                               }}
                             />
                           }
@@ -1399,11 +1410,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   closeAfterTransition
                 >
                   <div 
-                    onClick={() => {
-                      setSelectedImage(null)
-                      setHeaderState('default')
-                      setIsImageLoaded(false)
-                    }}
+                    // onClick={() => {
+                    //   setSelectedImage(null)
+                    //   setHeaderState('default')
+                    //   setIsImageLoaded(false)
+                    // }}
                     style={{ 
                       position: 'fixed', 
                       top: 0, 
@@ -1424,11 +1435,13 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
                     <Card
                       onScroll={handleCardScroll}
+                      id="myImageCard"
                       sx={{ 
                         position: 'relative',
                         maxHeight: '90%', 
@@ -1455,31 +1468,35 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             objectFit: 'contain'
                           }}
                         />
-                        {
-                            (selectedImage.caption_person || selectedImage.submitter_details) &&
-                            <Box 
-                              display="flex"
-                              flexDirection="row"
-                              width="90%"
-                              justifyContent="flex-start"
-                              alignItems="flex-end"
-                              marginTop="40px"
-                            >
                               {
-                                selectedImage.caption_person &&
-                                <Typography
-                                  sx={{
-                                    fontFamily: 'EFCircularMedium',
-                                    fontSize: '20pt',
-                                    marginRight: '15px'
-                                  }}
-                                >
-                                  {selectedImage.caption_person}
-                                </Typography>
+                              selectedImage.caption_person && 
+                              <Box 
+                                display="flex"
+                                flexDirection="row"
+                                width="90%"
+                                justifyContent="flex-start"
+                                alignItems="flex-end"
+                                marginTop="40px"
+                              >
+                                  <Typography
+                                    sx={{
+                                      fontFamily: 'EFCircularMedium',
+                                      fontSize: '20pt',
+                                      marginRight: '15px'
+                                    }}
+                                  >
+                                    {selectedImage.caption_person}
+                                  </Typography>
+                              </Box>
                               }
                               {
                                 selectedImage.submitter_details &&
                                 <Typography
+                                  display="flex"
+                                  flexDirection="row"
+                                  width="90%"
+                                  justifyContent="flex-start"
+                                  alignItems="flex-end"
                                   sx={{
                                     fontFamily: 'EFCircularBook',
                                     fontSize: '16pt',
@@ -1490,8 +1507,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   {selectedImage.submitter_details}
                                 </Typography>
                               }
-                            </Box>
-                          }
                           {
                             selectedImage.caption_location &&
                             <Typography
@@ -1523,15 +1538,28 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             </Typography>
                           }
                           {!isCardBottom && 
-                            <KeyboardArrowDownIcon
-                              style={{
-                                position: 'sticky',
-                                bottom: '0px',
-                                left: '100%', //somehow works to align arrow to the right
-                                color: 'grey',
-                                fontSize: '40px'
-                              }}
-                            />
+                            <Button
+                            onClick={() => {
+                              const card = document.getElementById('myImageCard');
+                              card.scrollTop = card.scrollHeight;
+                            }}
+                            style={{
+                              position: 'sticky',
+                              bottom: '0px',
+                              left: '100%', //somehow works to align arrow to the right
+                            }}
+                            >
+                              <img
+                                src="ArrowDown.svg"
+                                style={{
+                                  position: 'sticky',
+                                  bottom: '0px',
+                                  left: '100%', //somehow works to align arrow to the right
+                                  color: 'grey',
+                                  width: '40px'
+                                }}
+                              />
+                            </Button>
                           }
                         </CardContent>
                     </Card>
@@ -1545,11 +1573,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         color: 'white',
                         fontSize: '2em',
                       }}
-                      onClick={() => {
-                        setSelectedVideo(null)
-                        setHeaderState('default')
-                        setIsImageLoaded(false)
-                      }}
+                    onClick={() => {
+                      setSelectedImage(null)
+                      setHeaderState('default')
+                      setIsImageLoaded(false)
+                    }}
                     >
                     <IconClose
                       style={{
@@ -1572,11 +1600,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   closeAfterTransition
                 >
                   <div 
-                    onClick={() => {
-                      setSelectedVideo(null)
-                      setHeaderState('default')
-                      setIsVideoLoaded(false)
-                    }}
                     style={{ 
                       position: 'fixed', 
                       top: 0, 
@@ -1597,6 +1620,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
@@ -1611,6 +1635,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       controls
                       /> */}
                     <Card
+                      id='myVideoCard'
                       onScroll={handleCardScroll}
                       sx={{ 
                         maxHeight: '90%', 
@@ -1637,31 +1662,35 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             objectFit: 'contain'
                           }}
                         />
-                        {
-                            (selectedVideo.caption_person || selectedVideo.submitter_details) &&
-                            <Box 
-                              display="flex"
-                              flexDirection="row"
-                              width="90%"
-                              justifyContent="flex-start"
-                              alignItems="flex-end"
-                              marginTop="40px"
-                            >
                               {
-                                selectedVideo.caption_person &&
-                                <Typography
-                                  sx={{
-                                    fontFamily: 'EFCircularMedium',
-                                    fontSize: '20pt',
-                                    marginRight: '15px'
-                                  }}
-                                >
-                                  {selectedVideo.caption_person}
-                                </Typography>
+                              selectedVideo.caption_person && 
+                              <Box 
+                                display="flex"
+                                flexDirection="row"
+                                width="90%"
+                                justifyContent="flex-start"
+                                alignItems="flex-end"
+                                marginTop="40px"
+                              >
+                                  <Typography
+                                    sx={{
+                                      fontFamily: 'EFCircularMedium',
+                                      fontSize: '20pt',
+                                      marginRight: '15px'
+                                    }}
+                                  >
+                                    {selectedVideo.caption_person}
+                                  </Typography>
+                              </Box>
                               }
                               {
                                 selectedVideo.submitter_details &&
                                 <Typography
+                                  display="flex"
+                                  flexDirection="row"
+                                  width="90%"
+                                  justifyContent="flex-start"
+                                  alignItems="flex-end"
                                   sx={{
                                     fontFamily: 'EFCircularBook',
                                     fontSize: '16pt',
@@ -1672,8 +1701,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   {selectedVideo.submitter_details}
                                 </Typography>
                               }
-                            </Box>
-                          }
                           {
                             selectedVideo.caption_location &&
                             <Typography
@@ -1705,15 +1732,28 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             </Typography>
                           }
                           {!isCardBottom && 
-                            <KeyboardArrowDownIcon
-                              style={{
-                                position: 'sticky',
-                                bottom: '0px',
-                                left: '100%', //somehow works to align arrow to the right
-                                color: 'grey',
-                                fontSize: '40px'
-                              }}
-                            />
+                            <Button
+                            onClick={() => {
+                              const card = document.getElementById('myVideoCard');
+                              card.scrollTop = card.scrollHeight;
+                            }}
+                            style={{
+                              position: 'sticky',
+                              bottom: '0px',
+                              left: '100%', //somehow works to align arrow to the right
+                            }}
+                            >
+                              <img
+                                src="ArrowDown.svg"
+                                style={{
+                                  position: 'sticky',
+                                  bottom: '0px',
+                                  left: '100%', //somehow works to align arrow to the right
+                                  color: 'grey',
+                                  width: '40px'
+                                }}
+                              />
+                            </Button>
                           }
                         </CardContent>
                     </Card>
