@@ -640,6 +640,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               align="left"
                               justifyContent="flex-start"
                               alignItems="flex-end"
+                              marginTop='5px'
                               sx={{
                                 fontFamily: 'EFCircularMedium',
                                 fontSize: '18px',
@@ -680,21 +681,14 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedImage.caption_text}
                             </Typography>
                           }
-                          {!isCardBottom && 
-                            // <KeyboardArrowDownIcon
-                            //   style={{
-                            //     position: 'sticky',
-                            //     bottom: '0px',
-                            //     left: '100%', //somehow works to align arrow to the right
-                            //     color: 'grey',
-                            //     fontSize: '40px'
-                            //   }}
-                            // />
                             <Button
                             onClick={(event) => {
                               event.stopPropagation(); // prevent card from closing
                               const card = document.getElementById('myMobileCard');
                               card.scrollTop = card.scrollHeight;
+                              disableRipple
+                              disableFocusRipple
+                              disableTouchRipple
                             }}
                             style={{
                               position: 'sticky',
@@ -710,7 +704,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 }}
                               />
                           </Button>
-                          }
                         </CardContent>
                     </Card>
                 </div>
@@ -1498,6 +1491,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   width="90%"
                                   justifyContent="flex-start"
                                   alignItems="flex-end"
+                                  marginTop='5px'
                                   sx={{
                                     fontFamily: 'EFCircularBook',
                                     fontSize: '16pt',
@@ -1549,6 +1543,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               bottom: '0px',
                               left: '100%', //somehow works to align arrow to the right
                             }}
+                            disableRipple
+                            disableFocusRipple
+                            disableTouchRipple
                             >
                               <img
                                 src="ArrowDown.svg"
@@ -1732,7 +1729,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedVideo.caption_text}
                             </Typography>
                           }
-                          {!isCardBottom && 
                             <Button
                             onClick={() => {
                               const card = document.getElementById('myVideoCard');
@@ -1743,6 +1739,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               bottom: '0px',
                               left: '100%', //somehow works to align arrow to the right
                             }}
+                            disableRipple
+                            disableFocusRipple
+                            disableTouchRipple
                             >
                               <img
                                 src="ArrowDown.svg"
@@ -1755,7 +1754,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 }}
                               />
                             </Button>
-                          }
                         </CardContent>
                     </Card>
                     <button 
