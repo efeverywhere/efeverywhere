@@ -7,7 +7,12 @@ import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { Box } from '@mui/material';
 import Modal from '@mui/material/Modal';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -32,6 +37,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isCardBottom, setIsCardBottom] = useState(false);
   const [viewState, setViewState] = useState(isMobile ? 'squares' : 'quilted');
   const [currentPage, setCurrentPage] = useState(1);
   const [imagesPerPage] = useState(20); 
@@ -44,6 +51,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     src: image.file_name,
     caption_person: image.caption_person,
     caption_location: image.caption_location,
+    caption_text: image.caption_text,
+    submitter_details: image.submitter_details,
     alt: image.caption,
     file_type: image.file_type,
     cols: colsList[index % colsList.length],
@@ -62,8 +71,47 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
     console.log(countryISOCode)
   }, []);
 
+  useEffect(() => { //We need to use this for CardMedia image loading checks
+    const img = new Image();
+    if (!selectedImage) {
+      return;
+    }
+    img.src = selectedImage.src;
+    img.onload = handleImageLoad;
+  }, [selectedImage]);
+
   const handleImageLoad = () => {
     setIsImageLoaded(true);
+  };
+
+  useEffect(() => {
+    const video = document.createElement('video');
+  
+    if (!selectedVideo) {
+      return;
+    }
+  
+    video.onloadedmetadata = handleVideoLoad;
+    video.src = selectedVideo.src;
+  
+    // Cleanup function
+    return () => {
+      video.onloadedmetadata = null;
+    };
+  }, [selectedVideo]);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
+  const handleCardScroll = (e) => {
+    const bottom = e.target.scrollHeight - e.target.scrollTop < (e.target.clientHeight + 5);
+    console.log(e.target.scrollHeight)
+    console.log(e.target.scrollTop)
+    console.log(e.target.scrollHeight - e.target.scrollTop )
+    console.log(e.target.clientHeight)
+    console.log(bottom)
+    setIsCardBottom(bottom);
   };
 
   return (
@@ -362,6 +410,66 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "AQ" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="antarctica-flag.svg"
+                    alt="Antarctica Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CU" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="cuba-flag.svg"
+                    alt="Cuba Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CY" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="cyprus-flag.svg"
+                    alt="Cyprus Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "MC" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="monaco-flag.svg"
+                    alt="Monaco Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "ZW" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="zimbabwe-flag.svg"
+                    alt="Zimbabwe Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -412,7 +520,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           src={image.src  + '?width=300&height=300&func=crop'} 
                           alt={image.caption_person}
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                           }}
                           style={{
                             width: '100%',
@@ -426,7 +534,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.caption_person}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                           }}
                           style={{
                             borderRadius: '3px',
@@ -481,7 +589,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         alt={image.caption_person}
                         loading="lazy"
                         onClick={() => {
-                          setSelectedImage(image.src)
+                          setSelectedImage(image)
                         }}
                         style={{
                           borderRadius: '3px',
@@ -535,19 +643,147 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
-                  <img 
-                    src={selectedImage} 
-                    alt="" 
-                    style={{ maxHeight: '80%', maxWidth: '80%'}} 
-                    onLoad={handleImageLoad}
-                    onClick={() => {
-                      setSelectedImage(null)
-                      setIsImageLoaded(false)
-                    }}
-                    />
+                    <Card
+                      id="myMobileCard"
+                      onScroll={handleCardScroll}
+                      sx={{ 
+                        maxHeight: '80%', 
+                        maxWidth: '80%',
+                        overflow: 'scroll',
+                        paddingBottom:'50px',
+                      }} 
+                    >
+                      <CardContent
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '24px',
+
+                          }}
+                      >
+                        <CardMedia
+                          src={selectedImage.src} 
+                          title={selectedImage.name}
+                          component="img"
+                          sx={{
+                            maxHeight: '70vh',
+                            objectFit: 'contain',
+                          }}
+                        />
+                        { selectedImage.caption_person &&
+                            <Box 
+                              display="flex"
+                              width="90%"
+                              align="left"
+                              justifyContent="flex-start"
+                              alignItems="flex-end"
+                              marginTop="40px"
+                            >
+                                <Typography
+                                  paddingTop='10px'
+                                  sx={{
+                                    fontFamily: 'EFCircularMedium',
+                                    fontSize: '20px',
+                                    marginRight: '15px'
+                                  }}
+                                >
+                                  {selectedImage.caption_person}
+                                </Typography>
+                            </Box>
+                          }
+                          {selectedImage.submitter_details &&
+                            <Typography
+                              paddingTop='10px'
+                              display="flex"
+                              width="90%"
+                              align="left"
+                              justifyContent="flex-start"
+                              alignItems="flex-end"
+                              marginTop='5px'
+                              sx={{
+                                fontFamily: 'EFCircularMedium',
+                                fontSize: '18px',
+                                color: '#DA2381 !important',
+                                marginBottom: '1.25px'
+                              }}
+                            >
+                              {selectedImage.submitter_details}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption_location &&
+                            <Typography
+                            align='left'
+                            paddingLeft='5%'
+                            marginTop='5px'
+                            sx={{
+                              fontFamily: 'EFCircularBook',
+                              fontSize: '18px',
+                              width: '100%'
+                            }}
+                            >
+                              {selectedImage.caption_location}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption_text &&
+                            <Typography
+                              align='left'
+                              paddingLeft='5%'
+                              marginTop='40px'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                fontSize: '18px',
+                                width: '100%'
+                              }}
+                            >
+                              {selectedImage.caption_text}
+                            </Typography>
+                          }
+                          {/* {isCardBottom && */}
+                            <Button
+                            onClick={(event) => {
+                              event.stopPropagation(); // prevent card from closing
+                              const card = document.getElementById('myMobileCard');
+                              card.scrollTop = card.scrollHeight;
+                            }}
+                            disableRipple
+                            disableFocusRipple
+                            disableTouchRipple
+                            style={{
+                              position: 'sticky',
+                              bottom: '0px',
+                              left: '100%', //somehow works to align arrow to the right
+                            }}
+                            sx={{
+                              '&:hover': {
+                                backgroundColor: 'transparent', // Removes hover effect
+                              },
+                              '&:focus': {
+                                outline: 'none',
+                              },
+                              '.mat-ripple-element': {
+                                display: 'none'
+                            }
+                              }}
+                            >
+                              <img
+                                src="ArrowDown.svg"
+                                style={{
+                                  color: 'grey',
+                                  width: '40px'
+                                }}
+                              />
+                          </Button>
+                          {/* } */}
+                        </CardContent>
+                    </Card>
                 </div>
                 </Modal>
               )}
@@ -893,6 +1129,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='20px'
                       height='20px'
                       />
+                    ) : countryISOCode === "NA" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="namibia-flag.svg" 
+                      alt="Namibia Flag"
+                      width='20px'
+                      height='20px'
+                      />
                     ) : countryISOCode === "UG" ? (
                       <img 
                       style={{
@@ -903,13 +1149,53 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='20px'
                       height='20px'
                       />
-                    ) : countryISOCode === "NA" ? (
+                    ) : countryISOCode === "AQ" ? (
                       <img 
                       style={{
                         marginTop: '21px'
                       }}
-                      src="namibia-flag.svg" 
-                      alt="Namibia Flag"
+                      src="antarctica-flag.svg" 
+                      alt="Antarctica Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "CU" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="cuba-flag.svg" 
+                      alt="Cuba Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "CY" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="cyprus-flag.svg" 
+                      alt="Cyprus Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "MC" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="monaco-flag.svg" 
+                      alt="Monaco Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "ZW" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="zimbabwe-flag.svg" 
+                      alt="Zimbabwe Flag"
                       width='20px'
                       height='20px'
                       />
@@ -1081,7 +1367,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                             src={thumbnailDir + image.src.split("/").pop().split(".")[0] + '_thumbnail.png?width=250&height=250&func=crop'} 
                             // src={image.src.substring(0, image.src.lastIndexOf(".")) + ".jpg" + '?width=300&height=300&func=crop'} 
                             alt={image.caption_person}
-                            onClick={() => setSelectedVideo(image.src)}
+                            onClick={() => setSelectedVideo(image)}
                           />
                                 <img
                                 src="play_button.svg"
@@ -1094,7 +1380,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                   color: 'white',
                                   transform: 'translate(-50%, -50%)'
                                 }} 
-                                onClick={() => setSelectedVideo(image.src)}
+                                onClick={() => setSelectedVideo(image)}
                               />
                        </>
                         ) : (
@@ -1102,7 +1388,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           key={index} 
                           src={image.src  + '?width=250&height=250&func=crop'} 
                           alt={image.caption_person}
-                          onClick={() => setSelectedImage(image.src)}/>
+                          onClick={() => setSelectedImage(image)}/>
                         )}
                           <ImageListItemBar
                             title={image.caption_person}
@@ -1144,7 +1430,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedVideo(image.src)
+                            setSelectedVideo(image)
                             setHeaderState('gallery_image')
                           }}
                           style={{
@@ -1163,7 +1449,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           color: 'white',
                           transform: 'translate(-50%, -50%)'
                         }} 
-                        onClick={() => setSelectedVideo(image.src)}
+                        onClick={() => setSelectedVideo(image)}
                       />
                       </>
                       ) : (
@@ -1172,7 +1458,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           alt={image.title}
                           loading="lazy"
                           onClick={() => {
-                            setSelectedImage(image.src)
+                            setSelectedImage(image)
                             setHeaderState('gallery_image')
                           }}
                         />
@@ -1246,6 +1532,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                   closeAfterTransition
                 >
                   <div 
+                    // onClick={() => {
+                    //   setSelectedImage(null)
+                    //   setHeaderState('default')
+                    //   setIsImageLoaded(false)
+                    // }}
                     style={{ 
                       position: 'fixed', 
                       top: 0, 
@@ -1258,11 +1549,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       alignItems: 'center',
                       zIndex: 10000000000,
                     }}
-                    onClick={() => {
-                      setSelectedImage(null)
-                      setHeaderState('default')
-                      setIsImageLoaded(false)
-                    }}
                     >
                     {!isImageLoaded && 
                       <img 
@@ -1271,22 +1557,147 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
-                    <img 
-                      src={selectedImage} 
-                      alt="" 
-                      style={{ 
-                        maxHeight: '80%', 
-                        maxWidth: '80%'
+                    <Card
+                      onScroll={handleCardScroll}
+                      id="myImageCard"
+                      sx={{ 
+                        position: 'relative',
+                        maxHeight: '90%', 
+                        maxWidth: '80%',
+                        overflow: 'scroll',
+                        paddingBottom:'50px',
                       }} 
-                      onLoad={handleImageLoad}
-                      onClick={() => {
-                        setSelectedImage(null)
-                        setHeaderState('default')
-                        setIsImageLoaded(false)
-                      }}/>
+                    >
+                      <CardContent
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '50px'
+                          }}
+                      >
+                        <CardMedia
+                          src={selectedImage.src} 
+                          title={selectedImage.name}
+                          component="img"
+                          sx={{
+                            height: '80vh', 
+                            objectFit: 'contain'
+                          }}
+                        />
+                              {
+                              selectedImage.caption_person && 
+                              <Box 
+                                display="flex"
+                                flexDirection="row"
+                                width="90%"
+                                justifyContent="flex-start"
+                                alignItems="flex-end"
+                                marginTop="40px"
+                              >
+                                  <Typography
+                                    sx={{
+                                      fontFamily: 'EFCircularMedium',
+                                      fontSize: '20pt',
+                                      marginRight: '15px'
+                                    }}
+                                  >
+                                    {selectedImage.caption_person}
+                                  </Typography>
+                              </Box>
+                              }
+                              {
+                                selectedImage.submitter_details &&
+                                <Typography
+                                  display="flex"
+                                  flexDirection="row"
+                                  width="90%"
+                                  justifyContent="flex-start"
+                                  alignItems="flex-end"
+                                  marginTop='5px'
+                                  sx={{
+                                    fontFamily: 'EFCircularBook',
+                                    fontSize: '16pt',
+                                    paddingBottom: '1.5pt',
+                                    color: '#DA2381 !important'
+                                  }}
+                                >
+                                  {selectedImage.submitter_details}
+                                </Typography>
+                              }
+                          {
+                            selectedImage.caption_location &&
+                            <Typography
+                            align='left'
+                            paddingLeft='5%'
+                            marginTop='5px'
+                            sx={{
+                              fontFamily: 'EFCircularBook',
+                              fontSize: '16pt',
+                              width: '100%'
+                            }}
+                            >
+                              {selectedImage.caption_location}
+                            </Typography>
+                          }
+                          {
+                            selectedImage.caption_text &&
+                            <Typography
+                              align='left'
+                              paddingLeft='5%'
+                              marginTop='40px'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                fontSize: '18pt',
+                                width: '100%'
+                              }}
+                            >
+                              {selectedImage.caption_text}
+                            </Typography>
+                          }
+                          {!isCardBottom && 
+                            <Button
+                              onClick={() => {
+                                const card = document.getElementById('myImageCard');
+                                card.scrollTop = card.scrollHeight;
+                              }}
+                              style={{
+                                position: 'sticky',
+                                height: '0px',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                              }}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
+                                }}
+                                disableRipple
+                                disableFocusRipple
+                                disableTouchRipple
+                            >
+                              <img
+                                src="ArrowDown.svg"
+                                style={{
+                                  position: 'sticky',
+                                  bottom: '0px',
+                                  left: '100%', //somehow works to align arrow to the right
+                                  color: 'grey',
+                                  width: '40px'
+                                }}
+                              />
+                            </Button>
+                          }
+                        </CardContent>
+                    </Card>
                     <button 
                       style={{
                         position: 'absolute',
@@ -1297,11 +1708,11 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                         color: 'white',
                         fontSize: '2em',
                       }}
-                      onClick={() => {
-                        setSelectedVideo(null)
-                        setHeaderState('default')
-                        setIsImageLoaded(false)
-                      }}
+                    onClick={() => {
+                      setSelectedImage(null)
+                      setHeaderState('default')
+                      setIsImageLoaded(false)
+                    }}
                     >
                     <IconClose
                       style={{
@@ -1337,17 +1748,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       zIndex: 10000000000,
                     }}
                     >
-                    {!isImageLoaded && 
+                    {!isVideoLoaded && 
                       <img 
                       src="LoadingIcon.gif" 
                       alt="Loading..." 
                       style={{ 
                         height: '100px',
                         position: 'absolute',
+                        zIndex: 10000000000
                       }} 
                     />
                     }
-                    <video 
+                    {/* <video 
                       src={selectedVideo} 
                       alt="" 
                       style={{ 
@@ -1356,7 +1768,141 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }} 
                       onCanPlay={handleImageLoad}
                       controls
-                      />
+                      /> */}
+                      <Card
+                        id='myVideoCard'
+                        onScroll={handleCardScroll}
+                        sx={{ 
+                          maxHeight: '90%', 
+                          maxWidth: '80%',
+                          overflow: 'scroll',
+                          paddingBottom:'50px',
+                        }} 
+                      >
+                        <CardContent
+                            sx={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              padding: '50px',
+                            }}
+                        >
+                          <CardMedia
+                            src={selectedVideo.src} 
+                            title={selectedVideo.name}
+                            component="img"
+                            sx={{
+                              maxHeight: '70vh',
+                              objectFit: 'contain'
+                            }}
+                          />
+                                {
+                                selectedVideo.caption_person && 
+                                <Box 
+                                  display="flex"
+                                  flexDirection="row"
+                                  width="90%"
+                                  justifyContent="flex-start"
+                                  alignItems="flex-end"
+                                  marginTop="40px"
+                                >
+                                    <Typography
+                                      sx={{
+                                        fontFamily: 'EFCircularMedium',
+                                        fontSize: '20pt',
+                                        marginRight: '15px'
+                                      }}
+                                    >
+                                      {selectedVideo.caption_person}
+                                    </Typography>
+                                </Box>
+                                }
+                                {
+                                  selectedVideo.submitter_details &&
+                                  <Typography
+                                    display="flex"
+                                    flexDirection="row"
+                                    width="90%"
+                                    justifyContent="flex-start"
+                                    alignItems="flex-end"
+                                    sx={{
+                                      fontFamily: 'EFCircularBook',
+                                      fontSize: '16pt',
+                                      paddingBottom: '1.5pt',
+                                      color: '#DA2381 !important'
+                                    }}
+                                  >
+                                    {selectedVideo.submitter_details}
+                                  </Typography>
+                                }
+                            {
+                              selectedVideo.caption_location &&
+                              <Typography
+                              align='left'
+                              paddingLeft='5%'
+                              marginTop='5px'
+                              sx={{
+                                fontFamily: 'EFCircularBook',
+                                fontSize: '16pt',
+                                width: '100%'
+                              }}
+                              >
+                                {selectedVideo.caption_location}
+                              </Typography>
+                            }
+                            {
+                              selectedVideo.caption_text &&
+                              <Typography
+                                align='left'
+                                paddingLeft='5%'
+                                marginTop='40px'
+                                sx={{
+                                  fontFamily: 'EFCircularBook',
+                                  fontSize: '18pt',
+                                  width: '100%'
+                                }}
+                              >
+                                {selectedVideo.caption_text}
+                              </Typography>
+                            }
+                            {!isCardBottom && 
+                              <Button
+                              onClick={() => {
+                                const card = document.getElementById('myVideoCard');
+                                card.scrollTop = card.scrollHeight;
+                              }}
+                              style={{
+                                position: 'sticky',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                              }}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
+                                }}
+                              disableRipple
+                              disableFocusRipple
+                              disableTouchRipple
+                              >
+                                <img
+                                  src="ArrowDown.svg"
+                                  style={{
+                                    position: 'sticky',
+                                    bottom: '0px',
+                                    left: '100%', //somehow works to align arrow to the right
+                                    color: 'grey',
+                                    width: '40px'
+                                  }}
+                                />
+                              </Button>
+                              }
+                          </CardContent>
+                      </Card>
                     <button 
                       style={{
                         position: 'absolute',
@@ -1370,7 +1916,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       onClick={() => {
                         setSelectedVideo(null)
                         setHeaderState('default')
-                        setIsImageLoaded(false)
+                        setIsVideoLoaded(false)
                       }}
                     >
                       
@@ -1409,8 +1955,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                   />
                   <Typography
-                  fontFamily={'EFCircularBook'}
-                  style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
+                    fontFamily={'EFCircularBook'}
+                    style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
                   >
                   Map
                   </Typography>
