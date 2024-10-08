@@ -410,6 +410,66 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "AQ" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="antarctica-flag.svg"
+                    alt="Antarctica Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CU" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="cuba-flag.svg"
+                    alt="Cuba Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CY" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="cyprus-flag.svg"
+                    alt="Cyprus Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "MC" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="monaco-flag.svg"
+                    alt="Monaco Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "ZW" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="zimbabwe-flag.svg"
+                    alt="Zimbabwe Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -1081,6 +1141,56 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="uganda-flag.svg" 
                       alt="Uganda Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "AQ" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="antarctica-flag.svg" 
+                      alt="Antarctica Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "CU" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="cuba-flag.svg" 
+                      alt="Cuba Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "CY" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="cyprus-flag.svg" 
+                      alt="Cyprus Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "MC" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="monaco-flag.svg" 
+                      alt="Monaco Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "ZW" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="zimbabwe-flag.svg" 
+                      alt="Zimbabwe Flag"
                       width='20px'
                       height='20px'
                       />
