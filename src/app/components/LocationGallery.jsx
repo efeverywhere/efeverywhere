@@ -746,6 +746,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedImage.caption_text}
                             </Typography>
                           }
+                          {isCardBottom &&
                             <Button
                             onClick={(event) => {
                               event.stopPropagation(); // prevent card from closing
@@ -777,6 +778,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 }}
                               />
                           </Button>
+                          }
                         </CardContent>
                     </Card>
                 </div>
