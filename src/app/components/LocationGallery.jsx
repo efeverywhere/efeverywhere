@@ -746,16 +746,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               {selectedImage.caption_text}
                             </Typography>
                           }
-                          {isCardBottom &&
+                          {/* {isCardBottom && */}
                             <Button
                             onClick={(event) => {
                               event.stopPropagation(); // prevent card from closing
                               const card = document.getElementById('myMobileCard');
                               card.scrollTop = card.scrollHeight;
-                              disableRipple
-                              disableFocusRipple
-                              disableTouchRipple
                             }}
+                            disableRipple
+                            disableFocusRipple
+                            disableTouchRipple
                             style={{
                               position: 'sticky',
                               bottom: '0px',
@@ -768,6 +768,9 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               '&:focus': {
                                 outline: 'none',
                               },
+                              '.mat-ripple-element': {
+                                display: 'none'
+                            }
                               }}
                             >
                               <img
@@ -778,7 +781,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                                 }}
                               />
                           </Button>
-                          }
+                          {/* } */}
                         </CardContent>
                     </Card>
                 </div>
