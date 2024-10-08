@@ -105,7 +105,12 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
   };
 
   const handleCardScroll = (e) => {
-    const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+    const bottom = e.target.scrollHeight - e.target.scrollTop < (e.target.clientHeight + 5);
+    console.log(e.target.scrollHeight)
+    console.log(e.target.scrollTop)
+    console.log(e.target.scrollHeight - e.target.scrollTop )
+    console.log(e.target.clientHeight)
+    console.log(bottom)
     setIsCardBottom(bottom);
   };
 
@@ -695,6 +700,14 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                               bottom: '0px',
                               left: '100%', //somehow works to align arrow to the right
                             }}
+                            sx={{
+                              '&:hover': {
+                                backgroundColor: 'transparent', // Removes hover effect
+                              },
+                              '&:focus': {
+                                outline: 'none',
+                              },
+                              }}
                             >
                               <img
                                 src="ArrowDown.svg"
@@ -1534,18 +1547,27 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                           }
                           {!isCardBottom && 
                             <Button
-                            onClick={() => {
-                              const card = document.getElementById('myImageCard');
-                              card.scrollTop = card.scrollHeight;
-                            }}
-                            style={{
-                              position: 'sticky',
-                              bottom: '0px',
-                              left: '100%', //somehow works to align arrow to the right
-                            }}
-                            disableRipple
-                            disableFocusRipple
-                            disableTouchRipple
+                              onClick={() => {
+                                const card = document.getElementById('myImageCard');
+                                card.scrollTop = card.scrollHeight;
+                              }}
+                              style={{
+                                position: 'sticky',
+                                height: '0px',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                              }}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
+                                }}
+                                disableRipple
+                                disableFocusRipple
+                                disableTouchRipple
                             >
                               <img
                                 src="ArrowDown.svg"
@@ -1632,130 +1654,140 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       onCanPlay={handleImageLoad}
                       controls
                       /> */}
-                    <Card
-                      id='myVideoCard'
-                      onScroll={handleCardScroll}
-                      sx={{ 
-                        maxHeight: '90%', 
-                        maxWidth: '80%',
-                        overflow: 'scroll',
-                        paddingBottom:'50px',
-                      }} 
-                    >
-                      <CardContent
-                          sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            padding: '50px',
-                          }}
+                      <Card
+                        id='myVideoCard'
+                        onScroll={handleCardScroll}
+                        sx={{ 
+                          maxHeight: '90%', 
+                          maxWidth: '80%',
+                          overflow: 'scroll',
+                          paddingBottom:'50px',
+                        }} 
                       >
-                        <CardMedia
-                          src={selectedVideo.src} 
-                          title={selectedVideo.name}
-                          component="img"
-                          sx={{
-                            maxHeight: '70vh',
-                            objectFit: 'contain'
-                          }}
-                        />
-                              {
-                              selectedVideo.caption_person && 
-                              <Box 
-                                display="flex"
-                                flexDirection="row"
-                                width="90%"
-                                justifyContent="flex-start"
-                                alignItems="flex-end"
-                                marginTop="40px"
-                              >
-                                  <Typography
-                                    sx={{
-                                      fontFamily: 'EFCircularMedium',
-                                      fontSize: '20pt',
-                                      marginRight: '15px'
-                                    }}
-                                  >
-                                    {selectedVideo.caption_person}
-                                  </Typography>
-                              </Box>
-                              }
-                              {
-                                selectedVideo.submitter_details &&
-                                <Typography
+                        <CardContent
+                            sx={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              padding: '50px',
+                            }}
+                        >
+                          <CardMedia
+                            src={selectedVideo.src} 
+                            title={selectedVideo.name}
+                            component="img"
+                            sx={{
+                              maxHeight: '70vh',
+                              objectFit: 'contain'
+                            }}
+                          />
+                                {
+                                selectedVideo.caption_person && 
+                                <Box 
                                   display="flex"
                                   flexDirection="row"
                                   width="90%"
                                   justifyContent="flex-start"
                                   alignItems="flex-end"
-                                  sx={{
-                                    fontFamily: 'EFCircularBook',
-                                    fontSize: '16pt',
-                                    paddingBottom: '1.5pt',
-                                    color: '#DA2381 !important'
-                                  }}
+                                  marginTop="40px"
                                 >
-                                  {selectedVideo.submitter_details}
-                                </Typography>
-                              }
-                          {
-                            selectedVideo.caption_location &&
-                            <Typography
-                            align='left'
-                            paddingLeft='5%'
-                            marginTop='5px'
-                            sx={{
-                              fontFamily: 'EFCircularBook',
-                              fontSize: '16pt',
-                              width: '100%'
-                            }}
-                            >
-                              {selectedVideo.caption_location}
-                            </Typography>
-                          }
-                          {
-                            selectedVideo.caption_text &&
-                            <Typography
+                                    <Typography
+                                      sx={{
+                                        fontFamily: 'EFCircularMedium',
+                                        fontSize: '20pt',
+                                        marginRight: '15px'
+                                      }}
+                                    >
+                                      {selectedVideo.caption_person}
+                                    </Typography>
+                                </Box>
+                                }
+                                {
+                                  selectedVideo.submitter_details &&
+                                  <Typography
+                                    display="flex"
+                                    flexDirection="row"
+                                    width="90%"
+                                    justifyContent="flex-start"
+                                    alignItems="flex-end"
+                                    sx={{
+                                      fontFamily: 'EFCircularBook',
+                                      fontSize: '16pt',
+                                      paddingBottom: '1.5pt',
+                                      color: '#DA2381 !important'
+                                    }}
+                                  >
+                                    {selectedVideo.submitter_details}
+                                  </Typography>
+                                }
+                            {
+                              selectedVideo.caption_location &&
+                              <Typography
                               align='left'
                               paddingLeft='5%'
-                              marginTop='40px'
+                              marginTop='5px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
-                                fontSize: '18pt',
+                                fontSize: '16pt',
                                 width: '100%'
                               }}
-                            >
-                              {selectedVideo.caption_text}
-                            </Typography>
-                          }
-                            <Button
-                            onClick={() => {
-                              const card = document.getElementById('myVideoCard');
-                              card.scrollTop = card.scrollHeight;
-                            }}
-                            style={{
-                              position: 'sticky',
-                              bottom: '0px',
-                              left: '100%', //somehow works to align arrow to the right
-                            }}
-                            disableRipple
-                            disableFocusRipple
-                            disableTouchRipple
-                            >
-                              <img
-                                src="ArrowDown.svg"
-                                style={{
-                                  position: 'sticky',
-                                  bottom: '0px',
-                                  left: '100%', //somehow works to align arrow to the right
-                                  color: 'grey',
-                                  width: '40px'
+                              >
+                                {selectedVideo.caption_location}
+                              </Typography>
+                            }
+                            {
+                              selectedVideo.caption_text &&
+                              <Typography
+                                align='left'
+                                paddingLeft='5%'
+                                marginTop='40px'
+                                sx={{
+                                  fontFamily: 'EFCircularBook',
+                                  fontSize: '18pt',
+                                  width: '100%'
                                 }}
-                              />
-                            </Button>
-                        </CardContent>
-                    </Card>
+                              >
+                                {selectedVideo.caption_text}
+                              </Typography>
+                            }
+                            {!isCardBottom && 
+                              <Button
+                              onClick={() => {
+                                const card = document.getElementById('myVideoCard');
+                                card.scrollTop = card.scrollHeight;
+                              }}
+                              style={{
+                                position: 'sticky',
+                                bottom: '0px',
+                                left: '100%', //somehow works to align arrow to the right
+                              }}
+                              sx={{
+                                '&:hover': {
+                                  backgroundColor: 'transparent', // Removes hover effect
+                                },
+                                '&:focus': {
+                                  outline: 'none',
+                                },
+                                }}
+                              disableRipple
+                              disableFocusRipple
+                              disableTouchRipple
+                              >
+                                <img
+                                  src="ArrowDown.svg"
+                                  style={{
+                                    position: 'sticky',
+                                    bottom: '0px',
+                                    left: '100%', //somehow works to align arrow to the right
+                                    color: 'grey',
+                                    width: '40px'
+                                  }}
+                                />
+                              </Button>
+                              }
+                          </CardContent>
+                      </Card>
                     <button 
                       style={{
                         position: 'absolute',
@@ -1808,8 +1840,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                   />
                   <Typography
-                  fontFamily={'EFCircularBook'}
-                  style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
+                    fontFamily={'EFCircularBook'}
+                    style={{textTransform: 'none'}} // Makes sure "Map" is not all in capitals
                   >
                   Map
                   </Typography>
