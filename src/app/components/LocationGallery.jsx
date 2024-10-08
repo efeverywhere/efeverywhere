@@ -410,8 +410,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
-<<<<<<< HEAD
-=======
                   ) : countryISOCode === "AQ" ? (
                     <img 
                     style={{
@@ -472,7 +470,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     width='14px'
                     height='14px'
                     />
->>>>>>> test
                     ) : (
                         <FlagLoader 
                             style={{
@@ -1132,19 +1129,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='20px'
                       height='20px'
                       />
-<<<<<<< HEAD
-                    ) : countryISOCode === "UG" ? (
-                      <img 
-                      style={{
-                        marginTop: '21px'
-                      }}
-                      src="uganda-flag.svg" 
-                      alt="Uganda Flag"
-                      width='20px'
-                      height='20px'
-                      />
-=======
->>>>>>> test
                     ) : countryISOCode === "NA" ? (
                       <img 
                       style={{
@@ -1155,8 +1139,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='20px'
                       height='20px'
                       />
-<<<<<<< HEAD
-=======
                     ) : countryISOCode === "UG" ? (
                       <img 
                       style={{
@@ -1217,7 +1199,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       width='20px'
                       height='20px'
                       />
->>>>>>> test
                       ) : (
                         <FlagLoader 
                             style={{
