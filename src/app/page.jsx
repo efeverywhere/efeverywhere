@@ -410,7 +410,8 @@ useEffect(() => {
             >
               <Typography
               style={{
-                fontFamily: 'EFCircularBold'
+                fontFamily: 'EFCircularBold',
+                whiteSpace: 'nowrap'
               }}
               >
                 {name}
