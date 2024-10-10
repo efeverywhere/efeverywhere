@@ -87,6 +87,41 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   // const [state, reactHookFormSubmit] = useForm("xrbzknog"); //test form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!file) {
+      alert('Please submit an image before submitting the form.');
+      return;
+    }
+
+    if (file && file.size > 25000000) {
+      alert('Please make sure your file size does not exceed 25MB.');
+      return;
+    }
+
+    if (!e.target[form_email].value || !e.target[form_name].value || !e.target[form_country].value || !e.target[form_description].value) {
+      alert('Please fill in all fields before submitting the form.');
+      return;
+    }
+
+    if (!e.target[form_is_ef_staff].value){
+      alert('Please state if you are EF staff.');
+      return;
+    }
+
+    if (!e.target[form_is_ef_student].value){
+      alert('Please state if you are an EF student.');
+      return;
+    }
+
+    if (e.target[form_is_ef_staff].value === 'Yes' && (!e.target[form_ef_location].value || !e.target[form_ef_years].value)) {
+      alert('If you are an EF staff, please fill in EF Office Location and number of years you were with EF.');
+      return;
+    }
+
+    if (e.target[form_is_ef_student].value === 'Yes' && !e.target[form_experience].value) {
+      alert('If you are an EF student, please fill in your EF experience.');
+      return;
+    }
+
     setIsLoading(true);
   
     // Create a new FormData instance
@@ -107,9 +142,10 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_is_ef_student, e.target[form_is_ef_student]?.value ?? 'None');
     formData.append(form_experience, e.target[form_experience]?.value ?? 'None');
     formData.append(form_caption, e.target[form_caption].value);
-    setIsLoading(false);
+    
     // Call the handleSubmit function from useForm
     await reactHookFormSubmit(formData);
+    setIsLoading(false);
     setIsThankYouOpen(true);
   
   };
@@ -652,7 +688,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
-                        zIndex: 1000000
+                        zIndex: 10000000000
                       }} 
                       />}
               <Typography
@@ -1159,7 +1195,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
-                        zIndex: 1000000
+                        zIndex: 10000000000
                       }} 
                       />}
                 <Typography
