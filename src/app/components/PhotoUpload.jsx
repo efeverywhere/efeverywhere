@@ -92,6 +92,11 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
       return;
     }
 
+    if (file && file.size > 7000000) {
+      alert('Please make sure your file size does not exceed 7MB.');
+      return;
+    }
+
     if (!e.target[form_email].value || !e.target[form_name].value || !e.target[form_country].value || !e.target[form_description].value) {
       alert('Please fill in all fields before submitting the form.');
       return;
