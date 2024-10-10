@@ -119,7 +119,7 @@ function ThankYou({ isOpen, handleClose }) {
               />
               <Typography
                 sx={{
-                  fontSize: 40,
+                  fontSize: 32,
                   fontFamily: 'EFCircularBold',
                   marginTop: '30%',
                   marginLeft: '5vw',
