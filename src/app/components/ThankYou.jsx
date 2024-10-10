@@ -135,7 +135,7 @@ function ThankYou({ isOpen, handleClose }) {
                   marginTop: '4vh',
                   fontSize: 16,
                   fontFamily: 'EFCircularBook',
-                  marginBottom: '6vh',
+                  marginBottom: '2vh',
                   marginLeft: '5vw',
                   marginRight: '6vw',
                   wordWrap: 'break-word',

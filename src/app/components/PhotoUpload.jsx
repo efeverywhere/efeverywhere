@@ -137,9 +137,10 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
     formData.append(form_is_ef_student, e.target[form_is_ef_student]?.value ?? 'None');
     formData.append(form_experience, e.target[form_experience]?.value ?? 'None');
     formData.append(form_caption, e.target[form_caption].value);
-    setIsLoading(false);
+    
     // Call the handleSubmit function from useForm
     await reactHookFormSubmit(formData);
+    setIsLoading(false);
     setIsThankYouOpen(true);
   
   };
@@ -682,7 +683,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
-                        zIndex: 1000000
+                        zIndex: 10000000000
                       }} 
                       />}
               <Typography
@@ -1189,7 +1190,7 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
                       style={{ 
                         height: '100px',
                         position: 'absolute',
-                        zIndex: 1000000
+                        zIndex: 10000000000
                       }} 
                       />}
                 <Typography
