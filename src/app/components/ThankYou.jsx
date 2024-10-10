@@ -100,7 +100,7 @@ function ThankYou({ isOpen, handleClose }) {
           <div style={{
             height: '100vh',
             width: '100vw',
-            overflow: 'auto',
+            overflow: 'scroll',
             display: 'flex',
             flexDirection: 'column',
             // justifyContent: 'center',
