@@ -142,7 +142,7 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                Let’s get EF Everywhere to 100 countries by October! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you have any questions, suggestions, or fun ideas, please email us at efeverywhere@ef.com.
+                Let’s get EF Everywhere to 194 countries by February 2025! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you don’t see your photo/videos here one week after uploading, please let us know at efeverywhere@ef.com or submit them again!
               </Typography>
               <Typography
                 sx={{
@@ -157,7 +157,7 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                  We look forward to seeing EF Everywhere!
+                  Thank you and we look forward to seeing EF Everywhere!
               </Typography>
               
           </div>
@@ -235,7 +235,7 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                Let’s get EF Everywhere to 100 countries by October! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you have any questions, suggestions, or fun ideas, please email us at efeverywhere@ef.com. 
+                Let’s get EF Everywhere to 194 countries by February 2025! As we are receiving a high volume of submissions everyday, please give us 2-3 business days to review and upload your photos/videos. If you don’t see your photo/videos here one week after uploading, please let us know at efeverywhere@ef.com or submit them again!
               </Typography>
               <Typography
                 sx={{
@@ -245,7 +245,7 @@ function ThankYou({ isOpen, handleClose }) {
                   color: '#FFFFFF !important'
                 }}
               >
-                We look forward to seeing EF Everywhere!
+                Thank you and we look forward to seeing EF Everywhere!
               </Typography>
             </div>
         </div>
