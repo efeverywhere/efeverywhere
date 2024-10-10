@@ -87,6 +87,36 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
   // const [state, reactHookFormSubmit] = useForm("xrbzknog"); //test form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!file) {
+      alert('Please submit an image before submitting the form.');
+      return;
+    }
+
+    if (!e.target[form_email].value || !e.target[form_name].value || !e.target[form_country].value || !e.target[form_description].value) {
+      alert('Please fill in all fields before submitting the form.');
+      return;
+    }
+
+    if (!e.target[form_is_ef_staff].value){
+      alert('Please state if you are EF staff.');
+      return;
+    }
+
+    if (!e.target[form_is_ef_student].value){
+      alert('Please state if you are an EF student.');
+      return;
+    }
+
+    if (e.target[form_is_ef_staff].value === 'Yes' && (!e.target[form_ef_location].value || !e.target[form_ef_years].value)) {
+      alert('If you are an EF staff, please fill in EF Office Location and number of years you were with EF.');
+      return;
+    }
+
+    if (e.target[form_is_ef_student].value === 'Yes' && !e.target[form_experience].value) {
+      alert('If you are an EF student, please fill in your EF experience.');
+      return;
+    }
+
     setIsLoading(true);
   
     // Create a new FormData instance
