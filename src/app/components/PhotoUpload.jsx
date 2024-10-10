@@ -92,8 +92,8 @@ function PhotoSubmitForm({ isOpen, handleClose, setIsThankYouOpen }) {
       return;
     }
 
-    if (file && file.size > 7000000) {
-      alert('Please make sure your file size does not exceed 7MB.');
+    if (file && file.size > 25000000) {
+      alert('Please make sure your file size does not exceed 25MB.');
       return;
     }
 
