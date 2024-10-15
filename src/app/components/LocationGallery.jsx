@@ -28,7 +28,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 
 
-export default function LocationGallery({ onClose, name, images, countryISOCode }) {
+export default function LocationGallery({ onClose, name, images, countryISOCode, country }) {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
@@ -467,6 +467,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                     }}
                     src="zimbabwe-flag.svg"
                     alt="Zimbabwe Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "AD" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="andorra-flag.svg"
+                    alt="Andorra Flag"
                     width='14px'
                     height='14px'
                     />
@@ -1196,6 +1208,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode 
                       }}
                       src="zimbabwe-flag.svg" 
                       alt="Zimbabwe Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "AD" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="andorra-flag.svg" 
+                      alt="Andorra Flag"
                       width='20px'
                       height='20px'
                       />
