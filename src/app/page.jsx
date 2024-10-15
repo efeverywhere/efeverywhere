@@ -41,6 +41,7 @@ export default function MapChart() {
   const [cityName, setCityName] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [zoomState, setZoomState] = useState(4);
+  const [country, setCountry] = useState(null);
   const [countryISOCode, setCountryISOCode] = useState(null);
   const searchParams = useSearchParams();
   const lon = searchParams.get('lon')
@@ -126,14 +127,14 @@ useEffect(() => {
     .then(data => setCountriesData(data));
 }, []);
 
-  const handleMarkerClick = (folder_name, name, country_ISO) => {
-    // const handleMarkerClick = () => {
+  const handleMarkerClick = (folder_name, name, country_ISO, country) => {
     setSelectedMarker(folder_name);
     setCityName(name);
     setIsGalleryOpen(true);
     setHeaderState('gallery');
     setIsIntroVisible(false);
     setCountryISOCode(country_ISO)
+    setCountry(country)
 
     const currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set('gallery', folder_name);
@@ -384,7 +385,7 @@ useEffect(() => {
             latitude={coords[0]} 
             color="#FF329B"
             anchor="bottom"
-            onClick={() => handleMarkerClick(folder_name, name, country_ISO)}
+            onClick={() => handleMarkerClick(folder_name, name, country_ISO, country)}
           >
             {/* <img
              style={{ // width:height proportions should be 5:6
@@ -429,7 +430,8 @@ useEffect(() => {
               marker={selectedMarker}
               name={cityName}
               images={cityImages[selectedMarker]}
-              countryISOCode={countryISOCode} />
+              countryISOCode={countryISOCode}
+              country={country}/>
         </div>
          )}
     </div>
