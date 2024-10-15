@@ -126,6 +126,11 @@ html, body {
   color: white !important;
 }
 
+.custom-popup .mapboxgl-popup-content {
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
 /* .modal-open .map-container {
   pointer-events: none;
 } */

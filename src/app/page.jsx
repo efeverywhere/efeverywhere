@@ -400,7 +400,7 @@ useEffect(() => {
           </Marker>
           {zoomState > 4 && (
             <Popup
-              size="small"
+              className="custom-popup"
               longitude={coords[1]}
               latitude={coords[0]}
               closeButton={false}
