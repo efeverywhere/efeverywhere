@@ -41,7 +41,7 @@ export default function MapChart() {
   const [cityName, setCityName] = useState(null);
   const [markers, setMarkers] = useState([]);
   const [zoomState, setZoomState] = useState(4);
-  const [country, setCountry] = useState(null);
+  const [countryTitle, setCountryTitle] = useState(null);
   const [countryISOCode, setCountryISOCode] = useState(null);
   const searchParams = useSearchParams();
   const lon = searchParams.get('lon')
@@ -127,14 +127,14 @@ useEffect(() => {
     .then(data => setCountriesData(data));
 }, []);
 
-  const handleMarkerClick = (folder_name, name, country_ISO, country) => {
+  const handleMarkerClick = (folder_name, name, country_ISO, country_title) => {
     setSelectedMarker(folder_name);
     setCityName(name);
     setIsGalleryOpen(true);
     setHeaderState('gallery');
     setIsIntroVisible(false);
     setCountryISOCode(country_ISO)
-    setCountry(country)
+    setCountryTitle(country_title)
 
     const currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set('gallery', folder_name);
@@ -375,9 +375,53 @@ useEffect(() => {
         </div>
       )}
 
+      {/* Star Pin
+      {         
+       <Marker 
+          key={`marker-pin`}
+          longitude={-7.176594} 
+          latitude={ -13.675395} 
+          color="#FF329B"
+          anchor="bottom"
+          onClick={() => handleMarkerClick('star_pin', 'star_stuff', 'STAR', 'STAR')}
+        >
+            <img
+             style={{ // width:height proportions should be 5:6
+                // width: '25px',
+                // height: '30px',
+                scale: 0.35,
+                cursor: 'pointer',
+             }}
+             src='./star.png'
+             alt='star_pin'
+            />
+          {zoomState > 4 && (
+            <Popup
+              className="custom-popup"
+              longitude={-7.176594} 
+              latitude={ -13.675395} 
+              closeButton={false}
+              closeOnClick={false}
+              anchor="bottom"
+              offset={[0,-80]}
+              tipSize={0}
+            >
+              <Typography
+              style={{
+                fontFamily: 'EFCircularBold',
+                whiteSpace: 'nowrap'
+              }}
+              >
+                {'As seen in...'}
+              </Typography>
+            </Popup>
+          )}
+      </Marker>
+
+      } */}
 
       {
-        markers.map(({folder_name, name, coords, country, country_ISO}) => {
+        markers.map(({folder_name, name, coords, country, country_ISO, country_title}) => {
           return (<>
           <Marker 
             key={`marker-${folder_name}`}
@@ -385,7 +429,7 @@ useEffect(() => {
             latitude={coords[0]} 
             color="#FF329B"
             anchor="bottom"
-            onClick={() => handleMarkerClick(folder_name, name, country_ISO, country)}
+            onClick={() => handleMarkerClick(folder_name, name, country_ISO, country_title)}
           >
             {/* <img
              style={{ // width:height proportions should be 5:6
@@ -400,7 +444,7 @@ useEffect(() => {
           </Marker>
           {zoomState > 4 && (
             <Popup
-              size="small"
+              className="custom-popup"
               longitude={coords[1]}
               latitude={coords[0]}
               closeButton={false}
@@ -431,7 +475,7 @@ useEffect(() => {
               name={cityName}
               images={cityImages[selectedMarker]}
               countryISOCode={countryISOCode}
-              country={country}/>
+              country={countryTitle}/>
         </div>
          )}
     </div>
