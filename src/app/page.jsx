@@ -375,7 +375,7 @@ useEffect(() => {
         </div>
       )}
 
-      {/* Star Pin */}
+      {/* Star Pin
       {         
        <Marker 
           key={`marker-pin`}
@@ -418,7 +418,7 @@ useEffect(() => {
           )}
       </Marker>
 
-      }
+      } */}
 
       {
         markers.map(({folder_name, name, coords, country, country_ISO, country_title}) => {
