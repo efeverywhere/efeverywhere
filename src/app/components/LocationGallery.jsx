@@ -502,7 +502,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       fontSize: '20px'
                     }}
                   >
-                    {name}, {country}
+                        {name == 'As Seen In...' ? `${name}`: `${name}, ${country}`}
                   </Typography>
                 </div>
                 {images && viewState === 'squares' &&
@@ -1241,7 +1241,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                           fontSize: '64px'
                         }}
                       >
-                        {name}, {country}
+                        {name == 'As Seen In...' ? `${name}`: `${name}, ${country}`}
                       </Typography>
                     </div>
                     <div

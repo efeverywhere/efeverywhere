@@ -375,12 +375,12 @@ useEffect(() => {
         </div>
       )}
 
-      {/* Star Pin
-      {         
+      {/* Star Pin */}
+      {/* {         
        <Marker 
           key={`marker-pin`}
-          longitude={-7.176594} 
-          latitude={ -13.675395} 
+          latitude={4.166021} 
+          longitude={-35.127454} 
           color="#FF329B"
           anchor="bottom"
           onClick={() => handleMarkerClick('star_pin', 'star_stuff', 'STAR', 'STAR')}
@@ -389,7 +389,7 @@ useEffect(() => {
              style={{ // width:height proportions should be 5:6
                 // width: '25px',
                 // height: '30px',
-                scale: 0.35,
+                scale: 0.55,
                 cursor: 'pointer',
              }}
              src='./star.png'
@@ -398,8 +398,8 @@ useEffect(() => {
           {zoomState > 4 && (
             <Popup
               className="custom-popup"
-              longitude={-7.176594} 
-              latitude={ -13.675395} 
+              longitude={4.166021} 
+              latitude={-35.127454} 
               closeButton={false}
               closeOnClick={false}
               anchor="bottom"
