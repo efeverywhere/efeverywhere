@@ -320,8 +320,8 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude:  lat ? lat : 35.70584,
-        longitude: lon ? lon : 10.19321, 
+        latitude:  lat ? lat : 20.70584,
+        longitude: lon ? lon : 15.19321, 
         dragRotate: false,
         zoom: zoom ? zoom : 1.75
       }}
@@ -431,15 +431,18 @@ useEffect(() => {
             anchor="bottom"
             onClick={() => handleMarkerClick(folder_name, name, country_ISO, country_title)}
           >
-            {/* <img
-             style={{ // width:height proportions should be 5:6
-                width: '25px',
-                height: '30px',
-                cursor: 'pointer',
-             }}
-             src='./Pin_pink.png'
-             alt='map_pin'
-            /> */}
+            {name === "As Seen In..." && (
+              <img
+                style={{ // width:height proportions should be 5:6
+                  height: '70px',
+                  width: '35px',
+                  cursor: 'pointer',
+                  scale: 0.75
+                }}
+                src='./star_purple2.png'
+                alt='star_purple'
+              />
+            )}
             
           </Marker>
           {zoomState > 4 && (
