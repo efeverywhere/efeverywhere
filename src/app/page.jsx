@@ -437,7 +437,7 @@ useEffect(() => {
                   height: '70px',
                   width: '35px',
                   cursor: 'pointer',
-                  scale: 0.65
+                  scale: 0.75
                 }}
                 src='./star_purple2.png'
                 alt='star_purple'
