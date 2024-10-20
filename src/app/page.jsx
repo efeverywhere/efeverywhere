@@ -320,8 +320,8 @@ useEffect(() => {
               
       <Map
       initialViewState={{
-        latitude:  lat ? lat : 35.70584,
-        longitude: lon ? lon : 10.19321, 
+        latitude:  lat ? lat : 20.70584,
+        longitude: lon ? lon : 15.19321, 
         dragRotate: false,
         zoom: zoom ? zoom : 1.75
       }}
