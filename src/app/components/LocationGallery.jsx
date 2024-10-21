@@ -482,6 +482,42 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "ME" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="montenegro-flag.svg"
+                    alt="Montenegro Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "VU" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="vanuatu-flag.svg"
+                    alt="Vanuatu Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : name === "As Seen In..." ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="as_seen_in-flag.svg"
+                    alt="As Seen In Flag"
+                    width='14px'
+                    height='14px'
+                    />
                     ) : (
                         <FlagLoader 
                             style={{
@@ -1218,6 +1254,36 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="andorra-flag.svg" 
                       alt="Andorra Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "ME" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="montenegro-flag.svg" 
+                      alt="Montenegro Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "VU" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="vanuatu-flag.svg" 
+                      alt="Vanuatu Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : name === "As Seen In..." ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="as_seen_in-flag.svg" 
+                      alt="As Seen In Flag"
                       width='20px'
                       height='20px'
                       />
