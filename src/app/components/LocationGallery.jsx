@@ -106,11 +106,12 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
 
   const handleCardScroll = (e) => {
     const bottom = e.target.scrollHeight - e.target.scrollTop < (e.target.clientHeight + 5);
-    console.log(e.target.scrollHeight)
-    console.log(e.target.scrollTop)
-    console.log(e.target.scrollHeight - e.target.scrollTop )
-    console.log(e.target.clientHeight)
-    console.log(bottom)
+    setIsCardBottom(bottom);
+  };
+
+  const handleCardScrollMobile = (e) => {
+    const bottom = e.target.scrollHeight - e.target.scrollTop > (e.target.clientHeight);
+    // const bottom = true;
     setIsCardBottom(bottom);
   };
 
@@ -697,7 +698,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     }
                     <Card
                       id="myMobileCard"
-                      onScroll={handleCardScroll}
+                      onScroll={handleCardScrollMobile}
                       sx={{ 
                         maxHeight: '80%', 
                         maxWidth: '80%',
@@ -712,6 +713,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             justifyContent: 'center',
                             alignItems: 'center',
                             padding: '24px',
+
 
                           }}
                       >
@@ -794,7 +796,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                               {selectedImage.caption_text}
                             </Typography>
                           }
-                          {/* {isCardBottom && */}
+                          {isCardBottom &&
                             <Button
                             onClick={(event) => {
                               event.stopPropagation(); // prevent card from closing
@@ -829,7 +831,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                                 }}
                               />
                           </Button>
-                          {/* } */}
+                          }
                         </CardContent>
                     </Card>
                 </div>
