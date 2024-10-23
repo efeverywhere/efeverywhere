@@ -1,5 +1,5 @@
 'use client'
-import React, {Suspense, useEffect, useState} from 'react';
+import React, {Suspense, useEffect, useState, useRef} from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Carousel as EFCarousel} from '@ef-global/backpack/Carousel'
 import {
@@ -8,6 +8,7 @@ import {
 } from '@ef-global/backpack/SurfaceCard';
 import { Grid } from '@mui/material';
 import { useSearchParams } from 'next/navigation';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 import RadialProgressBar from '../components/RadialProgressBar';
 import Footer from '../components/Footer';
@@ -20,6 +21,21 @@ function PageContent(){
   const searchParams = useSearchParams()
   const scope = searchParams.get('scope')
   const isMobile = useMediaQuery('(max-width:600px)')
+
+    // Inside your component
+  const carouselRef = useRef(null);
+
+  const handlePrevClick = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft -= 200;
+    }
+  };
+
+  const handleNextClick = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft += 200;
+    }
+  };
 
   useEffect(() => {
     fetch(`/score_countries.json`)
@@ -314,18 +330,20 @@ function PageContent(){
             }}
           >
             <EFCarousel
+            ref={carouselRef}
             slidesInView = {2}
             themeConfig={{
               slots: {
                 sliderInnerContainer: 'overflow-hidden',
               }
             }}
-            controls= "none"
+            controls= "minimal"
             >
             <SurfaceCard
               style={{
                 boxShadow: 'none',
                 height: '40vh',
+                width: '200px',
                 overflowY: 'scroll'
               }}
               >
@@ -334,7 +352,7 @@ function PageContent(){
                         borderLeft: '4px solid #2FC8F2',
                         borderTopLeftRadius: '5000 !important', // Add this line to curve the top end of the border
                         borderBottomLeftRadius: '500000 !important', // Add t
-                        paddingLeft: '7vw'
+                        paddingLeft: '3vw'
                         }}>
                         <Typography
                           className='bold'
@@ -347,7 +365,7 @@ function PageContent(){
                       {countriesData['africa']['missing'].map(country => (
                         <div key={country} style={{ 
                           borderLeft: '4px solid #2FC8F2',
-                          paddingLeft: '7vw'}}>
+                          paddingLeft: '3vw'}}>
                         <Typography 
                           fontFamily='EFCircularBook'
                           key={country}
@@ -356,6 +374,14 @@ function PageContent(){
                         </Typography>
                         </div>
                       ))}
+                      <ExpandMoreIcon 
+                        style={{ 
+                          position: 'sticky', 
+                          bottom: '-5px', 
+                          left: '150px', 
+                          cursor: 'pointer' 
+                        }} 
+                      />
                       </div>
                     )}
                   </SurfaceCardContent>
@@ -364,6 +390,7 @@ function PageContent(){
               style={{
                 boxShadow: 'none',
                 height: '40vh',
+                width: '200px',
                 overflowY: 'scroll'
               }}
             >
@@ -391,6 +418,14 @@ function PageContent(){
                         </Typography>
                       </div>
                     ))}
+                      <ExpandMoreIcon 
+                        style={{ 
+                          position: 'sticky', 
+                          bottom: '-5px', 
+                          left: '150px', 
+                          cursor: 'pointer' 
+                        }} 
+                      />
                   </div>
                 )}
               </SurfaceCardContent>
@@ -399,6 +434,7 @@ function PageContent(){
               style={{
                 boxShadow: 'none',
                 height: '40vh',
+                width: '200px',
                 overflowY: 'scroll'
               }}
             >
@@ -426,6 +462,14 @@ function PageContent(){
                           </Typography>
                         </div>
                         ))}
+                      <ExpandMoreIcon 
+                        style={{ 
+                          position: 'sticky', 
+                          bottom: '-5px', 
+                          left: '150px', 
+                          cursor: 'pointer' 
+                        }} 
+                      />
                     </div>
                   )}
               </SurfaceCardContent>
@@ -434,6 +478,7 @@ function PageContent(){
               style={{
                 boxShadow: 'none',
                 height: '40vh',
+                width: '200px',
                 overflowY: 'scroll'
               }}
             >
@@ -461,11 +506,48 @@ function PageContent(){
                             </Typography>
                           </div>
                           ))}
+                      <ExpandMoreIcon 
+                        style={{ 
+                          position: 'sticky', 
+                          bottom: '-5px', 
+                          left: '150px', 
+                          cursor: 'pointer' 
+                        }} 
+                      />
                       </div>
                 )}
               </SurfaceCardContent>
             </SurfaceCard>
             </EFCarousel>
+            {/* <div
+              style={{
+
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                marginBottom: '20px'
+              }}
+            >
+              <img
+                src="left_pink_arrow.svg"
+                alt="Previous"
+                style={{ 
+                  cursor: 'pointer',
+                  transform: 'translateY(-20px)',
+                  marginRight: '10px'
+                }}
+                onClick={handlePrevClick}
+              />
+              <img
+                src="right_pink_arrow.svg"
+                alt="Next"
+                style={{ 
+                  cursor: 'pointer',
+                  transform: 'translateY(-20px)'
+                }}
+                onClick={handleNextClick}
+              />
+            </div> */}
           </div>
           ):(
             <Grid
