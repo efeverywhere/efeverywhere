@@ -25,17 +25,13 @@ function PageContent(){
     // Inside your component
   const carouselRef = useRef(null);
 
-  const handlePrevClick = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft -= 200;
+  const handleScroll = () => {
+    if (contentRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
+      setIsScrolledToBottom(scrollTop + clientHeight >= scrollHeight);
     }
   };
 
-  const handleNextClick = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft += 200;
-    }
-  };
 
   useEffect(() => {
     fetch(`/score_countries.json`)
