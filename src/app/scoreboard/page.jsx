@@ -21,17 +21,17 @@ function PageContent(){
   const searchParams = useSearchParams()
   const scope = searchParams.get('scope')
   const isMobile = useMediaQuery('(max-width:600px)')
+  const parentDivRef = useRef(null);
 
     // Inside your component
   const carouselRef = useRef(null);
+  const surfaceCardRef = useRef(null);
 
-  const handleScroll = () => {
-    if (contentRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = contentRef.current;
-      setIsScrolledToBottom(scrollTop + clientHeight >= scrollHeight);
+  const scrollToBottom = () => {
+    if (parentDivRef.current) {
+      parentDivRef.current.scrollTop = parentDivRef.current.scrollHeight;
     }
   };
-
 
   useEffect(() => {
     fetch(`/score_countries.json`)
@@ -336,6 +336,7 @@ function PageContent(){
             controls= "minimal"
             >
             <SurfaceCard
+              ref={surfaceCardRef}
               style={{
                 boxShadow: 'none',
                 height: '40vh',
@@ -357,7 +358,7 @@ function PageContent(){
                         </Typography>
                       </div>
                       {countriesData && (
-                      <div>
+                      <div ref={parentDivRef}>
                       {countriesData['africa']['missing'].map(country => (
                         <div key={country} style={{ 
                           borderLeft: '4px solid #2FC8F2',
@@ -375,8 +376,9 @@ function PageContent(){
                           position: 'sticky', 
                           bottom: '-25px', 
                           left: '175px', 
-                          cursor: 'pointer' 
+                          cursor: 'pointer'
                         }} 
+                        onClick={scrollToBottom}
                       />
                       </div>
                     )}
@@ -502,14 +504,14 @@ function PageContent(){
                             </Typography>
                           </div>
                           ))}
-                      <ExpandMoreIcon 
+                      {/* <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
                           bottom: '-25px',
                           left: '175px', 
                           cursor: 'pointer' 
                         }} 
-                      />
+                      /> */}
                       </div>
                 )}
               </SurfaceCardContent>
