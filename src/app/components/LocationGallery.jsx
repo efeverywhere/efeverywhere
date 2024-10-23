@@ -713,8 +713,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             justifyContent: 'center',
                             alignItems: 'center',
                             padding: '24px',
-
-
                           }}
                       >
                         <CardMedia
@@ -727,40 +725,29 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                           }}
                         />
                         { selectedImage.caption_person &&
-                            <Box 
-                              display="flex"
-                              width="90%"
-                              align="left"
-                              justifyContent="flex-start"
-                              alignItems="flex-end"
+                            <Typography
+                              paddingTop='10px'
                               marginTop="40px"
+                              sx={{
+                                fontFamily: 'EFCircularMedium',
+                                fontSize: '20px',
+                                width: '100%'
+                              }}
                             >
-                                <Typography
-                                  paddingTop='10px'
-                                  sx={{
-                                    fontFamily: 'EFCircularMedium',
-                                    fontSize: '20px',
-                                    marginRight: '15px'
-                                  }}
-                                >
-                                  {selectedImage.caption_person}
-                                </Typography>
-                            </Box>
+                              {selectedImage.caption_person}
+                            </Typography>
                           }
                           {selectedImage.submitter_details &&
                             <Typography
                               paddingTop='10px'
-                              display="flex"
-                              width="90%"
                               align="left"
-                              justifyContent="flex-start"
-                              alignItems="flex-end"
                               marginTop='5px'
                               sx={{
                                 fontFamily: 'EFCircularMedium',
                                 fontSize: '18px',
                                 color: '#DA2381 !important',
-                                marginBottom: '1.25px'
+                                marginBottom: '1.25px',
+                                width: '100%'
                               }}
                             >
                               {selectedImage.submitter_details}
@@ -770,7 +757,6 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             selectedImage.caption_location &&
                             <Typography
                             align='left'
-                            paddingLeft='5%'
                             marginTop='5px'
                             sx={{
                               fontFamily: 'EFCircularBook',
@@ -785,7 +771,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             selectedImage.caption_text &&
                             <Typography
                               align='left'
-                              paddingLeft='5%'
+                              // paddingLeft='5%'
                               marginTop='40px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
