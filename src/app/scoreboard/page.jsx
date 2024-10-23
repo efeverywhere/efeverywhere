@@ -373,8 +373,8 @@ function PageContent(){
                       <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
-                          bottom: '-5px', 
-                          left: '150px', 
+                          bottom: '-25px', 
+                          left: '175px', 
                           cursor: 'pointer' 
                         }} 
                       />
@@ -417,8 +417,8 @@ function PageContent(){
                       <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
-                          bottom: '-5px', 
-                          left: '150px', 
+                          bottom: '-25px',
+                          left: '175px', 
                           cursor: 'pointer' 
                         }} 
                       />
@@ -461,8 +461,8 @@ function PageContent(){
                       <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
-                          bottom: '-5px', 
-                          left: '150px', 
+                          bottom: '-25px', 
+                          left: '175px', 
                           cursor: 'pointer' 
                         }} 
                       />
@@ -505,8 +505,8 @@ function PageContent(){
                       <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
-                          bottom: '-5px', 
-                          left: '150px', 
+                          bottom: '-25px',
+                          left: '175px', 
                           cursor: 'pointer' 
                         }} 
                       />
