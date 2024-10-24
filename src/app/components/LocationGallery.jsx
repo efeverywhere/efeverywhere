@@ -1671,7 +1671,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                               <Box 
                                 display="flex"
                                 flexDirection="row"
-                                width="90%"
+                                width="100%"
                                 justifyContent="flex-start"
                                 alignItems="flex-end"
                                 marginTop="40px"
@@ -1690,11 +1690,8 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                               {
                                 selectedImage.submitter_details &&
                                 <Typography
-                                  display="flex"
-                                  flexDirection="row"
-                                  width="90%"
-                                  justifyContent="flex-start"
-                                  alignItems="flex-end"
+                                  align="left"
+                                  width="100%"
                                   marginTop='5px'
                                   sx={{
                                     fontFamily: 'EFCircularBook',
@@ -1710,7 +1707,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             selectedImage.caption_location &&
                             <Typography
                             align='left'
-                            paddingLeft='5%'
+                            // paddingLeft='5%'
                             marginTop='5px'
                             sx={{
                               fontFamily: 'EFCircularBook',
@@ -1725,7 +1722,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                             selectedImage.caption_text &&
                             <Typography
                               align='left'
-                              paddingLeft='5%'
+                              // paddingLeft='5%'
                               marginTop='40px'
                               sx={{
                                 fontFamily: 'EFCircularBook',
