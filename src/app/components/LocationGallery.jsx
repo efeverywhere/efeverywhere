@@ -507,6 +507,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "LC" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="lucia-flag.svg"
+                    alt="Lucia Flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1262,6 +1274,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="vanuatu-flag.svg" 
                       alt="Vanuatu Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "LC" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="lucia-flag.svg" 
+                      alt="Lucia Flag"
                       width='20px'
                       height='20px'
                       />
