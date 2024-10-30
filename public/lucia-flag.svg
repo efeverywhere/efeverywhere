@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000109015787482574015220000016638518927051721863_);}
+	
+		.st1{clip-path:url(#SVGID_00000149352125691157558290000000402371984130577558_);fill-rule:evenodd;clip-rule:evenodd;fill:#66CBFF;}
+	.st2{clip-path:url(#SVGID_00000149352125691157558290000000402371984130577558_);fill:#FFFFFF;}
+	.st3{clip-path:url(#SVGID_00000149352125691157558290000000402371984130577558_);}
+	.st4{clip-path:url(#SVGID_00000149352125691157558290000000402371984130577558_);fill:none;stroke:#000000;stroke-width:0.6585;}
+	.st5{clip-path:url(#SVGID_00000149352125691157558290000000402371984130577558_);fill:#FFD018;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="0.5" y="0.5" width="999" height="999"/>
+		</defs>
+		<defs>
+			<path id="SVGID_00000063613099333835095440000017560461117496428458_" d="M498.4,999.3c-132.2-0.4-258.8-53.2-352.1-146.9
+				C53,758.7,0.7,631.9,0.7,499.7c0.1-132.2,52.6-259,146-352.5C240.1,53.7,366.8,1,499,0.7c132.2-0.3,259.1,51.9,352.9,145.1
+				c93.8,93.2,146.8,219.7,147.4,351.9C999.9,629.9,948,757,855.1,851c-92.9,94-219.4,147.3-351.5,148.3"/>
+		</defs>
+		<clipPath id="SVGID_00000113345087208884093980000006168551504313673911_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		
+			<clipPath id="SVGID_00000135664339937646898130000007062986949572358591_" style="clip-path:url(#SVGID_00000113345087208884093980000006168551504313673911_);">
+			<use xlink:href="#SVGID_00000063613099333835095440000017560461117496428458_"  style="overflow:visible;"/>
+		</clipPath>
+		
+			<rect x="-498.5" y="0.7" style="clip-path:url(#SVGID_00000135664339937646898130000007062986949572358591_);fill-rule:evenodd;clip-rule:evenodd;fill:#66CBFF;" width="1997.1" height="998.5"/>
+		<path style="clip-path:url(#SVGID_00000135664339937646898130000007062986949572358591_);fill:#FFFFFF;" d="M186.9,869.6
+			L499.3,94.3l313.8,775.6L186.9,869.6z M186.9,869.6"/>
+		<path style="clip-path:url(#SVGID_00000135664339937646898130000007062986949572358591_);" d="M241.1,842.9l257.6-641.2
+			l260.1,636.6L241.1,842.9z M241.1,842.9"/>
+		
+			<path style="clip-path:url(#SVGID_00000135664339937646898130000007062986949572358591_);fill:none;stroke:#000000;stroke-width:0.6585;" d="
+			M241.1,842.9l257.6-641.2l260.1,636.6L241.1,842.9z M241.1,842.9"/>
+		<path style="clip-path:url(#SVGID_00000135664339937646898130000007062986949572358591_);fill:#FFD018;" d="M187,869.6
+			l313.1-353.2L813,869.8L187,869.6z M187,869.6"/>
+	</g>
+</g>
+</svg>
