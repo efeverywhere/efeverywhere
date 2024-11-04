@@ -21,16 +21,33 @@ function PageContent(){
   const searchParams = useSearchParams()
   const scope = searchParams.get('scope')
   const isMobile = useMediaQuery('(max-width:600px)')
-  const parentDivRef = useRef(null);
 
     // Inside your component
   const carouselRef = useRef(null);
-  const surfaceCardRef = useRef(null);
+  const expandMoreIconRef = useRef(null);
+  const asiaPacificRef = useRef(null);
+  const americasRef = useRef(null);
+  const africaRef = useRef(null);
 
-  const scrollToBottom = () => {
-    if (parentDivRef.current) {
-      parentDivRef.current.scrollTop = parentDivRef.current.scrollHeight;
+  // const scrollToBottom = () => {
+  //   if (expandMoreIconRef.current.parentDiv) {
+  //     const parentDiv = expandMoreIconRef.current.parentDiv;
+  //     if (parentDiv) {
+  //       parentDiv.scrollTop = parentDiv.scrollHeight;
+  //     }
+  //   }
+  //   console.log(parentDiv)
+  // };
+
+  const scrollToBottom = (ref) => {
+    if (ref.current) {
+      const parentDiv = ref.current.closest('div[class*="ef-surface"]');
+      if (parentDiv) {
+        parentDiv.scrollTop = parentDiv.scrollHeight;
+      }
+      console.log(parentDiv)
     }
+
   };
 
   useEffect(() => {
@@ -336,7 +353,6 @@ function PageContent(){
             controls= "minimal"
             >
             <SurfaceCard
-              ref={surfaceCardRef}
               style={{
                 boxShadow: 'none',
                 height: '40vh',
@@ -344,8 +360,11 @@ function PageContent(){
                 overflowY: 'scroll'
               }}
               >
-                  <SurfaceCardContent>
-                  <div style={{ 
+                  <SurfaceCardContent
+                  >
+                  <div 
+
+                      style={{ 
                         borderLeft: '4px solid #2FC8F2',
                         borderTopLeftRadius: '5000 !important', // Add this line to curve the top end of the border
                         borderBottomLeftRadius: '500000 !important', // Add t
@@ -358,7 +377,8 @@ function PageContent(){
                         </Typography>
                       </div>
                       {countriesData && (
-                      <div ref={parentDivRef}>
+                      <div
+                      >
                       {countriesData['africa']['missing'].map(country => (
                         <div key={country} style={{ 
                           borderLeft: '4px solid #2FC8F2',
@@ -372,13 +392,14 @@ function PageContent(){
                         </div>
                       ))}
                       <ExpandMoreIcon 
+                        ref={africaRef}
                         style={{ 
                           position: 'sticky', 
                           bottom: '-25px', 
                           left: '175px', 
                           cursor: 'pointer'
                         }} 
-                        onClick={scrollToBottom}
+                        onClick={() => scrollToBottom(africaRef)}
                       />
                       </div>
                     )}
@@ -417,12 +438,14 @@ function PageContent(){
                       </div>
                     ))}
                       <ExpandMoreIcon 
+                        ref={americasRef}
                         style={{ 
                           position: 'sticky', 
                           bottom: '-25px',
                           left: '175px', 
                           cursor: 'pointer' 
                         }} 
+                        onClick={() => scrollToBottom(americasRef)}
                       />
                   </div>
                 )}
@@ -461,12 +484,14 @@ function PageContent(){
                         </div>
                         ))}
                       <ExpandMoreIcon 
+                        ref={asiaPacificRef}
                         style={{ 
                           position: 'sticky', 
                           bottom: '-25px', 
                           left: '175px', 
                           cursor: 'pointer' 
                         }} 
+                        onClick={() => scrollToBottom(asiaPacificRef)}
                       />
                     </div>
                   )}
