@@ -294,7 +294,7 @@ Our goal is to collect photos and videos in every single country in the world—
                   marginTop: '20px',
                 }}
               >
-                These are the categories:
+                Take your best shot at any of these categories!
               </Typography>
               {isMobile ? (
               <div >
