@@ -175,7 +175,8 @@ export default function Page(){
                   marginTop: '20px'
                 }}
               >
-Our goal is to collect photos and videos in every single country in the world—in front of famous monuments, scenic spots, world cities, deserts, plains, mountains, more creative the better. We welcome submissions from EF team members, students, past travellers, family, friends, and pets. Prizes will be given to the wackiest, the rarest, the most viral, and the most EF. We can’t wait to see EF Everywhere!              </Typography>
+                Our goal is to collect photos and videos in every single country in the world—in front of famous monuments, scenic spots, world cities, deserts, plains, mountains, more creative the better. We welcome submissions from EF team members, students, past travellers, family, friends, and pets. We can’t wait to see EF Everywhere!
+              </Typography>
 
               <Typography
                 fontFamily='EFCircularBold'
@@ -251,7 +252,8 @@ Our goal is to collect photos and videos in every single country in the world—
                       listStyleType: 'disc',
                       
                     }}
-                  >Have a brilliant idea? Great! Get creative and win cool prizes</li>
+                  >
+                  Have a brilliant idea? Great! Get creative and show us EF Everywhere</li>
                                     <li
                     style={{
                       listStyleType: 'disc',
