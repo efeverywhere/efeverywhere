@@ -175,7 +175,7 @@ export default function Footer() {
                       fontSize: '16px'
                     }}
                   >
-                  © EF Education First 2024.
+                  ©️ Signum International AG 2024.
                   </Typography>
                   <Typography
                     fontFamily={'EFCircularBook'}
@@ -359,7 +359,7 @@ export default function Footer() {
                   fontSize: '12px'
                 }}
               >
-              © EF Education First 2024. All rights reserved.
+              ©️ Signum International AG 2024. All rights reserved.
               </Typography>
             </a>
         </div>
