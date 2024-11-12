@@ -531,6 +531,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "MK" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="north-macedonia-flag.svg"
+                    alt="North Macedonia Flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1306,6 +1318,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="bahamas-flag.svg" 
                       alt="Bahamas Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "MK" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="north-macedonia-flag.svg" 
+                      alt="North Macedonia Flag"
                       width='20px'
                       height='20px'
                       />
