@@ -543,6 +543,54 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "AG" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="antigua-barbuda-flag.svg"
+                    alt="Antigua and Barbuda Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "BB" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="barbados-flag.svg"
+                    alt="Barbados Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "GD" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="grenada-flag.svg"
+                    alt="Grenada Flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "VC" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="saint-vincent-grenadines-flag.svg"
+                    alt="Saint Vincent and the Grenadines flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1328,6 +1376,46 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="north-macedonia-flag.svg" 
                       alt="North Macedonia Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "AG" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="antigua-barbuda-flag.svg" 
+                      alt="Antigua and Barbuda Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "BB" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="barbados-flag.svg" 
+                      alt="Barbados Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "GD" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="grenada-flag.svg" 
+                      alt="Grenada Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "VC" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="saint-vincent-grenadines-flag.svg" 
+                      alt="Saint Vincent and Grenadines Flag"
                       width='20px'
                       height='20px'
                       />
