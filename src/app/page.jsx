@@ -428,7 +428,7 @@ useEffect(() => {
             longitude={coords[1]} 
             latitude={coords[0]} 
             color="#FF329B"
-            anchor="bottom"
+            anchor="center"
             onClick={() => handleMarkerClick(folder_name, name, country_ISO, country_title)}
           >
             {name === "As Seen In..." && (
