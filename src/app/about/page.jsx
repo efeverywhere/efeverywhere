@@ -323,7 +323,7 @@ export default function Page(){
                     }}
                     >
                         <img 
-                          src="category_icons/best_EF_office.svg" 
+                          src="category_icons/plane.svg" 
                           style={{ 
                             width: iconWidthMobile, 
                             height: iconHeightMobile, 
@@ -336,7 +336,7 @@ export default function Page(){
                       fontSize: '20px'
                     }}
                     >
-                    Best EF office/school/campus spirit!
+                    Best shot not on land
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -351,7 +351,7 @@ export default function Page(){
                       fontSize: '18px'
                     }}
                     >
-                    Photo or video.
+                    Fly high or swim deep - your call!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -362,7 +362,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                     >
-                      <Image src="category_icons/entries_on_map.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
+                      <Image src="category_icons/Sparkle.svg" style={{ width: iconWidthMobile, height: iconHeightMobile}}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -370,7 +370,7 @@ export default function Page(){
                       fontSize: '20px'
                     }}
                     >
-                    Product with most entries on the map
+                    Best shot of celebrity with EF logo
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -384,7 +384,7 @@ export default function Page(){
                       fontSize: '18px'
                     }}
                     >
-                    Think high quality high volume i.e. let’s be proud of being EF Everywhere!
+                    EF some A-listers.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -395,7 +395,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/customer_entries.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/Lightbulb.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -403,7 +403,7 @@ export default function Page(){
                       fontSize: '20px'
                     }}
                     >
-                    Product with best customer entries
+                    Most creative photo
                     </Typography>
                     <Typography
                     fontFamily='EFCircular'
@@ -418,7 +418,7 @@ export default function Page(){
                       fontSize: '18px'
                     }}
                     >
-                    Our customers are awesome, let’s invite them to join!
+                    Oh, the possibilities...
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -429,7 +429,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                    <img src="category_icons/product_photos.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                    <img src="category_icons/VideoCamera.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -437,7 +437,7 @@ export default function Page(){
                       fontSize: '20px'
                     }}
                     >
-                    Product photos in the most cities
+                    Most creative video
                     </Typography>
                     <Typography
                   fontFamily='EFCircular'
@@ -452,7 +452,7 @@ export default function Page(){
                     fontSize: '18px'
                   }}
                     >
-                    Or villages, or towns, or havens, nooks or hamlets.
+                    Where's my Oscar?
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -463,7 +463,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/biggest_crowd.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
+                      <img src="category_icons/viral_photo.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                       </div>
                       <Typography
                       fontFamily='EFCircularBold'
@@ -471,7 +471,7 @@ export default function Page(){
                         fontSize: '20px'
                       }}
                       >
-                        Biggest crowd in a photo
+                        Most viral EF photo
                       </Typography>
                       <Typography
                       fontFamily='EFCircular'
@@ -486,7 +486,7 @@ export default function Page(){
                         fontSize: '18px'
                       }}
                       >
-                      Think big, like really big!
+                      Do it for the 'likes.'
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -497,109 +497,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                     >
-                      <img src="category_icons/10_people.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Most creative with 10 or more people
-                    </Typography>
-                    <Typography
-                    fontFamily='EFCircular'
-                    sx={{
-                      marginTop: '5px',
-                      wordWrap: 'break-word',
-                      
-                      overflowX: 'none',
-                      overflowY: 'auto',
-                      height: sliderHeight,
-                      width: sliderWidth,
-                      fontSize: '18px'
-                    }}
-                    >
-                      Perhaps a great pyramid by the Great Pyramids?
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                    <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                    >
-                        <img src="category_icons/essence_homecity.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
-                      </div>
-                      <Typography
-                      fontFamily='EFCircularBold'
-                      sx={{
-                        fontSize: '20px'
-                      }}
-                      >
-                        Group that most represents the essence of their home city
-                      </Typography>
-                      <Typography
-                      fontFamily='EFCircular'
-                      sx={{
-                        marginTop: '5px',
-                        wordWrap: 'break-word',
-                        
-                        overflowX: 'none',
-                        overflowY: 'auto',
-                        height: sliderHeight,
-                        width: sliderWidth,
-                        fontSize: '18px'
-                      }}
-                      >
-                        Lederhosen. Always a good idea.
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/plane.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Best shot on a plane
-                    </Typography>
-                    <Typography
-                    fontFamily='EFCircular'
-                    sx={{
-                      marginTop: '5px',
-                      wordWrap: 'break-word',
-                      
-                      overflowX: 'none',
-                      overflowY: 'auto',
-                      height: sliderHeight,
-                      width: sliderWidth,
-                      fontSize: '18px'
-                    }}
-                    >
-                      Use your flight time effectively and get your flight crew and fellow passengers involved!
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/iconic_landmark.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/product_photos.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                    
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -622,7 +520,41 @@ export default function Page(){
                       fontSize: '18px'
                     }}
                     >
-                      Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there. 
+                      Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there.
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                    <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                    >
+                        <img src="category_icons/entries_on_map.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>                   
+                      </div>
+                      <Typography
+                      fontFamily='EFCircularBold'
+                      sx={{
+                        fontSize: '20px'
+                      }}
+                      >
+                        Best randomly spotted EF logo
+                      </Typography>
+                      <Typography
+                      fontFamily='EFCircular'
+                      sx={{
+                        marginTop: '5px',
+                        wordWrap: 'break-word',
+                        
+                        overflowX: 'none',
+                        overflowY: 'auto',
+                        height: sliderHeight,
+                        width: sliderWidth,
+                        fontSize: '18px'
+                      }}
+                      >
+                        Spot some EF-alike clouds? Or a cheetah with an ‘EF’ shaped birthmark? Snap it!
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
@@ -633,144 +565,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/celebrity.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Best shot of celebrity with EF logo
-                    </Typography>
-                    <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
-                    >
-                      EF some A-listers.
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/unique_place.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      EF logo in most unique place
-                    </Typography>
-                    <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
-                    >
-                      Space X anyone?
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/random_EF_logo.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Best randomly spotted EF logo
-                    </Typography>
-                    <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
-                    >
-                      Spot some EF-alike clouds? Or a cheetah with an ‘EF’ shaped birthmark? Snap it!
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/photo_bomb.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularBold'
-                    sx={{
-                      fontSize: '20px'
-                    }}
-                    >
-                      Best EF photobomb
-                    </Typography>
-                    <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
-                    >
-                      But in a safe, fun way. We hear King Charles’ security has little patience for that sort of thing.
-                    </Typography>
-                  </SurfaceCardContent>
-                </SurfaceCard>
-
-
-                <SurfaceCard style={{ boxShadow: 'none'}}>
-                  <SurfaceCardContent>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                      <img src="category_icons/represent_city.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/MapTrifold.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>          
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -781,23 +576,22 @@ export default function Page(){
                       Best representation of your city
                     </Typography>
                     <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
+                    fontFamily='EFCircular'
+                    sx={{
+                      marginTop: '5px',
+                      wordWrap: 'break-word',
+                      
+                      overflowX: 'none',
+                      overflowY: 'auto',
+                      height: sliderHeight,
+                      width: sliderWidth,
+                      fontSize: '18px'
+                    }}
                     >
                       Show your home town some EF love.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-
-
                 <SurfaceCard style={{ boxShadow: 'none'}}>
                   <SurfaceCardContent>
                   <div
@@ -805,7 +599,7 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                      <img src="category_icons/viral_photo.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                      <img src="category_icons/Group59.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularBold'
@@ -813,25 +607,25 @@ export default function Page(){
                       fontSize: '20px'
                     }}
                     >
-                      Most viral EF photo
+                      Most scenic shot
                     </Typography>
                     <Typography
-                   fontFamily='EFCircular'
-                   sx={{
-                     marginTop: '5px',
-                     wordWrap: 'break-word',
-                     overflowX: 'none',
-                     overflowY: 'auto',
-                     height: sliderHeight,
-                     width: sliderWidth,
-                     fontSize: '18px'
-                   }}
+                    fontFamily='EFCircular'
+                    sx={{
+                      marginTop: '5px',
+                      wordWrap: 'break-word',
+                      
+                      overflowX: 'none',
+                      overflowY: 'auto',
+                      height: sliderHeight,
+                      width: sliderWidth,
+                      fontSize: '18px'
+                    }}
                     >
-                      Do it for the likes.
+                      Wallpaper-worthy shots that make you want to clean your desktop. Take that, Windows.
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
-
                 </EFCarousel>
                 </div>
               ):(
@@ -851,138 +645,6 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                     >
-                        <img src="category_icons/best_EF_office.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Best EF office/school/campus spirit!
-                    </Typography>
-                    <Typography>
-                    Photo or video.
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <Image src="category_icons/entries_on_map.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                  </div>
-                  <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Product with most entries on the map
-                    </Typography>
-                    <Typography>
-                    Think high quality high volume i.e. let’s be proud of being EF Everywhere!
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px'
-                    }}
-                  >
-                        <img src="category_icons/customer_entries.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                  <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Product with best customer entries
-                    </Typography>
-                    <Typography>
-                    Our customers are awesome, let’s invite them to join!
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <img src="category_icons/product_photos.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                  <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Product photos in the most cities
-                    </Typography>
-                    <Typography>
-                    Or villages, or towns, or havens, nooks or hamlets.
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12/5}>
-                  <div>
-                        <img src="category_icons/biggest_crowd.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Biggest crowd in a photo
-                    </Typography>
-                    <Typography>
-                    Think big, like really big!
-                    </Typography>
-                  </Grid>
-
-
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <img src="category_icons/10_people.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Most creative with 10 or more people
-                    </Typography>
-                    <Typography>
-                    Perhaps a great pyramid by the Great Pyramids?
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <img src="category_icons/essence_homecity.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                    <Typography
-                    fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Group that most represents the essence of their home city
-                    </Typography>
-                    <Typography>
-                    Lederhosen. Always a good idea.
-                    </Typography>
-                  </Grid>
-
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
                         <img src="category_icons/plane.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
@@ -990,43 +652,22 @@ export default function Page(){
                     sx={{
                       
                     }}>
-                    Best shot on a plane
+                    Best shot not on land
                     </Typography>
                     <Typography>
-                    Use your flight time effectively and get your flight crew and fellow passengers involved!
+                    Fly high or swim deep - your call!
                     </Typography>
                   </Grid>
-
                   <Grid item xs={12/5}>
                   <div
                     style={{
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/iconic_landmark.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
+                        <Image src="category_icons/Sparkle.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                  </div>
                   <Typography
-                  fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Best shot of iconic landmark
-                    </Typography>
-                    <Typography>
-                    Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there. 
-                    </Typography>
-                  </Grid>
-
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <img src="category_icons/celebrity.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                  <Typography
-                  fontFamily='EFCircularMedium'
+                    fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
@@ -1036,24 +677,23 @@ export default function Page(){
                     EF some A-listers.
                     </Typography>
                   </Grid>
-
                   <Grid item xs={12/5}>
                   <div
                     style={{
-                      marginBottom: '20px',
+                      marginBottom: '20px'
                     }}
                   >
-                        <img src="category_icons/unique_place.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/Lightbulb.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
-                    <Typography
+                  <Typography
                     fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
-                    EF logo in most unique place
+                    Most creative photo
                     </Typography>
                     <Typography>
-                    Space X anyone?
+                    Oh, the possibilities...
                     </Typography>
                   </Grid>
                   <Grid item xs={12/5}>
@@ -1062,7 +702,66 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/random_EF_logo.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/VideoCamera.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                  <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Most creative video
+                    </Typography>
+                    <Typography>
+                    Where's my Oscar?
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/viral_photo.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Most viral EF photo
+                    </Typography>
+                    <Typography>
+                    Do it for the 'likes.'
+                    </Typography>
+                  </Grid>
+
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/product_photos.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Best shot of iconic landmark
+                    </Typography>
+                    <Typography>
+                    Can you EF-ify the Roman Forum? Or Easter Island? Just putting it out there.
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/entries_on_map.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
@@ -1082,30 +781,10 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/photo_bomb.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/MapTrifold.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                     <Typography
                     fontFamily='EFCircularMedium'
-                    sx={{
-                      
-                    }}>
-                    Best EF photobomb
-                    </Typography>
-                    <Typography>
-                    But in a safe, fun way. We hear King Charles’ security has little patience for that sort of thing.
-                    </Typography>
-                  </Grid>
-
-                  <Grid item xs={12/5}>
-                  <div
-                    style={{
-                      marginBottom: '20px',
-                    }}
-                  >
-                        <img src="category_icons/represent_city.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
-                    </div>
-                  <Typography
-                  fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
@@ -1122,21 +801,19 @@ export default function Page(){
                       marginBottom: '20px',
                     }}
                   >
-                        <img src="category_icons/viral_photo.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                        <img src="category_icons/Group59.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
                     </div>
                   <Typography
                   fontFamily='EFCircularMedium'
                     sx={{
                       
                     }}>
-                    Most viral EF photo
+                    Most scenic shot
                     </Typography>
                     <Typography>
-                    Do it for the likes.
+                    Wallpaper-worthy shots that make you want to clean your desktop. Take that, Windows.
                     </Typography>
                   </Grid>
-
-
                 </Grid>
 
               </div>
@@ -1156,6 +833,9 @@ export default function Page(){
                   <EFButton
                     as="button"
                     onClick={toggleUpload}
+                    // onClick={() => {
+                    //   window.location.href = 'https://efcom.sharepoint.com/sites/ef-everywhere';
+                    // }}
                     variant="primary"
                     size="regular"
                     style={{
