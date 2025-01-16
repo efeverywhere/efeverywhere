@@ -319,7 +319,7 @@ export default function Footer() {
           }}
         >
             <a 
-              href="https://careers.ef.com/privacy-notice/" 
+              href=" https://www.ef.com/wwen/legal/privacy-policy/" 
               target="_blank" 
               rel="noopener noreferrer" 
               style={{ textDecoration: 'none', color: 'inherit' }}>
