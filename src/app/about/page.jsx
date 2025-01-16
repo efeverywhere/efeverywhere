@@ -626,6 +626,40 @@ export default function Page(){
                     </Typography>
                   </SurfaceCardContent>
                 </SurfaceCard>
+                <SurfaceCard style={{ boxShadow: 'none'}}>
+                  <SurfaceCardContent>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                      <img src="category_icons/Celebration.svg" style={{ width: iconWidthMobile, height: iconHeightMobile, objectFit: 'contain' }}/>
+                    </div>
+                    <Typography
+                    fontFamily='EFCircularBold'
+                    sx={{
+                      fontSize: '20px'
+                    }}
+                    >
+                      Best EF office/school/campus spirit!
+                    </Typography>
+                    <Typography
+                    fontFamily='EFCircular'
+                    sx={{
+                      marginTop: '5px',
+                      wordWrap: 'break-word',
+                      
+                      overflowX: 'none',
+                      overflowY: 'auto',
+                      height: sliderHeight,
+                      width: sliderWidth,
+                      fontSize: '18px'
+                    }}
+                    >
+                      Photo or video.
+                    </Typography>
+                  </SurfaceCardContent>
+                </SurfaceCard>
                 </EFCarousel>
                 </div>
               ):(
@@ -812,6 +846,26 @@ export default function Page(){
                     </Typography>
                     <Typography>
                     Wallpaper-worthy shots that make you want to clean your desktop. Take that, Windows.
+                    </Typography>
+                  </Grid>
+
+                  <Grid item xs={12/5}>
+                  <div
+                    style={{
+                      marginBottom: '20px',
+                    }}
+                  >
+                        <img src="category_icons/Celebration.svg" style={{ width: iconWidth, height: iconHeight, objectFit: 'contain' }}/>
+                    </div>
+                  <Typography
+                  fontFamily='EFCircularMedium'
+                    sx={{
+                      
+                    }}>
+                    Best EF office/school/campus spirit!
+                    </Typography>
+                    <Typography>
+                    Photo or video.
                     </Typography>
                   </Grid>
                 </Grid>
