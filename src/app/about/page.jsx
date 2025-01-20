@@ -887,9 +887,9 @@ export default function Page(){
                   <EFButton
                     as="button"
                     onClick={toggleUpload}
-                    // onClick={() => {
-                    //   window.location.href = 'https://efcom.sharepoint.com/sites/ef-everywhere';
-                    // }}
+                    onClick={() => {
+                      window.location.href = 'https://efcom.sharepoint.com/sites/ef-everywhere';
+                    }}
                     variant="primary"
                     size="regular"
                     style={{
@@ -897,7 +897,7 @@ export default function Page(){
                         '--color-component-button-primary-bg': '#DA2381'
                     }}
                   >
-                  Submit Your Shot
+                  Tell me more...
               </EFButton>
             </div>
             )}
