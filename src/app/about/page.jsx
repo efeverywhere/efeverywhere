@@ -886,7 +886,7 @@ export default function Page(){
               <div>
                   <EFButton
                     as="button"
-                    onClick={toggleUpload}
+                    // onClick={toggleUpload}
                     onClick={() => {
                       window.location.href = 'https://efcom.sharepoint.com/sites/ef-everywhere';
                     }}
