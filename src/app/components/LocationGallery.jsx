@@ -591,6 +591,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "SC" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="seychelles-flag.svg"
+                    alt="Seychelles flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "TL" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="timoreleste-flag.svg"
+                    alt="Timor Leste flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1416,6 +1440,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="saint-vincent-grenadines-flag.svg" 
                       alt="Saint Vincent and Grenadines Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "SC" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="seychelles-flag.svg" 
+                      alt="Seychelles Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "TL" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="timoreleste-flag.svg" 
+                      alt="Timor Leste Flag"
                       width='20px'
                       height='20px'
                       />
