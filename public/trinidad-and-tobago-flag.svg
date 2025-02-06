@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Countryflags.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 300 200">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #000;
+      }
+
+      .cls-4 {
+        fill: #fcfcfc;
+      }
+
+      .cls-5 {
+        fill: #b20000;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="300" height="200"/>
+    </clipPath>
+  </defs>
+  <g class="cls-1">
+    <g>
+      <rect class="cls-5" x="-22.6" width="345.3" height="201.4"/>
+      <path class="cls-4" d="M-22.6,0l239.7,201.4h105.6L83,0H-22.6ZM-22.6,0"/>
+      <path class="cls-3" d="M-5,0l239.7,201.4h70.4L65.4,0H-5ZM-5,0"/>
+    </g>
+  </g>
+</svg>

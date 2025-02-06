@@ -615,6 +615,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "TT" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="trinidad-and-tobago-flag.svg"
+                    alt="Trinidad and Tobago flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "BW" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="botswana-flag.svg"
+                    alt="Botswana flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1460,6 +1484,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="timoreleste-flag.svg" 
                       alt="Timor Leste Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "TT" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="trinidad-and-tobago-flag.svg" 
+                      alt="Trinidad and Tobago Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "BW" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="botswana-flag.svg" 
+                      alt="Botswana Flag"
                       width='20px'
                       height='20px'
                       />
