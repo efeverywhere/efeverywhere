@@ -639,6 +639,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "KN" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="saint-kitts-and-nevis-flag.svg"
+                    alt="Saint Kitts and Nevis flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "BN" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="brunei-flag.svg"
+                    alt="Brunei flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1504,6 +1528,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="botswana-flag.svg" 
                       alt="Botswana Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "KN" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="saint-kitts-and-nevis-flag.svg" 
+                      alt="Saint Kitts and Nevis Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "BN" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="brunei-flag.svg" 
+                      alt="Brunei Flag"
                       width='20px'
                       height='20px'
                       />
