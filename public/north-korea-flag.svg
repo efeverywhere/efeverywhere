@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #024fa2;
+      }
+
+      .cls-4 {
+        fill: #ed1c27;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-2" cx="500" cy="500" r="500"/>
+    </clipPath>
+  </defs>
+  <g class="cls-1">
+    <g>
+      <rect class="cls-4" x="-315.8" y="192.2" width="2000" height="612.2"/>
+      <rect class="cls-3" x="-315.8" width="2000" height="165.6"/>
+      <rect class="cls-3" x="-315.8" y="834.4" width="2000" height="165.6"/>
+      <rect class="cls-5" x="-315.8" y="804.4" width="2000" height="30"/>
+      <circle class="cls-5" cx="351" cy="498.3" r="221.9"/>
+      <polygon class="cls-4" points="351.6 285.7 399.6 433.1 554.8 433.5 428.9 525.2 477.5 672.3 351 581.5 225.2 673 273.1 524.7 147.3 433.2 303 433.3 351.6 285.7"/>
+      <rect class="cls-5" x="-315.8" y="165.6" width="2000" height="26.6"/>
+    </g>
+  </g>
+</svg>
