@@ -663,6 +663,30 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "KP" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="north-korea-flag.svg"
+                    alt="North Korea flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "ML" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="mali-flag.svg"
+                    alt="Mali flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1548,6 +1572,26 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="brunei-flag.svg" 
                       alt="Brunei Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "KP" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="north-korea-flag.svg" 
+                      alt="North Korea Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "ML" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="mali-flag.svg" 
+                      alt="Mali Flag"
                       width='20px'
                       height='20px'
                       />
