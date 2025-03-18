@@ -687,6 +687,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "BF" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="burkina-faso-flag.svg"
+                    alt="Burkina Faso flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -1592,6 +1604,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="mali-flag.svg" 
                       alt="Mali Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "BF" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="burkina-faso-flag.svg" 
+                      alt="Burkina Faso Flag"
                       width='20px'
                       height='20px'
                       />
