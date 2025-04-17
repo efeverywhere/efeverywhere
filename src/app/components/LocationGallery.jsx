@@ -68,7 +68,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
   }
 
   useEffect(() => {
-    console.log(countryISOCode)
+    console.log(country)
   }, []);
 
   useEffect(() => { //We need to use this for CardMedia image loading checks
@@ -696,6 +696,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     }}
                     src="burkina-faso-flag.svg"
                     alt="Burkina Faso flag"
+                    width='14px'
+                    height='14px'
+                    />
+                  ) : countryISOCode === "CN" && name === "Chinese Taipei" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="taiwan-flag.svg"
+                    alt="Taiwan flag"
                     width='14px'
                     height='14px'
                     />
@@ -1614,6 +1626,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="burkina-faso-flag.svg" 
                       alt="Burkina Faso Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "CN" && name === "Chinese Taipei" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="taiwan-flag.svg" 
+                      alt="Taiwan Flag"
                       width='20px'
                       height='20px'
                       />
