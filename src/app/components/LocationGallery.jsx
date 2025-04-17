@@ -68,7 +68,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
   }
 
   useEffect(() => {
-    console.log(countryISOCode)
+    console.log(country)
   }, []);
 
   useEffect(() => { //We need to use this for CardMedia image loading checks
@@ -699,6 +699,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "CN" && name === "Chinese Taipei" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="taiwan-flag.svg"
+                    alt="Taiwan flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : name === "As Seen In..." ? (
                     <img 
                     style={{
@@ -731,7 +743,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       fontSize: '20px'
                     }}
                   >
-                        {name == 'As Seen In...' ? `${name}`: `${name}, ${country}`}
+                        {name === 'As Seen In...' ? `${name}` : country ? `${name}, ${country}` : `${name}`}
                   </Typography>
                 </div>
                 {images && viewState === 'squares' &&
@@ -1617,6 +1629,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       width='20px'
                       height='20px'
                       />
+                    ) : countryISOCode === "CN" && name === "Chinese Taipei" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="taiwan-flag.svg" 
+                      alt="Taiwan Flag"
+                      width='20px'
+                      height='20px'
+                      />
                     ) : name === "As Seen In..." ? (
                       <img 
                       style={{
@@ -1647,7 +1669,7 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                           fontSize: '64px'
                         }}
                       >
-                        {name == 'As Seen In...' ? `${name}`: `${name}, ${country}`}
+                        {name === 'As Seen In...' ? `${name}` : country ? `${name}, ${country}` : `${name}`}
                       </Typography>
                     </div>
                     <div
