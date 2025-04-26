@@ -699,6 +699,18 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                     width='14px'
                     height='14px'
                     />
+                  ) : countryISOCode === "NR" ? (
+                    <img 
+                    style={{
+                      marginRight: '10px',
+                      marginTop: '18px',
+                      marginLeft: '-15px'
+                    }}
+                    src="nauru-flag.svg"
+                    alt="Nauru flag"
+                    width='14px'
+                    height='14px'
+                    />
                   ) : countryISOCode === "CN" && name === "Chinese Taipei" ? (
                     <img 
                     style={{
@@ -1626,6 +1638,16 @@ export default function LocationGallery({ onClose, name, images, countryISOCode,
                       }}
                       src="burkina-faso-flag.svg" 
                       alt="Burkina Faso Flag"
+                      width='20px'
+                      height='20px'
+                      />
+                    ) : countryISOCode === "NR" ? (
+                      <img 
+                      style={{
+                        marginTop: '21px'
+                      }}
+                      src="nauru-flag.svg" 
+                      alt="Nauru Flag"
                       width='20px'
                       height='20px'
                       />
