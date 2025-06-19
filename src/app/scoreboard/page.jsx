@@ -437,6 +437,9 @@ function PageContent(){
                         </Typography>
                       </div>
                     ))}
+
+
+                    
                       <ExpandMoreIcon 
                         ref={americasRef}
                         style={{ 
@@ -596,11 +599,15 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['africa']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
+                    {countriesData['africa']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['africa']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
                 </div>
                 )}
             </Grid>
@@ -612,12 +619,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['the_americas']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['the_americas']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['the_americas']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
             <Grid item xs={3} style={{ borderLeft: '4px solid #2FC8F2', paddingLeft: '1vw'}}>
@@ -628,12 +639,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['asia_pacific']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['asia_pacific']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['asia_pacific']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
             <Grid item xs={3} style={{ borderLeft: '4px solid #2FC8F2', paddingLeft: '1vw'}}>
@@ -644,12 +659,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['europe']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['europe']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['europe']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
           </Grid> 
