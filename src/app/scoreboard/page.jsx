@@ -161,6 +161,7 @@ function PageContent(){
                       hollowSize='55%'
                       dataLabelOffset={15}
                       scoreLabelColorOnHover='#2FC8F2'
+                      strokeColor='#FF329B'
                     />
                   </div>
                 }
@@ -214,6 +215,7 @@ function PageContent(){
                       hollowSize='55%'
                       dataLabelOffset={15}
                       scoreLabelColorOnHover='#2FC8F2'
+                      strokeColor='#FF329B'
                     />
                   </div>
                   )}
@@ -265,6 +267,7 @@ function PageContent(){
                 textBottom={`out of ${countriesData['the_americas']['total']}`}
                 textBottomSecond={`countries`}
                 scoreLabelColorOnHover='#2FC8F2'
+                strokeColor='#FF329B'
               />
             </div>
             )}
@@ -303,6 +306,7 @@ function PageContent(){
                 textBottom={`out of ${countriesData['europe']['total']}`} 
                 textBottomSecond={`countries`}
                 scoreLabelColorOnHover='#2FC8F2'
+                strokeColor='#FF329B'
               />
               </div>
             )}
@@ -425,7 +429,7 @@ function PageContent(){
                 </div>
                 {countriesData && (
                   <div>
-                    {countriesData['the_americas']['missing'].map(country => (
+                    {/* {countriesData['the_americas']['missing'].map(country => (
                       <div key={country} style={{ 
                         borderLeft: '4px solid #2FC8F2',
                         paddingLeft: '7vw'}}>
@@ -436,11 +440,20 @@ function PageContent(){
                           {country}
                         </Typography>
                       </div>
-                    ))}
-
+                    ))} */}
+                      <div key='america-complete' style={{ 
+                        borderLeft: '4px solid #2FC8F2',
+                        paddingLeft: '7vw'}}>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key='america-complete'
+                        >
+                          Complete!
+                        </Typography>
+                      </div>
 
                     
-                      <ExpandMoreIcon 
+                      {/* <ExpandMoreIcon 
                         ref={americasRef}
                         style={{ 
                           position: 'sticky', 
@@ -449,7 +462,7 @@ function PageContent(){
                           cursor: 'pointer' 
                         }} 
                         onClick={() => scrollToBottom(americasRef)}
-                      />
+                      /> */}
                   </div>
                 )}
               </SurfaceCardContent>
@@ -520,7 +533,7 @@ function PageContent(){
                     </div>
                     {countriesData && (
                       <div>
-                          {countriesData['europe']['missing'].map(country => (
+                          {/* {countriesData['europe']['missing'].map(country => (
                           <div key={country} style={{ 
                             borderLeft: '4px solid #2FC8F2',
                             paddingLeft: '7vw'}}>
@@ -531,7 +544,7 @@ function PageContent(){
                               {country}
                             </Typography>
                           </div>
-                          ))}
+                          ))} */}
                       {/* <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
@@ -540,6 +553,16 @@ function PageContent(){
                           cursor: 'pointer' 
                         }} 
                       /> */}
+                      <div key='america-complete' style={{ 
+                        borderLeft: '4px solid #2FC8F2',
+                        paddingLeft: '7vw'}}>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key='america-complete'
+                        >
+                          Complete!
+                        </Typography>
+                      </div>
                       </div>
                 )}
               </SurfaceCardContent>

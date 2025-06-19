@@ -5,12 +5,20 @@ import { Typography } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false, translateX='0px', translateY='0px', scoreLabelColorDefault='#000000', scoreLabelColorOnHover="#000000" }) => {
+const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, textBottom, textBottomSecond, fontSize='30px', height=300, width=300, dataLabelSize="90px", dataLabelOffset=30, hollowSize='65%', lineHeight='1.5', marginTop='35vh',isMobile=false, translateX='0px', translateY='0px', scoreLabelColorDefault='#000000', scoreLabelColorOnHover="#000000", strokeColor='#2FC8F2'}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const options = {
     plotOptions: {
       radialBar: {
+        dropShadow: {
+          enabled: true,
+          top: 2,
+          left: 0,
+          blur: 4,
+          opacity: 0.50,
+          color: '#000'
+        },
         hollow: {
           size: hollowSize,
         },
@@ -35,8 +43,16 @@ const RadialProgressBar = ({ percentage, textTop, textTopSecond, textRadial, tex
     },
     stroke: {
         lineCap: "round",
+        dropShadow: {
+          enabled: true,
+          top: 2,
+          left: 0,
+          blur: 4,
+          opacity: 0.50,
+          color: '#000'
+        }
       },
-    colors: ['#2FC8F2'],
+    colors: [strokeColor],
     labels: [textRadial],
   };
 
