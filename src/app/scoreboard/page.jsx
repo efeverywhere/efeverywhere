@@ -161,6 +161,7 @@ function PageContent(){
                       hollowSize='55%'
                       dataLabelOffset={15}
                       scoreLabelColorOnHover='#2FC8F2'
+                      strokeColor='#FF329B'
                     />
                   </div>
                 }
@@ -214,6 +215,7 @@ function PageContent(){
                       hollowSize='55%'
                       dataLabelOffset={15}
                       scoreLabelColorOnHover='#2FC8F2'
+                      strokeColor='#FF329B'
                     />
                   </div>
                   )}
@@ -265,6 +267,7 @@ function PageContent(){
                 textBottom={`out of ${countriesData['the_americas']['total']}`}
                 textBottomSecond={`countries`}
                 scoreLabelColorOnHover='#2FC8F2'
+                strokeColor='#FF329B'
               />
             </div>
             )}
@@ -303,6 +306,7 @@ function PageContent(){
                 textBottom={`out of ${countriesData['europe']['total']}`} 
                 textBottomSecond={`countries`}
                 scoreLabelColorOnHover='#2FC8F2'
+                strokeColor='#FF329B'
               />
               </div>
             )}
@@ -425,7 +429,7 @@ function PageContent(){
                 </div>
                 {countriesData && (
                   <div>
-                    {countriesData['the_americas']['missing'].map(country => (
+                    {/* {countriesData['the_americas']['missing'].map(country => (
                       <div key={country} style={{ 
                         borderLeft: '4px solid #2FC8F2',
                         paddingLeft: '7vw'}}>
@@ -436,8 +440,20 @@ function PageContent(){
                           {country}
                         </Typography>
                       </div>
-                    ))}
-                      <ExpandMoreIcon 
+                    ))} */}
+                      <div key='america-complete' style={{ 
+                        borderLeft: '4px solid #2FC8F2',
+                        paddingLeft: '7vw'}}>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key='america-complete'
+                        >
+                          Complete!
+                        </Typography>
+                      </div>
+
+                    
+                      {/* <ExpandMoreIcon 
                         ref={americasRef}
                         style={{ 
                           position: 'sticky', 
@@ -446,7 +462,7 @@ function PageContent(){
                           cursor: 'pointer' 
                         }} 
                         onClick={() => scrollToBottom(americasRef)}
-                      />
+                      /> */}
                   </div>
                 )}
               </SurfaceCardContent>
@@ -517,7 +533,7 @@ function PageContent(){
                     </div>
                     {countriesData && (
                       <div>
-                          {countriesData['europe']['missing'].map(country => (
+                          {/* {countriesData['europe']['missing'].map(country => (
                           <div key={country} style={{ 
                             borderLeft: '4px solid #2FC8F2',
                             paddingLeft: '7vw'}}>
@@ -528,7 +544,7 @@ function PageContent(){
                               {country}
                             </Typography>
                           </div>
-                          ))}
+                          ))} */}
                       {/* <ExpandMoreIcon 
                         style={{ 
                           position: 'sticky', 
@@ -537,6 +553,16 @@ function PageContent(){
                           cursor: 'pointer' 
                         }} 
                       /> */}
+                      <div key='america-complete' style={{ 
+                        borderLeft: '4px solid #2FC8F2',
+                        paddingLeft: '7vw'}}>
+                        <Typography 
+                          fontFamily='EFCircularBook'
+                          key='america-complete'
+                        >
+                          Complete!
+                        </Typography>
+                      </div>
                       </div>
                 )}
               </SurfaceCardContent>
@@ -596,11 +622,15 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['africa']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
+                    {countriesData['africa']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['africa']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
                 </div>
                 )}
             </Grid>
@@ -612,12 +642,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['the_americas']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['the_americas']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['the_americas']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
             <Grid item xs={3} style={{ borderLeft: '4px solid #2FC8F2', paddingLeft: '1vw'}}>
@@ -628,12 +662,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['asia_pacific']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['asia_pacific']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['asia_pacific']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
             <Grid item xs={3} style={{ borderLeft: '4px solid #2FC8F2', paddingLeft: '1vw'}}>
@@ -644,12 +682,16 @@ function PageContent(){
               </Typography>
               {countriesData && (
                 <div>
-                    {countriesData['europe']['missing'].map(country => (
-                      <Typography key={country}>
-                        {country}
-                      </Typography>
-                    ))}
-                </div>
+                    {countriesData['europe']['missing'].length === 0 ? (
+                      <Typography>Completed!</Typography>
+                    ) : (
+                      countriesData['europe']['missing'].map(country => (
+                        <Typography key={country}>
+                          {country}
+                        </Typography>
+                      ))
+                    )}
+                  </div>
                 )}
             </Grid>
           </Grid> 
