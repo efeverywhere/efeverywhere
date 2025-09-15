@@ -160,7 +160,7 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
-                      scoreLabelColorOnHover='#2FC8F2'
+                      scoreLabelColorOnHover='#FF329B'
                       strokeColor='#FF329B'
                     />
                   </div>
@@ -192,7 +192,8 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
-                      scoreLabelColorOnHover='#2FC8F2'
+                      scoreLabelColorOnHover='#FF329B'
+                      strokeColor='#FF329B'
                     />
                   </div>
                   )}
@@ -214,7 +215,7 @@ function PageContent(){
                       dataLabelSize='45px'
                       hollowSize='55%'
                       dataLabelOffset={15}
-                      scoreLabelColorOnHover='#2FC8F2'
+                      scoreLabelColorOnHover='#FF329B'
                       strokeColor='#FF329B'
                     />
                   </div>
@@ -266,7 +267,7 @@ function PageContent(){
                 textRadial={countriesData['the_americas']['occupied']}
                 textBottom={`out of ${countriesData['the_americas']['total']}`}
                 textBottomSecond={`countries`}
-                scoreLabelColorOnHover='#2FC8F2'
+                scoreLabelColorOnHover='#FF329B'
                 strokeColor='#FF329B'
               />
             </div>
@@ -286,7 +287,8 @@ function PageContent(){
                 textRadial={countriesData['asia_pacific']['occupied']}
                 textBottom={`out of ${countriesData['asia_pacific']['total']}`} 
                 textBottomSecond={`countries`}
-                scoreLabelColorOnHover='#2FC8F2'
+                scoreLabelColorOnHover='#FF329B'
+                strokeColor='#FF329B'
               />
             </div>
             )}
@@ -305,7 +307,7 @@ function PageContent(){
                 textRadial={countriesData['europe']['occupied']}
                 textBottom={`out of ${countriesData['europe']['total']}`} 
                 textBottomSecond={`countries`}
-                scoreLabelColorOnHover='#2FC8F2'
+                scoreLabelColorOnHover='#FF329B'
                 strokeColor='#FF329B'
               />
               </div>
