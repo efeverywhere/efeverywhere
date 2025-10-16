@@ -310,6 +310,8 @@ useEffect(() => {
                               marginTop= {isMobile ? '0vh': '35vh'}
                               translateX= {isMobile ? '-8px' : '0px' }
                               translateY= {isMobile ? '0px' : '0px' }
+                              scoreLabelColorOnHover='#FF329B'
+                              strokeColor='#FF329B'
                             />
 
                         </CardContent>
