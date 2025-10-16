@@ -85,7 +85,6 @@ function PageContent(){
                 cursor: 'pointer'
               }}
               onClick={() => {
-                console.log('LJDSLFJKDSL')
                 window.location.href = `/?lon=0&lat=40&zoom=1&scope=world`
               }}
             >
@@ -100,7 +99,8 @@ function PageContent(){
                 dataLabelSize='130px'
                 dataLabelOffset={45}
                 isMobile={isMobile}
-                scoreLabelColorOnHover='#2FC8F2'
+                scoreLabelColorOnHover='#FF329B'
+                strokeColor='#FF329B'
               />
             </div>
             }
@@ -138,7 +138,8 @@ function PageContent(){
                         dataLabelSize='45px'
                         hollowSize='55%'
                         dataLabelOffset={15}
-                        scoreLabelColorOnHover='#2FC8F2'
+                        scoreLabelColorOnHover='#FF329B'
+                        strokeColor='#FF329B'
                       />
                      </div>
                   }
@@ -248,7 +249,8 @@ function PageContent(){
                 textRadial={countriesData['africa']['occupied']}
                 textBottom={`out of ${countriesData['africa']['total']}`} 
                 textBottomSecond={`countries`}
-                scoreLabelColorOnHover='#2FC8F2'
+                scoreLabelColorOnHover='#FF329B'
+                strokeColor='#FF329B'
               />
             </div>
             )}
